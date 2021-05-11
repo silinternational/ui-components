@@ -1,0 +1,14 @@
+@use '@material/layout-grid/mdc-layout-grid'; // https://material.io/develop/web/components/layout-grid
+@use './breakpoints';
+@use './theme';
+@use './typography';
+
+
+/* MDC select floating label */
+.mdc-select:not(.mdc-select--disabled).mdc-select--focused .mdc-floating-label,
+
+/* MDC textfield floating label */
+.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label
+{
+    color: var(--mdc-theme-secondary); /* or primary */
+}
