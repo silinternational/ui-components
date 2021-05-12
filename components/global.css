@@ -190,6 +190,18 @@ p {
 .white {
 	color: white;
 }
+/* background color */
+.blue {
+    background-color: var(--sil-primary-blue);
+}
+
+.green {
+	background-color: var(--sil-green);
+}
+
+.skyblue {
+	background-color: var(--mdc-theme-primary);
+}
 
 /* flex */
 .flex {
