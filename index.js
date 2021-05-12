@@ -18,6 +18,8 @@ import {
   TopAppBar,
 } from './components/mdc'
 
+import Badge from './components/Badge.svelte'
+
 export {
   Button,
   Card,
@@ -36,4 +38,5 @@ export {
   TextField,
   Tooltip,
   TopAppBar,
+  Badge
 }
