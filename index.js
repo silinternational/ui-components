@@ -23,6 +23,7 @@ import StaticChip from './components/StaticChip.svelte'
 import CustomCard from './components/CustomCard.svelte'
 import Form from './components/Form.svelte'
 import FormTo from './components/FormTo.svelte'
+import JobHeader from './components/JobHeader.svelte'
 
 export {
   Button,
@@ -46,5 +47,6 @@ export {
   CustomCard,
   Form,
   FormTo,
+  JobHeader,
   StaticChip
 }
