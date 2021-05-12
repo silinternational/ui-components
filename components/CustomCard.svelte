@@ -2,7 +2,7 @@
     import { Button, Card } from './mdc'
 
     export let src = ''
-    export let alt = 'image is missisng'
+    export let alt = 'image is missing'
     export let title = 'Title'
     export let icon = ''
     export let disabled = false
