@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/silinternational/ui-components#readme",
   "devDependencies": {
-    "material-components-web": "^10.0.0"
+    "material-components-web": "^10.0.0",
+    "svelte": "^3.38.2"
   }
 }
