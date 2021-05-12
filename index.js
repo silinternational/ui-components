@@ -19,11 +19,11 @@ import {
 } from './components/mdc'
 
 import Badge from './components/Badge.svelte'
-import StaticChip from './components/StaticChip.svelte'
 import CustomCard from './components/CustomCard.svelte'
 import Form from './components/Form.svelte'
-import FormTo from './components/FormTo.svelte'
+import FromTo from './components/FromTo.svelte'
 import JobHeader from './components/JobHeader.svelte'
+import StaticChip from './components/StaticChip.svelte'
 
 export {
   Button,
@@ -46,7 +46,7 @@ export {
   Badge,
   CustomCard,
   Form,
-  FormTo,
+  FromTo,
   JobHeader,
   StaticChip
 }
