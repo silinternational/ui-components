@@ -19,6 +19,7 @@ import {
 } from './components/mdc'
 
 import Badge from './components/Badge.svelte'
+import StaticChip from './components/StaticChip.svelte'
 
 export {
   Button,
@@ -38,5 +39,6 @@ export {
   TextField,
   Tooltip,
   TopAppBar,
-  Badge
+  Badge,
+  StaticChip
 }
