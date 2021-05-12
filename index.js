@@ -20,6 +20,7 @@ import {
 
 import Badge from './components/Badge.svelte'
 import StaticChip from './components/StaticChip.svelte'
+import CustomCard from './components/CustomCard.svelte'
 
 export {
   Button,
@@ -40,5 +41,6 @@ export {
   Tooltip,
   TopAppBar,
   Badge,
-  StaticChip
+  StaticChip,
+  CustomCard
 }
