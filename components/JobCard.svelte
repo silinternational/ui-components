@@ -4,18 +4,15 @@
     import { findByID } from "./helpers"
     import Tooltip from './mdc/Tooltip'
     import { goto } from '@roxi/routify'
-    import { createEventDispatcher } from 'svelte'
     
     export let alt = 'owner Avatar'
-    export let gigID = ''
     export let languages = []
-    export let link = `/gigs/${gigID}/requests`
+    export let link = `/gigs/${gig.id}/requests`
     export let claimed = false
     export let gig = {}
     let showImage = true
     const now = Date.now()
     
-    $: gigID && getGig(gigID)
     $: src = gig?.owner?.avatar_url
     $: title = gig?.name || ''
     $: footerText = findByID(languages, gig?.target_language_id)?.name
@@ -23,12 +20,6 @@
     $: ownerInitial = gig?.owner?.nickname?.charAt(0) || ''
     $: msLeft = Date.parse(gig?.deadline) - now
     $: daysLeft = msLeft > 0 ? Math.floor(msLeft/day) : '-' //TODO, Math.min(daysLeft, remainingWindowDays when available)
-
-    const dispatch = createEventDispatcher()
-
-    async function getGig (gigID) {
-        dispatch('getGig', gigID)
-    }
 
     const avatarError = () => showImage = false
 </script>
@@ -105,14 +96,14 @@
         <div class="flex justify-between aligned mb-8px gray fs-12">
             <span>{footerText}</span>
             <span class="flex justify-between aligned">
-                <Tooltip.Wrapper ariaDescribedBy={`count-${gigID}`}>
+                <Tooltip.Wrapper ariaDescribedBy={`count-${gig.id}`}>
                     <div class="flex aligned">
                         <span class="material-icons md-16">ballot</span>
                         <span>{count}</span>
                     </div>
                 </Tooltip.Wrapper>
                 <div class="icon">
-                    <Tooltip.Wrapper ariaDescribedBy={`days-${gigID}`}>
+                    <Tooltip.Wrapper ariaDescribedBy={`days-${gig.id}`}>
                         <div class="flex aligned">
                             <span class="material-icons md-16">brightness_4</span>
                             <span>{daysLeft}</span>
@@ -124,5 +115,5 @@
     </div>
 </div>
 
-<Tooltip tooltipID={`count-${gigID}`}>{gig?.word_count} words in {count} portions</Tooltip>
-<Tooltip tooltipID={`days-${gigID}`}>{ claimed ? `Due in ${daysLeft} days` : 'Due 7 days after claiming' }</Tooltip>
+<Tooltip tooltipID={`count-${gig.id}`}>{gig?.word_count} words in {count} portions</Tooltip>
+<Tooltip tooltipID={`days-${gig.id}`}>{ claimed ? `Due in ${daysLeft} days` : 'Due 7 days after claiming' }</Tooltip>
