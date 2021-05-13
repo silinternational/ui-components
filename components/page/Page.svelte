@@ -2,7 +2,7 @@
 import { Progress } from '../mdc'
 import appBarTitle from '../mdc/TopAppBar/title'
 
-export let loading = true
+export let loading = false
 export let title = ''
 export let layout = 'default'
 export let center = false // center page content, only applicable if using default layout
