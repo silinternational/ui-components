@@ -1,8 +1,7 @@
 <script>
 import { Button, Datatable, Progress } from './mdc'
 import { isAboveMobile, isAboveTablet } from './mdc/breakpoints'
-import { resolvePath, sortByNum, sortByString } from '../data/helpers.js'
-import Data from './mdc/Datatable/Data.svelte'
+import { resolvePath, sortByNum, sortByString } from './helpers.js'
 import { formatDate } from './dates'
 
 let headerID = 'name'
