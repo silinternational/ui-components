@@ -20,8 +20,9 @@
     "url": "https://github.com/silinternational/ui-components/issues"
   },
   "homepage": "https://github.com/silinternational/ui-components#readme",
-  "devDependencies": {
+  "peerDependencies": {
+    "@roxi/routify": "^2.x",
     "material-components-web": "^10.0.0",
-    "svelte": "^3.38.2"
+    "svelte": "^3.x"
   }
 }
