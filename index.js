@@ -24,8 +24,9 @@ import Form from './components/Form.svelte'
 import FromTo from './components/FromTo.svelte'
 import JobHeader from './components/JobHeader.svelte'
 import JobCard from './components/JobCard.svelte'
-import StaticChip from './components/StaticChip.svelte'
 import Page from './components/page'
+import StaticChip from './components/StaticChip.svelte'
+import Tour from './components/Tour.svelte'
 
 export {
   Button,
@@ -52,5 +53,6 @@ export {
   JobHeader,
   JobCard,
   Page,
-  StaticChip
+  StaticChip,
+  Tour
 }
