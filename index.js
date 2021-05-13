@@ -26,6 +26,7 @@ import JobHeader from './components/JobHeader.svelte'
 import JobCard from './components/JobCard.svelte'
 import Page from './components/page'
 import StaticChip from './components/StaticChip.svelte'
+import SortableTable from './components/SortableTable.svelte'
 import Tour from './components/Tour.svelte'
 
 export {
@@ -53,6 +54,7 @@ export {
   JobHeader,
   JobCard,
   Page,
+  SortableTable,
   StaticChip,
   Tour
 }
