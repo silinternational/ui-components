@@ -1,7 +1,7 @@
 # ui-components
 Reusable Svelte components for some internal applications
 
-### installation (not yet published to npm so you will need to download the repository from https://github.com/silinternational/ui-components)
+### installation
 To install to your svelte project open your project's root directory in a terminal. Type `npm i ` then drag and drop the ui-components directory to the terminal window or copy and past the path to the ui-components directory and press enter.
 
 ### bundler configuration
