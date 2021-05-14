@@ -21,12 +21,8 @@ import {
 import Badge from './components/Badge.svelte'
 import CustomCard from './components/CustomCard.svelte'
 import Form from './components/Form.svelte'
-import FromTo from './components/FromTo.svelte'
-import JobHeader from './components/JobHeader.svelte'
-import JobCard from './components/JobCard.svelte'
 import Page from './components/page'
 import StaticChip from './components/StaticChip.svelte'
-import SortableTable from './components/SortableTable.svelte'
 import Tour from './components/Tour.svelte'
 
 export {
@@ -50,11 +46,7 @@ export {
   Badge,
   CustomCard,
   Form,
-  FromTo,
-  JobHeader,
-  JobCard,
   Page,
-  SortableTable,
   StaticChip,
   Tour
 }
