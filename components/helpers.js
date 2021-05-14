@@ -1,1 +1,0 @@
-export const findByID = (list, id) => list.find(item => id && (item.id === id))
