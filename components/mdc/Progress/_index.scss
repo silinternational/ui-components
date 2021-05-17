@@ -1,0 +1,8 @@
+@use "@material/circular-progress/mdc-circular-progress";
+@use "@material/linear-progress";
+
+@include linear-progress.core-styles;
+
+.bar-color {    
+  @include linear-progress.bar-color(var(--sil-primary-blue));
+}

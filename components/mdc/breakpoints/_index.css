@@ -1,0 +1,14 @@
+/* Details about Material Design's breakpoints can be found here:
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ *
+ * The `body` selector was included in these styles to give them a tiny bit more
+ * specificity than a single CSS class selector. That lets these override normal
+ * display rules but still be overridden when necessary. */
+
+/*** To hide an element ABOVE a given breakpoint, use one of these: ***/
+
+/* Above xsmall breakpoint: */
+@media (min-width: 840px) { body .hide-above-tablet { display: none; } }
+
+/* Above small breakpoint: */
+@media (min-width: 600px) { body .hide-above-mobile { display: none; } }
