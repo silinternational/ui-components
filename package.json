@@ -1,5 +1,5 @@
 {
-  "name": "ui-components",
+  "name": "@silintl/ui-components",
   "version": "1.0.0",
   "description": "Reusable Svelte components for some internal applications",
   "main": "index.js",
@@ -11,10 +11,13 @@
     "url": "git+https://github.com/silinternational/ui-components.git"
   },
   "keywords": [
+    "material",
+    "material-design",
+    "svelte",
     "svelte-components",
-    "material"
+    "ui-components"
   ],
-  "author": "",
+  "author": "Michael Wilson",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/silinternational/ui-components/issues"
