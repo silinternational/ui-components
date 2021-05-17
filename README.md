@@ -1,7 +1,7 @@
 # ui-components
 Reusable Svelte components for some internal applications
 
-### installation (not yet published to npm so you will need to download the repository from https://github.com/silinternational/ui-components)
+### installation
 To install to your Svelte project, open your project's root directory in a terminal. Type `npm i` then drag and drop the ui-components directory to the terminal window or copy and paste the ui-components directory path and press enter.
 
 ### bundler configuration
@@ -38,7 +38,7 @@ module.exports = {
 		}),
 		routify({}),
 		dotenv(),
-        // ...
+		// ...
 ```
 
 ### Components
@@ -51,11 +51,11 @@ Card (secondary, outlined, color)
 Checkbox (label, checked, disabled, uppercase)
 
 Datatable (label) [
-    Datatable.Data, Datatable.Data.Row, Datatable.Data.Row.Item, Datatable.Header, Datatable.Header.Item
+	Datatable.Data, Datatable.Data.Row, Datatable.Data.Row.Item, Datatable.Header, Datatable.Header.Item
 ]
 
 Dialog [
-    Dialog.Alert (open, title, defaultAction), Dialog.Simple(open, title)
+	Dialog.Alert (open, title, defaultAction), Dialog.Simple(open, title)
 ]
 
 Drawer (title, subtitle, menuItems)
@@ -65,21 +65,21 @@ Fab (icon, label, url)
 IconButton (icon, ariaLabel)
 
 List (twoLine, avatar) [
-    List.Item (activated, graphicURL, graphicAlt, icon, meta, primary, secondary, text, withDivider, nonInteractive, tabindex), List.Divider
+	List.Item (activated, graphicURL, graphicAlt, icon, meta, primary, secondary, text, withDivider, nonInteractive, tabindex), List.Divider
 ]
 
 Progress [
-    Progress.Circular, Progress.Linear (indeterminate, value)
+	Progress.Circular, Progress.Linear (indeterminate, value)
 ]
 
 Select (options, width, disabled, selectedID)
 
 Snackbar [
-    notice.js
+	notice.js
 ]
 
 TabBar [
-    TabBar.Scroller, TabBar.Tab (active, label)
+	TabBar.Scroller, TabBar.Tab (active, label)
 ]
 
 TextArea (label, value, placeholder, rows, maxlength, autofocus, rtl)
@@ -87,23 +87,23 @@ TextArea (label, value, placeholder, rows, maxlength, autofocus, rtl)
 TextField (label, value, placeholder, maxlength, autofocus, disabled)
 
 Tooltip (tooltipID, positionX, positionY) [
-    Tooltip.Wrapper (ariaDescribedBy)
+	Tooltip.Wrapper (ariaDescribedBy)
 ]
 
 TopAppBar (dense, fixed, navIconBreakpointClass) [
-    actions.js, title.js
+	actions.js, title.js
 ]
 
 Badge (color)
 
 CustomCard (
-    src, alt, title, icon, disabled, buttons, footerText
+	src, alt, title, icon, disabled, buttons, footerText
 )
 
 Form
 
 Page (loading, title, layout, center, noProgress) [
-    Page.Subheader
+	Page.Subheader
 ]
 
 StaticChip
@@ -121,10 +121,10 @@ Here is an example of importing Button and Card:
 </script>
 
 <Card class="mb-1">
-    <p>This is a card.</p>
+	<p>This is a card.</p>
 
-    <span slot="actions">
-    <Button on:click={doSomething} >Click here!</Button>
-    </span>
+	<span slot="actions">
+		<Button on:click={doSomething} >Click here!</Button>
+	</span>
 </Card>
 ```
