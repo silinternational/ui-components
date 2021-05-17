@@ -128,3 +128,9 @@ Here is an example of importing Button and Card:
 	</span>
 </Card>
 ```
+
+### Example template
+Here is a template with more examples of how to use components.
+https://github.com/hobbitronics/svelte-ui-components-app
+
+It was buit from https://github.com/sveltejs/template
