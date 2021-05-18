@@ -1,5 +1,5 @@
 <script>
-  export let color
+  export let color = 'gray'
 </script>
 
 <style>
@@ -9,9 +9,9 @@
     padding: .2em;
   }
 
-  .gray {
-    background-color: gray;
+  .background {
+    background-color: var(--theme-color);
   }
 </style>
 
-<span class="dib align-center white fs-16 br-50" class:gray={!color} class:blue={color === 'blue'} class:green={color === 'green'} class:skyblue={color === 'skyblue'}><slot /></span>
+<span class="dib align-center white fs-16 br-50 background" style="--theme-color: {color}" ><slot /></span>
