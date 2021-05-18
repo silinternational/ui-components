@@ -1,0 +1,18 @@
+@use "@material/floating-label/mdc-floating-label";
+//@use "@material/line-ripple/mdc-line-ripple"; // Only needed if using ripple.
+@use "@material/notched-outline/mdc-notched-outline";
+@use "@material/textfield";
+
+@include textfield.core-styles;
+
+/* TODO should be cleaned up later, this code is in multiple files but only needs to be in the master css*/
+
+/* MDC textfield floating label */
+.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label
+{
+    color: var(--mdc-theme-primary-variant); /* or primary */
+}
+
+.textfield-radius {    
+    @include textfield.outline-shape-radius(8px);
+}
