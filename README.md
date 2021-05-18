@@ -117,7 +117,7 @@ Here is an example of importing Button and Card:
 
 ```
 <script>
-  import { Button, Card } from 'ui-components'
+  import { Button, Card } from '@silintl/ui-components'
 </script>
 
 <Card class="mb-1">
