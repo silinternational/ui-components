@@ -2,7 +2,7 @@
 Reusable Svelte components for some internal applications
 
 ### installation
-To install to your Svelte project, open your project's root directory in a terminal. Type `npm i` then drag and drop the ui-components directory to the terminal window or copy and paste the ui-components directory path and press enter.
+To install to your Svelte project, open your project's root directory in a terminal. Type `npm i @silintl/ui-components` and press enter.
 
 ### bundler configuration
 Your Svelte project will need the bundler (rollup most likely) configured to compile Sass files. If you are using rollup your plugins in your "rollup.config.js" should look something like this taking special note of postcss and svelte (it may work still without autoPreprocess):
