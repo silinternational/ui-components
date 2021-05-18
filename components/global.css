@@ -26,6 +26,9 @@
 .ml-1 {
 	margin-left: 1rem;
 }
+.ml-2 {
+	margin-left: 2rem;
+}
 
 .mb-0 {
 	margin-bottom: 0;
@@ -36,6 +39,9 @@
 }
 .mb-2 {
 	margin-bottom: 2rem;
+}
+.mb-4 {
+	margin-bottom: 4rem;
 }
 
 .mt-0 {
@@ -51,6 +57,9 @@
 	margin-top: 4rem;
 }
 
+.mr-1 {
+	margin-right: 1rem;
+}
 .mr-2 {
 	margin-right: 2rem;
 }
@@ -63,9 +72,16 @@
 	margin-bottom: 2rem;
 	margin-top: 2rem;
 }
+.my-4 {
+	margin-bottom: 4rem;
+	margin-top: 4rem;
+}
 
 .p-1 {
 	padding: 1rem;
+}
+.p-2 {
+	padding: 2rem;
 }
 .p-4 {
 	padding: 4rem;
@@ -75,10 +91,22 @@
 	padding-left: 1rem;
 	padding-right: 1rem;
 }
+.px-2 {
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+.px-4 {
+	padding-left: 4rem;
+	padding-right: 4rem;
+}
 
 .py-1 {
 	padding-top: 1rem;
 	padding-bottom: 1rem;
+}
+.py-2 {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
 }
 .py-4 {
 	padding-top: 4rem;
@@ -88,12 +116,18 @@
 .pt-1 {
 	padding-top: 1rem;
 }
+.pt-2 {
+	padding-top: 2rem;
+}
 .pt-4 {
 	padding-top: 4rem;
 }
 
 .pr-1 {
 	padding-right: 1rem;
+}
+.pr-2 {
+	padding-right: 2rem;
 }
 
 .absolute {
@@ -191,8 +225,24 @@
 	flex-wrap: wrap;
 }
 
+.grow-0 {
+	flex-grow: 0;
+}
 .grow-1 {
 	flex-grow: 1;
+}
+.grow-2 {
+	flex-grow: 2;
+}
+
+.shrink-0 {
+	flex-shrink: 0;
+}
+.shrink-1 {
+	flex-shrink: 1;
+}
+.shrink-2 {
+	flex-shrink: 2;
 }
 
 .row {
@@ -209,6 +259,10 @@
 
 .justify-between {
 	justify-content: space-between;
+}
+
+.justify-around {
+	justify-content: space-around;
 }
 
 .justify-end {
