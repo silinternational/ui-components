@@ -118,6 +118,8 @@ Here is an example of importing Button and Card:
 ```
 <script>
   import { Button, Card } from '@silintl/ui-components'
+
+	// ...
 </script>
 
 <Card class="mb-1">
@@ -131,8 +133,11 @@ Here is an example of importing Button and Card:
 ### Theming
 If you are using an MDC theme https://material.io/develop/web/docs/theming and typography https://material.io/develop/web/components/typography then import your _index.scss file to the App.svelte file so they get applied to the ui-components.
 
-### Example template
-Here is a template with more examples of how to use components.
+### Examples
+Here is a demo app with more examples of how to use components.
 https://github.com/hobbitronics/svelte-ui-components-app
 
 It was buit from https://github.com/sveltejs/template
+
+### Storybook
+Check out our components at https://silinternational.github.io/ui-components/
