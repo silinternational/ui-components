@@ -1,4 +1,5 @@
 import {
+  actions,
   Button,
   Card,
   Checkbox,
@@ -26,6 +27,7 @@ import StaticChip from './components/StaticChip.svelte'
 import Tour from './components/Tour.svelte'
 
 export {
+  actions,
   Button,
   Card,
   Checkbox,

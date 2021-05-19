@@ -21,8 +21,10 @@ import TabBar from './TabBar'
 import {TextArea, TextField} from './TextInput'
 import Tooltip from './Tooltip'
 import TopAppBar from './TopAppBar'
+import actions from './TopAppBar/actions'
 
 export {
+  actions,
   Button,
   Card,
   Checkbox,
