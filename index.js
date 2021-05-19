@@ -8,6 +8,8 @@ import {
   Drawer,
   Fab,
   IconButton,
+  isAboveMobile,
+  isAboveTablet,
   List,
   Progress,
   Select,
@@ -17,6 +19,7 @@ import {
   TextField,
   Tooltip,
   TopAppBar,
+  setNotice
 } from './components/mdc'
 
 import Badge from './components/Badge.svelte'
@@ -29,6 +32,8 @@ import Tour from './components/Tour.svelte'
 export {
   actions,
   Button,
+  isAboveMobile,
+  isAboveTablet,
   Card,
   Checkbox,
   Datatable,
@@ -50,5 +55,6 @@ export {
   Form,
   Page,
   StaticChip,
+  setNotice,
   Tour
 }
