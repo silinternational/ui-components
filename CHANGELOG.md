@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - actions, isAboveMobile, isAboveTablet, setNotice to index.js so they can be imported directly
-- README: Theminig, Drawer example and Storybook url.
+- README: Theming, Drawer example and Storybook url.
 - Storybook for showcasing components at https://silinternational.github.io/ui-components/
 
 ### Fixed
