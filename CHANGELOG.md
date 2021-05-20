@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Changed
-- package.json version to 1.1.1 
+- package.json version to 1.1.0
 
 ### Added
 - actions, isAboveMobile, isAboveTablet, setNotice to index.js so they can be imported directly
