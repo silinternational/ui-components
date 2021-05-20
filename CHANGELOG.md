@@ -24,7 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2021-05-18
 ### Added
 - package.json and package-lock.json
-- ./random/index.js to generate random IDs for some componentes
+- ./random/index.js to generate random IDs for some components
 - components - for use in svelte projects based on material design
 - index.js to expose components
 - README to provide basic installation, configuration, examples and usage instructions
