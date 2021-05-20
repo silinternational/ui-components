@@ -4,6 +4,7 @@
 // icons: https://material.io/resources/icons/
 // !! (keep an eye on this):  https://github.com/material-components/material-components-web-components
 import './_index.scss'
+import actions from './TopAppBar/actions'
 import Button from './Button'
 import Card from './Card'
 import Checkbox from './Checkbox'
@@ -13,6 +14,7 @@ import Drawer from './Drawer'
 import Fab from './Fab'
 import IconButton from './IconButton'
 import './icons'
+import { isAboveMobile, isAboveTablet } from './breakpoints'
 import List from './List'
 import Progress from './Progress'
 import Select from './Select'
@@ -21,8 +23,10 @@ import TabBar from './TabBar'
 import {TextArea, TextField} from './TextInput'
 import Tooltip from './Tooltip'
 import TopAppBar from './TopAppBar'
+import { setNotice } from './Snackbar/notice'
 
 export {
+  actions,
   Button,
   Card,
   Checkbox,
@@ -31,13 +35,16 @@ export {
   Drawer,
   Fab,
   IconButton,
+  isAboveMobile,
+  isAboveTablet,
   List,
   Progress,
-  Select,
-  Snackbar,
   TabBar,
   TextArea,
   TextField,
   Tooltip,
   TopAppBar,
+  Snackbar,
+  Select,
+  setNotice
 }
