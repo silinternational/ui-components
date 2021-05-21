@@ -9,7 +9,7 @@
 />
 
 <Template let:args>
-  <IconButton {...args} on:click={args.onClick}>{args.label}</IconButton>
+  <IconButton {...args} on:click={args.onClick}/>
 </Template>
 
 <Story

@@ -9,7 +9,7 @@
 />
 
 <Template let:args>
-  <Checkbox {...args} on:click={args.onClick}>{args.label}</Checkbox>
+  <Checkbox {...args} on:click={args.onClick}/>
 </Template>
 
 <Story
