@@ -11,9 +11,7 @@
 />
 
 <Template let:args>
-  <TextArea {...args}>
-    {args.label}
-  </TextArea>
+  <TextArea {...args}/>
 </Template>
 
 <Story

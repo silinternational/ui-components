@@ -11,9 +11,7 @@
 />
 
 <Template let:args>
-  <TextField {...args}>
-    {args.label}
-  </TextField>
+  <TextField {...args}/>
 </Template>
 
 <Story
