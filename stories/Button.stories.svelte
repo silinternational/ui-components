@@ -1,6 +1,8 @@
 <script>
   import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
   import { Button } from "../components/mdc";
+
+  export let content = 'Button slot'
 </script>
 
 <Meta
@@ -9,14 +11,13 @@
 />
 
 <Template let:args>
-  <Button {...args} on:click={args.onClick}>{args.label}</Button>
+  <Button {...args} on:click={args.onClick}>{content}</Button>
 </Template>
 
 <Story
   name="Primary"
   args={{
     raised: true,
-    label: "Button",
     class: '',
   }}
 />
@@ -24,7 +25,6 @@
 <Story
   name="Secondary"
   args={{
-    label: "Button",
     class: '',
     outlined: true,
     raised: true,
@@ -36,7 +36,6 @@
   args={{
     disabled: true,
     raised: true,
-    label: "Button",
     class: '',
   }}
 />
@@ -46,7 +45,6 @@
   args={{
     raised: true,
     appendIcon: "arrow_forward",
-    label: "Button",
     class: '',
   }}
 />
@@ -55,7 +53,6 @@
   name="Icon Before"
   args={{
     raised: true,
-    label: "Button",
     class: '',
     prependIcon: "work"
   }}
