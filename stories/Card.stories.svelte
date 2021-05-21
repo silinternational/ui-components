@@ -17,10 +17,10 @@
 </Template>
 
 <Story
-  outlined
   name="outlined"
   args={{
     outlined: true,
+    class: '',
     label: title,
   }}
 />
@@ -29,6 +29,7 @@
   name="Secondary"
   args={{
     secondary: "secondary",
+    class: '',
     label: title,
   }}
 />
@@ -37,6 +38,7 @@
   name="Color"
   args={{
     color: "yellow",
+    class: '',
     label: title,
   }}
 />

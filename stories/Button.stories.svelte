@@ -13,11 +13,11 @@
 </Template>
 
 <Story
-  raised
   name="Primary"
   args={{
     raised: true,
     label: "Button",
+    class: '',
   }}
 />
 
@@ -25,6 +25,7 @@
   name="Secondary"
   args={{
     label: "Button",
+    class: '',
     outlined: true,
     raised: true,
   }}
@@ -36,6 +37,7 @@
     disabled: true,
     raised: true,
     label: "Button",
+    class: '',
   }}
 />
 
@@ -45,6 +47,7 @@
     raised: true,
     appendIcon: "arrow_forward",
     label: "Button",
+    class: '',
   }}
 />
 
@@ -53,6 +56,7 @@
   args={{
     raised: true,
     label: "Button",
+    class: '',
     prependIcon: "work"
   }}
 />
