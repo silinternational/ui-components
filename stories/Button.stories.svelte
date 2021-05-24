@@ -23,7 +23,7 @@
 
 <Story
   name="Primary"
-  args={args}
+  {args}
 />
 
 <Story

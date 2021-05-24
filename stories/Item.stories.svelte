@@ -31,7 +31,7 @@
 
 <Story
   name="Default"
-  args={args}
+  {args}
 />
 
 <Story
