@@ -99,7 +99,7 @@
     graphicUrl: '',
     graphicAlt: '',
     icon: '',
-    meta: 'meta',
+    meta: '',
     primary: '',
     secondary: '',
     text: 'Some text',
