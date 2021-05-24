@@ -10,11 +10,13 @@
 
 <Template let:args>
   <List {...args} on:click={args.onClick}>
+    <List.Divider/>
     <List.Item>list item 1</List.Item>
     <List.Divider/>
     <List.Item>list item 2</List.Item>
     <List.Divider/>
     <List.Item>list item 3</List.Item>
+    <List.Divider/>
   </List>
 </Template>
 
