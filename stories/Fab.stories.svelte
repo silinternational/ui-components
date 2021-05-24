@@ -17,7 +17,7 @@
   args={{
     icon: 'add',
     label: "Fab",
-    url: '',
+    url: './',
     class: '', //will only work with global class
   }}
 />
