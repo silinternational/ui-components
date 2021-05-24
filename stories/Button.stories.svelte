@@ -1,8 +1,15 @@
 <script>
-  import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import { Button } from "../components/mdc";
+  import { Meta, Template, Story } from "@storybook/addon-svelte-csf"
+  import { Button } from "../components/mdc"
+  import { copyAndModifyArgs } from "./helpers.js"
 
   export let content = 'Button slot'
+
+  const args = {
+    raised: true,
+    class: '',
+    onClick: () => {},
+  }
 </script>
 
 <Meta
@@ -16,50 +23,26 @@
 
 <Story
   name="Primary"
-  args={{
-    raised: true,
-    class: '',
-    onClick: () => console.log('click'),
-  }}
+  args={args}
 />
 
 <Story
   name="Secondary"
-  args={{
-    class: '',
-    onClick: () => console.log('click'),
-    outlined: true,
-    raised: true,
-  }}
+  args={copyAndModifyArgs(args, { outlined: true })}
 />
 
 <Story
   name="Disabled"
-  args={{
-    disabled: true,
-    raised: true,
-    class: '',
-    onClick: () => console.log('click'),
-  }}
+  args={copyAndModifyArgs(args, { disabled: true })}
 />
 
 <Story
   name="Icon After"
-  args={{
-    raised: true,
-    appendIcon: "arrow_forward",
-    class: '',
-    onClick: () => console.log('click'),
-  }}
+  args={copyAndModifyArgs(args, { appendIcon: 'arrow_forward' })}
 />
 
 <Story
   name="Icon Before"
-  args={{
-    raised: true,
-    class: '',
-    onClick: () => console.log('click'),
-    prependIcon: "work"
-  }}
+  args={copyAndModifyArgs(args, { prependIcon: 'work' })}
 />
 
