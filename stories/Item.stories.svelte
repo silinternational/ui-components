@@ -36,30 +36,30 @@
 
 <Story
   name="Primary"
-  args={copyAndModifyArgs(args, [{key: 'primary', value: 'Primary text'}])}
+  args={copyAndModifyArgs(args, {primary: 'Primary text'})}
 />
 
 <Story
   name="Secondary"
-  args={copyAndModifyArgs(args, [{key: 'primary', value: 'Primary text'}, {key: 'secondary', value: 'Secondary text'}])}
+  args={copyAndModifyArgs(args, {primary: 'Primary text', secondary: 'Secondary text'})}
 />
 
 <Story
   name="Meta"
-  args={copyAndModifyArgs(args, [{key: 'meta', value: 'meta text'}])}
+  args={copyAndModifyArgs(args, {meta: 'meta text'})}
 />
 
 <Story
   name="nonInteractive"
-  args={copyAndModifyArgs(args, [{key: 'nonInteractive', value: true}])}
+  args={copyAndModifyArgs(args, {nonInteractive: true})}
 />
 
 <Story
   name="WithDivider"
-  args={copyAndModifyArgs(args, [{key: 'withDivider', value: true}])}
+  args={copyAndModifyArgs(args, {withDivider: true})}
 />
 
 <Story
   name="Icon"
-  args={copyAndModifyArgs(args, [{key: 'icon', value: 'done'}])}
+  args={copyAndModifyArgs(args, {icon: 'done'})}
 />

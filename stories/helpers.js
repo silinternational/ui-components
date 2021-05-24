@@ -1,7 +1,9 @@
-export const copyAndModifyArgs = (args, argsToChangeArray) => { //takes the default args object and an array of objects eg. [{key: 'raised', value: true}]
+export const copyAndModifyArgs = (args, argsToChange) => { //takes the default args object and object of args to change eg. { raised: true, disable: true }
   const copyOfArgs = {...args}
 
-  argsToChangeArray.forEach( arg => copyOfArgs[arg.key] = arg.value )
+  for (const [key, value] of Object.entries(argsToChange)) {
+    copyOfArgs[key] = value
+  }
 
   return copyOfArgs
 }
