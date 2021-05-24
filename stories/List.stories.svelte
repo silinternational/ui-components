@@ -1,6 +1,11 @@
 <script>
-  import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import { List } from "../components/mdc";
+  import { Meta, Template, Story } from "@storybook/addon-svelte-csf"
+  import { List } from "../components/mdc"
+  import { copyAndModifyArgs } from "./helpers.js"
+
+  const args= {
+    class: '', //will only work with global class
+  }
 </script>
 
 <Meta
@@ -22,27 +27,19 @@
 
 <Story
   name="Default"
-  args={{
-    twoLine: false,
-    avatar: false,
-    class: '', //will only work with global class
-  }}
+  {args}
 />
 
 <Story
   name="TwoList"
-  args={{
-    twoLine: true,
-    avatar: false,
-    class: '', //will only work with global class
-  }}
+  args={
+    copyAndModifyArgs(args, {twoLine: true})
+  }
 />
 
 <Story
   name="Avatar"
-  args={{
-    twoLine: false,
-    avatar: true,
-    class: '', //will only work with global class
-  }}
+  args={
+    copyAndModifyArgs(args, {avatar: true})
+  }
 />
