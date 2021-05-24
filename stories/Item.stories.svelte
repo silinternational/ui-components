@@ -1,6 +1,6 @@
 <script>
-  import { Meta as MetaStory, Template, Story } from "@storybook/addon-svelte-csf";
-  import { List } from "../components/mdc";
+  import { Meta as MetaStory, Template, Story } from "@storybook/addon-svelte-csf"
+  import { List } from "../components/mdc"
   import { copyAndModifyArgs } from "./helpers.js"
 
   const args = {
