@@ -30,6 +30,7 @@
     withDivider: false,
     nonInteractive: false,
     tabindex: undefined,
+    onClick: () => {},
   }}
 />
 
@@ -44,10 +45,11 @@
     meta: '',
     primary: 'primary',
     secondary: '',
-    text: '',
+    text: 'Some text',
     withDivider: false,
     nonInteractive: false,
     tabindex: undefined,
+    onClick: () => {},
   }}
 />
 
@@ -62,10 +64,11 @@
     meta: '',
     primary: '',
     secondary: 'secondary',
-    text: '',
+    text: 'Some text',
     withDivider: false,
     nonInteractive: false,
     tabindex: undefined,
+    onClick: () => {},
   }}
 />
 
@@ -80,10 +83,11 @@
     meta: 'meta',
     primary: '',
     secondary: '',
-    text: '',
+    text: 'Some text',
     withDivider: false,
     nonInteractive: false,
     tabindex: undefined,
+    onClick: () => {},
   }}
 />
 
@@ -98,9 +102,10 @@
     meta: 'meta',
     primary: '',
     secondary: '',
-    text: '',
+    text: 'Some text',
     withDivider: false,
     nonInteractive: true,
     tabindex: undefined,
+    onClick: () => {},
   }}
 />
