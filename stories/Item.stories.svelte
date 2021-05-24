@@ -1,6 +1,23 @@
 <script>
   import { Meta as MetaStory, Template, Story } from "@storybook/addon-svelte-csf";
   import { List } from "../components/mdc";
+  import { copyAndModifyArgs } from "./helpers.js"
+
+  const args = {
+    class: '', //will only work with global class
+    activated: false,
+    graphicUrl: '',
+    graphicAlt: '',
+    icon: '',
+    meta: '',
+    primary: '',
+    secondary: '',
+    text: 'Some text',
+    withDivider: false,
+    nonInteractive: false,
+    tabindex: undefined,
+    onClick: () => {},
+  }
 </script>
 
 <MetaStory
@@ -14,113 +31,35 @@
 
 <Story
   name="Default"
-  args={{
-    class: '', //will only work with global class
-    activated: false,
-    graphicUrl: '',
-    graphicAlt: '',
-    icon: '',
-    meta: '',
-    primary: '',
-    secondary: '',
-    text: 'Some text',
-    withDivider: false,
-    nonInteractive: false,
-    tabindex: undefined,
-    onClick: () => {},
-  }}
+  args={args}
 />
 
 <Story
   name="Primary"
-  args={{
-    class: '', //will only work with global class
-    activated: false,
-    graphicUrl: '',
-    graphicAlt: '',
-    icon: '',
-    meta: '',
-    primary: 'primary',
-    secondary: '',
-    text: 'Some text',
-    withDivider: false,
-    nonInteractive: false,
-    tabindex: undefined,
-    onClick: () => {},
-  }}
+  args={copyAndModifyArgs(args, [{key: 'primary', value: 'Primary text'}])}
 />
 
 <Story
   name="Secondary"
-  args={{
-    class: '', //will only work with global class
-    activated: false,
-    graphicUrl: '',
-    graphicAlt: '',
-    icon: '',
-    meta: '',
-    primary: '',
-    secondary: 'secondary',
-    text: 'Some text',
-    withDivider: false,
-    nonInteractive: false,
-    tabindex: undefined,
-    onClick: () => {},
-  }}
+  args={copyAndModifyArgs(args, [{key: 'primary', value: 'Primary text'}, {key: 'secondary', value: 'Secondary text'}])}
 />
 
 <Story
   name="Meta"
-  args={{
-    class: '', //will only work with global class
-    activated: false,
-    graphicUrl: '',
-    graphicAlt: '',
-    icon: '',
-    meta: 'meta',
-    primary: '',
-    secondary: '',
-    text: 'Some text',
-    withDivider: false,
-    nonInteractive: false,
-    tabindex: undefined,
-    onClick: () => {},
-  }}
+  args={copyAndModifyArgs(args, [{key: 'meta', value: 'meta text'}])}
 />
 
 <Story
   name="nonInteractive"
-  args={{
-    class: '', //will only work with global class
-    activated: false,
-    graphicUrl: '',
-    graphicAlt: '',
-    icon: '',
-    meta: '',
-    primary: '',
-    secondary: '',
-    text: 'Some text',
-    withDivider: false,
-    nonInteractive: true,
-    tabindex: undefined,
-  }}
+  args={copyAndModifyArgs(args, [{key: 'nonInteractive', value: true}])}
+/>
+
+<Story
+  name="WithDivider"
+  args={copyAndModifyArgs(args, [{key: 'withDivider', value: true}])}
 />
 
 <Story
   name="Icon"
-  args={{
-    class: '', //will only work with global class
-    activated: false,
-    graphicUrl: '',
-    graphicAlt: '',
-    icon: 'done',
-    meta: '',
-    primary: '',
-    secondary: '',
-    text: 'Some text',
-    withDivider: false,
-    nonInteractive: false,
-    tabindex: undefined,
-    onClick: () => {},
-  }}
+  args={copyAndModifyArgs(args, [{key: 'icon', value: 'done'}])}
 />
