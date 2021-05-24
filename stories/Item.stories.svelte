@@ -9,10 +9,7 @@
 />
 
 <Template let:args>
-  <List>
-    <List.Item {...args} on:click={args.onClick}>
-    </List.Item>
-  </List>
+  <List.Item {...args} on:click={args.onClick}/>
 </Template>
 
 <Story
@@ -106,7 +103,6 @@
     withDivider: false,
     nonInteractive: true,
     tabindex: undefined,
-    onClick: () => {},
   }}
 />
 
