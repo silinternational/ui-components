@@ -109,3 +109,22 @@
     onClick: () => {},
   }}
 />
+
+<Story
+  name="Icon"
+  args={{
+    class: '', //will only work with global class
+    activated: false,
+    graphicUrl: '',
+    graphicAlt: '',
+    icon: 'done',
+    meta: '',
+    primary: '',
+    secondary: '',
+    text: 'Some text',
+    withDivider: false,
+    nonInteractive: false,
+    tabindex: undefined,
+    onClick: () => {},
+  }}
+/>
