@@ -7,12 +7,7 @@
 
   const args = {
     label: title,
-    value: '',
-    placeholder: '',
-    maxlength: undefined,
-    autofocus: false,
-    disabled: false,
-    class: '',
+    class: '' //will only work with global class
   }
 </script>
 

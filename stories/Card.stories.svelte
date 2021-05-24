@@ -6,10 +6,8 @@
   let title = 'Card'
 
   const args = {
-    outlined: false,
-    class: '',
+    class: '', //will only work with global class
     label: title,
-    secondary: false
   }
 </script>
 

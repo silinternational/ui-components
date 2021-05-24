@@ -7,13 +7,8 @@
 
   const args = {
     label: title,
-    value: ' ',
-    placeholder: '',
     row: 8,
-    maxlength: undefined,
-    autofocus: false,
-    rtl: false,
-    class: '',
+    class: '' //only works for global classes
   }
 </script>
 

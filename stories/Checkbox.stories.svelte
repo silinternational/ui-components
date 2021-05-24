@@ -5,9 +5,6 @@
 
   const args = {
     label: "Checkbox",
-    checked: false,
-    disable: false,
-    uppercase: false,
   }
 </script>
 

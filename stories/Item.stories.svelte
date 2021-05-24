@@ -5,17 +5,7 @@
 
   const args = {
     class: '', //will only work with global class
-    activated: false,
-    graphicUrl: '',
-    graphicAlt: '',
-    icon: '',
-    meta: '',
-    primary: '',
-    secondary: '',
     text: 'Some text',
-    withDivider: false,
-    nonInteractive: false,
-    tabindex: undefined,
     onClick: () => {},
   }
 </script>
