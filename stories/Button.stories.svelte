@@ -19,6 +19,7 @@
   args={{
     raised: true,
     class: '',
+    onClick: () => console.log('click'),
   }}
 />
 
@@ -26,6 +27,7 @@
   name="Secondary"
   args={{
     class: '',
+    onClick: () => console.log('click'),
     outlined: true,
     raised: true,
   }}
@@ -37,6 +39,7 @@
     disabled: true,
     raised: true,
     class: '',
+    onClick: () => console.log('click'),
   }}
 />
 
@@ -46,6 +49,7 @@
     raised: true,
     appendIcon: "arrow_forward",
     class: '',
+    onClick: () => console.log('click'),
   }}
 />
 
@@ -54,6 +58,7 @@
   args={{
     raised: true,
     class: '',
+    onClick: () => console.log('click'),
     prependIcon: "work"
   }}
 />
