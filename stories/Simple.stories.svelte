@@ -5,7 +5,6 @@
 
   const args = {
     onChosen: e => console.log(e.detail),
-    title: 'Choose one',
     open: true,
     items: [
       {id: '1', name: 'item1 name'},
