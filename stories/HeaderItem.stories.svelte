@@ -10,7 +10,7 @@
 
 <Meta
   title="Atoms/Datatable.Header.Item"
-  component={Datatable.HeaderItem}
+  component={Datatable.Header.Item}
 />
 
 <Template let:args>
