@@ -90,7 +90,7 @@ Tooltip (tooltipID, positionX, positionY) [
 	Tooltip.Wrapper (ariaDescribedBy)
 ]
 
-TopAppBar (dense, fixed, navIconBreakpointClass) [
+TopAppBar (dense, fixed, navIconBreakpointClass, bgColorIsVariant) [
 	actions.js, title.js
 ]
 
