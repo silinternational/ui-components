@@ -5,6 +5,7 @@
 
   const args = {
     label: "Checkbox",
+    class: '', //only works for global classes
   }
 </script>
 
