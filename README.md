@@ -90,7 +90,7 @@ Tooltip (tooltipID, positionX, positionY) [
 	Tooltip.Wrapper (ariaDescribedBy)
 ]
 
-TopAppBar (dense, fixed, navIconBreakpointClass) [
+TopAppBar (dense, fixed, navIconBreakpointClass, bgColorIsVariant) [
 	actions.js, title.js
 ]
 
@@ -179,7 +179,10 @@ An example of using Drawer:
 ```
 
 ### storybook
-Check out our components at https://silinternational.github.io/ui-components/
+Try out our components at https://silinternational.github.io/ui-components/
+
+### CSS utility classes
+Classes from [global.css](https://github.com/silinternational/ui-components/blob/develop/components/global.css) can be applied to all components and even components and elements from your app.
 
 ### theming
-If you are using an MDC theme https://material.io/develop/web/docs/theming and typography https://material.io/develop/web/components/typography then import your _index.scss file to the App.svelte file so they get applied to the ui-components.
+If you are using an [MDC theme](https://material.io/develop/web/docs/theming) and [typography](https://material.io/develop/web/components/typography) then import your _index.scss file to the App.svelte file so they get applied to the ui-components.
