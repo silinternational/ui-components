@@ -40,7 +40,7 @@ afterUpdate(() => {
 })
 </script>
 
-<div class="mdc-select mdc-select--outlined" bind:this={element} style="width: {width}">
+<div class="mdc-select mdc-select--outlined {$$props.class}" bind:this={element} style="width: {width}">
   <div class="mdc-select__anchor"
        role="button"
        aria-haspopup="listbox"
