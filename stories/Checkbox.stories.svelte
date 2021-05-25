@@ -1,6 +1,11 @@
 <script>
-  import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import { Checkbox } from "../components/mdc";
+  import { Meta, Template, Story } from "@storybook/addon-svelte-csf"
+  import { Checkbox } from "../components/mdc"
+  import { copyAndModifyArgs } from "./helpers.js"
+
+  const args = {
+    label: "Checkbox",
+  }
 </script>
 
 <Meta
@@ -13,26 +18,21 @@
 </Template>
 
 <Story
-  raised
+  name="Default"
+  {args}
+/>
+
+<Story
   name="Checked"
-  args={{
-    label: "Checkbox",
-    checked: true
-  }}
+  args={copyAndModifyArgs(args, {checked: true})}
 />
 
 <Story
   name="Uppercase"
-  args={{
-    label: "Checkbox",
-    uppercase: true
-  }}
+  args={copyAndModifyArgs(args, {uppercase: true})}
 />
 
 <Story
   name="Disabled"
-  args={{
-    disabled: true,
-    label: "Checkbox",
-  }}
+  args={copyAndModifyArgs(args, {disabled: true})}
 />

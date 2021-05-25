@@ -1,8 +1,14 @@
 <script>
-  import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import { TextField } from "../components/mdc";
+  import { Meta, Template, Story } from "@storybook/addon-svelte-csf"
+  import { TextField } from "../components/mdc"
+  import { copyAndModifyArgs } from "./helpers.js"
 
   let title = 'TextField'
+
+  const args = {
+    label: title,
+    class: '' //will only work with global class
+  }
 </script>
 
 <Meta
@@ -16,53 +22,27 @@
 
 <Story
   name="Default"
-  args={{
-    label: title,
-    value: '',
-    placeholder: '',
-    maxlength: undefined,
-    autofocus: false,
-    disabled: false,
-    class: '',
-  }}
+  {args}
 />
 
 <Story
   name="Placeholder"
-  args={{
-    label: title,
-    value: '',
-    placeholder: 'Enter text here',
-    maxlength: undefined,
-    autofocus: false,
-    disabled: false,
-    class: '',
-  }}
+  args={
+    copyAndModifyArgs(args, {placeholder: 'Enter text here'})
+  }
 />
 
 <Story
   name="Autofocus"
-  args={{
-    label: title,
-    value: '',
-    placeholder: '',
-    maxlength: undefined,
-    autofocus: true,
-    disabled: false,
-    class: '',
-  }}
+  args={
+    copyAndModifyArgs(args, {autofocus: true})
+  }
 />
 
 <Story
   name="Disabled"
-  args={{
-    label: title,
-    value: '',
-    placeholder: '',
-    maxlength: undefined,
-    autofocus: false,
-    disabled: true,
-    class: '',
-  }}
+  args={
+    copyAndModifyArgs(args, {disabled: true})
+  }
 />
 

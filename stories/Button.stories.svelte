@@ -1,6 +1,15 @@
 <script>
-  import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import { Button } from "../components/mdc";
+  import { Meta, Template, Story } from "@storybook/addon-svelte-csf"
+  import { Button } from "../components/mdc"
+  import { copyAndModifyArgs } from "./helpers.js"
+
+  export let content = 'Button slot'
+
+  const args = {
+    raised: true,
+    class: '',
+    onClick: () => {},
+  }
 </script>
 
 <Meta
@@ -9,55 +18,31 @@
 />
 
 <Template let:args>
-  <Button {...args} on:click={args.onClick}>{args.label}</Button>
+  <Button {...args} on:click={args.onClick}>{content}</Button>
 </Template>
 
 <Story
   name="Primary"
-  args={{
-    raised: true,
-    label: "Button",
-    class: '',
-  }}
+  {args}
 />
 
 <Story
   name="Secondary"
-  args={{
-    label: "Button",
-    class: '',
-    outlined: true,
-    raised: true,
-  }}
+  args={copyAndModifyArgs(args, { outlined: true })}
 />
 
 <Story
   name="Disabled"
-  args={{
-    disabled: true,
-    raised: true,
-    label: "Button",
-    class: '',
-  }}
+  args={copyAndModifyArgs(args, { disabled: true })}
 />
 
 <Story
   name="Icon After"
-  args={{
-    raised: true,
-    appendIcon: "arrow_forward",
-    label: "Button",
-    class: '',
-  }}
+  args={copyAndModifyArgs(args, { appendIcon: 'arrow_forward' })}
 />
 
 <Story
   name="Icon Before"
-  args={{
-    raised: true,
-    label: "Button",
-    class: '',
-    prependIcon: "work"
-  }}
+  args={copyAndModifyArgs(args, { prependIcon: 'work' })}
 />
 

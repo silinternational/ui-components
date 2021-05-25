@@ -18,6 +18,6 @@
     icon: 'done',
     ariaLabel: 'ariaLabel',
     class: '', //will only work with global class
-    label: "IconButton",
+    onClick: () => console.log('click'),
   }}
 />
