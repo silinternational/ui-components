@@ -4,5 +4,5 @@
 @include linear-progress.core-styles;
 
 .bar-color {    
-  @include linear-progress.bar-color(var(--sil-primary-blue));
+  @include linear-progress.bar-color(var(--sil-primary-blue)); //TODO change variable name to something more generic, fallback to primary theme color?
 }
