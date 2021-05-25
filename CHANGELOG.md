@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - $$props.class to Fab, TextArea, Select, Checkbox and List so they can accept global classes
 - barColorProvided to Progress.Linear to allow bypass of bar-color class when no color is provided
 - bgColorIsVariant to TopAppBar to allow bypass of bg-color-variant if no color is provided
-- README: Theming, Drawer example and Storybook url.
+- README: Theming, Drawer example, CSS utility classes and Storybook url.
 - Storybook for showcasing components at https://silinternational.github.io/ui-components/
 
 ### Fixed
