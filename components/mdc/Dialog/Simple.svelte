@@ -35,7 +35,7 @@ const toAction = json => JSON.stringify(json)
 const fromAction = s => JSON.parse(s)
 </script>
 
-<div class="mdc-dialog" bind:this={element}>
+<div class="mdc-dialog {$$props.class}" bind:this={element}>
   <div class="mdc-dialog__container">
     <div class="mdc-dialog__surface" role="alertdialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-content">
       <!--(notes from docs) Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
