@@ -17,7 +17,7 @@
 />
 
 <Template let:args>
-  <Dialog.Alert {...args} on:chosen={args.onChosen} on:closed={args.onClosed}/>
+  <Dialog.Alert {...args} on:chosen={args.onChosen} on:closed={args.onClosed}>Main slot here</Dialog.Alert>
 </Template>
 
 <Story
