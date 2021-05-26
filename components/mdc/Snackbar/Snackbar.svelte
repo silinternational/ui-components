@@ -46,7 +46,7 @@ function open(msg) {
 </script>
 
 <div class="mdc-snackbar" bind:this={element}>
-  <div class="mdc-snackbar__surface mdc-theme--secondary-variant">
+  <div class="mdc-snackbar__surface mdc-theme--secondary-variant {$$props.class}">
     <div class="mdc-snackbar__label" role="status" aria-live="polite">
     </div>
     {#if action}
