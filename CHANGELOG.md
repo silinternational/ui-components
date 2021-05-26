@@ -1,0 +1,35 @@
+# Changelog
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.1.0](https://github.com/silinternational/ui-components/releases/tag/v1.1.0) - 2021-05-26
+### Changed
+- package.json version to 1.1.0
+
+### Added
+- actions, isAboveMobile, isAboveTablet, setNotice to index.js so they can be imported directly
+- $$props.class to Fab, TextArea, Select, Checkbox, Datatable, Dialog.Simple, Dialog.Alert, Tooltip, Snackbar, TabBar and List so they can accept global classes
+- barColorProvided to Progress.Linear to allow bypass of bar-color class when no color is provided
+- bgColorIsVariant to TopAppBar to allow bypass of bg-color-variant if no color is provided
+- README: Theming, Drawer example, CSS utility classes and Storybook url.
+- Storybook for showcasing components at https://silinternational.github.io/ui-components/
+
+### Fixed
+- README: import from '@silintl/ui-components' not 'ui-components'
+
+## [1.0.1](https://github.com/silinternational/ui-components/releases/tag/v1.0.1) - 2021-05-18
+### Changed
+- updated package-lock.json
+- installation instructions in README. Now install with npm: `npm i @silintl/ui-components`
+
+## [1.0.0](https://github.com/silinternational/ui-components/releases/tag/v1.0.0) - 2021-05-18
+### Added
+- package.json and package-lock.json
+- ./random/index.js to generate random IDs for some components
+- components - for use in svelte projects based on material design
+- index.js to expose components
+- README to provide basic installation, configuration, examples and usage instructions
+- global.css for styling components and using as utilities in the dependent
+- peerDependencies: @roxi/routify, material-components-web, svelte

@@ -24,7 +24,7 @@ onMount(() => {
 }
 </style>
 
-<a class="mdc-fab" aria-label={label} bind:this={element} href={url}>
+<a class="mdc-fab {$$props.class}" aria-label={label} bind:this={element} href={url}>
   <div class="mdc-fab__ripple"></div>
   <span class="mdc-fab__icon material-icons">{icon}</span>
 </a>

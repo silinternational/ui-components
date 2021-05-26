@@ -1,6 +1,6 @@
 {
   "name": "@silintl/ui-components",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Reusable Svelte components for some internal applications",
   "main": "index.js",
   "scripts": {
@@ -39,7 +39,7 @@
     "@storybook/addon-svelte-csf": "^1.0.0",
     "@storybook/builder-webpack5": "^6.3.0-alpha.34",
     "@storybook/preset-scss": "^1.0.3",
-    "@storybook/svelte": "^6.3.0-alpha.34",
+    "@storybook/svelte": "^6.3.0-alpha.36",
     "css-loader": "^5.2.4",
     "material-components-web": "^10.0.0",
     "sass": "^1.32.12",

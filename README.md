@@ -41,7 +41,7 @@ module.exports = {
 		// ...
 ```
 
-### Components
+### components
 A list of all components (subcomponents and js files for interfacing in []) followed by their properties in ():
 
 Button (disabled, outlined, raised, prependIcon, appendIcon, url)
@@ -69,7 +69,7 @@ List (twoLine, avatar) [
 ]
 
 Progress [
-	Progress.Circular, Progress.Linear (indeterminate, value)
+	Progress.Circular, Progress.Linear (indeterminate, value, barColorProvided)
 ]
 
 Select (options, width, disabled, selectedID)
@@ -90,7 +90,7 @@ Tooltip (tooltipID, positionX, positionY) [
 	Tooltip.Wrapper (ariaDescribedBy)
 ]
 
-TopAppBar (dense, fixed, navIconBreakpointClass) [
+TopAppBar (dense, fixed, navIconBreakpointClass, bgColorIsVariant) [
 	actions.js, title.js
 ]
 
@@ -110,29 +110,79 @@ StaticChip
 
 Tour (steps, data)
 
-### Importing Components
+### importing components
 After installation and bundler configuration all of the components are ready to be imported.
 
-Here is an example of importing Button and Card:
+Just include `import { Button } from '@silintl/ui-components'` in your script section to import Button and any other components you want to use.
 
+### examples
+Here is a demo app with examples of how to use components.
+https://github.com/hobbitronics/svelte-ui-components-app
+
+It was buit from https://github.com/sveltejs/template
+
+If you are building a single page app with routify then it is recommended to use this template https://github.com/roxiness/routify-starter
+
+An example of using Button and Card:
 ```
 <script>
-  import { Button, Card } from 'ui-components'
+  import { Button, Card } from '@silintl/ui-components'
+
+	// ...
 </script>
 
 <Card class="mb-1">
 	<p>This is a card.</p>
 
 	<span slot="actions">
-		<Button on:click={doSomething} >Click here!</Button>
+		<Button raised prependIcon="done" on:click={doSomething} >Click here!</Button>
 	</span>
 </Card>
 ```
-### Theming
-If you are using an MDC theme https://material.io/develop/web/docs/theming and typography https://material.io/develop/web/components/typography then import your _index.scss file to the App.svelte file so they get applied to the ui-components.
 
-### Example template
-Here is a template with more examples of how to use components.
-https://github.com/hobbitronics/svelte-ui-components-app
+An example of using Drawer:
+```
+<script>
+  import { actions, Drawer } from '@silintl/ui-components'
+	// ...
+	$: menuItems = [
+			// ...
+			{},
+			{
+				label: '--break--',
+			},
+			{},
+			{
+				url: 'https://silinternational.github.io/ui-components/index.html?path=/story/atoms-button--primary',
+				label: 'see our components in storybook'
+			}
+		]
 
-It was buit from https://github.com/sveltejs/template
+		onMount(() => {
+			//actions are for TopAppBar which Drawer uses as a child.
+			$actions = [
+				{
+					icon: 'info_outline',
+					label: 'action demo',
+					onClick: () => alert('you clicked an action'),
+				},
+			]
+		})
+</script>
+
+<Drawer {menuItems} title={appName}>
+	<span class="pointer" on:click={() => $goto('./someUrl')} slot="header">
+		<img class="w-100" src="" alt="logo">
+	</span>
+	<slot />
+</Drawer>
+```
+
+### storybook
+Try out our components at https://silinternational.github.io/ui-components/
+
+### CSS utility classes
+Classes from [global.css](https://github.com/silinternational/ui-components/blob/develop/components/global.css) can be applied to all components and even components and elements from your app.
+
+### theming
+If you are using an [MDC theme](https://material.io/develop/web/docs/theming) and [typography](https://material.io/develop/web/components/typography) then import your _index.scss file to the App.svelte file so they get applied to the ui-components.
