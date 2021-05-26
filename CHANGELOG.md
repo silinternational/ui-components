@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - actions, isAboveMobile, isAboveTablet, setNotice to index.js so they can be imported directly
-- $$props.class to Fab, TextArea, Select, Checkbox, Datatable, Dialog.Simple, Dialog.Alert, Tooltip, Snackbar and List so they can accept global classes
+- $$props.class to Fab, TextArea, Select, Checkbox, Datatable, Dialog.Simple, Dialog.Alert, Tooltip, Snackbar, TabBar and List so they can accept global classes
 - barColorProvided to Progress.Linear to allow bypass of bar-color class when no color is provided
 - bgColorIsVariant to TopAppBar to allow bypass of bg-color-variant if no color is provided
 - README: Theming, Drawer example, CSS utility classes and Storybook url.
