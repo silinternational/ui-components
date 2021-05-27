@@ -29,7 +29,7 @@
         previous: 2,
       },
     ],
-    data: {userName: 'John'},
+    onAlertChosen: () => {},
     class: '', //only works for global classes
   }
 </script>
@@ -40,7 +40,7 @@
 />
 
 <Template let:args>
-  <Tour {...args}/>
+  <Tour on:AlertChosen={args.onAlertChosen} {...args}/>
 </Template>
 
 <Story
