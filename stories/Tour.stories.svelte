@@ -47,3 +47,8 @@
   name="Default"
   {args}
 />
+
+<Story
+  name="Data"
+  args={copyAndModifyArgs(args, {data: {userName: 'Jon'}})}
+/>
