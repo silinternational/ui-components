@@ -68,4 +68,4 @@
   }
   </script>
 
-  <Dialog.Alert title={tourTitle} on:chosen={event => alertChosen(event.detail)} open={openDialog} {buttons}>{@html tourMessage}</Dialog.Alert>
+  <Dialog.Alert class="{$$props.class}" title={tourTitle} on:chosen={event => alertChosen(event.detail)} open={openDialog} {buttons}>{@html tourMessage}</Dialog.Alert>
