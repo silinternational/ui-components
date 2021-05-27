@@ -56,9 +56,9 @@
     tourTitle = thisStep.title || ''
     target = thisStep.target || ''
     for (const [key, value] of Object.entries(data)) {
-      tourMessage = tourMessage.replace(`{${key}}`, value)
-      tourTitle = tourTitle.replace(`{${key}}`, value)
-      target = target.replace(`{${key}}`, value)
+      tourMessage = tourMessage.replace(key, value)
+      tourTitle = tourTitle.replace(key, value)
+      target = target.replace(key, value)
     }
 
     buttons = [
