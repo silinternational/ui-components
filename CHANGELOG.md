@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - $$props.class to Badge, Form, CustomCard, Tour and StaticChip so they can accept global classes
+- Badge, CustomCard, Form, StaticChip and Tour stories to Storybook
+
+### Fixed
+- Tour was failing to replace key with value of data prop in steps content.
 
 ## [1.1.0](https://github.com/silinternational/ui-components/releases/tag/v1.1.0) - 2021-05-26
 ### Changed
