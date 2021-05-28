@@ -1,0 +1,216 @@
+/*************/
+/* Utilities */
+/*************/
+.h-100 {
+	height: 100%;
+}
+
+.w-100 {
+	width: 100%;
+}
+.w-50 {
+	width: 50%;
+}
+.w-40 {
+	width: 40%;
+}
+
+// margin and padding
+$start: 0 !default;
+$end:  8 !default;
+
+$properties: (margin: m, padding: p);
+$sides: (top: t, right: r, bottom: b, left: l);
+$sidesY: (top, bottom);
+$sidesX: (left, right);
+
+// margin & padding m-1 through m-8, p-1 through p-8
+@each $property, $prop in $properties {
+  @for $i from $start through $end {
+    .#{$prop}-#{$i} {
+      #{$property}: #{$i}rem;
+    }
+  }
+}
+
+// margin & padding X (m or p)X-1 through (m or p)X-8
+@each $property, $prop in $properties {
+  @each $sideX in $sidesX {
+    @for $i from $start through $end {
+      .#{$prop}x-#{$i} {
+        #{$property}-#{$sideX}: #{$i}rem;
+        #{$property}-#{$sideX}: #{$i}rem;
+      }
+    }
+  }
+}
+
+// margin & padding Y (m or p)Y-1 through (m or p)Y-8
+@each $property, $prop in $properties {
+  @each $sideY in $sidesY {
+    @for $i from $start through $end {
+      .#{$prop}y-#{$i} {
+        #{$property}-#{$sideY}: #{$i}rem;
+        #{$property}-#{$sideY}: #{$i}rem;
+      }
+    }
+  }
+}
+
+// margin & padding sides m(side)-(1 to 8), p(side)-(1 to 8)
+@for $i from $start through $end {
+  @each $side, $name in $sides {
+    @each $property, $prop in $properties {
+      .#{$prop}#{$name}-#{$i} {
+        #{$property}-#{$side}: #{$i}rem;
+      }
+    }
+  }
+}
+
+.absolute {
+	position: absolute;
+}
+
+.r-50 {
+  right: 50%;
+}
+
+.t-50 {
+  top: 50%;
+}
+
+.z-10 {
+	z-index: 10;
+}
+
+.stick-b{
+	position:fixed;
+	bottom:0px;
+}
+
+.dib{
+  display: inline-block;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.rtl {
+	direction: rtl;
+}
+
+.fs-12 {
+	font-size: 12px;
+}
+
+.fs-14 {
+	font-size: 14px;
+}
+
+.fs-16 {
+	font-size: 16px;
+}
+
+.br-8px {
+	border-radius: 8px;
+}
+
+.br-16px {
+	border-radius: 16px;
+}
+
+.br-50 {
+	border-radius: 50%;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+/* text color */
+.black {
+	color: #2A3032;
+}
+
+.gray {
+	color: #666666;
+}
+
+.white {
+	color: white;
+}
+
+/* flex */
+.flex {
+	display: flex;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.grow-0 {
+	flex-grow: 0;
+}
+.grow-1 {
+	flex-grow: 1;
+}
+.grow-2 {
+	flex-grow: 2;
+}
+
+.shrink-0 {
+	flex-shrink: 0;
+}
+.shrink-1 {
+	flex-shrink: 1;
+}
+.shrink-2 {
+	flex-shrink: 2;
+}
+
+.row {
+	flex-direction: row;
+}
+
+.column {
+	flex-direction: column;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+.justify-around {
+	justify-content: space-around;
+}
+
+.justify-end {
+	justify-content: flex-end;
+}
+
+.justify-start {
+	justify-content: flex-start;
+}
+
+.aligned {
+	align-items: center;
+}
