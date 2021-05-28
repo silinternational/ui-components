@@ -4,6 +4,6 @@
 }
 </style>
 
-<form class="w-100" on:submit|preventDefault autocomplete="off">
+<form class="w-100 {$$props.class}" on:submit|preventDefault autocomplete="off">
   <slot />
 </form>
