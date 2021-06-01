@@ -183,7 +183,7 @@ Try out our components at https://silinternational.github.io/ui-components/
 or run storybook locally. Just copy this repo to your machine and run `npm install` then `npm run dev.` Storybook should open a browser window when it finishes building.
 
 ### CSS utility classes
-Classes from [global.css](https://github.com/silinternational/ui-components/blob/develop/components/global.css) can be applied to all components and even components and elements from your app.
+Classes from [global.scss](https://github.com/silinternational/ui-components/blob/develop/components/global.scss) can be applied to all components and even components and elements from your app.
 
 ### theming
 If you are using an [MDC theme](https://material.io/develop/web/docs/theming) and [typography](https://material.io/develop/web/components/typography) then import your _index.scss file to the App.svelte file so they get applied to the ui-components.
