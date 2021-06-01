@@ -28,8 +28,7 @@ jobs:
       - run: npm test
 
       - name: Build
-        run: sass components/global.scss components/global.css
-        run: npm run build
+        run: sass components/global.scss components/global.css; npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
