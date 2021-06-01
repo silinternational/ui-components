@@ -28,6 +28,7 @@ jobs:
       - run: npm test
 
       - name: Build
+        run: sass components/global.scss components/global.css
         run: npm run build
 
       - name: Deploy
