@@ -57,9 +57,9 @@ $sides: (top: t, right: r, bottom: b, left: l);
 }
 
 // margin & padding sides m(side)-(1 to 8), p(side)-(1 to 8)
-@for $i from $start through $end {
+@each $property, $prop in $properties {
   @each $side, $name in $sides {
-    @each $property, $prop in $properties {
+    @for $i from $start through $end {
       .#{$prop}#{$name}-#{$i} {
         #{$property}-#{$side}: #{$i}rem;
       }
