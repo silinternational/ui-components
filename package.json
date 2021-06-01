@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo test",
-    "dev": "start-storybook -p 6007",
+    "dev": "sass components/global.scss components/global.css; start-storybook -p 6007",
     "build": "build-storybook"
   },
   "repository": {
