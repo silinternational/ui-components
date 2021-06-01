@@ -1,18 +1,23 @@
 /*************/
 /* Utilities */
 /*************/
-.h-100 {
-	height: 100%;
-}
 
-.w-100 {
-	width: 100%;
-}
-.w-50 {
-	width: 50%;
-}
-.w-40 {
-	width: 40%;
+// height and width h-0 through h-100, w-0 through w-100
+$dim-start:  0 !default;
+$dim-end:   100 !default;
+$interval:    5 !default;
+$dimensions: (height: h, width: w);
+
+@each $dimension, $dim in $dimensions {
+	$i: $dim-start;
+	
+	@while $i <= $dim-end {
+		.#{$dim}-#{$i} {
+			#{$dimension}: #{$i}#{'%'};
+				
+			$i: $i + $interval;
+		}
+	}
 }
 
 // margin and padding
@@ -31,7 +36,7 @@ $sides: (top: t, right: r, bottom: b, left: l);
   }
 }
 
-// margin & padding X (m or p)X-1 through (m or p)X-8
+// margin & padding x (m or p)x-1 through (m or p)x-8
 @each $property, $prop in $properties {
 	@for $i from $start through $end {
 		.#{$prop}x-#{$i} {
@@ -41,7 +46,7 @@ $sides: (top: t, right: r, bottom: b, left: l);
 	}
 }
 
-// margin & padding Y (m or p)Y-1 through (m or p)Y-8
+// margin & padding y (m or p)y-1 through (m or p)y-8
 @each $property, $prop in $properties {
 	@for $i from $start through $end {
 		.#{$prop}y-#{$i} {
