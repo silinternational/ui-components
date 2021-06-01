@@ -1,11 +1,11 @@
 {
   "name": "@silintl/ui-components",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Reusable Svelte components for some internal applications",
   "main": "index.js",
   "scripts": {
     "test": "echo test",
-    "dev": "start-storybook -p 6007",
+    "dev": "sass components/global.scss components/global.css; start-storybook -p 6007",
     "build": "build-storybook"
   },
   "repository": {

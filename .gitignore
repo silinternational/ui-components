@@ -105,3 +105,7 @@ dist
 
 # MacOs
 .DS_Store
+
+#CSS compiled for Storybook
+global.css.map
+global.css

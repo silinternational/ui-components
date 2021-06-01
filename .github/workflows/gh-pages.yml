@@ -3,7 +3,7 @@ name: github pages
 on:
   push:
     branches:
-      - main  # Set a branch name to trigger deployment
+      - develop  # Set a branch name to trigger deployment
 
 jobs:
   deploy:
@@ -28,6 +28,7 @@ jobs:
       - run: npm test
 
       - name: Build
+        run: sass components/global.scss components/global.css
         run: npm run build
 
       - name: Deploy

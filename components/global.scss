@@ -15,119 +15,51 @@
 	width: 40%;
 }
 
-.mw-50ch {
-	min-width: 50ch;
+// margin and padding
+$start: 0 !default;
+$end:  8 !default;
+
+$properties: (margin: m, padding: p);
+$sides: (top: t, right: r, bottom: b, left: l);
+
+// margin & padding m-1 through m-8, p-1 through p-8
+@each $property, $prop in $properties {
+  @for $i from $start through $end {
+    .#{$prop}-#{$i} {
+      #{$property}: #{$i}rem;
+    }
+  }
 }
 
-.m-0 {
-	margin: 0;
+// margin & padding X (m or p)X-1 through (m or p)X-8
+@each $property, $prop in $properties {
+	@for $i from $start through $end {
+		.#{$prop}x-#{$i} {
+			#{$property}-left: #{$i}rem;
+			#{$property}-right: #{$i}rem;
+		}
+	}
 }
 
-.ml-1 {
-	margin-left: 1rem;
-}
-.ml-2 {
-	margin-left: 2rem;
-}
-
-.mb-0 {
-	margin-bottom: 0;
-}
-
-.mb-1 {
-	margin-bottom: 1rem;
-}
-.mb-2 {
-	margin-bottom: 2rem;
-}
-.mb-4 {
-	margin-bottom: 4rem;
+// margin & padding Y (m or p)Y-1 through (m or p)Y-8
+@each $property, $prop in $properties {
+	@for $i from $start through $end {
+		.#{$prop}y-#{$i} {
+			#{$property}-top: #{$i}rem;
+			#{$property}-bottom: #{$i}rem;
+		}
+	}
 }
 
-.mt-0 {
-	margin-top: 0;
-}
-.mt-1 {
-	margin-top: 1rem;
-}
-.mt-2 {
-	margin-top: 2rem;
-}
-.mt-4 {
-	margin-top: 4rem;
-}
-
-.mr-1 {
-	margin-right: 1rem;
-}
-.mr-2 {
-	margin-right: 2rem;
-}
-
-.my-0 {
-	margin-bottom: 0;
-	margin-top: 0;
-}
-.my-2 {
-	margin-bottom: 2rem;
-	margin-top: 2rem;
-}
-.my-4 {
-	margin-bottom: 4rem;
-	margin-top: 4rem;
-}
-
-.p-1 {
-	padding: 1rem;
-}
-.p-2 {
-	padding: 2rem;
-}
-.p-4 {
-	padding: 4rem;
-}
-
-.px-1 {
-	padding-left: 1rem;
-	padding-right: 1rem;
-}
-.px-2 {
-	padding-left: 2rem;
-	padding-right: 2rem;
-}
-.px-4 {
-	padding-left: 4rem;
-	padding-right: 4rem;
-}
-
-.py-1 {
-	padding-top: 1rem;
-	padding-bottom: 1rem;
-}
-.py-2 {
-	padding-top: 2rem;
-	padding-bottom: 2rem;
-}
-.py-4 {
-	padding-top: 4rem;
-	padding-bottom: 4rem;
-}
-
-.pt-1 {
-	padding-top: 1rem;
-}
-.pt-2 {
-	padding-top: 2rem;
-}
-.pt-4 {
-	padding-top: 4rem;
-}
-
-.pr-1 {
-	padding-right: 1rem;
-}
-.pr-2 {
-	padding-right: 2rem;
+// margin & padding sides m(side)-(1 to 8), p(side)-(1 to 8)
+@for $i from $start through $end {
+  @each $side, $name in $sides {
+    @each $property, $prop in $properties {
+      .#{$prop}#{$name}-#{$i} {
+        #{$property}-#{$side}: #{$i}rem;
+      }
+    }
+  }
 }
 
 .absolute {
