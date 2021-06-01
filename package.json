@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo test",
     "dev": "sass components/global.scss components/global.css; start-storybook -p 6007",
-    "build": "build-storybook"
+    "build": "sass components/global.scss components/global.css; build-storybook"
   },
   "repository": {
     "type": "git",
