@@ -25,12 +25,12 @@
     }
 </style>
 
-<Card class="h-100 py-1">
+<Card class="h-100 py-1 {$$props.class}">
     <div class="flex justify-center">
         <img class="w-100" {src} {alt} class:disabled/>
     </div>
 
-    <div class="flex justify-between aligned black">
+    <div class="flex justify-between align-items-center black">
         <h4>{title}</h4>
 
         <span class="material-icons">{icon}</span>  

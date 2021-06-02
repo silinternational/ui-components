@@ -5,7 +5,7 @@ import { MDCTopAppBar } from '@material/top-app-bar'
 import { createEventDispatcher, onMount } from 'svelte'
 import title from './title'
 
-export let bgColorIsVariant = true
+export let bgColorIsVariant = false
 export let dense = false
 export let fixed = false
 export let navIconBreakpointClass = ''

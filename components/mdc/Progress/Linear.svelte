@@ -5,7 +5,6 @@ import { onMount } from 'svelte'
 
 export let indeterminate = false
 export let value = 0
-export let barColorProvided = true
 
 let element = {}
 let mdcProgress
@@ -25,10 +24,10 @@ onMount(() => {
     <div class="mdc-linear-progress__buffer-bar"></div>
     <div class="mdc-linear-progress__buffer-dots"></div>
   </div>
-  <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar" class:bar-color={barColorProvided}>
+  <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar bar-color">
     <span class="mdc-linear-progress__bar-inner"></span>
   </div>
-  <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+  <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar bar-color">
     <span class="mdc-linear-progress__bar-inner"></span>
   </div>
 </div>

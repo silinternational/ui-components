@@ -1,0 +1,284 @@
+/*************/
+/* Utilities */
+/*************/
+
+// height and width h-0 through h-100, w-0 through w-100
+$dim-start:  0 !default;
+$dim-end:   100 !default;
+$interval:    5 !default;
+$dimensions: (height: h, width: w);
+
+@each $dimension, $dim in $dimensions {
+	$i: $dim-start;
+	
+	@while $i <= $dim-end {
+		.#{$dim}-#{$i} {
+			#{$dimension}: #{$i}#{'%'};
+				
+			$i: $i + $interval;
+		}
+	}
+}
+
+// margin and padding
+$start: 0 !default;
+$end:  8 !default;
+
+$properties: (margin: m, padding: p);
+$sides: (top: t, right: r, bottom: b, left: l);
+
+// margin & padding m-1 through m-8, p-1 through p-8
+@each $property, $prop in $properties {
+  @for $i from $start through $end {
+    .#{$prop}-#{$i} {
+      #{$property}: #{$i}rem;
+    }
+  }
+}
+
+// margin & padding x (m or p)x-1 through (m or p)x-8
+@each $property, $prop in $properties {
+	@for $i from $start through $end {
+		.#{$prop}x-#{$i} {
+			#{$property}-left: #{$i}rem;
+			#{$property}-right: #{$i}rem;
+		}
+	}
+}
+
+// margin & padding y (m or p)y-1 through (m or p)y-8
+@each $property, $prop in $properties {
+	@for $i from $start through $end {
+		.#{$prop}y-#{$i} {
+			#{$property}-top: #{$i}rem;
+			#{$property}-bottom: #{$i}rem;
+		}
+	}
+}
+
+// margin & padding sides m(side)-(1 to 8), p(side)-(1 to 8)
+@each $property, $prop in $properties {
+  @each $side, $name in $sides {
+    @for $i from $start through $end {
+      .#{$prop}#{$name}-#{$i} {
+        #{$property}-#{$side}: #{$i}rem;
+      }
+    }
+  }
+}
+
+// position
+.relative {
+	position: relative;
+}
+
+.fixed {
+	position: fixed;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.r-50 {
+  right: 50%;
+}
+
+.t-50 {
+  top: 50%;
+}
+
+.stick-b{
+	position:fixed;
+	bottom:0px;
+}
+
+// z-index z-0 to z-10
+$i: 0;
+
+@for $i from 0 through 10 {
+	.z-#{$i} {
+		z-index: #{$i};
+	}
+}
+
+// display
+.dib {
+  display: inline-block;
+}
+
+.d-inline {
+	display: inline;
+}
+
+.d-block {
+	display: block;
+}
+
+// text
+.text-align-start {
+	text-align: start;
+}
+
+.text-align-end {
+	text-align: end;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-center {
+	text-align: center;
+}
+
+.rtl {
+	direction: rtl;
+}
+
+.fs-10 {
+	font-size: 10px;
+}
+
+.fs-12 {
+	font-size: 12px;
+}
+
+.fs-14 {
+	font-size: 14px;
+}
+
+.fs-16 {
+	font-size: 16px;
+}
+
+.br-8px {
+	border-radius: 8px;
+}
+
+.br-16px {
+	border-radius: 16px;
+}
+
+.br-50 {
+	border-radius: 50%;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+/* text color */
+.black {
+	color: #2A3032;
+}
+
+.gray {
+	color: #666666;
+}
+
+.white {
+	color: white;
+}
+
+/* flex */
+.flex {
+	display: flex;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.grow-0 {
+	flex-grow: 0;
+}
+.grow-1 {
+	flex-grow: 1;
+}
+.grow-2 {
+	flex-grow: 2;
+}
+
+.shrink-0 {
+	flex-shrink: 0;
+}
+.shrink-1 {
+	flex-shrink: 1;
+}
+.shrink-2 {
+	flex-shrink: 2;
+}
+
+.row {
+	flex-direction: row;
+}
+
+.column {
+	flex-direction: column;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+.justify-around {
+	justify-content: space-around;
+}
+
+.justify-end {
+	justify-content: flex-end;
+}
+
+.justify-start {
+	justify-content: flex-start;
+}
+
+.align-items-center {
+	align-items: center;
+}
+
+.align-items-end {
+	align-items: flex-end;
+}
+
+.align-items-strech {
+	align-items: stretch;
+}
+
+.align-items-baseline {
+	align-items: baseline;
+}
+
+.align-self-auto {
+	align-self: auto;
+}
+
+.align-self-center {
+	align-self: center;
+}
+
+.align-self-end {
+	align-self: flex-end;
+}
+
+.align-self-strech {
+	align-self: stretch;
+}
+
+.align-self-baseline {
+	align-self: baseline;
+}
+
+// misc
+.pointer {
+	cursor: pointer;
+}
