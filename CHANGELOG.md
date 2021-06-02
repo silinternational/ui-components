@@ -13,7 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### BREAKING CHANGES
 - .align-center, .align-left and .align-right global classes are now .text-align-center, .text-align-left and .text-align-right.
 - .aligned global class is now .align-items-center
-- Progress.Linear prop barColorProvided default value is now false
+- Progress.Linear barColorProvided prop deleted
+- Progress.Linear uses --progress-bar-color and falls back to --mdc-theme-primary instead of --sil-primary-blue from the apps _theme file
 - TopAppBar prop bgColorIsVariant default value is now false
 
 ### Added
@@ -25,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 - global.css was removed and added to .gitignore
+- Progress.Linear prop barColorProvided
 
 ### Fixed
 - Tour was failing to replace key with value of data prop in steps content.
