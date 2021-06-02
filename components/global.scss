@@ -238,8 +238,40 @@ $i: 0;
 	justify-content: flex-start;
 }
 
-.aligned {
+.align-items-center {
 	align-items: center;
+}
+
+.align-items-end {
+	align-items: flex-end;
+}
+
+.align-items-strech {
+	align-items: stretch;
+}
+
+.align-items-baseline {
+	align-items: baseline;
+}
+
+.align-self-auto {
+	align-self: auto;
+}
+
+.align-self-center {
+	align-self: center;
+}
+
+.align-self-end {
+	align-self: flex-end;
+}
+
+.align-self-strech {
+	align-self: stretch;
+}
+
+.align-self-baseline {
+	align-self: baseline;
 }
 
 // misc
