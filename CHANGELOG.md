@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### BREAKING CHANGES
 - .align-center, .align-left and .align-right global classes are now .text-align-center, .text-align-left and .text-align-right.
 - .aligned global class is now .align-items-center
+- Progress.Linear prop barColorProvided default value is now false
+- TopAppBar prop bgColorIsVariant default value is now false
 
 ### Added
 - $$props.class to Badge, Form, CustomCard, Tour and StaticChip so they can accept global classes
