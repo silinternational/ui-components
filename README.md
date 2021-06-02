@@ -69,7 +69,7 @@ List (twoLine, avatar) [
 ]
 
 Progress [
-	Progress.Circular, Progress.Linear (indeterminate, value, barColorProvided)
+	Progress.Circular, Progress.Linear (indeterminate, value)
 ]
 
 Select (options, width, disabled, selectedID)
