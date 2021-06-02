@@ -103,8 +103,16 @@ $i: 0;
 }
 
 // display
-.dib{
+.dib {
   display: inline-block;
+}
+
+.d-inline {
+	display: inline;
+}
+
+.d-block {
+	display: block;
 }
 
 // text
