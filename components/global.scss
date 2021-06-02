@@ -67,6 +67,15 @@ $sides: (top: t, right: r, bottom: b, left: l);
   }
 }
 
+//position
+.relative {
+	position: relative;
+}
+
+.fixed {
+	position: fixed;
+}
+
 .absolute {
 	position: absolute;
 }
