@@ -1,18 +1,23 @@
 /*************/
 /* Utilities */
 /*************/
-.h-100 {
-	height: 100%;
-}
 
-.w-100 {
-	width: 100%;
-}
-.w-50 {
-	width: 50%;
-}
-.w-40 {
-	width: 40%;
+// height and width h-0 through h-100, w-0 through w-100
+$dim-start:  0 !default;
+$dim-end:   100 !default;
+$interval:    5 !default;
+$dimensions: (height: h, width: w);
+
+@each $dimension, $dim in $dimensions {
+	$i: $dim-start;
+	
+	@while $i <= $dim-end {
+		.#{$dim}-#{$i} {
+			#{$dimension}: #{$i}#{'%'};
+				
+			$i: $i + $interval;
+		}
+	}
 }
 
 // margin and padding
@@ -31,7 +36,7 @@ $sides: (top: t, right: r, bottom: b, left: l);
   }
 }
 
-// margin & padding X (m or p)X-1 through (m or p)X-8
+// margin & padding x (m or p)x-1 through (m or p)x-8
 @each $property, $prop in $properties {
 	@for $i from $start through $end {
 		.#{$prop}x-#{$i} {
@@ -41,7 +46,7 @@ $sides: (top: t, right: r, bottom: b, left: l);
 	}
 }
 
-// margin & padding Y (m or p)Y-1 through (m or p)Y-8
+// margin & padding y (m or p)y-1 through (m or p)y-8
 @each $property, $prop in $properties {
 	@for $i from $start through $end {
 		.#{$prop}y-#{$i} {
@@ -52,14 +57,23 @@ $sides: (top: t, right: r, bottom: b, left: l);
 }
 
 // margin & padding sides m(side)-(1 to 8), p(side)-(1 to 8)
-@for $i from $start through $end {
+@each $property, $prop in $properties {
   @each $side, $name in $sides {
-    @each $property, $prop in $properties {
+    @for $i from $start through $end {
       .#{$prop}#{$name}-#{$i} {
         #{$property}-#{$side}: #{$i}rem;
       }
     }
   }
+}
+
+// position
+.relative {
+	position: relative;
+}
+
+.fixed {
+	position: fixed;
 }
 
 .absolute {
@@ -74,33 +88,60 @@ $sides: (top: t, right: r, bottom: b, left: l);
   top: 50%;
 }
 
-.z-10 {
-	z-index: 10;
-}
-
 .stick-b{
 	position:fixed;
 	bottom:0px;
 }
 
-.dib{
+// z-index z-0 to z-10
+$i: 0;
+
+@for $i from 0 through 10 {
+	.z-#{$i} {
+		z-index: #{$i};
+	}
+}
+
+// display
+.dib {
   display: inline-block;
 }
 
-.align-right {
+.d-inline {
+	display: inline;
+}
+
+.d-block {
+	display: block;
+}
+
+// text
+.text-align-start {
+	text-align: start;
+}
+
+.text-align-end {
+	text-align: end;
+}
+
+.text-align-right {
   text-align: right;
 }
 
-.align-left {
+.text-align-left {
   text-align: left;
 }
 
-.align-center {
+.text-align-center {
 	text-align: center;
 }
 
 .rtl {
 	direction: rtl;
+}
+
+.fs-10 {
+	font-size: 10px;
 }
 
 .fs-12 {
@@ -129,10 +170,6 @@ $sides: (top: t, right: r, bottom: b, left: l);
 
 .uppercase {
 	text-transform: uppercase;
-}
-
-.pointer {
-	cursor: pointer;
 }
 
 /* text color */
@@ -205,6 +242,43 @@ $sides: (top: t, right: r, bottom: b, left: l);
 	justify-content: flex-start;
 }
 
-.aligned {
+.align-items-center {
 	align-items: center;
+}
+
+.align-items-end {
+	align-items: flex-end;
+}
+
+.align-items-strech {
+	align-items: stretch;
+}
+
+.align-items-baseline {
+	align-items: baseline;
+}
+
+.align-self-auto {
+	align-self: auto;
+}
+
+.align-self-center {
+	align-self: center;
+}
+
+.align-self-end {
+	align-self: flex-end;
+}
+
+.align-self-strech {
+	align-self: stretch;
+}
+
+.align-self-baseline {
+	align-self: baseline;
+}
+
+// misc
+.pointer {
+	cursor: pointer;
 }

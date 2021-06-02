@@ -5,7 +5,7 @@ import { onMount } from 'svelte'
 
 export let indeterminate = false
 export let value = 0
-export let barColorProvided = true
+export let barColorProvided = false
 
 let element = {}
 let mdcProgress

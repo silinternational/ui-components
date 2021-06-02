@@ -22,7 +22,7 @@ div.mdc-layout-grid {
 <div class="mdc-layout-grid">
   <div class="mdc-layout-grid__inner">
     {#if layout == 'default'}
-      <div class={center ? `${cell12} flex column aligned` : `${cell12}`}>
+      <div class={center ? `${cell12} flex column align-items-center` : `${cell12}`}>
         {#if loading && !noProgress}
           <Progress.Circular class="absolute r-50 t-50 z-10" />
         {/if}
