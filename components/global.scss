@@ -103,11 +103,11 @@ $i: 0;
 }
 
 // display
-
 .dib{
   display: inline-block;
 }
 
+// text
 .align-right {
   text-align: right;
 }
@@ -150,10 +150,6 @@ $i: 0;
 
 .uppercase {
 	text-transform: uppercase;
-}
-
-.pointer {
-	cursor: pointer;
 }
 
 /* text color */
@@ -228,4 +224,9 @@ $i: 0;
 
 .aligned {
 	align-items: center;
+}
+
+// misc
+.pointer {
+	cursor: pointer;
 }
