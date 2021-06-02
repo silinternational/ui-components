@@ -30,7 +30,7 @@
         <img class="w-100" {src} {alt} class:disabled/>
     </div>
 
-    <div class="flex justify-between aligned black">
+    <div class="flex justify-between align-items-center black">
         <h4>{title}</h4>
 
         <span class="material-icons">{icon}</span>  
