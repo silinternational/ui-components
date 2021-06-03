@@ -8,6 +8,7 @@
   const args = {
     class: '', //only works for global classes
     title: 'Title',
+    toggle: false,
     menuItems: [
       {},
 			{
@@ -46,14 +47,6 @@
     <span class="pointer" slot="header">
       <img class="w-100" src="/logo.png" alt="logo">
     </span>
-
-    <Page title="title" layout="grid">
-      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
-        <p>
-          Here is where you put your page content.
-        </p>
-      </div>
-    </Page>
   </Drawer>
 </Template>
 
