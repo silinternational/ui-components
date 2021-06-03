@@ -6,7 +6,6 @@
   const args = {
     class: '', //only works for global classes
     value: .5,
-    barColorProvided: false
   }
 </script>
 
