@@ -34,7 +34,9 @@
     "transformIgnorePatterns": [
       "node_modules/(?!(@storybook/svelte)/)"
     ],
-    "setupFiles": ["./setupGlobal.js"]
+    "setupFiles": [
+      "./setupGlobal.js"
+    ]
   },
   "peerDependencies": {
     "@roxi/routify": "^2.x",
@@ -48,11 +50,11 @@
     "@storybook/addon-essentials": "^6.3.0-alpha.34",
     "@storybook/addon-links": "^6.3.0-alpha.34",
     "@storybook/addon-postcss": "^2.0.0",
-    "@storybook/addon-storyshots": "^6.2.9",
+    "@storybook/addon-storyshots": "^6.3.0-alpha.34",
     "@storybook/addon-svelte-csf": "^1.0.0",
     "@storybook/builder-webpack5": "^6.3.0-alpha.34",
     "@storybook/preset-scss": "^1.0.3",
-    "@storybook/svelte": "^6.3.0-alpha.36",
+    "@storybook/svelte": "^6.3.0-alpha.34",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^27.0.2",
     "css-loader": "^5.2.4",
