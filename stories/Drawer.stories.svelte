@@ -1,9 +1,7 @@
 <script>
-  import { Page } from "../"
   import { Meta, Template, Story } from "@storybook/addon-svelte-csf"
   import { Drawer } from "../components/mdc"
   import { copyAndModifyArgs } from "./helpers.js"
-  import './_index.scss'
 
   const args = {
     class: '', //only works for global classes
@@ -13,6 +11,7 @@
       {},
 			{
 				url: './',
+        icon: 'account_circle',
 				label: 'see our components in storybook'
 			},
       {
@@ -38,7 +37,7 @@
 </script>
 
 <Meta
-  title="Molecule/Drawer"
+  title="Atoms/Drawer"
   component={Drawer}
 />
 
