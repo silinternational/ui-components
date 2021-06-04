@@ -55,7 +55,6 @@
     "@storybook/builder-webpack5": "^6.3.0-alpha.34",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/svelte": "^6.3.0-alpha.34",
-    "babel-core": "^7.0.0-bridge.0",
     "css-loader": "^5.2.4",
     "jest": "^27.0.4",
     "jest-transform-svelte": "^2.1.1",
