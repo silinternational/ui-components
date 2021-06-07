@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - global.scss to generate full range of padding and margin from 1rem to 8rem, height and width from 0 to 100% in increments of 5, z-index from 0 to 10.
 - align-item and align-self flex utilites to global.scss
 - .text-align-start, .text-align-end, .d-inline, .d-block, .relative, .fixed and .fs-10 added to global.scss
-- toggle (opens and closes Drawer when modal or dismissible), dismissible(Drawer is hidded by default) and hasTopAppBar props to Drawer
+- toggle (opens and closes Drawer when modal or dismissible), dismissible(Drawer is hidden by default) and hasTopAppBar props to Drawer
 
 ### Removed
 - global.css was removed and added to .gitignore
