@@ -9,6 +9,10 @@ import TopAppBar from '../TopAppBar'
 export let title = ''
 export let subtitle = ''
 export let menuItems = []
+export let hasTopAppBar = true
+export let modal = false
+export let dismissible = false
+export let toggle = true
 
 let mdcDrawer = {}
 let element = {}
@@ -24,6 +28,7 @@ onMount(() => {
 const isMenuItemActive = (currentUrl, menuItemUrl) => currentUrl === menuItemUrl
 
 $: currentUrl = window.location.pathname
+$: toggle, toggleDrawer()
 
 $beforeUrlChange(({ url }) => {
   currentUrl = url
@@ -32,14 +37,10 @@ $beforeUrlChange(({ url }) => {
 })
 
 const showAppropriateDrawer = () => {
-  isDesktop() ? showStandardDrawer() : showModalDrawer()
+  isDesktop() && !dismissible ? showStandardDrawer() : showModalDrawer()
 }
-const showModalDrawer = () => {
-  element.classList && element.classList.add("mdc-drawer--modal")
-}
-const showStandardDrawer = () => {
-  element.classList && element.classList.remove("mdc-drawer--modal")
-}
+const showModalDrawer = () => modal = true
+const showStandardDrawer = () => modal = false
 const closeDrawer = () => mdcDrawer.open = false
 const toggleDrawer = () => mdcDrawer.open = !mdcDrawer.open
 </script>
@@ -53,7 +54,6 @@ const toggleDrawer = () => mdcDrawer.open = !mdcDrawer.open
 .app-content {
   flex: auto;
   overflow: auto;
-  position: relative;
 }
 main {
   overflow: auto;
@@ -64,14 +64,7 @@ main {
 /* TODO: keep an eye on this bug https://github.com/material-components/material-components-web/issues/5242, overriding for now so menu items will take on the themed color */
 .mdc-drawer .mdc-list-item--activated,
 .mdc-drawer .mdc-list-item--activated .mdc-list-item__graphic {
-  color: var(--mdc-theme-primary-variant);
-}
-.mdc-list {
-  /* override built-in padding so height 100 works correctly without creating a vertical scroller */
-  padding: 0;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  color: var(--mdc-theme-primary-variant, var(--mdc-theme-primary));
 }
 .mdc-list-item {
   /* changing the list to flex causes the margins to not collapse */
@@ -81,7 +74,7 @@ main {
 
 <svelte:window on:resize={showAppropriateDrawer}/>
 
-<aside class="mdc-drawer mdc-drawer--modal" bind:this={element}>
+<aside class="mdc-drawer" class:mdc-drawer--modal={modal} class:mdc-drawer--dismissible={dismissible} bind:this={element}>
   {#if title || subtitle}
     <div class="mdc-drawer__header mt-1">
       <slot name="header"/>
@@ -89,7 +82,8 @@ main {
   {/if}
 
   <div class="mdc-drawer__content">
-    <nav class="mdc-list" on:click={closeDrawer}>
+    <!-- override built-in padding so height 100 works correctly without creating a vertical scroller -->
+    <nav class="mdc-list flex column p-0 h-100" on:click={closeDrawer}>
       {#each menuItems as {icon, label, url, hide}, i}
         {#if label === '--break--'}
           <span class="grow-1" />
@@ -114,8 +108,10 @@ main {
 
 <div class="mdc-drawer-scrim" />
 
-<div class="app-content">
-  <TopAppBar dense fixed on:nav={toggleDrawer} navIconBreakpointClass="hide-above-tablet" />
+<div class="app-content relative">
+  {#if hasTopAppBar}
+    <TopAppBar dense fixed bgColorIsVariant on:nav={toggleDrawer} navIconBreakpointClass="hide-above-tablet" />
+  {/if}
 
   <main class="h-100">
     <div class="mdc-top-app-bar--dense-fixed-adjust h-100">

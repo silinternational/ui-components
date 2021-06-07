@@ -58,7 +58,7 @@ Dialog [
 	Dialog.Alert (open, title, defaultAction), Dialog.Simple(open, title)
 ]
 
-Drawer (title, subtitle, menuItems)
+Drawer (title, subtitle, menuItems, toggle, modal, dismissible, hasTopAppBar)
 
 Fab (icon, label, url)
 
