@@ -6,7 +6,6 @@
   const args = {
     class: '', //only works for global classes
     title: 'Title',
-    toggle: false,
     menuItems: [
       {},
 			{
