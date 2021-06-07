@@ -10,7 +10,7 @@ export let title = ''
 export let subtitle = ''
 export let menuItems = []
 export let hasTopAppBar = true
-export let modal = true
+export let modal = false
 export let dismissible = false
 export let toggle = true
 
