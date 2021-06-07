@@ -42,11 +42,13 @@
 />
 
 <Template let:args>
-  <Drawer {...args}>
-    <span class="pointer" slot="header">
-      <img class="w-100" src="/logo.png" alt="logo">
-    </span>
-  </Drawer>
+  <body>
+    <Drawer {...args}>
+      <span class="pointer" slot="header">
+        <img class="w-100" src="/logo.png" alt="logo">
+      </span>
+    </Drawer>
+  </body>
 </Template>
 
 <Story
