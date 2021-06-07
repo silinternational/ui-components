@@ -55,7 +55,6 @@ const toggleDrawer = () => mdcDrawer.open = !mdcDrawer.open
 .app-content {
   flex: auto;
   overflow: auto;
-  position: relative;
 }
 main {
   overflow: auto;
@@ -67,13 +66,6 @@ main {
 .mdc-drawer .mdc-list-item--activated,
 .mdc-drawer .mdc-list-item--activated .mdc-list-item__graphic {
   color: var(--mdc-theme-primary-variant, var(--mdc-theme-primary));
-}
-.mdc-list {
-  /* override built-in padding so height 100 works correctly without creating a vertical scroller */
-  padding: 0;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 .mdc-list-item {
   /* changing the list to flex causes the margins to not collapse */
@@ -91,7 +83,8 @@ main {
   {/if}
 
   <div class="mdc-drawer__content">
-    <nav class="mdc-list" on:click={closeDrawer}>
+    <!-- override built-in padding so height 100 works correctly without creating a vertical scroller -->
+    <nav class="mdc-list flex column p-0 h-100" on:click={closeDrawer}>
       {#each menuItems as {icon, label, url, hide}, i}
         {#if label === '--break--'}
           <span class="grow-1" />
@@ -116,7 +109,7 @@ main {
 
 <div class="mdc-drawer-scrim" />
 
-<div class="app-content">
+<div class="app-content relative">
   {#if hasTopAppBar}
     <TopAppBar dense fixed bgColorIsVariant on:nav={toggleDrawer} navIconBreakpointClass="hide-above-tablet" />
   {/if}
