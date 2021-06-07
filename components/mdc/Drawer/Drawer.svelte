@@ -29,7 +29,6 @@ const isMenuItemActive = (currentUrl, menuItemUrl) => currentUrl === menuItemUrl
 
 $: currentUrl = window.location.pathname
 $: toggle, toggleDrawer()
-$: dismissible ? modal = false : modal = true
 
 $beforeUrlChange(({ url }) => {
   currentUrl = url
