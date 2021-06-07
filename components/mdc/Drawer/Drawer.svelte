@@ -37,7 +37,7 @@ $beforeUrlChange(({ url }) => {
 })
 
 const showAppropriateDrawer = () => {
-  isDesktop() ? showStandardDrawer() : showModalDrawer()
+  isDesktop() && !dismissible ? showStandardDrawer() : showModalDrawer()
 }
 const showModalDrawer = () => modal = true
 const showStandardDrawer = () => modal = false
