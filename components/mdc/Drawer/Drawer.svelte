@@ -12,6 +12,7 @@ export let menuItems = []
 export let hasTopAppBar = true
 export let modal = true
 export let dismissible = false
+export let toggle = true
 
 let mdcDrawer = {}
 let element = {}
@@ -27,6 +28,8 @@ onMount(() => {
 const isMenuItemActive = (currentUrl, menuItemUrl) => currentUrl === menuItemUrl
 
 $: currentUrl = window.location.pathname
+$: toggle, toggleDrawer()
+$: dismissible ? modal = false : modal = true
 
 $beforeUrlChange(({ url }) => {
   currentUrl = url
@@ -37,12 +40,8 @@ $beforeUrlChange(({ url }) => {
 const showAppropriateDrawer = () => {
   isDesktop() ? showStandardDrawer() : showModalDrawer()
 }
-const showModalDrawer = () => {
-  element.classList && element.classList.add("mdc-drawer--modal")
-}
-const showStandardDrawer = () => {
-  element.classList && element.classList.remove("mdc-drawer--modal")
-}
+const showModalDrawer = () => modal = true
+const showStandardDrawer = () => modal = false
 const closeDrawer = () => mdcDrawer.open = false
 const toggleDrawer = () => mdcDrawer.open = !mdcDrawer.open
 </script>
