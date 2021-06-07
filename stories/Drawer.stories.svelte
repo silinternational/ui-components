@@ -1,11 +1,12 @@
 <script>
   import { Meta, Template, Story } from "@storybook/addon-svelte-csf"
-  import { Drawer } from "../components/mdc"
+  import { Drawer, Button } from "../components/mdc"
   import { copyAndModifyArgs } from "./helpers.js"
 
   const args = {
     class: '', //only works for global classes
     title: 'Title',
+    toggle: true,
     menuItems: [
       {},
 			{
@@ -36,7 +37,7 @@
 </script>
 
 <Meta
-  title="Atoms/Drawer"
+  title="Molecule/Drawer"
   component={Drawer}
 />
 
@@ -45,7 +46,11 @@
     <Drawer {...args}>
       <span class="pointer" slot="header">
         <img class="w-100" src="/logo.png" alt="logo">
+        <Button on:click={() => args.toggle = !args.toggle}>Toggle drawer</Button>
       </span>
+
+      <Button on:click={() => args.toggle = !args.toggle}>Toggle drawer</Button>
+
     </Drawer>
   </body>
 </Template>
@@ -58,4 +63,9 @@
 <Story
   name="Subtitle"
   args={copyAndModifyArgs(args, {subtitle: 'subtitle'})}
+/>
+
+<Story
+  name="Dismissible"
+  args={copyAndModifyArgs(args, {dismissible: true})}
 />
