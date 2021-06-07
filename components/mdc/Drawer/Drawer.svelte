@@ -4,11 +4,14 @@ import { isAboveTablet as isDesktop } from '../breakpoints'
 import { MDCDrawer } from '@material/drawer'
 import { beforeUrlChange } from '@roxi/routify'
 import { onMount } from 'svelte'
+import TopAppBar from '../TopAppBar'
 
 export let title = ''
 export let subtitle = ''
 export let menuItems = []
-export let toggle
+export let hasTopAppBar = true
+export let modal = true
+export let dismissible = false
 
 let mdcDrawer = {}
 let element = {}
@@ -24,7 +27,6 @@ onMount(() => {
 const isMenuItemActive = (currentUrl, menuItemUrl) => currentUrl === menuItemUrl
 
 $: currentUrl = window.location.pathname
-$: toggle, toggleDrawer
 
 $beforeUrlChange(({ url }) => {
   currentUrl = url
@@ -51,6 +53,16 @@ const toggleDrawer = () => mdcDrawer.open = !mdcDrawer.open
 }
 
 /* ref: https://material.io/develop/web/components/navigation-drawer */
+.app-content {
+  flex: auto;
+  overflow: auto;
+  position: relative;
+}
+main {
+  overflow: auto;
+
+  background: #fafafa; /* didn't like the way the spec kept the bg color of the drawer and the main exactly the same. */
+}
 
 /* TODO: keep an eye on this bug https://github.com/material-components/material-components-web/issues/5242, overriding for now so menu items will take on the themed color */
 .mdc-drawer .mdc-list-item--activated,
@@ -72,7 +84,7 @@ const toggleDrawer = () => mdcDrawer.open = !mdcDrawer.open
 
 <svelte:window on:resize={showAppropriateDrawer}/>
 
-<aside class="mdc-drawer mdc-drawer--modal" bind:this={element}>
+<aside class="mdc-drawer" class:mdc-drawer--modal={modal} class:mdc-drawer--dismissible={dismissible} bind:this={element}>
   {#if title || subtitle}
     <div class="mdc-drawer__header mt-1">
       <slot name="header"/>
@@ -105,3 +117,14 @@ const toggleDrawer = () => mdcDrawer.open = !mdcDrawer.open
 
 <div class="mdc-drawer-scrim" />
 
+<div class="app-content">
+  {#if hasTopAppBar}
+    <TopAppBar dense fixed bgColorIsVariant on:nav={toggleDrawer} navIconBreakpointClass="hide-above-tablet" />
+  {/if}
+
+  <main class="h-100">
+    <div class="mdc-top-app-bar--dense-fixed-adjust h-100">
+      <slot />
+    </div>
+  </main>
+</div>
