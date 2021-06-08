@@ -110,7 +110,7 @@ main {
 
 <div class="app-content relative">
   {#if hasTopAppBar}
-    <TopAppBar dense fixed bgColorIsVariant on:nav={toggleDrawer} navIconBreakpointClass="hide-above-tablet" />
+    <TopAppBar dense fixed bgColorIsVariant on:nav={toggleDrawer} navIconBreakpointClass={!dismissible && "hide-above-tablet"} />
   {/if}
 
   <main class="h-100">
