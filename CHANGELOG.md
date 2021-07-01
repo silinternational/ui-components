@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [2.0.0](https://github.com/silinternational/ui-components/releases/tag/v2.0.0) - 2021-07-02
 ### Changed
 - README - Instructions for running Storybook locally
 - global.css is compiled during Storybook dev and deployment build from global.scss and used only for Storybook
@@ -19,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - $$props.class to Badge, Form, CustomCard, Tour and StaticChip so they can accept global classes
+- mdc-typography class to Badge, StaticChip and Card as it was not being applied
 - Badge, CustomCard, Drawer, Form, StaticChip and Tour stories to Storybook
 - global.scss to generate full range of padding and margin from 1rem to 8rem, height and width from 0 to 100% in increments of 5, z-index from 0 to 10.
 - align-item and align-self flex utilites to global.scss
