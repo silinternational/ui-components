@@ -40,13 +40,13 @@
     "@storybook/builder-webpack5": "^6.3.0-alpha.34",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/svelte": "^6.3.0-alpha.36",
-    "css-loader": "^5.2.4",
+    "css-loader": "^5.2.6",
     "material-components-web": "^10.0.0",
-    "sass": "^1.32.12",
+    "sass": "^1.35.1",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
     "svelte": "^3.x",
-    "svelte-loader": "^3.1.1",
+    "svelte-loader": "^3.1.2",
     "svelte-preprocess": "^4.7.3"
   }
 }
