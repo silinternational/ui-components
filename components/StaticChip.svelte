@@ -10,7 +10,7 @@
   }
 </style>
 
-<div class="chip black flex justify-center align-items-center mb-1 mr-2 fs-14 br-16px {$$props.class}">
+<div class="mdc-typography chip black flex justify-center align-items-center mb-1 mr-2 fs-14 br-16px {$$props.class}">
   <div class="chip-content flex align-items-center">
     <slot></slot>
   </div>  

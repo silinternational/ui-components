@@ -14,4 +14,4 @@
   }
 </style>
 
-<span class="dib text-align-center white fs-16 br-50 background {$$props.class}" style="--theme-color: {color}" ><slot /></span>
+<span class="mdc-typography dib text-align-center white fs-16 br-50 background {$$props.class}" style="--theme-color: {color}" ><slot /></span>
