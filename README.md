@@ -5,7 +5,7 @@ Reusable Svelte components for some internal applications
 To install to your Svelte project, open your project's root directory in a terminal. Type `npm i @silintl/ui-components` and press enter.
 
 ### bundler configuration
-Your Svelte project will need the bundler (rollup most likely) configured to compile Sass files. If you are using rollup your plugins in your "rollup.config.js" should look something like this taking special note of postcss and svelte (it may work still without autoPreprocess):
+Your Svelte project will need the bundler (rollup most likely) configured to compile Sass files. If you are using rollup your plugins in your "rollup.config.js" should look something like this taking special note of postcss and svelte:
 ```
 import postcss from 'rollup-plugin-postcss';
 import autoPreprocess from 'svelte-preprocess';
@@ -179,7 +179,7 @@ An example of using Drawer:
 ```
 
 ### storybook
-Try out our components at https://silinternational.github.io/ui-components/
+Try out our components and see examples at https://silinternational.github.io/ui-components/
 or run storybook locally. Just copy this repo to your machine and run `npm install` then `npm run dev.` Storybook should open a browser window when it finishes building.
 
 ### CSS utility classes

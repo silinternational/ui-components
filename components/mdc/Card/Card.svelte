@@ -18,7 +18,7 @@ export let color = 'white'
 }
 </style>
 
-<div class="mdc-card {$$props.class}" style="background-color: {color}" class:mdc-card--outlined={outlined}>
+<div class="mdc-card mdc-typography {$$props.class}" style="background-color: {color}" class:mdc-card--outlined={outlined}>
   {#if secondary.length}
     <div class="secondary-text uppercase gray">
       {secondary}
