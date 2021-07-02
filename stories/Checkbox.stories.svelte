@@ -6,6 +6,8 @@
   const args = {
     label: "Checkbox",
     class: '', //only works for global classes
+    'on:checked': () => alert('checked'),
+    'on:unchecked': () => alert('unchecked'),
   }
 </script>
 
@@ -15,7 +17,7 @@
 />
 
 <Template let:args>
-  <Checkbox {...args} on:click={args.onClick}/>
+  <Checkbox {...args} on:unchecked={args['on:unchecked']} on:checked={args['on:checked']}/>
 </Template>
 
 <Story

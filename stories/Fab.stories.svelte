@@ -9,7 +9,7 @@
 />
 
 <Template let:args>
-  <Fab {...args} on:click={args.onClick}/>
+  <Fab {...args}/>
 </Template>
 
 <Story

@@ -9,7 +9,7 @@
 />
 
 <Template let:args>
-  <IconButton {...args} on:click={args.onClick}/>
+  <IconButton {...args} on:click={args['on:click']}/>
 </Template>
 
 <Story
@@ -18,6 +18,6 @@
     icon: 'done',
     ariaLabel: 'ariaLabel',
     class: '', //will only work with global class
-    onClick: () => console.log('click'),
+    'on:click': () => alert('click'),
   }}
 />
