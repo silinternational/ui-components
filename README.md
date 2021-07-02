@@ -5,7 +5,7 @@ Reusable Svelte components for some internal applications
 To install to your Svelte project, open your project's root directory in a terminal. Type `npm i @silintl/ui-components` and press enter.
 
 ### bundler configuration
-Your Svelte project will need the bundler (rollup most likely) configured to compile Sass files. If you are using rollup your plugins in your "rollup.config.js" should look something like this taking special note of postcss and svelte (it may work still without autoPreprocess):
+Your Svelte project will need the bundler (rollup most likely) configured to compile Sass files. If you are using rollup your plugins in your "rollup.config.js" should look something like this taking special note of postcss and svelte:
 ```
 import postcss from 'rollup-plugin-postcss';
 import autoPreprocess from 'svelte-preprocess';
@@ -58,7 +58,7 @@ Dialog [
 	Dialog.Alert (open, title, defaultAction), Dialog.Simple(open, title)
 ]
 
-Drawer (title, subtitle, menuItems)
+Drawer (title, subtitle, menuItems, toggle, modal, dismissible, hasTopAppBar)
 
 Fab (icon, label, url)
 
@@ -69,7 +69,7 @@ List (twoLine, avatar) [
 ]
 
 Progress [
-	Progress.Circular, Progress.Linear (indeterminate, value, barColorProvided)
+	Progress.Circular, Progress.Linear (indeterminate, value)
 ]
 
 Select (options, width, disabled, selectedID)
@@ -179,10 +179,11 @@ An example of using Drawer:
 ```
 
 ### storybook
-Try out our components at https://silinternational.github.io/ui-components/
+Try out our components and see examples at https://silinternational.github.io/ui-components/
+or run storybook locally. Just copy this repo to your machine and run `npm install` then `npm run dev.` Storybook should open a browser window when it finishes building.
 
 ### CSS utility classes
-Classes from [global.css](https://github.com/silinternational/ui-components/blob/develop/components/global.css) can be applied to all components and even components and elements from your app.
+Classes from [global.scss](https://github.com/silinternational/ui-components/blob/develop/components/global.scss) can be applied to all components and even components and elements from your app.
 
 ### theming
 If you are using an [MDC theme](https://material.io/develop/web/docs/theming) and [typography](https://material.io/develop/web/components/typography) then import your _index.scss file to the App.svelte file so they get applied to the ui-components.

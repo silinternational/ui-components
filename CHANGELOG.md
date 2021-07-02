@@ -4,6 +4,37 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+## [2.0.0](https://github.com/silinternational/ui-components/releases/tag/v2.0.0) - 2021-07-02
+### Changed
+- README - Instructions for running Storybook locally
+- global.css is compiled during Storybook dev and deployment build from global.scss and used only for Storybook
+- _index.scss uses global.scss
+
+### BREAKING CHANGES
+- .align-center, .align-left and .align-right global classes are now .text-align-center, .text-align-left and .text-align-right.
+- .aligned global class is now .align-items-center
+- Progress.Linear barColorProvided prop deleted
+- Progress.Linear uses --progress-bar-color instead of --sil-primary-blue from the apps _theme file and falls back to --mdc-theme-primary
+- TopAppBar prop bgColorIsVariant default value is now false
+
+### Added
+- $$props.class to Badge, Form, CustomCard, Tour and StaticChip so they can accept global classes
+- mdc-typography class to Badge, StaticChip and Card as it was not being applied
+- Badge, CustomCard, Drawer, Form, StaticChip and Tour stories to Storybook
+- global.scss to generate full range of padding and margin from 1rem to 8rem, height and width from 0 to 100% in increments of 5, z-index from 0 to 10.
+- align-item and align-self flex utilites to global.scss
+- .text-align-start, .text-align-end, .d-inline, .d-block, .relative, .fixed and .fs-10 added to global.scss
+- toggle (opens and closes Drawer when modal or dismissible), dismissible(Drawer is hidden by default) and hasTopAppBar props to Drawer
+
+### Removed
+- global.css was removed and added to .gitignore
+- barColorProvided from Progress.Linear
+
+### Fixed
+- Tour was failing to replace key with value of data prop in steps content.
+
 ## [1.1.0](https://github.com/silinternational/ui-components/releases/tag/v1.1.0) - 2021-05-26
 ### Changed
 - package.json version to 1.1.0
