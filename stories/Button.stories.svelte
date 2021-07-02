@@ -3,12 +3,12 @@
   import { Button } from "../components/mdc"
   import { copyAndModifyArgs } from "./helpers.js"
 
-  export let content = 'Button slot'
+  let content = 'Button slot'
 
   const args = {
     raised: true,
     class: '',
-    onClick: () => {},
+    'on:click': () => alert('you clicked'),
   }
 </script>
 
@@ -18,7 +18,7 @@
 />
 
 <Template let:args>
-  <Button {...args} on:click={args.onClick}>{content}</Button>
+  <Button {...args} on:click={args['on:click']}>{content}</Button>
 </Template>
 
 <Story

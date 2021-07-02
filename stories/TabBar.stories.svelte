@@ -4,7 +4,7 @@
 
   const args = {
     tab: 0,
-    onClick: () => {},
+    'on:click': () => alert('you tabbed'),
     class: '' //only works for global classes
   }
 </script>
@@ -17,9 +17,9 @@
 <Template let:args>
   <TabBar {...args}>
     <TabBar.Scroller>
-      <TabBar.Tab label="tab 1" on:click={args.onClick} active={args.tab === 0} />
-      <TabBar.Tab label="tab 2" on:click={args.onClick} active={args.tab === 1} />
-      <TabBar.Tab label="tab 3" on:click={args.onClick} active={args.tab === 2} />
+      <TabBar.Tab label="tab 1" on:click={args['on:click']} active={args.tab === 0} />
+      <TabBar.Tab label="tab 2" on:click={args['on:click']} active={args.tab === 1} />
+      <TabBar.Tab label="tab 3" on:click={args['on:click']} active={args.tab === 2} />
     </TabBar.Scroller>
   </TabBar>
 </Template>
