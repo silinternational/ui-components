@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - on:click, on:mousedown, on:mouseup, on:keypress, isClickable (prop) and tabindex to Card
 
+### Fixed
+- Events in Storybook
+
 ## [2.0.0](https://github.com/silinternational/ui-components/releases/tag/v2.0.0) - 2021-07-02
 ### Changed
 - README - Instructions for running Storybook locally
