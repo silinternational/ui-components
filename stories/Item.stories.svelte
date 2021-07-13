@@ -6,7 +6,7 @@
   const args = {
     class: '', //will only work with global class
     text: 'Some text',
-    onClick: () => {},
+    'on:click': () => alert('you clicked'),
   }
 </script>
 
@@ -16,7 +16,7 @@
 />
 
 <Template let:args>
-  <List.Item {...args} on:click={args.onClick}/>
+  <List.Item {...args} on:click={args['on:click']}/>
 </Template>
 
 <Story

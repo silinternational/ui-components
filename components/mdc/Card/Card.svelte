@@ -3,6 +3,9 @@
 export let secondary = ''
 export let outlined = false
 export let color = 'white'
+export let isClickable = false
+
+$: tabindex = isClickable ? '0' : undefined
 </script>
 
 <style>
@@ -18,7 +21,7 @@ export let color = 'white'
 }
 </style>
 
-<div class="mdc-card mdc-typography {$$props.class}" style="background-color: {color}" class:mdc-card--outlined={outlined}>
+<div {tabindex} class="mdc-card mdc-typography {$$props.class}" style="background-color: {color}" class:mdc-card--outlined={outlined} class:mdc-card__primary-action={isClickable} on:click on:mousedown on:mouseup on:keypress>
   {#if secondary.length}
     <div class="secondary-text uppercase gray">
       {secondary}
