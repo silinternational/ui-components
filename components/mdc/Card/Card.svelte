@@ -21,14 +21,13 @@ $: tabindex = isClickable ? '0' : undefined
   padding-right: 16px;
 }
 .noPadding {
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0;
 }
 </style>
 
 <div {tabindex} class="mdc-card mdc-typography {$$props.class}" style="background-color: {color}" class:mdc-card--outlined={outlined} class:mdc-card__primary-action={isClickable} on:click on:mousedown on:mouseup on:keypress>
   {#if secondary.length}
-    <div class="secondary-text uppercase gray">
+    <div class="secondary-text uppercase gray" class:noPadding>
       {secondary}
     </div>
   {/if}
@@ -36,7 +35,7 @@ $: tabindex = isClickable ? '0' : undefined
     <slot />
   </div>
   {#if $$slots.actions}
-    <div class="mdc-card__actions">
+    <div class="mdc-card__actions" class:noPadding>
       <slot name="actions" />
     </div>
   {/if}
