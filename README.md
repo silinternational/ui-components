@@ -48,7 +48,7 @@ A list of all components (subcomponents and js files for interfacing in []) foll
 
 Button (disabled, outlined, raised, prependIcon, appendIcon, url)
 
-Card (secondary, outlined, color, isClickable)
+Card (secondary, outlined, color, isClickable, noPadding)
 
 Checkbox (label, checked, disabled, uppercase)
 
