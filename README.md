@@ -108,7 +108,7 @@ Page (loading, title, layout, center, noProgress) [
 	Page.Subheader
 ]
 
-StaticChip
+StaticChip (bgColor)
 
 Tour (steps, data)
 
