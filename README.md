@@ -96,7 +96,7 @@ TopAppBar (dense, fixed, navIconBreakpointClass, bgColorIsVariant) [
 	actions.js, title.js
 ]
 
-Badge (color)
+Badge (color, borderRadius, padding, bordered)
 
 CustomCard (
 	src, alt, title, icon, disabled, buttons, footerText
@@ -108,7 +108,7 @@ Page (loading, title, layout, center, noProgress) [
 	Page.Subheader
 ]
 
-StaticChip
+StaticChip (bgColor)
 
 Tour (steps, data)
 
