@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - bgColor to StaticChip
 
+### Changed
+- README - updated component index
+
 ## [2.2.1](https://github.com/silinternational/ui-components/releases/tag/v2.2.1) - 2021-07-15
 ### Fixed
 - Excessive warnings from sass. Reverted to 1.32.12
