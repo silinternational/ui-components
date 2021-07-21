@@ -5,7 +5,9 @@
 
   const args = {
     class: '', //only works for global classes
-    color: 'gray'
+    color: 'gray',
+    borderRadius: '50%',
+    padding: '.2em'
   }
 </script>
 
@@ -26,4 +28,9 @@
 <Story
   name="Blue"
   args={copyAndModifyArgs(args, {color: 'blue'})}
+/>
+
+<Story
+  name="Pill"
+  args={copyAndModifyArgs(args, {borderRadius: '12px', padding: '.1em .5em'})}
 />
