@@ -6,7 +6,11 @@
 
   let transparentColor = ''
 
-  $: if (color.length == 7) transparentColor = color + '12' //sets transparent background color. only works with full hexadecimal color
+  $: if (color[0] == '#') {
+    color.length == 7 && (transparentColor = color + '12')
+
+    color.length == 4 && (transparentColor = color + color.slice(1) + '12')
+  }
 </script>
 
 <style>
