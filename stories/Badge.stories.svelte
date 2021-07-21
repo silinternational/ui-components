@@ -34,3 +34,8 @@
   name="Pill"
   args={copyAndModifyArgs(args, {borderRadius: '12px', padding: '.1em .5em'})}
 />
+
+<Story
+  name="Bordered"
+  args={copyAndModifyArgs(args, {borderRadius: '12px', padding: '.1em .5em', color: '#F5731E', bordered: true})}
+/>
