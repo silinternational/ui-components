@@ -96,7 +96,7 @@ TopAppBar (dense, fixed, navIconBreakpointClass, bgColorIsVariant) [
 	actions.js, title.js
 ]
 
-Badge (color, borderRadius, padding)
+Badge (color, borderRadius, padding, bordered)
 
 CustomCard (
 	src, alt, title, icon, disabled, buttons, footerText
