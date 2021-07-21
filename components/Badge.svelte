@@ -6,10 +6,10 @@
 
   let transparentColor = ''
 
-  $: if (color[0] == '#') {
+  $: if (/^#([0-9A-F]{3}){1,2}$/i.test(color)) {
     color.length == 7 && (transparentColor = color + '12')
 
-    color.length == 4 && (transparentColor = color + color.slice(1) + '12')
+    color.length == 4 && (transparentColor = color.slice(1, 2).repeat(2) + color.slice(2, 3).repeat(2) + color.slice(3, 4).repeat(2) + '12')
   }
 </script>
 
