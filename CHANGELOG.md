@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [2.3.1](https://github.com/silinternational/ui-components/releases/tag/v2.3.1) - 2021-07-21
+## [2.3.1](https://github.com/silinternational/ui-components/releases/tag/v2.3.1) - 2021-07-22
 ### Fixed
 - package-lock.json still had sass@1.35.2. Excessive warnings from sass.
 
