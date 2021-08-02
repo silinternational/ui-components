@@ -13,6 +13,7 @@ export let hasTopAppBar = true
 export let modal = false
 export let dismissible = false
 export let toggle = false
+export let isFullHeight = true
 
 let mdcDrawer = {}
 let element = {}
@@ -83,7 +84,7 @@ main {
 
   <div class="mdc-drawer__content">
     <!-- override built-in padding so height 100 works correctly without creating a vertical scroller -->
-    <nav class="mdc-list flex column p-0 h-100" on:click={closeDrawer}>
+    <nav class="mdc-list flex column p-0" class:isFullHeight={'h-100'} on:click={closeDrawer}>
       {#each menuItems as {icon, label, url, hide}, i}
         {#if label === '--break--'}
           <span class="grow-1" />
