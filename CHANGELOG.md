@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - capitalize to global.scss
 - $$class.props and isFullHeightMenu property to Drawer
+- button to menu array in Drawer
 
 ### Changed
 - update README index
