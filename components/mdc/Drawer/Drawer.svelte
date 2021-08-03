@@ -2,9 +2,9 @@
 <script>
 import { isAboveTablet as isDesktop } from '../breakpoints'
 import { MDCDrawer } from '@material/drawer'
+import { Button, TopAppBar } from '../index'
 import { beforeUrlChange } from '@roxi/routify'
 import { onMount } from 'svelte'
-import TopAppBar from '../TopAppBar'
 
 export let title = ''
 export let subtitle = ''
@@ -75,7 +75,7 @@ main {
 
 <svelte:window on:resize={showAppropriateDrawer}/>
 
-<aside class="mdc-drawer" class:mdc-drawer--modal={modal} class:mdc-drawer--dismissible={dismissible} bind:this={element}>
+<aside class="mdc-drawer {$$props.class}" class:mdc-drawer--modal={modal} class:mdc-drawer--dismissible={dismissible} bind:this={element}>
   {#if title || subtitle}
     <div class="mdc-drawer__header mt-1">
       <slot name="header"/>
@@ -86,18 +86,20 @@ main {
     <!-- override built-in padding so height 100 works correctly without creating a vertical scroller -->
     <!-- changing the list to flex causes the margins to not collapse -->
     <nav class="mdc-list flex column p-0" class:h-100={isFullHeightMenu} on:click={closeDrawer}>
-      {#each menuItems as {icon, label, url, hide}, i}
+      {#each menuItems as {icon, label, url, hide, button}, i}
         {#if label === '--break--'}
           <span class="grow-1" />
         {:else if !hide}
-          {#if url}
+          {#if url && button}
+            <Button prependIcon={button} {url} />
+          {:else if url}
             <a class="mdc-list-item" class:mdc-list-item--activated={isMenuItemActive(currentUrl, url)} href={url}
               aria-current={isMenuItemActive(currentUrl, url) ? "page" : null} tabindex={i === 0 ? 0 : undefined}>
               <span class="mdc-list-item__ripple" />
               {#if icon}
                 <i class="material-icons mdc-list-item__graphic" aria-hidden="true">{icon}</i>
               {/if}
-              
+
               {#if label}
                 <span class="mdc-list-item__text">{label}</span>
               {/if}
