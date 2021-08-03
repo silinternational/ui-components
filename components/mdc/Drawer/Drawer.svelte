@@ -91,7 +91,7 @@ main {
           <span class="grow-1" />
         {:else if !hide}
           {#if url && button}
-            <Button prependIcon={button} {url} >{label}</Button>
+           <Button class="m-1" raised prependIcon={typeof button == 'string' ? button : null} {url} >{label}</Button>
           {:else if url}
             <a class="mdc-list-item" class:mdc-list-item--activated={isMenuItemActive(currentUrl, url)} href={url}
               aria-current={isMenuItemActive(currentUrl, url) ? "page" : null} tabindex={i === 0 ? 0 : undefined}>
@@ -117,7 +117,9 @@ main {
 
 <div class="app-content relative">
   {#if hasTopAppBar}
-    <TopAppBar dense fixed bgColorIsVariant on:nav={toggleDrawer} navIconBreakpointClass={!dismissible && "hide-above-tablet"} />
+    <TopAppBar dense fixed bgColorIsVariant on:nav={toggleDrawer} navIconBreakpointClass={!dismissible && "hide-above-tablet"} >
+      <slot name="TopAppBar"/>
+    </TopAppBar>
   {/if}
 
   <main class="h-100">
