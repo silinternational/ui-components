@@ -91,7 +91,7 @@ main {
           <span class="grow-1" />
         {:else if !hide}
           {#if url && button}
-            <Button prependIcon={button} {url} />
+            <Button prependIcon={button} {url} >{label}</Button>
           {:else if url}
             <a class="mdc-list-item" class:mdc-list-item--activated={isMenuItemActive(currentUrl, url)} href={url}
               aria-current={isMenuItemActive(currentUrl, url) ? "page" : null} tabindex={i === 0 ? 0 : undefined}>
