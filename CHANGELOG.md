@@ -7,9 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - capitalize to global.scss
+- $$class.props and isFullHeightMenu property to Drawer
+- button to menu array in Drawer
+
+### Changed
+- update README index
 
 ### Fixed
 - typo in global.scss
+- bug in Drawer by defaulting to modal
 
 ## [2.3.1](https://github.com/silinternational/ui-components/releases/tag/v2.3.1) - 2021-07-22
 ### Fixed
