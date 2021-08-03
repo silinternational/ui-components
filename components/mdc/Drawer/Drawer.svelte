@@ -97,7 +97,10 @@ main {
               {#if icon}
                 <i class="material-icons mdc-list-item__graphic" aria-hidden="true">{icon}</i>
               {/if}
-              <span class="mdc-list-item__text">{label}</span>
+              
+              {#if label}
+                <span class="mdc-list-item__text">{label}</span>
+              {/if}
             </a>
           {:else}
             <hr class="mdc-list-divider mdc-list-divider--inset-leading mdc-list-divider--inset-trailing" role="separator" />
