@@ -172,6 +172,9 @@ $i: 0;
 	text-transform: uppercase;
 }
 
+.capitalize {
+	text-transform: capitalize;
+}
 /* text color */
 .black {
 	color: #2A3032;
@@ -250,7 +253,7 @@ $i: 0;
 	align-items: flex-end;
 }
 
-.align-items-strech {
+.align-items-stretch {
 	align-items: stretch;
 }
 
