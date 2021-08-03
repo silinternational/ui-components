@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - capitalize to global.scss
-- isFullHeightMenu property to Drawer
+- $$class.props and isFullHeightMenu property to Drawer
 
 ### Changed
 - update README index
