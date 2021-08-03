@@ -69,7 +69,6 @@ main {
   color: var(--mdc-theme-primary-variant, var(--mdc-theme-primary));
 }
 .mdc-list-item {
-  /* changing the list to flex causes the margins to not collapse */
   margin: 4px 8px;
 }
 </style>
@@ -85,6 +84,7 @@ main {
 
   <div class="mdc-drawer__content">
     <!-- override built-in padding so height 100 works correctly without creating a vertical scroller -->
+    <!-- changing the list to flex causes the margins to not collapse -->
     <nav class="mdc-list flex column p-0" class:h-100={isFullHeightMenu} on:click={closeDrawer}>
       {#each menuItems as {icon, label, url, hide}, i}
         {#if label === '--break--'}
