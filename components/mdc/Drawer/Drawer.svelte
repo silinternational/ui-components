@@ -123,7 +123,7 @@ main {
   {/if}
 
   <main class="h-100">
-    <div class="mdc-top-app-bar--dense-fixed-adjust h-100">
+    <div class:mdc-top-app-bar--dense-fixed-adjust={hasTopAppBar} class="h-100">
       <slot />
     </div>
   </main>
