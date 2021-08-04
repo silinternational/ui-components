@@ -12,9 +12,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - another slot to TopAppBar
 - main-drawer-content id and actions slot to Drawer
 
-### Changed
-- update README index
-
 ### Fixed
 - TopAppBar adjust class removed when not needed by Drawer
 
