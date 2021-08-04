@@ -6,7 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- optinal border-white class to drawer
+- optinal border-white class and classForContent prop to Drawer
+
+### Changed
+- update README index
 
 ### Fixed
 - TopAppBar adjust class removed when not needed by Drawer

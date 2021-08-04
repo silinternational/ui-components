@@ -14,6 +14,7 @@ export let modal = false
 export let dismissible = false
 export let toggle = false
 export let isFullHeightMenu = true
+export let classForContent = '' //can be used to change background color
 
 let mdcDrawer = {}
 let element = {}
@@ -122,7 +123,7 @@ main {
     </TopAppBar>
   {/if}
 
-  <main class="h-100">
+  <main class="h-100" class:classForContent>
     <div class:mdc-top-app-bar--dense-fixed-adjust={hasTopAppBar} class="h-100">
       <slot />
     </div>
