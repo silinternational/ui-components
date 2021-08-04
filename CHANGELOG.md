@@ -8,9 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.6.0](https://github.com/silinternational/ui-components/releases/tag/v2.6.0) - 2021-08-04
 ### Added
-- optinal border-white class and classForContent prop to Drawer
+- optinal border-white class and Drawer
 - another slot to TopAppBar
-- actions slot to Drawer
+- main-drawer-content id and actions slot to Drawer
 
 ### Changed
 - update README index
