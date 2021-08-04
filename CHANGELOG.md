@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - optinal border-white class to drawer
 
+### Fixed
+- TopAppBar adjust class removed when not needed by Drawer
+
 ## [2.5.0](https://github.com/silinternational/ui-components/releases/tag/v2.5.0) - 2021-08-03
 ### Added
 - slot to TopAppBar in Drawer
