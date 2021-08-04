@@ -2,9 +2,10 @@
 <script>
 import { isAboveTablet as isDesktop } from '../breakpoints'
 import { MDCDrawer } from '@material/drawer'
-import { Button, TopAppBar } from '../index'
+import Button from '../Button'
 import { beforeUrlChange } from '@roxi/routify'
 import { onMount } from 'svelte'
+import TopAppBar from '../TopAppBar'
 
 export let title = ''
 export let subtitle = ''
