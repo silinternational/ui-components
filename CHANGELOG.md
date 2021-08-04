@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - optinal border-white class and classForContent prop to Drawer
-
+- another slot to TopAppBar
 ### Changed
 - update README index
 
