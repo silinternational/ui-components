@@ -44,6 +44,8 @@ onMount(() => {
     </section>
     
     <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+      <slot name="actions"/>
+
       {#each $actions as { icon, onClick, label }}
         <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label={label} on:click={onClick}>{icon}</button>
       {/each}

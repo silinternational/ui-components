@@ -2,9 +2,10 @@
 <script>
 import { isAboveTablet as isDesktop } from '../breakpoints'
 import { MDCDrawer } from '@material/drawer'
-import { Button, TopAppBar } from '../index'
+import Button from '../Button'
 import { beforeUrlChange } from '@roxi/routify'
 import { onMount } from 'svelte'
+import TopAppBar from '../TopAppBar'
 
 export let title = ''
 export let subtitle = ''
@@ -119,11 +120,12 @@ main {
   {#if hasTopAppBar}
     <TopAppBar dense fixed bgColorIsVariant on:nav={toggleDrawer} navIconBreakpointClass={!dismissible && "hide-above-tablet"} >
       <slot name="TopAppBar"/>
+      <slot name="actions"/>
     </TopAppBar>
   {/if}
 
-  <main class="h-100">
-    <div class="mdc-top-app-bar--dense-fixed-adjust h-100">
+  <main class="h-100" id="main-drawer-content">
+    <div class:mdc-top-app-bar--dense-fixed-adjust={hasTopAppBar} class="h-100">
       <slot />
     </div>
   </main>

@@ -5,3 +5,7 @@
 @include drawer.dismissible-core-styles;
 @include drawer.modal-core-styles;
 @include list.core-styles;
+
+.border-white {
+  @include drawer.border-color(#fff);
+}
