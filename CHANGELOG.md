@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.6.0](https://github.com/silinternational/ui-components/releases/tag/v2.6.0) - 2021-08-04
 ### Added
-- optional border-white class in Drawer
+- hideForMobile prop and optional border-white class in Drawer
 - another slot to TopAppBar
 - main-drawer-content id and actions slot to Drawer
 

@@ -15,6 +15,7 @@ export let modal = false
 export let dismissible = false
 export let toggle = false
 export let isFullHeightMenu = true
+export let hideForMobile = true
 
 let mdcDrawer = {}
 let element = {}
@@ -40,7 +41,7 @@ $beforeUrlChange(({ url }) => {
 })
 
 const showAppropriateDrawer = () => {
-  isDesktop() && !dismissible ? showStandardDrawer() : showModalDrawer()
+  isDesktop() && !dismissible ? showStandardDrawer() : hideForMobile && showModalDrawer()
 }
 const showModalDrawer = () => modal = true
 const showStandardDrawer = () => modal = false
