@@ -120,7 +120,7 @@ main {
   {#if hasTopAppBar}
     <TopAppBar dense fixed bgColorIsVariant on:nav={toggleDrawer} navIconBreakpointClass={!dismissible && "hide-above-tablet"} >
       <slot name="TopAppBar"/>
-      <slot name="actions"/>
+      <slot slot="actions" name="actions"/>
     </TopAppBar>
   {/if}
 
