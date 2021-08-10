@@ -27,12 +27,12 @@ onMount(() => {
 </style>
 
 {#if mini}
-  <button on:click={action} class="mdc-fab mdc-fab--mini" aria-label={label} bind:this={element}>
+  <button on:click={action} class="mdc-fab mdc-fab--mini {$$props.class}" aria-label={label} bind:this={element}>
     <div class="mdc-fab__ripple"></div>
     <span class="mdc-fab__icon material-icons">{icon}</span>
   </button>
 {:else if extended}
-  <button on:click={action} class="mdc-fab mdc-fab--extended" bind:this={element}>
+  <button on:click={action} class="mdc-fab mdc-fab--extended {$$props.class}" bind:this={element}>
     <div class="mdc-fab__ripple"></div>
     <span class="material-icons mdc-fab__icon">{icon}</span>
     <span class="mdc-fab__label">{label}</span>
