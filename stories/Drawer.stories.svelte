@@ -12,25 +12,22 @@
 			{
 				url: './',
         icon: 'account_circle',
-				label: 'see our components in storybook'
+				label: 'reload'
 			},
-      {
-        label: '--break--',
-      },
 			{
 				url: './',
-				label: 'see our components in storybook'
+        icon: 'face',
+				label: 'reload'
 			},
       {
 				url: './',
-				label: 'see our components in storybook'
+        icon: 'add',
+				label: 'reload'
 			},
-      {
-        label: '--break--',
-      },
 			{
 				url: './',
-				label: 'see our components in storybook'
+        icon: 'money',
+				label: 'reload'
 			}
 		]
   }
@@ -78,4 +75,9 @@
 <Story
   name="hideForPhonesOnly"
   args={copyAndModifyArgs(args, {hideForPhonesOnly: true})}
+/>
+
+<Story
+  name="miniMenu"
+  args={copyAndModifyArgs(args, {miniMenu: true})}
 />
