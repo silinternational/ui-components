@@ -1,7 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-fab -->
 <script>
 import { MDCRipple } from '@material/ripple'
-import { goto } from '@roxi/routify'
 import { onMount } from 'svelte'
 
 export let icon = 'add'
