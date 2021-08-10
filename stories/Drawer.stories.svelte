@@ -69,3 +69,13 @@
   name="Dismissible"
   args={copyAndModifyArgs(args, {dismissible: true})}
 />
+
+<Story
+  name="HideForTablets"
+  args={copyAndModifyArgs(args, {hideForPhonesOnly: false})}
+/>
+
+<Story
+  name="hideForPhonesOnly"
+  args={copyAndModifyArgs(args, {hideForPhonesOnly: true})}
+/>
