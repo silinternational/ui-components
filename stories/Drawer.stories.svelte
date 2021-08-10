@@ -27,7 +27,8 @@
 			{
 				url: './',
         icon: 'money',
-				label: 'reload'
+				label: 'reload',
+        button: true
 			}
 		]
   }

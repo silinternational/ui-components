@@ -3,7 +3,8 @@
 import { isAboveTablet as isDesktop, isAboveMobile } from '../breakpoints'
 import { MDCDrawer } from '@material/drawer'
 import Button from '../Button'
-import { beforeUrlChange } from '@roxi/routify'
+import IconButton from '../IconButton/IconButton.svelte'
+import { beforeUrlChange, goto } from '@roxi/routify'
 import { onMount } from 'svelte'
 import TopAppBar from '../TopAppBar'
 
@@ -107,6 +108,8 @@ main {
         {:else if !hide}
           {#if url && button && isNotMini}
            <Button class="m-1" raised prependIcon={icon} {url} >{label}</Button>
+          {:else if button}
+            <IconButton class="mdc-theme--primary pl-1" {icon} ariaLabel={label} on:click={() => $goto(url)}/>
           {:else if url}
             <a class="mdc-list-item" class:mdc-list-item--activated={isMenuItemActive(currentUrl, url)} href={url}
               aria-current={isMenuItemActive(currentUrl, url) ? "page" : null} tabindex={i === 0 ? 0 : undefined}>
