@@ -1,6 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-drawer -->
 <script>
-import { isAboveTablet as isDesktop } from '../breakpoints'
+import { isAboveTablet as isDesktop, isAboveMobile } from '../breakpoints'
 import { MDCDrawer } from '@material/drawer'
 import Button from '../Button'
 import { beforeUrlChange } from '@roxi/routify'
@@ -15,7 +15,8 @@ export let modal = false
 export let dismissible = false
 export let toggle = false
 export let isFullHeightMenu = true
-export let hideForMobile = true
+export let hideForTablet = true
+export let hideForPhonesOnly = false
 
 let mdcDrawer = {}
 let element = {}
@@ -41,7 +42,11 @@ $beforeUrlChange(({ url }) => {
 })
 
 const showAppropriateDrawer = () => {
-  isDesktop() && !dismissible ? showStandardDrawer() : hideForMobile && showModalDrawer()
+  if (hideForPhonesOnly) {
+    isAboveMobile() && !dismissible ? showStandardDrawer() : showModalDrawer()
+  } else if (hideForTablet) {
+    isDesktop() && !dismissible ? showStandardDrawer() : showModalDrawer()
+  }
 }
 const showModalDrawer = () => modal = true
 const showStandardDrawer = () => modal = false
