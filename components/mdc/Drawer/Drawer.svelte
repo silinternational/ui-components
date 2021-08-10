@@ -17,14 +17,16 @@ export let toggle = false
 export let isFullHeightMenu = true
 export let hideForTablet = true
 export let hideForPhonesOnly = false
+export let miniMenu = false
 
 let mdcDrawer = {}
 let element = {}
+let isNotMini
 
 onMount(() => {
   mdcDrawer = new MDCDrawer(element)
 
-  showAppropriateDrawer()
+  showAppropriateThings()
 
   return () => mdcDrawer.destroy()
 })
@@ -41,6 +43,11 @@ $beforeUrlChange(({ url }) => {
   return true
 })
 
+const showAppropriateThings = () => {
+  showAppropriateDrawer()
+  showAppropriateSizeMenu()
+}
+
 const showAppropriateDrawer = () => {
   if (hideForPhonesOnly) {
     isAboveMobile() && !dismissible ? showStandardDrawer() : showModalDrawer()
@@ -48,6 +55,7 @@ const showAppropriateDrawer = () => {
     isDesktop() && !dismissible ? showStandardDrawer() : showModalDrawer()
   }
 }
+const showAppropriateSizeMenu = () => isNotMini = isAboveMobile() || !miniMenu
 const showModalDrawer = () => modal = true
 const showStandardDrawer = () => modal = false
 const closeDrawer = () => mdcDrawer.open = false
@@ -80,7 +88,7 @@ main {
 }
 </style>
 
-<svelte:window on:resize={showAppropriateDrawer}/>
+<svelte:window on:resize={showAppropriateThings}/>
 
 <aside class="mdc-drawer {$$props.class}" class:mdc-drawer--modal={modal} class:mdc-drawer--dismissible={dismissible} bind:this={element}>
   {#if title || subtitle}
@@ -97,7 +105,7 @@ main {
         {#if label === '--break--'}
           <span class="grow-1" />
         {:else if !hide}
-          {#if url && button}
+          {#if url && button && isNotMini}
            <Button class="m-1" raised prependIcon={icon} {url} >{label}</Button>
           {:else if url}
             <a class="mdc-list-item" class:mdc-list-item--activated={isMenuItemActive(currentUrl, url)} href={url}
@@ -107,7 +115,7 @@ main {
                 <i class="material-icons mdc-list-item__graphic" aria-hidden="true">{icon}</i>
               {/if}
 
-              {#if label}
+              {#if label && isNotMini}
                 <span class="mdc-list-item__text">{label}</span>
               {/if}
             </a>
