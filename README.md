@@ -62,7 +62,7 @@ Dialog [
 
 Drawer (title, subtitle, menuItems, toggle, modal, dismissible, hasTopAppBar, isFullHeightMenu, hideForPhonesOnly, hideForTablet, miniMenu)
 
-Fab (icon, label, url)
+Fab (icon, label, url, mini, extended, action)
 
 IconButton (icon, ariaLabel)
 
