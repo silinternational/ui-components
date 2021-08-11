@@ -9,76 +9,66 @@
     toggle: true,
     menuItems: [
       {},
-			{
-				url: './',
-        icon: 'account_circle',
-				label: 'reload'
-			},
-			{
-				url: './',
-        icon: 'face',
-				label: 'reload'
-			},
       {
-				url: './',
+        url: './',
+        icon: 'account_circle',
+        label: 'reload',
+      },
+      {
+        url: './',
+        icon: 'face',
+        label: 'reload',
+      },
+      {
+        url: './',
         icon: 'add',
-				label: 'reload'
-			},
-			{
-				url: './',
+        label: 'reload',
+      },
+      {
+        url: './',
         icon: 'money',
-				label: 'reload',
-        button: true
-			}
-		]
-  }
+        label: 'reload',
+        button: true,
+      },
+    ],
+  };
 </script>
 
-<Meta
-  title="Molecule/Drawer"
-  component={Drawer}
-/>
+<Meta title='Molecule/Drawer' component={Drawer} />
 
 <Template let:args>
   <body>
     <Drawer {...args}>
-      <span class="pointer" slot="header">
-        <img class="w-100" src="/logo.png" alt="logo">
-        <Button on:click={() => args.toggle = !args.toggle}>Toggle drawer</Button>
+      <span class='pointer' slot='header'>
+        <img class='w-100' src='/logo.png' alt='logo' />
+        <Button on:click={() => (args.toggle = !args.toggle)} >Toggle drawer</Button>
       </span>
 
-      <Button on:click={() => args.toggle = !args.toggle}>Toggle drawer</Button>
-
+      <Button on:click={() => (args.toggle = !args.toggle)} >Toggle drawer</Button>
     </Drawer>
   </body>
 </Template>
 
+<Story name='Default' {args} />
+
 <Story
-  name="Default"
-  {args}
+  name='Subtitle'
+  args={copyAndModifyArgs(args, { subtitle: 'subtitle' })}
 />
 
 <Story
-  name="Subtitle"
-  args={copyAndModifyArgs(args, {subtitle: 'subtitle'})}
+  name='Dismissible'
+  args={copyAndModifyArgs(args, { dismissible: true })}
 />
 
 <Story
-  name="Dismissible"
-  args={copyAndModifyArgs(args, {dismissible: true})}
+  name='HideForTablets'
+  args={copyAndModifyArgs(args, { hideForTablets: true, modal: true })}
 />
 
 <Story
-  name="HideForTablets"
-  args={copyAndModifyArgs(args, {hideForTablets: true, modal: true})}
+  name='hideForPhonesOnly'
+  args={copyAndModifyArgs(args, { hideForPhonesOnly: true, modal: true })}
 />
 
-<Story
-  name="hideForPhonesOnly"
-  args={copyAndModifyArgs(args, {hideForPhonesOnly: true, modal: true})}
-/>
-
-<Story
-  name="miniMenu"
-  args={copyAndModifyArgs(args, {miniMenu: true})}
-/>
+<Story name='miniMenu' args={copyAndModifyArgs(args, { miniMenu: true })} />
