@@ -25,12 +25,16 @@ let mdcDrawer = {}
 let mdcList = {}
 let element = {}
 let listElement = {}
+let mainContentEl = {}
 let isNotMini
 
 onMount(() => {
   
   if (modal || dismissible) {
     mdcDrawer = new MDCDrawer(element)
+
+    //MDC docs: restores focus to first focusable element when drawer closes
+    document.body.addEventListener('MDCDrawer:closed', () => mainContentEl.querySelector('input, button').focus())
     
     showAppropriateThings()
 
@@ -66,6 +70,12 @@ const showAppropriateDrawer = () => {
     isDesktop() && !dismissible ? showStandardDrawer() : showModalDrawer()
   }
 }
+
+const onListClick = e => {
+  modal && closeDrawer()
+  dismissible && mainContentEl.querySelector('input, button').focus()
+}
+
 const showAppropriateSizeMenu = () => isNotMini = isAboveMobile() || !miniMenu
 const showModalDrawer = () => modal = true
 const showStandardDrawer = () => modal = false
@@ -111,7 +121,7 @@ main {
   <div class="mdc-drawer__content">
     <!-- override built-in padding so height 100 works correctly without creating a vertical scroller -->
     <!-- changing the list to flex causes the margins to not collapse -->
-    <nav class="mdc-list flex column p-0" class:h-100={isFullHeightMenu} on:click={closeDrawer} bind:this={listElement}>
+    <nav class="mdc-list flex column p-0" class:h-100={isFullHeightMenu} on:click={onListClick} bind:this={listElement}>
       {#each menuItems as {icon, label, url, hide, button}, i}
         {#if label === '--break--'}
           <span class="grow-1" />
@@ -151,7 +161,7 @@ main {
     </TopAppBar>
   {/if}
 
-  <main class="h-100" id="main-drawer-content">
+  <main class="h-100" id="main-drawer-content" bind:this={mainContentEl}>
     <div class:mdc-top-app-bar--dense-fixed-adjust={hasTopAppBar} class="h-100">
       <slot />
     </div>
