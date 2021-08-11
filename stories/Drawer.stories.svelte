@@ -70,12 +70,12 @@
 
 <Story
   name="HideForTablets"
-  args={copyAndModifyArgs(args, {hideForPhonesOnly: false})}
+  args={copyAndModifyArgs(args, {hideForTablets: true, modal: true})}
 />
 
 <Story
   name="hideForPhonesOnly"
-  args={copyAndModifyArgs(args, {hideForPhonesOnly: true})}
+  args={copyAndModifyArgs(args, {hideForPhonesOnly: true, modal: true})}
 />
 
 <Story
