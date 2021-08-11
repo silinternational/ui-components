@@ -12,14 +12,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - non link variation of Fab when url prop is empty
 - hideForPhonesOnly, hideForTablet, miniMenu to Drawer
 
+### Fixed
+- bug preventing standard nagivation Drawer
+
+### BREAKING CHANGES
 ### Removed
 - hideForMobile from Drawer
 
 ### Changed
 - all boolean props in Drawer are now false by default
-
-### Fixed
-- bug preventing standard nagivation Drawer
 
 ## [2.6.0](https://github.com/silinternational/ui-components/releases/tag/v2.6.0) - 2021-08-04
 ### Added
