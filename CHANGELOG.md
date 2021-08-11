@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - hideForPhonesOnly, hideForTablet, miniMenu to Drawer
 
 ### Fixed
-- bug preventing standard nagivation Drawer
+- bug preventing standard navigation Drawer
 
 ### BREAKING CHANGES
 ### Removed
