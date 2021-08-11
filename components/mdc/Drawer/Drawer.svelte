@@ -2,6 +2,7 @@
 <script>
 import { isAboveTablet as isDesktop, isAboveMobile } from '../breakpoints'
 import { MDCDrawer } from '@material/drawer'
+import { MDCList } from "@material/list"
 import Button from '../Button'
 import IconButton from '../IconButton/IconButton.svelte'
 import { beforeUrlChange, goto } from '@roxi/routify'
@@ -11,32 +12,41 @@ import TopAppBar from '../TopAppBar'
 export let title = ''
 export let subtitle = ''
 export let menuItems = []
-export let hasTopAppBar = true
-export let modal = false
 export let dismissible = false
-export let toggle = false
-export let isFullHeightMenu = true
-export let hideForTablet = true
+export let hasTopAppBar = false
+export let hideForTablet = false
 export let hideForPhonesOnly = false
+export let isFullHeightMenu = false
 export let miniMenu = false
+export let modal = false
+export let toggle = false
 
 let mdcDrawer = {}
+let mdcList = {}
 let element = {}
+let listElement = {}
 let isNotMini
 
 onMount(() => {
-  mdcDrawer = new MDCDrawer(element)
+  
+  if (modal || dismissible) {
+    mdcDrawer = new MDCDrawer(element)
+    
+    showAppropriateThings()
 
-  showAppropriateThings()
-
-  return () => mdcDrawer.destroy()
+    return () => mdcDrawer.destroy()
+  } else {
+    mdcList = new MDCList(listElement)
+    
+    return () => mdcList.destroy()
+  }
+  
 })
 
 const isMenuItemActive = (currentUrl, menuItemUrl) => currentUrl === menuItemUrl
 
 $: currentUrl = window.location.pathname
 $: toggle, toggleDrawer()
-$: !dismissible && showModalDrawer() //prevents error if neither is selected
 
 $beforeUrlChange(({ url }) => {
   currentUrl = url
@@ -101,12 +111,12 @@ main {
   <div class="mdc-drawer__content">
     <!-- override built-in padding so height 100 works correctly without creating a vertical scroller -->
     <!-- changing the list to flex causes the margins to not collapse -->
-    <nav class="mdc-list flex column p-0" class:h-100={isFullHeightMenu} on:click={closeDrawer}>
+    <nav class="mdc-list flex column p-0" class:h-100={isFullHeightMenu} on:click={closeDrawer} bind:this={listElement}>
       {#each menuItems as {icon, label, url, hide, button}, i}
         {#if label === '--break--'}
           <span class="grow-1" />
         {:else if !hide}
-          {#if url && button && isNotMini}
+          {#if button && isNotMini}
            <Button class="m-1" raised prependIcon={icon} {url} >{label}</Button>
           {:else if button}
             <IconButton class="mdc-theme--primary pl-1" {icon} ariaLabel={label} on:click={() => $goto(url)}/>
