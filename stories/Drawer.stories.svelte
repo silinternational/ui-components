@@ -63,7 +63,7 @@
 
 <Story
   name='HideForTablets'
-  args={copyAndModifyArgs(args, { hideForTablets: true, modal: true })}
+  args={copyAndModifyArgs(args, { hideForTablet: true, modal: true })}
 />
 
 <Story
