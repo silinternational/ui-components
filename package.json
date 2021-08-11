@@ -8,6 +8,18 @@
     "dev": "sass components/global.scss components/global.css; start-storybook -p 6007",
     "build": "sass components/global.scss components/global.css; build-storybook"
   },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/silinternational/ui-components.git"
@@ -32,6 +44,7 @@
   },
   "devDependencies": {
     "@roxi/routify": "^2.x",
+    "@semantic-release/git": "^9.0.0",
     "@storybook/addon-actions": "^6.3.2",
     "@storybook/addon-docs": "^6.3.2",
     "@storybook/addon-essentials": "^6.3.2",
@@ -46,6 +59,7 @@
     "material-components-web": "^10.0.0",
     "sass": "1.32.x",
     "sass-loader": "^11.0.1",
+    "semantic-release": "^17.4.4",
     "style-loader": "^2.0.0",
     "svelte": "^3.x",
     "svelte-loader": "^3.1.2",
