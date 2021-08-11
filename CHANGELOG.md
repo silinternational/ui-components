@@ -6,10 +6,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-<!-- ## [2.7.0](https://github.com/silinternational/ui-components/releases/tag/v2.7.0) - 2021-08-xx -->
+<!-- ## [3.0.0](https://github.com/silinternational/ui-components/releases/tag/v3.0.0) - 2021-08-xx -->
 ### Added
 - mini, extended and action props to Fab
 - non link variation of Fab when url prop is empty
+- hideForPhonesOnly, hideForTablet, miniMenu to Drawer
+
+### Fixed
+- bug preventing standard navigation Drawer
+
+### BREAKING CHANGES
+### Removed
+- hideForMobile from Drawer
+
+### Changed
+- all boolean props in Drawer are now false by default
 
 ## [2.6.0](https://github.com/silinternational/ui-components/releases/tag/v2.6.0) - 2021-08-04
 ### Added

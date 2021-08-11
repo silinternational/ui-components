@@ -60,7 +60,7 @@ Dialog [
 	Dialog.Alert (open, title, defaultAction), Dialog.Simple(open, title)
 ]
 
-Drawer (title, subtitle, menuItems, toggle, modal, dismissible, hasTopAppBar, isFullHeightMenu, hideForMobile)
+Drawer (title, subtitle, menuItems, toggle, modal, dismissible, hasTopAppBar, isFullHeightMenu, hideForPhonesOnly, hideForTablet, miniMenu)
 
 Fab (icon, label, url, mini, extended, action)
 
