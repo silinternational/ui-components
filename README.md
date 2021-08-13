@@ -53,7 +53,7 @@ Card (secondary, outlined, color, isClickable, noPadding)
 Checkbox (label, checked, disabled, uppercase)
 
 Datatable (label) [
-	Datatable.Data, Datatable.Data.Row, Datatable.Data.Row.Item, Datatable.Header, Datatable.Header.Item
+	Datatable.Data, Datatable.Data.Row (clickable), Datatable.Data.Row.Item, Datatable.Header, Datatable.Header.Item
 ]
 
 Dialog [
