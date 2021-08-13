@@ -7,6 +7,7 @@
   const args = {
     class: '', //only works for global classes
     onSorted: () => {},
+    clickable: false
   }
 
   let loaded = false
@@ -29,7 +30,7 @@
     </Datatable.Header>
 
     <Datatable.Data>
-        <Datatable.Data.Row>
+        <Datatable.Data.Row clickable={args.clickable}>
           <Datatable.Data.Row.Item>item</Datatable.Data.Row.Item>
           <Datatable.Data.Row.Item>today</Datatable.Data.Row.Item>
         </Datatable.Data.Row>
@@ -61,4 +62,9 @@
 <Story
   name="Label"
   args={copyAndModifyArgs(args, {label: 'label'})}
+/>
+
+<Story
+  name="Clickable row"
+  args={copyAndModifyArgs(args, {clickable: 'true'})}
 />
