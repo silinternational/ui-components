@@ -53,16 +53,16 @@ Card (secondary, outlined, color, isClickable, noPadding)
 Checkbox (label, checked, disabled, uppercase)
 
 Datatable (label) [
-	Datatable.Data, Datatable.Data.Row, Datatable.Data.Row.Item, Datatable.Header, Datatable.Header.Item
+	Datatable.Data, Datatable.Data.Row (clickable), Datatable.Data.Row.Item, Datatable.Header, Datatable.Header.Item
 ]
 
 Dialog [
 	Dialog.Alert (open, title, defaultAction), Dialog.Simple(open, title)
 ]
 
-Drawer (title, subtitle, menuItems, toggle, modal, dismissible, hasTopAppBar, isFullHeightMenu, hideForMobile)
+Drawer (title, subtitle, menuItems, toggle, modal, dismissible, hasTopAppBar, isFullHeightMenu, hideForPhonesOnly, hideForTablet, miniMenu)
 
-Fab (icon, label, url)
+Fab (icon, label, url, mini, extended, action)
 
 IconButton (icon, ariaLabel)
 

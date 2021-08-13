@@ -6,6 +6,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.0](https://github.com/silinternational/ui-components/releases/tag/v3.0.0) - 2021-08-13
+### Added
+- mini, extended and action props to Fab
+- non link variation of Fab when url prop is empty
+- hideForPhonesOnly, hideForTablet, miniMenu to Drawer
+- clickable to Datatable.Data.Row
+- $$props.class to all Datatable sub components that didn't already have it.
+- margin & padding global classes m-0px through m-25px and p-0px through p-25px
+- margin & padding x (m or p)x-0px through (m or p)x-25px global classes
+- margin & padding y (m or p)y-0px through (m or p)y-25px global classes
+- margin & padding sides m(side)-(0 to 25)px, p(side)-(0 to 25)px global classes
+
+### Fixed
+- bug preventing standard navigation Drawer
+
+### BREAKING CHANGES
+### Removed
+- hideForMobile from Drawer
+
+### Changed
+- all boolean props in Drawer are now false by default
+
 ## [2.6.0](https://github.com/silinternational/ui-components/releases/tag/v2.6.0) - 2021-08-04
 ### Added
 - hideForMobile prop and optional border-white class in Drawer

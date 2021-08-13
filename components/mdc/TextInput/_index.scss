@@ -10,9 +10,9 @@
 /* MDC textfield floating label */
 .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label
 {
-    color: var(--mdc-theme-primary-variant); /* or primary */
+  color: var(--mdc-theme-primary-variant); /* or primary */
 }
 
-.textfield-radius {    
-    @include textfield.outline-shape-radius(8px);
+.textfield-radius {
+  @include textfield.outline-shape-radius(8px);
 }
