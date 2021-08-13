@@ -27,7 +27,7 @@ $end:  8 !default;
 $properties: (margin: m, padding: p);
 $sides: (top: t, right: r, bottom: b, left: l);
 
-//UNITS: REM !!
+// UNITS: REM !!
 // margin & padding m-0 through m-8, p-0 through p-8
 @each $property, $prop in $properties {
   @for $i from $start through $end {
