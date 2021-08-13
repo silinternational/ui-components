@@ -8,8 +8,9 @@
 /* TODO should be cleaned up later, this code is in multiple files but only needs to be in the master css*/
 
 /* MDC textfield floating label */
-.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
-  color: var(--mdc-theme-primary-variant);
+.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label
+{
+  color: var(--mdc-theme-primary-variant); /* or primary */
 }
 
 .textfield-radius {
