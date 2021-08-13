@@ -27,6 +27,7 @@ $end:  8 !default;
 $properties: (margin: m, padding: p);
 $sides: (top: t, right: r, bottom: b, left: l);
 
+//UNITS: REM !!
 // margin & padding m-1 through m-8, p-1 through p-8
 @each $property, $prop in $properties {
   @for $i from $start through $end {
@@ -62,6 +63,50 @@ $sides: (top: t, right: r, bottom: b, left: l);
     @for $i from $start through $end {
       .#{$prop}#{$name}-#{$i} {
         #{$property}-#{$side}: #{$i}rem;
+      }
+    }
+  }
+}
+
+// UNITS: PIXELS!!
+$startPX: 0 !default;
+$endPX:  25 !default;
+
+// margin & padding m-1px through m-8px, p-1px through p-8px
+@each $property, $prop in $properties {
+  @for $i from $startPX through $endPX {
+    .#{$prop}-#{$i}px {
+      #{$property}: #{$i}px;
+    }
+  }
+}
+
+// margin & padding x (m or p)x-1px through (m or p)x-8px
+@each $property, $prop in $properties {
+	@for $i from $startPX through $endPX {
+		.#{$prop}x-#{$i}px {
+			#{$property}-left: #{$i}px;
+			#{$property}-right: #{$i}px;
+		}
+	}
+}
+
+// margin & padding y (m or p)y-1px through (m or p)y-8px
+@each $property, $prop in $properties {
+	@for $i from $startPX through $endPX {
+		.#{$prop}y-#{$i}px {
+			#{$property}-top: #{$i}px;
+			#{$property}-bottom: #{$i}px;
+		}
+	}
+}
+
+// margin & padding sides m(side)-(1 to 8)px, p(side)-(1 to 8)px
+@each $property, $prop in $properties {
+  @each $side, $name in $sides {
+    @for $i from $startPX through $endPX {
+      .#{$prop}#{$name}-#{$i}px {
+        #{$property}-#{$side}: #{$i}px;
       }
     }
   }
