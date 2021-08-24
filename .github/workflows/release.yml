@@ -26,6 +26,4 @@ jobs:
           TESTINGONE: TESTING
           TESTINGTWO: $TESTING
           TESTINGTHREE: ${secrets.TESTING}
-          TESTINGFOUR: ${{environments.Release.TESTING}}
-          TESTINGFIVE: ${{TESTING}}
-        run: echo "-$TESTING" && echo "ONE-$TESTINGONE" && echo "TWO-$TESTINGTWO" && echo "THREE-$TESTINGTHREE" && echo "FOUR-$TESTINGFOUR" && echo "FIVE-$TESTINGFIVE"
+        run: echo "-$TESTING" && echo "ONE-$TESTINGONE" && echo "TWO-$TESTINGTWO" && echo "THREE-$TESTINGTHREE"
