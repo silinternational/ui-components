@@ -182,7 +182,7 @@ An example of using Drawer:
 
 ### storybook
 Try out our components and see examples at https://silinternational.github.io/ui-components/
-or run storybook locally. Just copy this repo to your machine and run `npm install` then `npm run dev.` Storybook should open a browser window when it finishes building.
+or run storybook locally. Just copy this repo to your machine and run `npm install` then `npm run dev` in your terminal. Storybook should open a browser window when it finishes building.
 
 ### CSS utility classes
 Classes from [global.scss](https://github.com/silinternational/ui-components/blob/develop/components/global.scss) can be applied to all components and even components and elements from your app.
