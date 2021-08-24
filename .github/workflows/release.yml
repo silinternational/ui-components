@@ -21,5 +21,5 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          TESTING: ${{secrets.TESTING}}
+          TESTING: '${{secrets.TESTING}}'
         run: echo "-----------------$TESTING"
