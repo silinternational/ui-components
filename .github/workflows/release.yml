@@ -18,8 +18,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Release
+        shell: bash
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           TESTING: "${{secrets.TESTING}}"
-        run: echo "-----------------$TESTING"
+          TESTINGONE: TESTING
+          TESTINGTWO: $TESTING
+          TESTINGTHREE: ${secrets.TESTING}
+          TESTINGFOUR: ${{environments.Release.TESTING}}
+          TESTINGFIVE: ${{TESTING}}
+        run: echo "-$TESTING" && echo "ONE-$TESTINGONE" && echo "TWO-$TESTINGTWO" && echo "THREE-$TESTINGTHREE" && echo "FOUR-$TESTINGFOUR" && echo "FIVE-$TESTINGFIVE"
