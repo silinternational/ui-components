@@ -3,11 +3,14 @@ on:
   push:
     branches:
       - main
+      - testing
 jobs:
   release:
     name: Release
     runs-on: ubuntu-18.04
     steps:
+      - name: SayHi
+        run: echo "-----------------$TESTING"
       - name: Checkout
         uses: actions/checkout@v1
       - name: Setup Node.js
