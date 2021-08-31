@@ -37,6 +37,15 @@ afterUpdate(() => {
   // As a reactive statement, this would execute before the DOM is updated with the new options list.
   // This makes sure the index is updated AFTER the select list contains the full list of options.
   mdcSelect.selectedIndex = selectedIndex
+  
+  // If options have been provided, give the current processes time to finish
+  // what they're doing, then indicate that this Select is now populated with
+  // options. At this point, it's safe for the selectedID to be initialized.
+  if (options.length > 0) {
+    setTimeout(() => {
+      dispatch('populated')
+    })
+  }
 })
 </script>
 
