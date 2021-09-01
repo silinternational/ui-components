@@ -12,7 +12,8 @@
       {name: 'choice 5', id: '4'},
       {name: 'choice 6', id: '5'}
     ],
-    onChange: e => console.log(e.detail),
+    'on:change': e => console.log(e.detail),
+    'on:populated': () => console.log('it is safe to set selectedID'),
     class: '', //only works for global classes
   }
 </script>
@@ -23,7 +24,7 @@
 />
 
 <Template let:args>
-  <Select {...args} on:change={args.onChange}/>
+  <Select {...args} on:change={args['on:change']} on:populated={args['on:populated']} />
 </Template>
 
 <Story
