@@ -20,4 +20,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           YELLOW: ${{ secrets.HI }}
-        run: echo ${{ secrets.HI }} && echo $GH_TOKEN && echo $YELLOW && echo $NPM_TOKEN && "3-$YELLOW" && npx semantic-release
+        run: echo "one-${{ secrets.HI }}" && echo "twol-$GH_TOKEN" && echo "3-$YELLOW" && echo "4-$NPM_TOKEN"
