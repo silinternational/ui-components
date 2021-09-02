@@ -2,7 +2,7 @@ name: Release
 on:
   push:
     branches:
-      - main
+      - testing
 jobs:
   release:
     name: Release
@@ -20,4 +20,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
+          YELLOW: ${{ secrents.HI }}
+        run: echo $HI && echo "2-$HI" && echo $YELLOW && "3-$YELLOW" && npx semantic-release
