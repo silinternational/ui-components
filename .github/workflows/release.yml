@@ -20,4 +20,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           YELLOW: ${{ secrets.HI }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: echo "one-${{ secrets.HI }}" && echo "twol-$GH_TOKEN" && echo "3-$YELLOW" && echo "4-$NPM_TOKEN"
