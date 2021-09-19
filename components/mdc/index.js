@@ -24,6 +24,7 @@ import {TextArea, TextField} from './TextInput'
 import Tooltip from './Tooltip'
 import TopAppBar from './TopAppBar'
 import { setNotice } from './Snackbar/notice'
+import Menu from './Menu'
 
 export {
   actions,
@@ -46,5 +47,6 @@ export {
   TopAppBar,
   Snackbar,
   Select,
-  setNotice
+  setNotice,
+  Menu
 }
