@@ -1,11 +1,15 @@
 # ui-components
+
 Reusable Svelte components for some internal applications
 
 ### installation
+
 To install to your Svelte project, open your project's root directory in a terminal. Type `npm i @silintl/ui-components --save-dev` and press enter.
 
 ### bundler configuration
+
 Your Svelte project will need the bundler (rollup most likely) configured to compile Sass files. If you are using rollup your plugins in your "rollup.config.js" should look something like this taking special note of postcss and svelte:
+
 ```
 import postcss from 'rollup-plugin-postcss';
 import autoPreprocess from 'svelte-preprocess';
@@ -44,7 +48,8 @@ module.exports = {
 ```
 
 ### components
-A list of all components (subcomponents and js files for interfacing in []) followed by their properties in ():
+
+A list of all components (subcomponents and js files for interfacing in []) followed by their properties in (<property>: <defaultValue>):
 
 Button (disabled, outlined, raised, prependIcon, appendIcon, url)
 
@@ -53,11 +58,11 @@ Card (secondary, outlined, color, isClickable, noPadding)
 Checkbox (label, checked, disabled, uppercase)
 
 Datatable (label) [
-	Datatable.Data, Datatable.Data.Row (clickable), Datatable.Data.Row.Item, Datatable.Header, Datatable.Header.Item
+Datatable.Data, Datatable.Data.Row (clickable), Datatable.Data.Row.Item, Datatable.Header, Datatable.Header.Item
 ]
 
 Dialog [
-	Dialog.Alert (open, title, defaultAction), Dialog.Simple(open, title)
+Dialog.Alert (buttons: [{label: 'cancel', action: 'cancel',class: 'mdc-dialog__button'},{label: 'discard', action: 'discard',class: 'mdc-dialog__button'}], open: false, title: '', defaultAction: 'discard'), Dialog.Simple(open: false, title: '')
 ]
 
 Drawer (title, subtitle, menuItems, toggle, modal, dismissible, hasTopAppBar, isFullHeightMenu, hideForPhonesOnly, hideForTablet, miniMenu)
@@ -67,21 +72,21 @@ Fab (icon, label, url, mini, extended, action)
 IconButton (icon, ariaLabel)
 
 List (twoLine, avatar) [
-	List.Item (activated, graphicURL, graphicAlt, icon, meta, primary, secondary, text, withDivider, nonInteractive, tabindex), List.Divider
+List.Item (activated, graphicURL, graphicAlt, icon, meta, primary, secondary, text, withDivider, nonInteractive, tabindex), List.Divider
 ]
 
 Progress [
-	Progress.Circular, Progress.Linear (indeterminate, value)
+Progress.Circular, Progress.Linear (indeterminate, value)
 ]
 
 Select (options, width, disabled, selectedID)
 
 Snackbar [
-	notice.js
+notice.js
 ]
 
 TabBar [
-	TabBar.Scroller, TabBar.Tab (active, label)
+TabBar.Scroller, TabBar.Tab (active, label)
 ]
 
 TextArea (label, value, placeholder, rows, maxlength, autofocus, rtl)
@@ -89,23 +94,23 @@ TextArea (label, value, placeholder, rows, maxlength, autofocus, rtl)
 TextField (label, value, placeholder, maxlength, autofocus, disabled)
 
 Tooltip (tooltipID, positionX, positionY) [
-	Tooltip.Wrapper (ariaDescribedBy)
+Tooltip.Wrapper (ariaDescribedBy)
 ]
 
 TopAppBar (dense, fixed, navIconBreakpointClass, bgColorIsVariant) [
-	actions.js, title.js
+actions.js, title.js
 ]
 
 Badge (color, borderRadius, padding, bordered)
 
 CustomCard (
-	src, alt, title, icon, disabled, buttons, footerText
+src, alt, title, icon, disabled, buttons, footerText
 )
 
 Form
 
 Page (loading, title, layout, center, noProgress) [
-	Page.Subheader
+Page.Subheader
 ]
 
 StaticChip (bgColor)
@@ -113,11 +118,13 @@ StaticChip (bgColor)
 Tour (steps, data)
 
 ### importing components
+
 After installation and bundler configuration all of the components are ready to be imported.
 
 Just include `import { Button } from '@silintl/ui-components'` in your script section to import Button and any other components you want to use.
 
 ### examples
+
 Here is a demo app with examples of how to use components.
 https://github.com/hobbitronics/svelte-ui-components-app
 
@@ -126,6 +133,7 @@ It was buit from https://github.com/sveltejs/template
 If you are building a single page app with routify then it is recommended to use this template https://github.com/roxiness/routify-starter
 
 An example of using Button and Card:
+
 ```
 <script>
   import { Button, Card } from '@silintl/ui-components'
@@ -143,6 +151,7 @@ An example of using Button and Card:
 ```
 
 An example of using Drawer:
+
 ```
 <script>
   import { actions, Drawer } from '@silintl/ui-components'
@@ -181,11 +190,14 @@ An example of using Drawer:
 ```
 
 ### storybook
+
 Try out our components and see examples at https://silinternational.github.io/ui-components/
 or run storybook locally. Just copy this repo to your machine and run `npm install` then `npm run dev` in your terminal. Storybook should open a browser window when it finishes building.
 
 ### CSS utility classes
+
 Classes from [global.scss](https://github.com/silinternational/ui-components/blob/develop/components/global.scss) can be applied to all components and even components and elements from your app.
 
 ### theming
-If you are using an [MDC theme](https://material.io/develop/web/docs/theming) and [typography](https://material.io/develop/web/components/typography) then import your _index.scss file to the App.svelte file so they get applied to the ui-components.
+
+If you are using an [MDC theme](https://material.io/develop/web/docs/theming) and [typography](https://material.io/develop/web/components/typography) then import your \_index.scss file to the App.svelte file so they get applied to the ui-components.
