@@ -62,7 +62,7 @@ Datatable.Data, Datatable.Data.Row (clickable), Datatable.Data.Row.Item, Datatab
 ]
 
 Dialog [
-Dialog.Alert (buttons: [{label: 'cancel', action: 'cancel',class: 'mdc-dialog__button'},{label: 'discard', action: 'discard',class: 'mdc-dialog__button'}], open: false, title: '', defaultAction: 'discard'), Dialog.Simple(open: false, title: '')
+Dialog.Alert (buttons: [{label: 'cancel', action: 'cancel',class: 'mdc-dialog__button'},{label: 'discard', action: 'discard',class: 'mdc-dialog__button'}], open: false, title: '', defaultAction: 'discard'), Dialog.Simple(items: [], open: false, title: '')
 ]
 
 Drawer (title, subtitle, menuItems, toggle, modal, dismissible, hasTopAppBar, isFullHeightMenu, hideForPhonesOnly, hideForTablet, miniMenu)
