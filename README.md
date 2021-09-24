@@ -70,6 +70,8 @@ List (twoLine, avatar) [
 	List.Item (activated, graphicURL, graphicAlt, icon, meta, primary, secondary, text, withDivider, nonInteractive, tabindex), List.Divider
 ]
 
+Menu (menuItems, menuOpen)
+
 Progress [
 	Progress.Circular, Progress.Linear (indeterminate, value)
 ]
