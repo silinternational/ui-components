@@ -3,7 +3,7 @@
 import { onDestroy, onMount } from 'svelte'
 import { MDCMenu } from '@material/menu'
 import { createEventDispatcher } from 'svelte'
-import { goto } from '@roxi/routify';
+import { goto } from '@roxi/routify'
 
 export let menuItems = []
 export let menuOpen = false
