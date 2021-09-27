@@ -3,330 +3,350 @@
 /*************/
 
 // height and width h-0 through h-100, w-0 through w-100
-$dim-start:	0 !default;
-$dim-end:	100 !default;
-$interval:	5 !default;
-$dimensions: (height: h, width: w);
+$dim-start: 0 !default;
+$dim-end: 100 !default;
+$interval: 5 !default;
+$dimensions: (
+  height: h,
+  width: w,
+);
 
 @each $dimension, $dim in $dimensions {
-	$i: $dim-start;
-	
-	@while $i <= $dim-end {
-		.#{$dim}-#{$i} {
-			#{$dimension}: #{$i}#{'%'};
-				
-			$i: $i + $interval;
-		}
-	}
+  $i: $dim-start;
+
+  @while $i <= $dim-end {
+    .#{$dim}-#{$i} {
+      #{$dimension}: #{$i}#{'%'} !important;
+
+      $i: $i + $interval;
+    }
+  }
 }
 
 // margin and padding
 $start: 0 !default;
-$end:		8 !default;
+$end: 8 !default;
 
-$properties: (margin: m, padding: p);
-$sides: (top: t, right: r, bottom: b, left: l);
+$properties: (
+  margin: m,
+  padding: p,
+);
+$sides: (
+  top: t,
+  right: r,
+  bottom: b,
+  left: l,
+);
 
 // UNITS: REM !!
 // margin & padding m-0 through m-8, p-0 through p-8
 @each $property, $prop in $properties {
-	@for $i from $start through $end {
-		.#{$prop}-#{$i} {
-			#{$property}: #{$i}rem;
-		}
-	}
+  @for $i from $start through $end {
+    .#{$prop}-#{$i} {
+      #{$property}: #{$i}rem !important;
+    }
+  }
 }
 
 // margin & padding x (m or p)x-0 through (m or p)x-8
 @each $property, $prop in $properties {
-	@for $i from $start through $end {
-		.#{$prop}x-#{$i} {
-			#{$property}-left: #{$i}rem;
-			#{$property}-right: #{$i}rem;
-		}
-	}
+  @for $i from $start through $end {
+    .#{$prop}x-#{$i} {
+      #{$property}-left: #{$i}rem !important;
+      #{$property}-right: #{$i}rem !important;
+    }
+  }
 }
 
 // margin & padding y (m or p)y-0 through (m or p)y-8
 @each $property, $prop in $properties {
-	@for $i from $start through $end {
-		.#{$prop}y-#{$i} {
-			#{$property}-top: #{$i}rem;
-			#{$property}-bottom: #{$i}rem;
-		}
-	}
+  @for $i from $start through $end {
+    .#{$prop}y-#{$i} {
+      #{$property}-top: #{$i}rem !important;
+      #{$property}-bottom: #{$i}rem !important;
+    }
+  }
 }
 
 // margin & padding sides m(side)-(0 to 8), p(side)-(0 to 8)
 @each $property, $prop in $properties {
-	@each $side, $name in $sides {
-		@for $i from $start through $end {
-			.#{$prop}#{$name}-#{$i} {
-				#{$property}-#{$side}: #{$i}rem;
-			}
-		}
-	}
+  @each $side, $name in $sides {
+    @for $i from $start through $end {
+      .#{$prop}#{$name}-#{$i} {
+        #{$property}-#{$side}: #{$i}rem !important;
+      }
+    }
+  }
 }
 
 // UNITS: PIXELS!!
 $startPX: 0 !default;
-$endPX:	25 !default;
+$endPX: 25 !default;
 
 // margin & padding m-0px through m-25px, p-0px through p-25px
 @each $property, $prop in $properties {
-	@for $i from $startPX through $endPX {
-		.#{$prop}-#{$i}px {
-			#{$property}: #{$i}px;
-		}
-	}
+  @for $i from $startPX through $endPX {
+    .#{$prop}-#{$i}px {
+      #{$property}: #{$i}px !important;
+    }
+  }
 }
 
 // margin & padding x (m or p)x-0px through (m or p)x-25px
 @each $property, $prop in $properties {
-	@for $i from $startPX through $endPX {
-		.#{$prop}x-#{$i}px {
-			#{$property}-left: #{$i}px;
-			#{$property}-right: #{$i}px;
-		}
-	}
+  @for $i from $startPX through $endPX {
+    .#{$prop}x-#{$i}px {
+      #{$property}-left: #{$i}px !important;
+      #{$property}-right: #{$i}px !important;
+    }
+  }
 }
 
 // margin & padding y (m or p)y-0px through (m or p)y-25px
 @each $property, $prop in $properties {
-	@for $i from $startPX through $endPX {
-		.#{$prop}y-#{$i}px {
-			#{$property}-top: #{$i}px;
-			#{$property}-bottom: #{$i}px;
-		}
-	}
+  @for $i from $startPX through $endPX {
+    .#{$prop}y-#{$i}px {
+      #{$property}-top: #{$i}px !important;
+      #{$property}-bottom: #{$i}px !important;
+    }
+  }
 }
 
 // margin & padding sides m(side)-(0 to 25)px, p(side)-(0 to 25)px
 @each $property, $prop in $properties {
-	@each $side, $name in $sides {
-		@for $i from $startPX through $endPX {
-			.#{$prop}#{$name}-#{$i}px {
-				#{$property}-#{$side}: #{$i}px;
-			}
-		}
-	}
+  @each $side, $name in $sides {
+    @for $i from $startPX through $endPX {
+      .#{$prop}#{$name}-#{$i}px {
+        #{$property}-#{$side}: #{$i}px !important;
+      }
+    }
+  }
 }
 
 // position
 .relative {
-	position: relative;
+  position: relative !important;
 }
 
 .fixed {
-	position: fixed;
+  position: fixed !important;
 }
 
 .absolute {
-	position: absolute;
+  position: absolute !important;
 }
 
 .r-50 {
-	right: 50%;
+  right: 50% !important;
 }
 
 .t-50 {
-	top: 50%;
+  top: 50% !important;
 }
 
-.stick-b{
-	position:fixed;
-	bottom:0px;
+.stick-b {
+  position: fixed !important;
+  bottom: 0px !important;
 }
 
 // z-index z-0 to z-10
 $i: 0;
 
 @for $i from 0 through 10 {
-	.z-#{$i} {
-		z-index: #{$i};
-	}
+  .z-#{$i} {
+    z-index: #{$i} !important;
+  }
 }
 
 // display
 .dib {
-	display: inline-block;
+  display: inline-block !important;
 }
 
 .d-inline {
-	display: inline;
+  display: inline !important;
 }
 
 .d-block {
-	display: block;
+  display: block !important;
+}
+
+//opacity
+.opacity0 {
+  opacity: 0 !important;
+}
+
+.opacity1 {
+  opacity: 1 !important;
 }
 
 // text
 .text-align-start {
-	text-align: start;
+  text-align: start !important;
 }
 
 .text-align-end {
-	text-align: end;
+  text-align: end !important;
 }
 
 .text-align-right {
-	text-align: right;
+  text-align: right !important;
 }
 
 .text-align-left {
-	text-align: left;
+  text-align: left !important;
 }
 
 .text-align-center {
-	text-align: center;
+  text-align: center !important;
 }
 
 .rtl {
-	direction: rtl;
+  direction: rtl !important;
 }
 
 .fs-10 {
-	font-size: 10px;
+  font-size: 10px !important;
 }
 
 .fs-12 {
-	font-size: 12px;
+  font-size: 12px !important;
 }
 
 .fs-14 {
-	font-size: 14px;
+  font-size: 14px !important;
 }
 
 .fs-16 {
-	font-size: 16px;
+  font-size: 16px !important;
 }
 
 .br-8px {
-	border-radius: 8px;
+  border-radius: 8px !important;
 }
 
 .br-16px {
-	border-radius: 16px;
+  border-radius: 16px !important;
 }
 
 .br-50 {
-	border-radius: 50%;
+  border-radius: 50% !important;
 }
 
 .uppercase {
-	text-transform: uppercase;
+  text-transform: uppercase !important;
 }
 
 .capitalize {
-	text-transform: capitalize;
+  text-transform: capitalize !important;
 }
 /* text color */
 .black {
-	color: #2A3032;
+  color: #2a3032 !important;
 }
 
 .gray {
-	color: #666666;
+  color: #666666 !important;
 }
 
 .white {
-	color: white;
+  color: white !important;
 }
 
 /* flex */
 .flex {
-	display: flex;
+  display: flex !important;
 }
 
 .flex-wrap {
-	flex-wrap: wrap;
+  flex-wrap: wrap !important;
 }
 
 .grow-0 {
-	flex-grow: 0;
+  flex-grow: 0 !important;
 }
 .grow-1 {
-	flex-grow: 1;
+  flex-grow: 1 !important;
 }
 .grow-2 {
-	flex-grow: 2;
+  flex-grow: 2 !important;
 }
 
 .shrink-0 {
-	flex-shrink: 0;
+  flex-shrink: 0 !important;
 }
 .shrink-1 {
-	flex-shrink: 1;
+  flex-shrink: 1 !important;
 }
 .shrink-2 {
-	flex-shrink: 2;
+  flex-shrink: 2 !important;
 }
 
 .row {
-	flex-direction: row;
+  flex-direction: row !important;
 }
 
 .column {
-	flex-direction: column;
+  flex-direction: column !important;
 }
 
 .justify-center {
-	justify-content: center;
+  justify-content: center !important;
 }
 
 .justify-between {
-	justify-content: space-between;
+  justify-content: space-between !important;
 }
 
 .justify-around {
-	justify-content: space-around;
+  justify-content: space-around !important;
 }
 
 .justify-end {
-	justify-content: flex-end;
+  justify-content: flex-end !important;
 }
 
 .justify-start {
-	justify-content: flex-start;
+  justify-content: flex-start !important;
 }
 
 .align-items-center {
-	align-items: center;
+  align-items: center !important;
 }
 
 .align-items-end {
-	align-items: flex-end;
+  align-items: flex-end !important;
 }
 
 .align-items-stretch {
-	align-items: stretch;
+  align-items: stretch !important;
 }
 
 .align-items-baseline {
-	align-items: baseline;
+  align-items: baseline !important;
 }
 
 .align-self-auto {
-	align-self: auto;
+  align-self: auto !important;
 }
 
 .align-self-center {
-	align-self: center;
+  align-self: center !important;
 }
 
 .align-self-end {
-	align-self: flex-end;
+  align-self: flex-end !important;
 }
 
 .align-self-strech {
-	align-self: stretch;
+  align-self: stretch !important;
 }
 
 .align-self-baseline {
-	align-self: baseline;
+  align-self: baseline !important;
 }
 
 // misc
 .pointer {
-	cursor: pointer;
+  cursor: pointer !important;
 }
