@@ -92,7 +92,17 @@ Dialog [
 ]
 
 Drawer (
-	title, subtitle, menuItems, toggle, modal, dismissible, hasTopAppBar, isFullHeightMenu, hideForPhonesOnly, hideForTablet, miniMenu
+	title,
+	subtitle,
+	menuItems,
+	toggle,
+	modal,
+	dismissible,
+	hasTopAppBar,
+	isFullHeightMenu,
+	hideForPhonesOnly,
+	hideForTablet,
+	miniMenu
 )
 
 Fab (icon, label, url, mini, extended, action)
@@ -101,13 +111,24 @@ IconButton (icon, ariaLabel)
 
 List (twoLine, avatar) [
 	List.Item (
-		activated, graphicURL, graphicAlt, icon, meta, primary, secondary, text, withDivider, nonInteractive, tabindex
+		activated,
+		graphicURL,
+		graphicAlt,
+		icon,
+		meta,
+		primary,
+		secondary,
+		text,
+		withDivider,
+		nonInteractive,
+		tabindex
 	),
 	List.Divider
 ]
 
 Progress [
-	Progress.Circular, Progress.Linear (indeterminate, value)
+	Progress.Circular,
+	Progress.Linear (indeterminate, value)
 ]
 
 Select (options, width, disabled, selectedID)
