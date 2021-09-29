@@ -51,6 +51,7 @@ module.exports = {
 
 A list of all components (subcomponents and js files for interfacing in []) followed by their properties in (<property>: <defaultValue>):
 
+```
 Button (disabled, outlined, raised, prependIcon, appendIcon, url)
 
 Card (secondary, outlined, color, isClickable, noPadding)
@@ -58,35 +59,65 @@ Card (secondary, outlined, color, isClickable, noPadding)
 Checkbox (label, checked, disabled, uppercase)
 
 Datatable (label) [
-Datatable.Data, Datatable.Data.Row (clickable), Datatable.Data.Row.Item, Datatable.Header, Datatable.Header.Item
+	Datatable.Data,
+	Datatable.Data.Row (clickable),
+	Datatable.Data.Row.Item,
+	Datatable.Header,
+	Datatable.Header.Item
 ]
 
 Dialog [
-Dialog.Alert (buttons: [{label: 'cancel', action: 'cancel',class: 'mdc-dialog__button'},{label: 'discard', action: 'discard',class: 'mdc-dialog__button'}], open: false, title: '', defaultAction: 'discard'), Dialog.Simple(items: [], open: false, title: '')
+	Dialog.Alert (
+		buttons: [
+			{
+				label: 'cancel',
+				action: 'cancel',
+				class: 'mdc-dialog__button'
+			},
+			{
+				label: 'discard',
+				action: 'discard',
+				class: 'mdc-dialog__button'
+			}
+		],
+		open: false,
+		title: '',
+		defaultAction: 'discard'
+	),
+	Dialog.Simple(
+		items: [],
+		open: false,
+		title: ''
+	)
 ]
 
-Drawer (title, subtitle, menuItems, toggle, modal, dismissible, hasTopAppBar, isFullHeightMenu, hideForPhonesOnly, hideForTablet, miniMenu)
+Drawer (
+	title, subtitle, menuItems, toggle, modal, dismissible, hasTopAppBar, isFullHeightMenu, hideForPhonesOnly, hideForTablet, miniMenu
+)
 
 Fab (icon, label, url, mini, extended, action)
 
 IconButton (icon, ariaLabel)
 
 List (twoLine, avatar) [
-List.Item (activated, graphicURL, graphicAlt, icon, meta, primary, secondary, text, withDivider, nonInteractive, tabindex), List.Divider
+	List.Item (
+		activated, graphicURL, graphicAlt, icon, meta, primary, secondary, text, withDivider, nonInteractive, tabindex
+	),
+	List.Divider
 ]
 
 Progress [
-Progress.Circular, Progress.Linear (indeterminate, value)
+	Progress.Circular, Progress.Linear (indeterminate, value)
 ]
 
 Select (options, width, disabled, selectedID)
 
 Snackbar [
-notice.js
+	notice.js
 ]
 
 TabBar [
-TabBar.Scroller, TabBar.Tab (active, label)
+	TabBar.Scroller, TabBar.Tab (active, label)
 ]
 
 TextArea (label, value, placeholder, rows, maxlength, autofocus, rtl)
@@ -94,28 +125,29 @@ TextArea (label, value, placeholder, rows, maxlength, autofocus, rtl)
 TextField (label, value, placeholder, maxlength, autofocus, disabled)
 
 Tooltip (tooltipID, positionX, positionY) [
-Tooltip.Wrapper (ariaDescribedBy)
+	Tooltip.Wrapper (ariaDescribedBy)
 ]
 
 TopAppBar (dense, fixed, navIconBreakpointClass, bgColorIsVariant) [
-actions.js, title.js
+	actions.js, title.js
 ]
 
 Badge (color, borderRadius, padding, bordered)
 
 CustomCard (
-src, alt, title, icon, disabled, buttons, footerText
+	src, alt, title, icon, disabled, buttons, footerText
 )
 
 Form
 
-Page (loading, title, layout, center, noProgress) [
-Page.Subheader
+Page (loading, title, layout, center, noProgress)[
+	Page.Subheader
 ]
 
 StaticChip (bgColor)
 
 Tour (steps, data)
+```
 
 ### importing components
 
