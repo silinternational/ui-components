@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Menu to components
+- Menu story to storybook
+
+### Changed
+
+- README index with Menu and default values for Dialog
+- README index formatting
+- Dialog story event names
+- let prettier redo some formatting
+
 ## [3.1.0](https://github.com/silinternational/ui-components/releases/tag/v3.1.0) - 2021-09-01
 
 ### Added
