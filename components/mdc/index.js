@@ -16,6 +16,7 @@ import IconButton from './IconButton'
 import './icons'
 import { isAboveMobile, isAboveTablet } from './breakpoints'
 import List from './List'
+import Menu from './Menu'
 import Progress from './Progress'
 import Select from './Select'
 import Snackbar from './Snackbar'
@@ -38,6 +39,7 @@ export {
   isAboveMobile,
   isAboveTablet,
   List,
+  Menu,
   Progress,
   TabBar,
   TextArea,
