@@ -16,6 +16,7 @@ import IconButton from './IconButton'
 import './icons'
 import { isAboveMobile, isAboveTablet } from './breakpoints'
 import List from './List'
+import Menu from './Menu'
 import Progress from './Progress'
 import Select from './Select'
 import Snackbar from './Snackbar'
@@ -24,7 +25,6 @@ import {TextArea, TextField} from './TextInput'
 import Tooltip from './Tooltip'
 import TopAppBar from './TopAppBar'
 import { setNotice } from './Snackbar/notice'
-import Menu from './Menu'
 
 export {
   actions,
@@ -39,6 +39,7 @@ export {
   isAboveMobile,
   isAboveTablet,
   List,
+  Menu,
   Progress,
   TabBar,
   TextArea,
@@ -47,6 +48,5 @@ export {
   TopAppBar,
   Snackbar,
   Select,
-  setNotice,
-  Menu
+  setNotice
 }
