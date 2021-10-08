@@ -26,12 +26,6 @@ onMount(() => {
 const focus = (node) => autofocus && node.focus()
 </script>
 
-<style>
-.NotoSans {
-  font-family: 'Noto Sans' !important;
-}
-</style>
-
 <label
   class="mdc-text-field mdc-text-field--outlined {$$props.class} textfield-radius"
   class:mdc-text-field--no-label={!label}
@@ -40,7 +34,7 @@ const focus = (node) => autofocus && node.focus()
 >
   <input
     type="text"
-    class="mdc-text-field__input NotoSans"
+    class="mdc-text-field__input"
     aria-labelledby={labelID}
     bind:value
     use:focus

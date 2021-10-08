@@ -50,9 +50,6 @@ const focus = async (node) => {
 label {
   width: 100%;
 }
-.NotoSans {
-  font-family: 'Noto Sans' !important;
-}
 </style>
 
 <label
@@ -63,7 +60,7 @@ label {
   bind:this={element}
 >
   <textarea
-    class="mdc-text-field__input NotoSans"
+    class="mdc-text-field__input"
     class:rtl
     aria-labelledby={labelID}
     {rows}
