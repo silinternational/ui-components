@@ -25,7 +25,17 @@ $: tabindex = isClickable ? '0' : undefined
 }
 </style>
 
-<div {tabindex} class="mdc-card mdc-typography {$$props.class}" style="background-color: {color}" class:mdc-card--outlined={outlined} class:mdc-card__primary-action={isClickable} on:click on:mousedown on:mouseup on:keypress>
+<div
+  {tabindex}
+  class="mdc-card mdc-typography {$$props.class}"
+  style="background-color: {color}"
+  class:mdc-card--outlined={outlined}
+  class:mdc-card__primary-action={isClickable}
+  on:click
+  on:mousedown
+  on:mouseup
+  on:keypress
+>
   {#if secondary.length}
     <div class="secondary-text uppercase gray" class:noPadding>
       {secondary}

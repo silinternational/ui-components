@@ -2,7 +2,7 @@
 <script>
 import { isAboveTablet as isDesktop, isAboveMobile } from '../breakpoints'
 import { MDCDrawer } from '@material/drawer'
-import { MDCList } from "@material/list"
+import { MDCList } from '@material/list'
 import Button from '../Button'
 import IconButton from '../IconButton/IconButton.svelte'
 import { beforeUrlChange, goto } from '@roxi/routify'
@@ -29,22 +29,20 @@ let mainContentEl = {}
 let isNotMini
 
 onMount(() => {
-  
   if (modal || dismissible) {
     mdcDrawer = new MDCDrawer(element)
 
     //MDC docs: restores focus to first focusable element when drawer closes
     document.body.addEventListener('MDCDrawer:closed', () => mainContentEl.querySelector('input, button').focus())
-    
+
     showAppropriateThings()
 
     return () => mdcDrawer.destroy()
   } else {
     mdcList = new MDCList(listElement)
-    
+
     return () => mdcList.destroy()
   }
-  
 })
 
 const isMenuItemActive = (currentUrl, menuItemUrl) => currentUrl === menuItemUrl
@@ -71,16 +69,16 @@ const showAppropriateDrawer = () => {
   }
 }
 
-const onListClick = e => {
+const onListClick = (e) => {
   modal && closeDrawer()
   dismissible && mainContentEl.querySelector('input, button').focus()
 }
 
-const showAppropriateSizeMenu = () => isNotMini = isAboveMobile() || !miniMenu
-const showModalDrawer = () => modal = true
-const showStandardDrawer = () => modal = false
-const closeDrawer = () => mdcDrawer.open = false
-const toggleDrawer = () => mdcDrawer.open = !mdcDrawer.open
+const showAppropriateSizeMenu = () => (isNotMini = isAboveMobile() || !miniMenu)
+const showModalDrawer = () => (modal = true)
+const showStandardDrawer = () => (modal = false)
+const closeDrawer = () => (mdcDrawer.open = false)
+const toggleDrawer = () => (mdcDrawer.open = !mdcDrawer.open)
 </script>
 
 <style>
@@ -109,12 +107,17 @@ main {
 }
 </style>
 
-<svelte:window on:resize={showAppropriateThings}/>
+<svelte:window on:resize={showAppropriateThings} />
 
-<aside class="mdc-drawer {$$props.class}" class:mdc-drawer--modal={modal} class:mdc-drawer--dismissible={dismissible} bind:this={element}>
+<aside
+  class="mdc-drawer {$$props.class}"
+  class:mdc-drawer--modal={modal}
+  class:mdc-drawer--dismissible={dismissible}
+  bind:this={element}
+>
   {#if title || subtitle}
     <div class="mdc-drawer__header mt-1">
-      <slot name="header"/>
+      <slot name="header" />
     </div>
   {/if}
 
@@ -122,17 +125,22 @@ main {
     <!-- override built-in padding so height 100 works correctly without creating a vertical scroller -->
     <!-- changing the list to flex causes the margins to not collapse -->
     <nav class="mdc-list flex column p-0" class:h-100={isFullHeightMenu} on:click={onListClick} bind:this={listElement}>
-      {#each menuItems as {icon, label, url, hide, button}, i}
+      {#each menuItems as { icon, label, url, hide, button }, i}
         {#if label === '--break--'}
           <span class="grow-1" />
         {:else if !hide}
           {#if button && isNotMini}
-           <Button class="m-1" raised prependIcon={icon} {url} >{label}</Button>
+            <Button class="m-1" raised prependIcon={icon} {url}>{label}</Button>
           {:else if button}
-            <IconButton class="mdc-theme--primary pl-1" {icon} ariaLabel={label} on:click={() => $goto(url)}/>
+            <IconButton class="mdc-theme--primary pl-1" {icon} ariaLabel={label} on:click={() => $goto(url)} />
           {:else if url}
-            <a class="mdc-list-item" class:mdc-list-item--activated={isMenuItemActive(currentUrl, url)} href={url}
-              aria-current={isMenuItemActive(currentUrl, url) ? "page" : null} tabindex={i === 0 ? 0 : undefined}>
+            <a
+              class="mdc-list-item"
+              class:mdc-list-item--activated={isMenuItemActive(currentUrl, url)}
+              href={url}
+              aria-current={isMenuItemActive(currentUrl, url) ? 'page' : null}
+              tabindex={i === 0 ? 0 : undefined}
+            >
               <span class="mdc-list-item__ripple" />
               {#if icon}
                 <i class="material-icons mdc-list-item__graphic" aria-hidden="true">{icon}</i>
@@ -143,7 +151,10 @@ main {
               {/if}
             </a>
           {:else}
-            <hr class="mdc-list-divider mdc-list-divider--inset-leading mdc-list-divider--inset-trailing" role="separator" />
+            <hr
+              class="mdc-list-divider mdc-list-divider--inset-leading mdc-list-divider--inset-trailing"
+              role="separator"
+            />
           {/if}
         {/if}
       {/each}
@@ -155,9 +166,15 @@ main {
 
 <div class="app-content relative">
   {#if hasTopAppBar}
-    <TopAppBar dense fixed bgColorIsVariant on:nav={toggleDrawer} navIconBreakpointClass={!dismissible && "hide-above-tablet"} >
-      <slot name="TopAppBar"/>
-      <slot slot="actions" name="actions"/>
+    <TopAppBar
+      dense
+      fixed
+      bgColorIsVariant
+      on:nav={toggleDrawer}
+      navIconBreakpointClass={!dismissible && 'hide-above-tablet'}
+    >
+      <slot name="TopAppBar" />
+      <slot slot="actions" name="actions" />
     </TopAppBar>
   {/if}
 

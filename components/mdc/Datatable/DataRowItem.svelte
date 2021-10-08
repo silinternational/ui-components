@@ -2,5 +2,7 @@
 export let numeric = false
 export let colspan = 1
 </script>
-  
-<td class="mdc-data-table__cell text-align-left {$$props.class}" class:mdc-data-table__cell--numeric={numeric} {colspan}><slot /></td>
+
+<td class="mdc-data-table__cell text-align-left {$$props.class}" class:mdc-data-table__cell--numeric={numeric} {colspan}
+  ><slot /></td
+>

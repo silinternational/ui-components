@@ -9,7 +9,6 @@ onMount(() => {
   const scroller = new MDCTabScroller(element)
   return () => scroller.destroy()
 })
-
 </script>
 
 <div class="mdc-tab-scroller" bind:this={element}>

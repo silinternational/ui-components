@@ -11,7 +11,6 @@ onMount(() => {
   const indicator = new MDCTabIndicator(element)
   return () => indicator.destroy()
 })
-
 </script>
 
 <style>
@@ -21,5 +20,5 @@ onMount(() => {
 </style>
 
 <span class="mdc-tab-indicator" class:mdc-tab-indicator--active={active} bind:this={element}>
-  <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+  <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" />
 </span>

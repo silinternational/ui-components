@@ -18,16 +18,24 @@ onMount(() => {
 })
 </script>
 
-<div role="progressbar" class="mdc-linear-progress {$$props.class}" class:mdc-linear-progress--indeterminate={indeterminate} aria-label="Progress Bar"
-     aria-valuemin="0" aria-valuemax="1" aria-valuenow="0" bind:this={element}>
+<div
+  role="progressbar"
+  class="mdc-linear-progress {$$props.class}"
+  class:mdc-linear-progress--indeterminate={indeterminate}
+  aria-label="Progress Bar"
+  aria-valuemin="0"
+  aria-valuemax="1"
+  aria-valuenow="0"
+  bind:this={element}
+>
   <div class="mdc-linear-progress__buffer">
-    <div class="mdc-linear-progress__buffer-bar"></div>
-    <div class="mdc-linear-progress__buffer-dots"></div>
+    <div class="mdc-linear-progress__buffer-bar" />
+    <div class="mdc-linear-progress__buffer-dots" />
   </div>
   <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar bar-color">
-    <span class="mdc-linear-progress__bar-inner"></span>
+    <span class="mdc-linear-progress__bar-inner" />
   </div>
   <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar bar-color">
-    <span class="mdc-linear-progress__bar-inner"></span>
+    <span class="mdc-linear-progress__bar-inner" />
   </div>
 </div>
