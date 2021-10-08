@@ -57,7 +57,7 @@
     "@storybook/svelte": "^6.3.2",
     "css-loader": "^5.2.6",
     "material-components-web": "^10.0.0",
-    "prettier": "^2.2.1",
+    "prettier": "^2.4.1",
     "prettier-plugin-svelte": "^2.4.0",
     "sass": "1.32.x",
     "sass-loader": "^11.0.1",
