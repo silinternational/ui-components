@@ -1,0 +1,6 @@
+# Ignore artifacts:
+.routify
+dist
+
+# Ignore build dependencies
+node_modules

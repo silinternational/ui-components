@@ -1,0 +1,11 @@
+{
+    "printWidth": 120,
+    "semi": false,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "useTabs": false,
+
+    "svelteSortOrder": "options-scripts-styles-markup",
+    "svelteAllowShorthand": true,
+    "svelteIndentScriptAndStyle": false
+}
