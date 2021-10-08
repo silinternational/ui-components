@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo test",
+    "format-all": "npx prettier --write .",
     "dev": "sass components/global.scss components/global.css; start-storybook -p 6007",
     "build": "sass components/global.scss components/global.css; build-storybook"
   },
