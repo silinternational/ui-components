@@ -1,22 +1,16 @@
 <script>
-  import { Meta, Template, Story } from "@storybook/addon-svelte-csf"
-  import { StaticChip } from "../"
+import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
+import { StaticChip } from '../'
 
-  const args = {
-    class: '', //only works for global classes
-  }
+const args = {
+  class: '', //only works for global classes
+}
 </script>
 
-<Meta
-  title="Atoms/StaticChip"
-  component={StaticChip}
-/>
+<Meta title="Atoms/StaticChip" component={StaticChip} />
 
 <Template let:args>
   <StaticChip {...args}>A Chip</StaticChip>
 </Template>
 
-<Story
-  name="Default"
-  {args}
-/>
+<Story name="Default" {args} />

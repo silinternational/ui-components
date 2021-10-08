@@ -12,7 +12,7 @@ let element = {}
 onMount(() => {
   const dataTable = new MDCDataTable(element)
 
-  dataTable.listen('MDCDataTable:sorted', event => {
+  dataTable.listen('MDCDataTable:sorted', (event) => {
     dispatch('sorted', event.detail)
   })
 

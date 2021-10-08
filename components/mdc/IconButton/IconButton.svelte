@@ -9,15 +9,13 @@ export let ariaLabel
 let element = {}
 onMount(() => {
   const ripple = new MDCRipple(element)
-  
+
   ripple.unbounded = true
-  
+
   return () => ripple.destroy()
 })
 </script>
 
-<button class="mdc-icon-button material-icons {$$props.class}"
-        aria-label={ariaLabel}
-        on:click
-        bind:this={element}
-        >{icon}</button>
+<button class="mdc-icon-button material-icons {$$props.class}" aria-label={ariaLabel} on:click bind:this={element}
+  >{icon}</button
+>

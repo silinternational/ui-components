@@ -1,15 +1,12 @@
 <script>
-  import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import { IconButton } from "../components/mdc";
+import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
+import { IconButton } from '../components/mdc'
 </script>
 
-<Meta
-  title="Atoms/IconButton"
-  component={IconButton}
-/>
+<Meta title="Atoms/IconButton" component={IconButton} />
 
 <Template let:args>
-  <IconButton {...args} on:click={args['on:click']}/>
+  <IconButton {...args} on:click={args['on:click']} />
 </Template>
 
 <Story

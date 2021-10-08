@@ -1,0 +1,12 @@
+# Ignore artifacts:
+dist
+
+# Ignore build dependencies
+node_modules
+
+#Ignore github
+.github
+
+#Ignore storybook
+.storybook
+storybook-static

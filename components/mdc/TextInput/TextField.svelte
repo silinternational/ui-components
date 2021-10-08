@@ -23,21 +23,33 @@ onMount(() => {
   return () => mdcTextField.destroy()
 })
 
-const focus = node => autofocus && node.focus()
+const focus = (node) => autofocus && node.focus()
 </script>
 
-<label class="mdc-text-field mdc-text-field--outlined {$$props.class} textfield-radius"
-       class:mdc-text-field--no-label={!label}
-       class:mdc-text-field--disabled={disabled}
-       bind:this={element}>
-  <input type="text" class="mdc-text-field__input" aria-labelledby={labelID} bind:value use:focus on:blur {maxlength} {disabled} {placeholder}>
+<label
+  class="mdc-text-field mdc-text-field--outlined {$$props.class} textfield-radius"
+  class:mdc-text-field--no-label={!label}
+  class:mdc-text-field--disabled={disabled}
+  bind:this={element}
+>
+  <input
+    type="text"
+    class="mdc-text-field__input"
+    aria-labelledby={labelID}
+    bind:value
+    use:focus
+    on:blur
+    {maxlength}
+    {disabled}
+    {placeholder}
+  />
   <span class="mdc-notched-outline">
-    <span class="mdc-notched-outline__leading"></span>
+    <span class="mdc-notched-outline__leading" />
     {#if label}
       <span class="mdc-notched-outline__notch">
         <span class="mdc-floating-label" id={labelID}>{label}</span>
       </span>
     {/if}
-    <span class="mdc-notched-outline__trailing"></span>
+    <span class="mdc-notched-outline__trailing" />
   </span>
 </label>

@@ -1,18 +1,15 @@
 <script>
-  import { Meta, Template, Story } from "@storybook/addon-svelte-csf"
-  import { TabBar } from "../components/mdc"
+import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
+import { TabBar } from '../components/mdc'
 
-  const args = {
-    tab: 0,
-    'on:click': () => alert('you tabbed'),
-    class: '' //only works for global classes
-  }
+const args = {
+  tab: 0,
+  'on:click': () => alert('you tabbed'),
+  class: '', //only works for global classes
+}
 </script>
 
-<Meta
-  title="Atoms/TabBar"
-  component={TabBar}
-/>
+<Meta title="Atoms/TabBar" component={TabBar} />
 
 <Template let:args>
   <TabBar {...args}>
@@ -24,7 +21,4 @@
   </TabBar>
 </Template>
 
-<Story
-  name="Default"
-  {args}
-/>
+<Story name="Default" {args} />

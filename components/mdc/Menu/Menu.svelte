@@ -51,7 +51,8 @@ const closeMenuHandler = () => {
         class:mdc-list-item--activated={isMenuItemActive(currentUrl, url)}
         aria-current={isMenuItemActive(currentUrl, url) ? 'page' : null}
         tabindex={i === 0 ? 0 : undefined}
-        on:blur={closeMenuHandler}>
+        on:blur={closeMenuHandler}
+      >
         <span class="mdc-list-item__ripple" />
         {#if icon}
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">{icon}</i>

@@ -37,12 +37,12 @@ const resize = () => {
   height = Math.min(maxHeight, textarea.scrollHeight)
 }
 
-const focus = async node => {
+const focus = async (node) => {
   if (autofocus) {
     await tick()
-    
+
     node.focus()
-  } 
+  }
 }
 </script>
 
@@ -52,19 +52,34 @@ label {
 }
 </style>
 
-<label class="mdc-text-field mdc-text-field--outlined mdc-text-field--textarea {$$props.class} textfield-radius"
-       class:mdc-text-field--no-label={!label}
-       class:mdc-text-field--label-floating={label}
-       class:mdc-text-field--with-internal-counter={maxlength}
-       bind:this={element}>
-
-  <textarea class="mdc-text-field__input" class:rtl aria-labelledby={labelID} {rows} {maxlength} {placeholder}
-            bind:value use:focus bind:this={textarea} style="height:{height}px" on:input={resize} on:keydown on:focus on:blur />
+<label
+  class="mdc-text-field mdc-text-field--outlined mdc-text-field--textarea {$$props.class} textfield-radius"
+  class:mdc-text-field--no-label={!label}
+  class:mdc-text-field--label-floating={label}
+  class:mdc-text-field--with-internal-counter={maxlength}
+  bind:this={element}
+>
+  <textarea
+    class="mdc-text-field__input"
+    class:rtl
+    aria-labelledby={labelID}
+    {rows}
+    {maxlength}
+    {placeholder}
+    bind:value
+    use:focus
+    bind:this={textarea}
+    style="height:{height}px"
+    on:input={resize}
+    on:keydown
+    on:focus
+    on:blur
+  />
   {#if maxlength}
     <span class="mdc-text-field-character-counter">0 / {maxlength}</span>
   {/if}
   <span class="mdc-notched-outline">
-    <span class="mdc-notched-outline__leading"></span>
+    <span class="mdc-notched-outline__leading" />
 
     {#if label}
       <span class="mdc-notched-outline__notch">
@@ -74,6 +89,6 @@ label {
       </span>
     {/if}
 
-    <span class="mdc-notched-outline__trailing"></span>
+    <span class="mdc-notched-outline__trailing" />
   </span>
 </label>
