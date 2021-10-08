@@ -26,17 +26,11 @@ onMount(() => {
 const focus = node => autofocus && node.focus()
 </script>
 
-<style>
-  .NotoSans {
-    font-family: 'Noto Sans' !important;
-  }
-</style>
-
 <label class="mdc-text-field mdc-text-field--outlined {$$props.class} textfield-radius"
        class:mdc-text-field--no-label={!label}
        class:mdc-text-field--disabled={disabled}
        bind:this={element}>
-  <input type="text" class="mdc-text-field__input NotoSans" aria-labelledby={labelID} bind:value use:focus on:blur {maxlength} {disabled} {placeholder}>
+  <input type="text" class="mdc-text-field__input" aria-labelledby={labelID} bind:value use:focus on:blur {maxlength} {disabled} {placeholder}>
   <span class="mdc-notched-outline">
     <span class="mdc-notched-outline__leading"></span>
     {#if label}

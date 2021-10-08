@@ -50,9 +50,6 @@ const focus = async node => {
 label {
   width: 100%;
 }
-.NotoSans {
-  font-family: 'Noto Sans' !important;
-}
 </style>
 
 <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--textarea {$$props.class} textfield-radius"
@@ -61,7 +58,7 @@ label {
        class:mdc-text-field--with-internal-counter={maxlength}
        bind:this={element}>
 
-  <textarea class="mdc-text-field__input NotoSans" class:rtl aria-labelledby={labelID} {rows} {maxlength} {placeholder}
+  <textarea class="mdc-text-field__input" class:rtl aria-labelledby={labelID} {rows} {maxlength} {placeholder}
             bind:value use:focus bind:this={textarea} style="height:{height}px" on:input={resize} on:keydown on:focus on:blur />
   {#if maxlength}
     <span class="mdc-text-field-character-counter">0 / {maxlength}</span>
