@@ -20,7 +20,7 @@ import {
   TextField,
   Tooltip,
   TopAppBar,
-  setNotice
+  setNotice,
 } from './components/mdc'
 
 import Badge from './components/Badge.svelte'
@@ -58,5 +58,5 @@ export {
   Page,
   StaticChip,
   setNotice,
-  Tour
+  Tour,
 }

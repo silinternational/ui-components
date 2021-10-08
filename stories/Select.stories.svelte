@@ -1,54 +1,33 @@
 <script>
-  import { Meta, Template, Story } from "@storybook/addon-svelte-csf"
-  import { Select } from "../components/mdc"
-  import { copyAndModifyArgs } from "./helpers.js"
+import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
+import { Select } from '../components/mdc'
+import { copyAndModifyArgs } from './helpers.js'
 
-  const args = {
-    options: [
-      {name: 'choice 1', id: '0'},
-      {name: 'choice 2', id: '1'},
-      {name: 'choice 3', id: '2'},
-      {name: 'choice 4', id: '3'},
-      {name: 'choice 5', id: '4'},
-      {name: 'choice 6', id: '5'}
-    ],
-    'on:change': e => console.log(e.detail),
-    'on:populated': () => console.log('it is safe to set selectedID'),
-    class: '', //only works for global classes
-  }
+const args = {
+  options: [
+    { name: 'choice 1', id: '0' },
+    { name: 'choice 2', id: '1' },
+    { name: 'choice 3', id: '2' },
+    { name: 'choice 4', id: '3' },
+    { name: 'choice 5', id: '4' },
+    { name: 'choice 6', id: '5' },
+  ],
+  'on:change': (e) => console.log(e.detail),
+  'on:populated': () => console.log('it is safe to set selectedID'),
+  class: '', //only works for global classes
+}
 </script>
 
-<Meta
-  title="Atoms/Select"
-  component={Select}
-/>
+<Meta title="Atoms/Select" component={Select} />
 
 <Template let:args>
   <Select {...args} on:change={args['on:change']} on:populated={args['on:populated']} />
 </Template>
 
-<Story
-  name="Default"
-  {args}
-/>
+<Story name="Default" {args} />
 
-<Story
-  name="Label"
-  args={
-    copyAndModifyArgs(args, {label: 'Label'})
-  }
-/>
+<Story name="Label" args={copyAndModifyArgs(args, { label: 'Label' })} />
 
-<Story
-  name="Width"
-  args={
-    copyAndModifyArgs(args, {width: '560px'})
-  }
-/>
+<Story name="Width" args={copyAndModifyArgs(args, { width: '560px' })} />
 
-<Story
-  name="Disabled"
-  args={
-    copyAndModifyArgs(args, {disabled: true})
-  }
-/>
+<Story name="Disabled" args={copyAndModifyArgs(args, { disabled: true })} />

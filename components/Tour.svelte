@@ -1,71 +1,77 @@
 <script>
-  import { Dialog } from '../components/mdc'
-  import { onMount, tick } from 'svelte'
-  import { goto } from '@roxi/routify'
+import { Dialog } from '../components/mdc'
+import { onMount, tick } from 'svelte'
+import { goto } from '@roxi/routify'
 
-  export let steps = []
-  export let data = {}
+export let steps = []
+export let data = {}
 
-  let openDialog = false
-  let step = 0
-  let tourTitle = ''
-  let tourMessage = '' // tour message can accept html markup -- use caution to not send user-generated content
-  let target = ''
-  let buttons = []
+let openDialog = false
+let step = 0
+let tourTitle = ''
+let tourMessage = '' // tour message can accept html markup -- use caution to not send user-generated content
+let target = ''
+let buttons = []
 
-  $: setAlertProps(step, data)
+$: setAlertProps(step, data)
 
-  onMount(() => {
-    showStep(0)
-  })
+onMount(() => {
+  showStep(0)
+})
 
-  async function alertChosen(choice) {
-    openDialog = false
+async function alertChosen(choice) {
+  openDialog = false
 
-    const thisStep = steps[step]
+  const thisStep = steps[step]
 
-    if (choice === 'discard') {
-      if (target) {
-        $goto(target)
-        return
-      }
-      step++
-      showStep()
-    } else if (choice === 'cancel' && thisStep.previous >= 0) {
-      step = thisStep.previous
-      showStep()
+  if (choice === 'discard') {
+    if (target) {
+      $goto(target)
+      return
     }
+    step++
+    showStep()
+  } else if (choice === 'cancel' && thisStep.previous >= 0) {
+    step = thisStep.previous
+    showStep()
+  }
+}
+
+async function showStep() {
+  let thisStep = steps[step]
+
+  while (thisStep.decider) {
+    step = thisStep.decider() ? thisStep.trueStep : thisStep.falseStep
+    thisStep = steps[step]
   }
 
-  async function showStep() {
-    let thisStep = steps[step]
+  await tick() // dialog can't be reopened immediately, so wait a bit
+  openDialog = true
+}
 
-    while (thisStep.decider) {
-      step = thisStep.decider() ? thisStep.trueStep : thisStep.falseStep
-      thisStep = steps[step]
-    }
+function setAlertProps() {
+  const thisStep = steps[step]
 
-    await tick() // dialog can't be reopened immediately, so wait a bit
-    openDialog = true
+  tourMessage = thisStep.content || ''
+  tourTitle = thisStep.title || ''
+  target = thisStep.target || ''
+  for (const [key, value] of Object.entries(data)) {
+    tourMessage = tourMessage.replace(key, value)
+    tourTitle = tourTitle.replace(key, value)
+    target = target.replace(key, value)
   }
 
-  function setAlertProps() {
-    const thisStep = steps[step]
+  buttons = [
+    { action: 'cancel', label: thisStep.left || '← Previous' },
+    { action: 'discard', label: thisStep.right || 'Next →' },
+  ]
+}
+</script>
 
-    tourMessage = thisStep.content || ''
-    tourTitle = thisStep.title || ''
-    target = thisStep.target || ''
-    for (const [key, value] of Object.entries(data)) {
-      tourMessage = tourMessage.replace(key, value)
-      tourTitle = tourTitle.replace(key, value)
-      target = target.replace(key, value)
-    }
-
-    buttons = [
-      {'action': 'cancel', 'label': thisStep.left || '← Previous'},
-      {'action': 'discard', 'label': thisStep.right || 'Next →'},
-    ]
-  }
-  </script>
-
-  <Dialog.Alert class="{$$props.class}" title={tourTitle} on:chosen={event => alertChosen(event.detail)} open={openDialog} {buttons}>{@html tourMessage}</Dialog.Alert>
+<Dialog.Alert
+  class={$$props.class}
+  title={tourTitle}
+  on:chosen={(event) => alertChosen(event.detail)}
+  open={openDialog}
+  {buttons}>{@html tourMessage}</Dialog.Alert
+>

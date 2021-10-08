@@ -34,13 +34,15 @@ img {
 }
 </style>
 
-<li bind:this={element}
-    class="mdc-list-item"
-    class:mdc-list-item--activated={activated}
-    class:mdc-list-item--disabled={nonInteractive}
-    data-mdc-dialog-action={$$props['data-mdc-dialog-action']}
-    on:click
-    {tabindex}>
+<li
+  bind:this={element}
+  class="mdc-list-item"
+  class:mdc-list-item--activated={activated}
+  class:mdc-list-item--disabled={nonInteractive}
+  data-mdc-dialog-action={$$props['data-mdc-dialog-action']}
+  on:click
+  {tabindex}
+>
   {#if graphicURL}
     <div class="mdc-list-item__graphic">
       <img class="br-50" alt={graphicAlt} src={graphicURL} />
@@ -49,7 +51,7 @@ img {
     <i class="material-icons mdc-list-item__graphic" aria-hidden="true">{icon}</i>
   {/if}
 
-  <span class="mdc-list-item__ripple"></span>
+  <span class="mdc-list-item__ripple" />
 
   <span class="mdc-list-item__text" class:nonInteractive>
     {#if primary || secondary}
@@ -68,5 +70,5 @@ img {
 </li>
 
 {#if withDivider}
-  <li role="separator" class="mdc-list-divider"></li>
+  <li role="separator" class="mdc-list-divider" />
 {/if}

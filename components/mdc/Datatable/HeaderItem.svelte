@@ -10,16 +10,20 @@ export let sortable = false
 const labelID = generateRandomID('column-label-')
 </script>
 
-<th class="mdc-data-table__header-cell {$$props.class} mdc-data-table__header-cell--with-sort" class:mdc-data-table__header-cell--numeric={numeric}
-    role="columnheader" scope="col" data-column-id={columnID} >
+<th
+  class="mdc-data-table__header-cell {$$props.class} mdc-data-table__header-cell--with-sort"
+  class:mdc-data-table__header-cell--numeric={numeric}
+  role="columnheader"
+  scope="col"
+  data-column-id={columnID}
+>
   {#if sortable}
     <div class="mdc-data-table__header-cell-wrapper">
       <div class="mdc-data-table__header-cell-label">
         <slot />
       </div>
       <IconButton icon="arrow_upward" ariaLabel={`Sort by ${columnID}`} class="mdc-data-table__sort-icon-button" />
-      <div class="mdc-data-table__sort-status-label" aria-hidden="true" id={labelID}>
-      </div>
+      <div class="mdc-data-table__sort-status-label" aria-hidden="true" id={labelID} />
     </div>
   {:else}
     <slot />

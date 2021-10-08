@@ -1,0 +1,10 @@
+{
+  "files.trimTrailingWhitespace": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.rulers": [120],
+
+  "[svelte]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
+  }
+}

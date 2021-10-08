@@ -1,22 +1,19 @@
 <script>
-  import { Meta, Template, Story } from "@storybook/addon-svelte-csf"
-  import { Page } from "../index.js"
-  import { copyAndModifyArgs } from "./helpers.js"
+import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
+import { Page } from '../index.js'
+import { copyAndModifyArgs } from './helpers.js'
 
-  const args = {
-    class: '', //will only work with global class
-    loading : false,
-    title : 'My Page!',
-    layout : 'default',
-    center : false, // center page content, only applicable if using default layout
-    noProgress : false,
-  }
+const args = {
+  class: '', //will only work with global class
+  loading: false,
+  title: 'My Page!',
+  layout: 'default',
+  center: false, // center page content, only applicable if using default layout
+  noProgress: false,
+}
 </script>
 
-<Meta
-  title="Atoms/Page"
-  component={Page}
-/>
+<Meta title="Atoms/Page" component={Page} />
 
 <Template let:args>
   <Page {...args}>
@@ -36,17 +33,8 @@
   </Page>
 </Template>
 
-<Story
-  name="Default"
-  args={copyAndModifyArgs(args, {center: true})}
-/>
+<Story name="Default" args={copyAndModifyArgs(args, { center: true })} />
 
-<Story
-  name="Grid"
-  args={copyAndModifyArgs(args, {layout: 'grid'})}
-/>
+<Story name="Grid" args={copyAndModifyArgs(args, { layout: 'grid' })} />
 
-<Story
-  name="Loading"
-  args={copyAndModifyArgs(args, {loading: true, noProgress: false})}
-/>
+<Story name="Loading" args={copyAndModifyArgs(args, { loading: true, noProgress: false })} />

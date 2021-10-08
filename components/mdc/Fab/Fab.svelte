@@ -28,25 +28,23 @@ onMount(() => {
 
 {#if mini}
   <button on:click={action} class="mdc-fab mdc-fab--mini {$$props.class}" aria-label={label} bind:this={element}>
-    <div class="mdc-fab__ripple"></div>
+    <div class="mdc-fab__ripple" />
     <span class="mdc-fab__icon material-icons">{icon}</span>
   </button>
 {:else if extended}
   <button on:click={action} class="mdc-fab mdc-fab--extended {$$props.class}" bind:this={element}>
-    <div class="mdc-fab__ripple"></div>
+    <div class="mdc-fab__ripple" />
     <span class="material-icons mdc-fab__icon">{icon}</span>
     <span class="mdc-fab__label">{label}</span>
   </button>
+{:else if url}
+  <a class="mdc-fab {$$props.class}" aria-label={label} bind:this={element} href={url}>
+    <div class="mdc-fab__ripple" />
+    <span class="mdc-fab__icon material-icons">{icon}</span>
+  </a>
 {:else}
-  {#if url}
-    <a class="mdc-fab {$$props.class}" aria-label={label} bind:this={element} href={url}>
-      <div class="mdc-fab__ripple"></div>
-      <span class="mdc-fab__icon material-icons">{icon}</span>
-    </a>
-  {:else}
-    <button on:click={action} class="mdc-fab {$$props.class}" aria-label={label} bind:this={element}>
-      <div class="mdc-fab__ripple"></div>
-      <span class="mdc-fab__icon material-icons">{icon}</span>
-    </button>
-  {/if}
+  <button on:click={action} class="mdc-fab {$$props.class}" aria-label={label} bind:this={element}>
+    <div class="mdc-fab__ripple" />
+    <span class="mdc-fab__icon material-icons">{icon}</span>
+  </button>
 {/if}
