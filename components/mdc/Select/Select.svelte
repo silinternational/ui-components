@@ -19,12 +19,12 @@ const selectedTextID = generateRandomID('select-selected-text-')
 let element = {}
 let mdcSelect = {}
 
-$: selectedIndex = options.findIndex(option => option.id === selectedID)
+$: selectedIndex = options.findIndex((option) => option.id === selectedID)
 $: dispatch('change', options[selectedIndex] || {})
 $: mdcSelect.disabled = disabled
 $: if (options && mdcSelect.layoutOptions) mdcSelect.layoutOptions()
 
-const recordSelectedID = event => selectedID = event.detail.value
+const recordSelectedID = (event) => (selectedID = event.detail.value)
 
 onMount(() => {
   mdcSelect = new MDCSelect(element)
@@ -37,7 +37,7 @@ afterUpdate(() => {
   // As a reactive statement, this would execute before the DOM is updated with the new options list.
   // This makes sure the index is updated AFTER the select list contains the full list of options.
   mdcSelect.selectedIndex = selectedIndex
-  
+
   // If options have been provided, give the current processes time to finish
   // what they're doing, then indicate that this Select is now populated with
   // options. At this point, it's safe for the selectedID to be initialized.
@@ -50,43 +50,33 @@ afterUpdate(() => {
 </script>
 
 <div class="mdc-select mdc-select--outlined {$$props.class}" bind:this={element} style="width: {width}">
-  <div class="mdc-select__anchor"
-       role="button"
-       aria-haspopup="listbox"
-       aria-labelledby="{labelID} {selectedTextID}">
+  <div class="mdc-select__anchor" role="button" aria-haspopup="listbox" aria-labelledby="{labelID} {selectedTextID}">
     <span class="mdc-select__selected-text-container">
-      <span id={selectedTextID} class="mdc-select__selected-text"></span>
+      <span id={selectedTextID} class="mdc-select__selected-text" />
     </span>
     <span class="mdc-select__dropdown-icon">
-      <svg
-          class="mdc-select__dropdown-icon-graphic"
-          viewBox="7 10 10 5">
+      <svg class="mdc-select__dropdown-icon-graphic" viewBox="7 10 10 5">
         <polygon
-            class="mdc-select__dropdown-icon-inactive"
-            stroke="none"
-            fill-rule="evenodd"
-            points="7 10 12 15 17 10">
-        </polygon>
-        <polygon
-            class="mdc-select__dropdown-icon-active"
-            stroke="none"
-            fill-rule="evenodd"
-            points="7 15 12 10 17 15">
-        </polygon>
+          class="mdc-select__dropdown-icon-inactive"
+          stroke="none"
+          fill-rule="evenodd"
+          points="7 10 12 15 17 10"
+        />
+        <polygon class="mdc-select__dropdown-icon-active" stroke="none" fill-rule="evenodd" points="7 15 12 10 17 15" />
       </svg>
     </span>
     <span class="mdc-notched-outline">
-      <span class="mdc-notched-outline__leading"></span>
+      <span class="mdc-notched-outline__leading" />
       <span class="mdc-notched-outline__notch">
         <span id={labelID} class="mdc-floating-label">{label}</span>
       </span>
-      <span class="mdc-notched-outline__trailing"></span>
+      <span class="mdc-notched-outline__trailing" />
     </span>
   </div>
 
   <div class="mdc-select__menu mdc-menu mdc-menu-surface" style="width: {width}" role="listbox">
     <ul class="mdc-list">
-      {#each options as {id, name} (id)}
+      {#each options as { id, name } (id)}
         <li class="mdc-list-item" data-value={id} role="option">
           <span class="mdc-list-item__text">{name}</span>
         </li>

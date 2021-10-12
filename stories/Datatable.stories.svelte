@@ -1,26 +1,25 @@
 <script>
-  import { Meta, Template, Story } from "@storybook/addon-svelte-csf"
-  import { Datatable, isAboveMobile, isAboveTablet, Progress } from "../components/mdc"
-  import { copyAndModifyArgs } from "./helpers.js"
-  import { onMount } from "svelte"
+import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
+import { Datatable, isAboveMobile, isAboveTablet, Progress } from '../components/mdc'
+import { copyAndModifyArgs } from './helpers.js'
+import { onMount } from 'svelte'
 
-  const args = {
-    class: '', //only works for global classes
-    onSorted: () => {},
-    clickable: false
-  }
+const args = {
+  class: '', //only works for global classes
+  onSorted: () => {},
+  clickable: false,
+}
 
-  let loaded = false
+let loaded = false
 
-  onMount(() => setTimeout(() => {
+onMount(() =>
+  setTimeout(() => {
     loaded = true
-  }, 5000))
+  }, 5000)
+)
 </script>
 
-<Meta
-  title="Molecule/Datatable"
-  component={Datatable}
-/>
+<Meta title="Molecule/Datatable" component={Datatable} />
 
 <Template let:args>
   <Datatable {...args} on:sorted={args.onSorted}>
@@ -30,41 +29,32 @@
     </Datatable.Header>
 
     <Datatable.Data>
-        <Datatable.Data.Row clickable={args.clickable}>
-          <Datatable.Data.Row.Item>item</Datatable.Data.Row.Item>
-          <Datatable.Data.Row.Item>today</Datatable.Data.Row.Item>
-        </Datatable.Data.Row>
+      <Datatable.Data.Row clickable={args.clickable}>
+        <Datatable.Data.Row.Item>item</Datatable.Data.Row.Item>
+        <Datatable.Data.Row.Item>today</Datatable.Data.Row.Item>
+      </Datatable.Data.Row>
 
-        <Datatable.Data.Row>
-          <Datatable.Data.Row.Item>item2</Datatable.Data.Row.Item>
-          <Datatable.Data.Row.Item>tomorrow</Datatable.Data.Row.Item>
-        </Datatable.Data.Row>
+      <Datatable.Data.Row>
+        <Datatable.Data.Row.Item>item2</Datatable.Data.Row.Item>
+        <Datatable.Data.Row.Item>tomorrow</Datatable.Data.Row.Item>
+      </Datatable.Data.Row>
 
-        <Datatable.Data.Row>
-          <Datatable.Data.Row.Item colspan={isAboveMobile() ? 6 : 2}>
-            {#if loaded}
-              Done loading
-            {:else}
-              Loading...
-              <Progress.Linear barColorProvided={false} indeterminate/>
-            {/if}
-          </Datatable.Data.Row.Item>
-        </Datatable.Data.Row>
+      <Datatable.Data.Row>
+        <Datatable.Data.Row.Item colspan={isAboveMobile() ? 6 : 2}>
+          {#if loaded}
+            Done loading
+          {:else}
+            Loading...
+            <Progress.Linear barColorProvided={false} indeterminate />
+          {/if}
+        </Datatable.Data.Row.Item>
+      </Datatable.Data.Row>
     </Datatable.Data>
   </Datatable>
 </Template>
 
-<Story
-  name="Default"
-  {args}
-/>
+<Story name="Default" {args} />
 
-<Story
-  name="Label"
-  args={copyAndModifyArgs(args, {label: 'label'})}
-/>
+<Story name="Label" args={copyAndModifyArgs(args, { label: 'label' })} />
 
-<Story
-  name="Clickable row"
-  args={copyAndModifyArgs(args, {clickable: 'true'})}
-/>
+<Story name="Clickable row" args={copyAndModifyArgs(args, { clickable: 'true' })} />

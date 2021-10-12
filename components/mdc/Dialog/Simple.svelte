@@ -20,7 +20,7 @@ $: open && mdcDialog.open && mdcDialog.open()
 onMount(() => {
   mdcDialog = new MDCDialog(element)
 
-  mdcDialog.listen('MDCDialog:closed', event => {
+  mdcDialog.listen('MDCDialog:closed', (event) => {
     const action = event.detail.action
     const choiceWasMade = action !== 'close'
 
@@ -31,16 +31,22 @@ onMount(() => {
 })
 
 // data-mdc-dialog-action must be present and must be a string
-const toAction = json => JSON.stringify(json)
-const fromAction = s => JSON.parse(s)
+const toAction = (json) => JSON.stringify(json)
+const fromAction = (s) => JSON.parse(s)
 </script>
 
 <div class="mdc-dialog" bind:this={element}>
   <div class="mdc-dialog__container">
-    <div class="mdc-dialog__surface {$$props.class}" role="alertdialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-content">
+    <div
+      class="mdc-dialog__surface {$$props.class}"
+      role="alertdialog"
+      aria-modal="true"
+      aria-labelledby="dialog-title"
+      aria-describedby="dialog-content"
+    >
       <!--(notes from docs) Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
       <h2 class="mdc-dialog__title" id="dialog-title">{title}</h2>
-      
+
       <div class="mdc-dialog__content" id="dialog-content">
         <List avatar>
           {#each items as item, i (item.id)}
@@ -51,5 +57,5 @@ const fromAction = s => JSON.parse(s)
     </div>
   </div>
 
-  <div class="mdc-dialog__scrim"></div>
+  <div class="mdc-dialog__scrim" />
 </div>

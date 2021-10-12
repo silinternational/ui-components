@@ -18,43 +18,48 @@ onMount(() => {
 </script>
 
 {#if url}
-  <a class="mdc-button {$$props.class}"
-     href={url}
-     role="button"
-     class:mdc-button--outlined={outlined}
-     class:mdc-button--raised={raised}
-     {disabled}
-     on:click
-     bind:this={element}
-     >
+  <a
+    class="mdc-button {$$props.class}"
+    href={url}
+    role="button"
+    class:mdc-button--outlined={outlined}
+    class:mdc-button--raised={raised}
+    {disabled}
+    on:click
+    bind:this={element}
+  >
     <div class="mdc-button__ripple" />
-  
+
     {#if prependIcon}
       <i class="material-icons mdc-button__icon" aria-hidden="true">{prependIcon}</i>
     {/if}
-  
+
     <span class="mdc-button__label"><slot /></span>
-  
+
     {#if appendIcon}
       <i class="material-icons mdc-button__icon" aria-hidden="true">{appendIcon}</i>
     {/if}
   </a>
 {:else}
-  <button class="mdc-button {$$props.class}"
-          class:mdc-button--outlined={outlined}
-          class:mdc-button--raised={raised}
-          {disabled}
-          on:click on:mousedown on:blur on:focus
-          bind:this={element}
-          >
+  <button
+    class="mdc-button {$$props.class}"
+    class:mdc-button--outlined={outlined}
+    class:mdc-button--raised={raised}
+    {disabled}
+    on:click
+    on:mousedown
+    on:blur
+    on:focus
+    bind:this={element}
+  >
     <div class="mdc-button__ripple" />
-  
+
     {#if prependIcon}
       <i class="material-icons mdc-button__icon" aria-hidden="true">{prependIcon}</i>
     {/if}
-  
+
     <span class="mdc-button__label"><slot /></span>
-  
+
     {#if appendIcon}
       <i class="material-icons mdc-button__icon" aria-hidden="true">{appendIcon}</i>
     {/if}

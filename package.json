@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo test",
+    "format-all": "npx prettier --write .",
     "dev": "sass components/global.scss components/global.css; start-storybook -p 6007",
     "build": "sass components/global.scss components/global.css; build-storybook"
   },
@@ -15,6 +16,7 @@
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
       "@semantic-release/npm",
       "@semantic-release/git",
       "@semantic-release/github"
@@ -44,6 +46,7 @@
   },
   "devDependencies": {
     "@roxi/routify": "^2.x",
+    "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
     "@storybook/addon-actions": "^6.3.2",
     "@storybook/addon-docs": "^6.3.2",
@@ -57,6 +60,8 @@
     "@storybook/svelte": "^6.3.2",
     "css-loader": "^5.2.6",
     "material-components-web": "^10.0.0",
+    "prettier": "^2.4.1",
+    "prettier-plugin-svelte": "^2.4.0",
     "sass": "1.32.x",
     "sass-loader": "^11.0.1",
     "semantic-release": "^17.4.4",

@@ -1,5 +1,5 @@
 <script>
-  export let clickable = false
+export let clickable = false
 </script>
 
 <tr on:click on:keydown class="mdc-data-table__row {$$props.class}" class:pointer={clickable}>

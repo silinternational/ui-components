@@ -25,13 +25,17 @@ onMount(() => {
   color: var(--mdc-theme-text-secondary-on-background);
   opacity: 50%;
 }
-
-
 </style>
 
-<button class="mdc-tab mdc-tab--stacked mdc-tab--min-width"
-        class:mdc-tab--active={active}
-        role="tab" aria-selected={active} tabindex="-1" bind:this={element} on:click>
+<button
+  class="mdc-tab mdc-tab--stacked mdc-tab--min-width"
+  class:mdc-tab--active={active}
+  role="tab"
+  aria-selected={active}
+  tabindex="-1"
+  bind:this={element}
+  on:click
+>
   <span class="mdc-tab__content">
     <span class="mdc-tab__text-label">{label}</span>
   </span>

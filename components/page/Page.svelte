@@ -14,11 +14,11 @@ $: $appBarTitle = title
 
 <style>
 div.mdc-layout-grid {
-  height: 100%
+  height: 100%;
 }
 </style>
 
-<slot name="tabbar"/>
+<slot name="tabbar" />
 <div class="mdc-layout-grid">
   <div class="mdc-layout-grid__inner">
     {#if layout == 'default'}

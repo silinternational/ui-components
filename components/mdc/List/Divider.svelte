@@ -1,1 +1,1 @@
-<li role="separator" class="mdc-list-divider"></li>
+<li role="separator" class="mdc-list-divider" />

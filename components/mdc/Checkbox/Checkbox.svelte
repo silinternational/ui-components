@@ -35,11 +35,11 @@ const handleChange = () => dispatch(checkbox.checked ? 'checked' : 'unchecked')
     <input type="checkbox" {disabled} on:change={handleChange} class="mdc-checkbox__native-control" id={inputID} />
     <div class="mdc-checkbox__background">
       <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
       </svg>
-      <div class="mdc-checkbox__mixedmark"></div>
+      <div class="mdc-checkbox__mixedmark" />
     </div>
-    <div class="mdc-checkbox__ripple"></div>
+    <div class="mdc-checkbox__ripple" />
   </div>
   <label class:uppercase for={inputID}>{label}</label>
 </div>

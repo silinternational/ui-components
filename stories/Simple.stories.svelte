@@ -33,4 +33,5 @@ const args = {
       { id: '3', name: 'item3 name' },
       { id: '4', name: 'item4 name' },
     ],
-  })} />
+  })}
+/>

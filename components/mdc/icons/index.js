@@ -8,6 +8,6 @@ function loadIcons() {
 
   link.href = 'https://fonts.googleapis.com/icon?family=Material+Icons&display=swap'
   link.rel = 'stylesheet'
-  
+
   document.head.appendChild(link)
 }
