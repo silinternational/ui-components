@@ -1,3 +1,15 @@
+# [3.3.0](https://github.com/silinternational/ui-components/compare/v3.2.0...v3.3.0) (2021-10-13)
+
+
+### Bug Fixes
+
+* **TextInput:** remove Noto Sans ([3591a21](https://github.com/silinternational/ui-components/commit/3591a214ae96b722b0c1945676fe2a5df1e7ef74))
+
+
+### Features
+
+* **Menu:** add support for actions in MenuItems ([ce271f2](https://github.com/silinternational/ui-components/commit/ce271f22d444bfc6bb9e5e73605eb0079eca76c9))
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
