@@ -5,6 +5,7 @@ import { MDCDrawer } from '@material/drawer'
 import { MDCList } from '@material/list'
 import Button from '../Button'
 import IconButton from '../IconButton/IconButton.svelte'
+import Tooltip from '../Tooltip/Tooltip.svelte'
 import { beforeUrlChange, goto } from '@roxi/routify'
 import { onMount } from 'svelte'
 import TopAppBar from '../TopAppBar'
@@ -125,36 +126,41 @@ main {
     <!-- override built-in padding so height 100 works correctly without creating a vertical scroller -->
     <!-- changing the list to flex causes the margins to not collapse -->
     <nav class="mdc-list flex column p-0" class:h-100={isFullHeightMenu} on:click={onListClick} bind:this={listElement}>
-      {#each menuItems as { icon, label, url, hide, button }, i}
+      {#each menuItems as { icon, label, url, hide, button, tooltip }, i}
         {#if label === '--break--'}
           <span class="grow-1" />
         {:else if !hide}
-          {#if button && isNotMini}
-            <Button class="m-1" raised prependIcon={icon} {url}>{label}</Button>
-          {:else if button}
-            <IconButton class="mdc-theme--primary pl-1" {icon} ariaLabel={label} on:click={() => $goto(url)} />
-          {:else if url}
-            <a
-              class="mdc-list-item"
-              class:mdc-list-item--activated={isMenuItemActive(currentUrl, url)}
-              href={url}
-              aria-current={isMenuItemActive(currentUrl, url) ? 'page' : null}
-              tabindex={i === 0 ? 0 : undefined}
-            >
-              <span class="mdc-list-item__ripple" />
-              {#if icon}
-                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">{icon}</i>
-              {/if}
+          <Tooltip.Wrapper ariaDescribedBy={label + '-tooltip'}>
+            {#if button && isNotMini}
+              <Button class="m-1" raised prependIcon={icon} {url}>{label}</Button>
+            {:else if button}
+              <IconButton class="mdc-theme--primary pl-1" {icon} ariaLabel={label} on:click={() => $goto(url)} />
+            {:else if url}
+              <a
+                class="mdc-list-item"
+                class:mdc-list-item--activated={isMenuItemActive(currentUrl, url)}
+                href={url}
+                aria-current={isMenuItemActive(currentUrl, url) ? 'page' : null}
+                tabindex={i === 0 ? 0 : undefined}
+              >
+                <span class="mdc-list-item__ripple" />
+                {#if icon}
+                  <i class="material-icons mdc-list-item__graphic" aria-hidden="true">{icon}</i>
+                {/if}
 
-              {#if label && isNotMini}
-                <span class="mdc-list-item__text">{label}</span>
-              {/if}
-            </a>
-          {:else}
-            <hr
-              class="mdc-list-divider mdc-list-divider--inset-leading mdc-list-divider--inset-trailing"
-              role="separator"
-            />
+                {#if label && isNotMini}
+                  <span class="mdc-list-item__text">{label}</span>
+                {/if}
+              </a>
+            {:else}
+              <hr
+                class="mdc-list-divider mdc-list-divider--inset-leading mdc-list-divider--inset-trailing"
+                role="separator"
+              />
+            {/if}
+          </Tooltip.Wrapper>
+          {#if tooltip}
+            <Tooltip tooltipID={label + '-tooltip'}>{tooltip}</Tooltip>
           {/if}
         {/if}
       {/each}
