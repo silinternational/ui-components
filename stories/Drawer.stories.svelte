@@ -12,17 +12,25 @@ const args = {
     {
       url: './',
       icon: 'account_circle',
-      label: 'reload',
+      label: 'account',
+      tooltip: 'user account',
     },
     {
       url: './',
       icon: 'face',
-      label: 'reload',
+      label: 'bio',
     },
     {
       url: './',
       icon: 'add',
-      label: 'reload',
+      label: 'add stuff',
+      tooltip: 'add things',
+    },
+    {
+      url: './',
+      icon: 'remove',
+      label: 'remove stuff',
+      tooltip: 'remove things',
     },
     {
       url: './',
