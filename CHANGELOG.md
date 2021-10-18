@@ -1,3 +1,15 @@
+# [3.4.0](https://github.com/silinternational/ui-components/compare/v3.3.0...v3.4.0) (2021-10-18)
+
+
+### Bug Fixes
+
+* **Datatable:** Fix text-alignment in numeric Datatable cells ([8f733da](https://github.com/silinternational/ui-components/commit/8f733da8c46a059bfd7a98c40d82f94f9ce30366))
+
+
+### Features
+
+* **Drawer:** Add support for tooltips on menu items ([27cd6f9](https://github.com/silinternational/ui-components/commit/27cd6f92e5de773054989cabbc3b2a272f59a801))
+
 # [3.3.0](https://github.com/silinternational/ui-components/compare/v3.2.0...v3.3.0) (2021-10-13)
 
 
