@@ -22,12 +22,14 @@ onMount(() => {
 })
 
 const isMenuItemActive = (currentUrl, menuItemUrl) => currentUrl === menuItemUrl
-const handleItemClick = (url) => {
+const handleItemClick = (url, action) => {
   if (url) {
     $goto(url)
+  } else if (typeof action === 'function') {
+    action()
   }
 }
-const handleItemKeydown = (e, url) => (e.code == 'Space' || e.code == 'Enter') && handleItemClick(url)
+const handleItemKeydown = (e, url, action) => (e.code == 'Space' || e.code == 'Enter') && handleItemClick(url, action)
 const closeMenuHandler = () => {
   if (!menu.open) {
     //checks to make sure the click wasn't opening the menu or on the menu
@@ -41,11 +43,11 @@ const closeMenuHandler = () => {
 
 <div class="mdc-menu mdc-menu-surface {$$props.class}" bind:this={element}>
   <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
-    {#each menuItems as { icon, label, url }, i}
+    {#each menuItems as { icon, label, url, action }, i}
       <!-- svelte-ignore a11y-invalid-attribute -->
       <li
-        on:click|preventDefault={() => handleItemClick(url)}
-        on:keydown|preventDefault={(e) => handleItemKeydown(e, url)}
+        on:click|preventDefault={() => handleItemClick(url, action)}
+        on:keydown|preventDefault={(e) => handleItemKeydown(e, url, action)}
         role="menuitem"
         class="mdc-list-item"
         class:mdc-list-item--activated={isMenuItemActive(currentUrl, url)}

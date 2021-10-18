@@ -9,6 +9,11 @@ const args = {
   menuOpen: true,
   menuItems: [
     {
+      icon: 'notifications',
+      label: 'Alerts',
+      action: () => alert('Hello!'),
+    },
+    {
       icon: 'settings',
       label: 'User settings',
       url: '/household/settings',
