@@ -123,6 +123,7 @@ main {
   {/if}
 
   <div class="mdc-drawer__content">
+    <slot name="drawer-content-top" />
     <!-- override built-in padding so height 100 works correctly without creating a vertical scroller -->
     <!-- changing the list to flex causes the margins to not collapse -->
     <nav class="mdc-list flex column p-0" class:h-100={isFullHeightMenu} on:click={onListClick} bind:this={listElement}>
