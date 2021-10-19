@@ -1,3 +1,10 @@
+# [3.5.0](https://github.com/silinternational/ui-components/compare/v3.4.0...v3.5.0) (2021-10-19)
+
+
+### Features
+
+* **Drawer:** Add optional content slot above menu in Drawer ([6aa7ddb](https://github.com/silinternational/ui-components/commit/6aa7ddb98b11a97e19fd9fb0139ab1f9d9ee22bd))
+
 # [3.4.0](https://github.com/silinternational/ui-components/compare/v3.3.0...v3.4.0) (2021-10-18)
 
 
