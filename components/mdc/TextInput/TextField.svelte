@@ -39,6 +39,9 @@ const focus = (node) => autofocus && node.focus()
     bind:value
     use:focus
     on:blur
+    on:keydown
+    on:keypress
+    on:keyup
     {maxlength}
     {disabled}
     {placeholder}
