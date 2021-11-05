@@ -7,14 +7,22 @@ let title = 'TextField'
 
 const args = {
   label: title,
+  'on:keydown': (event) => console.log('TextField keydown', event),
+  'on:keypress': (event) => (lastKey = event.key),
+  'on:keyup': (event) => console.log('TextField keyup', event),
   class: '', //will only work with global class
 }
+
+let lastKey = ''
 </script>
 
 <Meta title="Atoms/TextField" component={TextField} />
 
 <Template let:args>
-  <TextField {...args} />
+  <TextField {...args} on:keydown={args['on:keydown']} on:keypress={args['on:keypress']} on:keyup={args['on:keyup']} />
+  {#if lastKey}
+    <p>Last key pressed: {lastKey}</p>
+  {/if}
 </Template>
 
 <Story name="Default" {args} />
