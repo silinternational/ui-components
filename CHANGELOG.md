@@ -1,3 +1,10 @@
+# [3.6.0](https://github.com/silinternational/ui-components/compare/v3.5.0...v3.6.0) (2021-11-05)
+
+
+### Features
+
+* **TextField:** add keydown, keypress, and keyup events ([da1b1bd](https://github.com/silinternational/ui-components/commit/da1b1bd46782514b23a795bad12d11b049057be8))
+
 # [3.5.0](https://github.com/silinternational/ui-components/compare/v3.4.0...v3.5.0) (2021-10-19)
 
 
