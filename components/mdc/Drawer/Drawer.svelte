@@ -46,7 +46,9 @@ onMount(() => {
   }
 })
 
-const isMenuItemActive = (currentUrl, menuItemUrl) => currentUrl === menuItemUrl
+const isMenuItemActive = (currentUrl, menuItemUrl, urlPattern) => {
+  return currentUrl === menuItemUrl || (urlPattern && RegExp(urlPattern).test(currentUrl))
+}
 
 $: currentUrl = window.location.pathname
 $: toggle, toggleDrawer()
@@ -127,7 +129,7 @@ main {
     <!-- override built-in padding so height 100 works correctly without creating a vertical scroller -->
     <!-- changing the list to flex causes the margins to not collapse -->
     <nav class="mdc-list flex column p-0" class:h-100={isFullHeightMenu} on:click={onListClick} bind:this={listElement}>
-      {#each menuItems as { icon, label, url, hide, button, tooltip }, i}
+      {#each menuItems as { icon, label, url, urlPattern, hide, button, tooltip }, i}
         {#if label === '--break--'}
           <span class="grow-1" />
         {:else if !hide}
@@ -139,9 +141,9 @@ main {
             {:else if url}
               <a
                 class="mdc-list-item"
-                class:mdc-list-item--activated={isMenuItemActive(currentUrl, url)}
+                class:mdc-list-item--activated={isMenuItemActive(currentUrl, url, urlPattern)}
                 href={url}
-                aria-current={isMenuItemActive(currentUrl, url) ? 'page' : null}
+                aria-current={isMenuItemActive(currentUrl, url, urlPattern) ? 'page' : null}
                 tabindex={i === 0 ? 0 : undefined}
               >
                 <span class="mdc-list-item__ripple" />
