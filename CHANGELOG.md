@@ -1,3 +1,10 @@
+# [3.7.0](https://github.com/silinternational/ui-components/compare/v3.6.0...v3.7.0) (2021-11-22)
+
+
+### Features
+
+* **Drawer:** add url pattern matching ([4ad5821](https://github.com/silinternational/ui-components/commit/4ad5821d72a6eee282c0f3d2cf8529b1a54e9531))
+
 # [3.6.0](https://github.com/silinternational/ui-components/compare/v3.5.0...v3.6.0) (2021-11-05)
 
 
