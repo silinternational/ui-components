@@ -29,7 +29,7 @@ const focus = (node) => autofocus && node.focus()
 
 <style>
 .required {
-  color: var(--mdc-required-input);
+  color: var(--mdc-required-input, var(--mdc-theme-status-error));
   font-size: small;
   margin-left: 1rem;
   margin-top: 0.2rem;
