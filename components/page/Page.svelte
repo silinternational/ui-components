@@ -12,14 +12,8 @@ let cell12 = 'mdc-layout-grid__cell mdc-layout-grid__cell--span-12'
 $: $appBarTitle = title
 </script>
 
-<style>
-div.mdc-layout-grid {
-  height: 100%;
-}
-</style>
-
 <slot name="tabbar" />
-<div class="mdc-layout-grid">
+<div class="mdc-layout-grid {$$props.class}">
   <div class="mdc-layout-grid__inner">
     {#if layout == 'default'}
       <div class={center ? `${cell12} flex column align-items-center` : `${cell12}`}>

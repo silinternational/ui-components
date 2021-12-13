@@ -49,128 +49,7 @@ module.exports = {
 
 ### components
 
-A list of all components (subcomponents and js files for interfacing in []) followed by their properties in (<property>: <defaultValue>):
-
-```
-Button (disabled, outlined, raised, prependIcon, appendIcon, url)
-
-Card (secondary, outlined, color, isClickable, noPadding)
-
-Checkbox (label, checked, disabled, uppercase)
-
-Datatable (label) [
-	Datatable.Data,
-	Datatable.Data.Row (clickable),
-	Datatable.Data.Row.Item,
-	Datatable.Header,
-	Datatable.Header.Item
-]
-
-Dialog [
-	Dialog.Alert (
-		buttons: [
-			{
-				label: 'cancel',
-				action: 'cancel',
-				class: 'mdc-dialog__button'
-			},
-			{
-				label: 'discard',
-				action: 'discard',
-				class: 'mdc-dialog__button'
-			}
-		],
-		open: false,
-		title: '',
-		defaultAction: 'discard'
-	),
-	Dialog.Simple(
-		items: [],
-		open: false,
-		title: ''
-	)
-]
-
-Drawer (
-	title,
-	subtitle,
-	menuItems,
-	toggle,
-	modal,
-	dismissible,
-	hasTopAppBar,
-	isFullHeightMenu,
-	hideForPhonesOnly,
-	hideForTablet,
-	miniMenu
-)
-
-Fab (icon, label, url, mini, extended, action)
-
-IconButton (icon, ariaLabel)
-
-List (twoLine, avatar) [
-	List.Item (
-		activated,
-		graphicURL,
-		graphicAlt,
-		icon,
-		meta,
-		primary,
-		secondary,
-		text,
-		withDivider,
-		nonInteractive,
-		tabindex
-	),
-	List.Divider
-]
-
-Menu (menuItems, menuOpen)
-
-Progress [
-	Progress.Circular,
-	Progress.Linear (indeterminate, value)
-]
-
-Select (options, width, disabled, selectedID)
-
-Snackbar [
-	notice.js
-]
-
-TabBar [
-	TabBar.Scroller, TabBar.Tab (active, label)
-]
-
-TextArea (label, value, placeholder, rows, maxlength, autofocus, rtl)
-
-TextField (label, value, placeholder, maxlength, autofocus, disabled)
-
-Tooltip (tooltipID, positionX, positionY) [
-	Tooltip.Wrapper (ariaDescribedBy)
-]
-
-TopAppBar (dense, fixed, navIconBreakpointClass, bgColorIsVariant) [
-	actions.js, title.js
-]
-
-Badge (color, borderRadius, padding, bordered)
-
-CustomCard (
-	src, alt, title, icon, disabled, buttons, footerText
-)
-
-Form
-
-Page (loading, title, layout, center, noProgress)[
-	Page.Subheader
-]
-
-StaticChip (bgColor)
-
-Tour (steps, data)
-```
+A list of all components and their props can be found in our running instance of [Storybook](https://silinternational.github.io/ui-components/).
 
 ### importing components
 
@@ -180,7 +59,9 @@ Just include `import { Button } from '@silintl/ui-components'` in your script se
 
 ### examples
 
-Here is a demo app with examples of how to use components.
+See our Storybook [Docs](https://silinternational.github.io/ui-components/?path=/docs/example-introduction--page) for examples. Just click on the component you want to learn more about.
+
+Here is a demo app with more examples of how to use components.
 https://github.com/hobbitronics/svelte-ui-components-app
 
 It was buit from https://github.com/sveltejs/template
