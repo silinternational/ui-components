@@ -1,3 +1,12 @@
+# [3.8.0](https://github.com/silinternational/ui-components/compare/v3.7.0...v3.8.0) (2021-12-13)
+
+
+### Features
+
+* **Drawer:** use var to set main content height ([79c4a51](https://github.com/silinternational/ui-components/commit/79c4a51e77ffc2596f146b234fb959d910bdd882))
+* **Page:** unset height and add $$props.class ([d292cf1](https://github.com/silinternational/ui-components/commit/d292cf13b1f091b39eb607fdb23cdd5fd69c8419))
+* **TextField:** add required field option ([2b594ae](https://github.com/silinternational/ui-components/commit/2b594ae8c0fde5ba509270d17be962484a4a89ca))
+
 # [3.7.0](https://github.com/silinternational/ui-components/compare/v3.6.0...v3.7.0) (2021-11-22)
 
 
