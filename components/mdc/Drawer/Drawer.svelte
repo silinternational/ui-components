@@ -108,6 +108,9 @@ main {
 .mdc-list-item {
   margin: 4px 8px;
 }
+.main-content-height {
+  height: var(--mdc-drawer-height);
+}
 </style>
 
 <svelte:window on:resize={showAppropriateThings} />
@@ -187,8 +190,8 @@ main {
     </TopAppBar>
   {/if}
 
-  <main class="h-100" id="main-drawer-content" bind:this={mainContentEl}>
-    <div class:mdc-top-app-bar--dense-fixed-adjust={hasTopAppBar} class="h-100">
+  <main class="main-content-height" id="main-drawer-content" bind:this={mainContentEl}>
+    <div class:mdc-top-app-bar--dense-fixed-adjust={hasTopAppBar} class="main-content-height">
       <slot />
     </div>
   </main>

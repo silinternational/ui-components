@@ -10,6 +10,7 @@ export let placeholder = ''
 export let maxlength = undefined
 export let autofocus = false
 export let disabled = false
+export let required = false
 
 const labelID = generateRandomID('text-label-')
 
@@ -25,6 +26,15 @@ onMount(() => {
 
 const focus = (node) => autofocus && node.focus()
 </script>
+
+<style>
+.required {
+  color: var(--mdc-required-input, var(--mdc-theme-status-error));
+  font-size: small;
+  margin-left: 1rem;
+  margin-top: 0.2rem;
+}
+</style>
 
 <label
   class="mdc-text-field mdc-text-field--outlined {$$props.class} textfield-radius"
@@ -42,6 +52,7 @@ const focus = (node) => autofocus && node.focus()
     on:keydown
     on:keypress
     on:keyup
+    {required}
     {maxlength}
     {disabled}
     {placeholder}
@@ -50,9 +61,14 @@ const focus = (node) => autofocus && node.focus()
     <span class="mdc-notched-outline__leading" />
     {#if label}
       <span class="mdc-notched-outline__notch">
-        <span class="mdc-floating-label" id={labelID}>{label}</span>
+        <span class="mdc-floating-label" id={labelID}>
+          {label}
+        </span>
       </span>
     {/if}
     <span class="mdc-notched-outline__trailing" />
   </span>
 </label>
+{#if required && !value}
+  <div class="required">*Required</div>
+{/if}

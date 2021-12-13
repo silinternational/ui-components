@@ -2,11 +2,11 @@
 
 Reusable Svelte components for some internal applications
 
-### installation
+## installation
 
 To install to your Svelte project, open your project's root directory in a terminal. Type `npm i @silintl/ui-components --save-dev` and press enter.
 
-### bundler configuration
+## bundler configuration
 
 Your Svelte project will need the bundler (rollup most likely) configured to compile Sass files. If you are using rollup your plugins in your "rollup.config.js" should look something like this taking special note of postcss and svelte:
 
@@ -47,140 +47,21 @@ module.exports = {
 		// ...
 ```
 
-### components
+## components
 
-A list of all components (subcomponents and js files for interfacing in []) followed by their properties in (<property>: <defaultValue>):
+A list of all components and their props can be found in our running instance of [Storybook](https://silinternational.github.io/ui-components/).
 
-```
-Button (disabled, outlined, raised, prependIcon, appendIcon, url)
-
-Card (secondary, outlined, color, isClickable, noPadding)
-
-Checkbox (label, checked, disabled, uppercase)
-
-Datatable (label) [
-	Datatable.Data,
-	Datatable.Data.Row (clickable),
-	Datatable.Data.Row.Item,
-	Datatable.Header,
-	Datatable.Header.Item
-]
-
-Dialog [
-	Dialog.Alert (
-		buttons: [
-			{
-				label: 'cancel',
-				action: 'cancel',
-				class: 'mdc-dialog__button'
-			},
-			{
-				label: 'discard',
-				action: 'discard',
-				class: 'mdc-dialog__button'
-			}
-		],
-		open: false,
-		title: '',
-		defaultAction: 'discard'
-	),
-	Dialog.Simple(
-		items: [],
-		open: false,
-		title: ''
-	)
-]
-
-Drawer (
-	title,
-	subtitle,
-	menuItems,
-	toggle,
-	modal,
-	dismissible,
-	hasTopAppBar,
-	isFullHeightMenu,
-	hideForPhonesOnly,
-	hideForTablet,
-	miniMenu
-)
-
-Fab (icon, label, url, mini, extended, action)
-
-IconButton (icon, ariaLabel)
-
-List (twoLine, avatar) [
-	List.Item (
-		activated,
-		graphicURL,
-		graphicAlt,
-		icon,
-		meta,
-		primary,
-		secondary,
-		text,
-		withDivider,
-		nonInteractive,
-		tabindex
-	),
-	List.Divider
-]
-
-Menu (menuItems, menuOpen)
-
-Progress [
-	Progress.Circular,
-	Progress.Linear (indeterminate, value)
-]
-
-Select (options, width, disabled, selectedID)
-
-Snackbar [
-	notice.js
-]
-
-TabBar [
-	TabBar.Scroller, TabBar.Tab (active, label)
-]
-
-TextArea (label, value, placeholder, rows, maxlength, autofocus, rtl)
-
-TextField (label, value, placeholder, maxlength, autofocus, disabled)
-
-Tooltip (tooltipID, positionX, positionY) [
-	Tooltip.Wrapper (ariaDescribedBy)
-]
-
-TopAppBar (dense, fixed, navIconBreakpointClass, bgColorIsVariant) [
-	actions.js, title.js
-]
-
-Badge (color, borderRadius, padding, bordered)
-
-CustomCard (
-	src, alt, title, icon, disabled, buttons, footerText
-)
-
-Form
-
-Page (loading, title, layout, center, noProgress)[
-	Page.Subheader
-]
-
-StaticChip (bgColor)
-
-Tour (steps, data)
-```
-
-### importing components
+## importing components
 
 After installation and bundler configuration all of the components are ready to be imported.
 
 Just include `import { Button } from '@silintl/ui-components'` in your script section to import Button and any other components you want to use.
 
-### examples
+## examples
 
-Here is a demo app with examples of how to use components.
+See our Storybook [Docs](https://silinternational.github.io/ui-components/?path=/docs/example-introduction--page) for examples. Just click on the component you want to learn more about.
+
+Here is a demo app with more examples of how to use components.
 https://github.com/hobbitronics/svelte-ui-components-app
 
 It was buit from https://github.com/sveltejs/template
@@ -244,15 +125,19 @@ An example of using Drawer:
 </Drawer>
 ```
 
-### storybook
+## storybook
 
 Try out our components and see examples at https://silinternational.github.io/ui-components/
 or run storybook locally. Just copy this repo to your machine and run `npm install` then `npm run dev` in your terminal. Storybook should open a browser window when it finishes building.
 
-### CSS utility classes
+## CSS utility classes
 
 Classes from [global.scss](https://github.com/silinternational/ui-components/blob/develop/components/global.scss) can be applied to all components and even components and elements from your app.
 
-### theming
+## theming
 
 If you are using an [MDC theme](https://material.io/develop/web/docs/theming) and [typography](https://material.io/develop/web/components/typography) then import your \_index.scss file to the App.svelte file so they get applied to the ui-components.
+
+## contributions
+
+All commit messages must follow [Angular Commit Message Conventions](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format) for a release to be triggered upon merging to main. Here is a basic example: `feat(pencil): add 'graphiteWidth' option`. This will trigger a minor release. If this is not done, an empty commit with the proper format can be pushed to trigger the release. See https://github.com/semantic-release/semantic-release for more details. Semantic Release will also update the version and the CHANGELOG based on the commit messages.

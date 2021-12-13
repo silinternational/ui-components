@@ -27,6 +27,8 @@ let lastKey = ''
 
 <Story name="Default" {args} />
 
+<Story name="Required" args={copyAndModifyArgs(args, { required: true })} />
+
 <Story name="Placeholder" args={copyAndModifyArgs(args, { placeholder: 'Enter text here' })} />
 
 <Story name="Autofocus" args={copyAndModifyArgs(args, { autofocus: true })} />
