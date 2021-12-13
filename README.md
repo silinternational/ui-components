@@ -2,11 +2,11 @@
 
 Reusable Svelte components for some internal applications
 
-### installation
+## installation
 
 To install to your Svelte project, open your project's root directory in a terminal. Type `npm i @silintl/ui-components --save-dev` and press enter.
 
-### bundler configuration
+## bundler configuration
 
 Your Svelte project will need the bundler (rollup most likely) configured to compile Sass files. If you are using rollup your plugins in your "rollup.config.js" should look something like this taking special note of postcss and svelte:
 
@@ -47,17 +47,17 @@ module.exports = {
 		// ...
 ```
 
-### components
+## components
 
 A list of all components and their props can be found in our running instance of [Storybook](https://silinternational.github.io/ui-components/).
 
-### importing components
+## importing components
 
 After installation and bundler configuration all of the components are ready to be imported.
 
 Just include `import { Button } from '@silintl/ui-components'` in your script section to import Button and any other components you want to use.
 
-### examples
+## examples
 
 See our Storybook [Docs](https://silinternational.github.io/ui-components/?path=/docs/example-introduction--page) for examples. Just click on the component you want to learn more about.
 
@@ -125,15 +125,19 @@ An example of using Drawer:
 </Drawer>
 ```
 
-### storybook
+## storybook
 
 Try out our components and see examples at https://silinternational.github.io/ui-components/
 or run storybook locally. Just copy this repo to your machine and run `npm install` then `npm run dev` in your terminal. Storybook should open a browser window when it finishes building.
 
-### CSS utility classes
+## CSS utility classes
 
 Classes from [global.scss](https://github.com/silinternational/ui-components/blob/develop/components/global.scss) can be applied to all components and even components and elements from your app.
 
-### theming
+## theming
 
 If you are using an [MDC theme](https://material.io/develop/web/docs/theming) and [typography](https://material.io/develop/web/components/typography) then import your \_index.scss file to the App.svelte file so they get applied to the ui-components.
+
+## contributions
+
+All commit messages must follow [Angular Commit Message Conventions](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format) for a release to be triggered upon merging to main. Here is a basic example: `feat(pencil): add 'graphiteWidth' option`. This will trigger a minor release. If this is not done, an empty commit with the proper format can be pushed to trigger the release. See https://github.com/semantic-release/semantic-release for more details. Semantic Release will also update the version and the CHANGELOG based on the commit messages.
