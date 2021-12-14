@@ -139,9 +139,9 @@ $sides: (
 
 // UNITS: PIXELS!!
 $startPX: 0 !default;
-$endPX: 25 !default;
+$endPX: 50 !default;
 
-// margin & padding m-0px through m-25px, p-0px through p-25px
+// margin & padding m-0px through m-50px, p-0px through p-50px
 @each $property, $prop in $properties {
   @for $i from $startPX through $endPX {
     .#{$prop}-#{$i}px {
@@ -150,7 +150,7 @@ $endPX: 25 !default;
   }
 }
 
-// margin & padding x (m or p)x-0px through (m or p)x-25px
+// margin & padding x (m or p)x-0px through (m or p)x-50px
 @each $property, $prop in $properties {
   @for $i from $startPX through $endPX {
     .#{$prop}x-#{$i}px {
@@ -160,7 +160,7 @@ $endPX: 25 !default;
   }
 }
 
-// margin & padding y (m or p)y-0px through (m or p)y-25px
+// margin & padding y (m or p)y-0px through (m or p)y-50px
 @each $property, $prop in $properties {
   @for $i from $startPX through $endPX {
     .#{$prop}y-#{$i}px {
@@ -170,7 +170,7 @@ $endPX: 25 !default;
   }
 }
 
-// margin & padding sides m(side)-(0 to 25)px, p(side)-(0 to 25)px
+// margin & padding sides m(side)-(0 to 50)px, p(side)-(0 to 50)px
 @each $property, $prop in $properties {
   @each $side, $name in $sides {
     @for $i from $startPX through $endPX {
