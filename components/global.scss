@@ -2,10 +2,30 @@
 /* Utilities */
 /*************/
 
-// height and width h-0 through h-100, w-0 through w-100
+// height and width
+.h-auto {
+  height: auto !important;
+}
+.h-fit-content {
+  height: fit-content !important;
+}
+.max-content-height {
+  height: max-content !important;
+}
+.w-auto {
+  width: auto !important;
+}
+.w-fit-content {
+  width: fit-content !important;
+}
+.max-content-width {
+  width: max-content !important;
+}
+
+//h-0 through h-100, w-0 through w-100
 $dim-start: 0 !default;
 $dim-end: 100 !default;
-$interval: 5 !default;
+$interval: 1 !default;
 $dimensions: (
   height: h,
   width: w,
@@ -23,9 +43,47 @@ $dimensions: (
   }
 }
 
+//min-height and min-width
+@each $dimension, $dim in $dimensions {
+  $i: $dim-start;
+
+  @while $i <= $dim-end {
+    .min-#{$dim}-#{$i} {
+      min-#{$dimension}: #{$i}#{'%'} !important;
+
+      $i: $i + $interval;
+    }
+  }
+}
+
+//max-height and max-width
+@each $dimension, $dim in $dimensions {
+  $i: $dim-start;
+
+  @while $i <= $dim-end {
+    .max-#{$dim}-#{$i} {
+      max-#{$dimension}: #{$i}#{'%'} !important;
+
+      $i: $i + $interval;
+    }
+  }
+}
 // margin and padding
+.m-auto {
+  margin: auto !important;
+}
+.m-0-auto {
+  margin: 0 auto !important;
+}
+.p-0-auto {
+  padding: 0 auto !important;
+}
+.p-auto {
+  padding: auto !important;
+}
+
 $start: 0 !default;
-$end: 8 !default;
+$end: 10 !default;
 
 $properties: (
   margin: m,
@@ -39,7 +97,7 @@ $sides: (
 );
 
 // UNITS: REM !!
-// margin & padding m-0 through m-8, p-0 through p-8
+// margin & padding m-0 through m-10, p-0 through p-10
 @each $property, $prop in $properties {
   @for $i from $start through $end {
     .#{$prop}-#{$i} {
@@ -48,7 +106,7 @@ $sides: (
   }
 }
 
-// margin & padding x (m or p)x-0 through (m or p)x-8
+// margin & padding x (m or p)x-0 through (m or p)x-10
 @each $property, $prop in $properties {
   @for $i from $start through $end {
     .#{$prop}x-#{$i} {
@@ -58,7 +116,7 @@ $sides: (
   }
 }
 
-// margin & padding y (m or p)y-0 through (m or p)y-8
+// margin & padding y (m or p)y-0 through (m or p)y-10
 @each $property, $prop in $properties {
   @for $i from $start through $end {
     .#{$prop}y-#{$i} {
@@ -68,7 +126,7 @@ $sides: (
   }
 }
 
-// margin & padding sides m(side)-(0 to 8), p(side)-(0 to 8)
+// margin & padding sides m(side)-(0 to 10), p(side)-(0 to 10)
 @each $property, $prop in $properties {
   @each $side, $name in $sides {
     @for $i from $start through $end {
