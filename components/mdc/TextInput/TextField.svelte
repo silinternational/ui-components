@@ -19,6 +19,7 @@ let element = {}
 let mdcTextField = {}
 
 $: mdcTextField.value = value
+$: width = `${element.offsetWidth}px`
 
 onMount(() => {
   mdcTextField = new MDCTextField(element)
@@ -46,6 +47,10 @@ const focus = (node) => autofocus && node.focus()
 }
 .mdc-text-field--label-floating .mdc-floating-label {
   margin-left: 0;
+}
+.mdc-text-field-helper-line {
+  float: right;
+  padding-right: 1rem;
 }
 </style>
 
@@ -83,6 +88,13 @@ const focus = (node) => autofocus && node.focus()
     <span class="mdc-notched-outline__trailing" />
   </span>
 </label>
-{#if required && !value}
-  <div class="required">*Required</div>
-{/if}
+<div style="width: {width};">
+  {#if required && !value}
+    <div class="required d-inline">*Required</div>
+  {/if}
+  {#if maxlength}
+    <div class="mdc-text-field-helper-line">
+      <div class="mdc-text-field-character-counter">0 / {maxlength}</div>
+    </div>
+  {/if}
+</div>
