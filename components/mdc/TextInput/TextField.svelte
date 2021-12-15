@@ -20,6 +20,7 @@ let mdcTextField = {}
 
 $: mdcTextField.value = value
 $: width = `${element.offsetWidth}px`
+$: hasReachedMaxLength = maxlength && value.length >= maxlength
 
 onMount(() => {
   mdcTextField = new MDCTextField(element)
@@ -58,6 +59,7 @@ const focus = (node) => autofocus && node.focus()
   class="mdc-text-field mdc-text-field--outlined {$$props.class} textfield-radius"
   class:mdc-text-field--no-label={!label}
   class:mdc-text-field--disabled={disabled}
+  class:mdc-text-field--invalid={hasReachedMaxLength}
   bind:this={element}
 >
   <i class="material-icons" aria-hidden="true">{icon}</i>
@@ -94,7 +96,7 @@ const focus = (node) => autofocus && node.focus()
   {/if}
   {#if maxlength}
     <div class="mdc-text-field-helper-line">
-      <div class="mdc-text-field-character-counter">0 / {maxlength}</div>
+      <div class="mdc-text-field-character-counter">{value.length} / {maxlength}</div>
     </div>
   {/if}
 </div>
