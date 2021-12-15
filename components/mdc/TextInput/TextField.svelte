@@ -11,6 +11,7 @@ export let maxlength = undefined
 export let autofocus = false
 export let disabled = false
 export let required = false
+export let icon = ''
 
 const labelID = generateRandomID('text-label-')
 
@@ -28,11 +29,23 @@ const focus = (node) => autofocus && node.focus()
 </script>
 
 <style>
+.material-icons {
+  color: rgb(133, 140, 148);
+  position: relative;
+  top: 0.4rem;
+  right: 0.6rem;
+}
 .required {
   color: var(--mdc-required-input, var(--mdc-theme-status-error));
   font-size: small;
   margin-left: 1rem;
   margin-top: 0.2rem;
+}
+.label-margin {
+  margin-left: 1.1rem;
+}
+.mdc-text-field--label-floating .mdc-floating-label {
+  margin-left: 0;
 }
 </style>
 
@@ -42,6 +55,7 @@ const focus = (node) => autofocus && node.focus()
   class:mdc-text-field--disabled={disabled}
   bind:this={element}
 >
+  <i class="material-icons" aria-hidden="true">{icon}</i>
   <input
     type="text"
     class="mdc-text-field__input"
@@ -61,7 +75,7 @@ const focus = (node) => autofocus && node.focus()
     <span class="mdc-notched-outline__leading" />
     {#if label}
       <span class="mdc-notched-outline__notch">
-        <span class="mdc-floating-label" id={labelID}>
+        <span class="mdc-floating-label" class:label-margin={icon} id={labelID}>
           {label}
         </span>
       </span>
