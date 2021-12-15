@@ -18,6 +18,8 @@ let element = {}
 let textarea = {}
 let height = ''
 
+$: hasReachedMaxLength = maxlength && value.length >= maxlength
+
 onMount(() => {
   resize()
 
@@ -57,6 +59,7 @@ label {
   class:mdc-text-field--no-label={!label}
   class:mdc-text-field--label-floating={label}
   class:mdc-text-field--with-internal-counter={maxlength}
+  class:mdc-text-field--invalid={hasReachedMaxLength}
   bind:this={element}
 >
   <textarea
