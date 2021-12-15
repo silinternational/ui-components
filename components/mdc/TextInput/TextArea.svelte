@@ -19,6 +19,7 @@ let textarea = {}
 let height = ''
 
 $: hasReachedMaxLength = maxlength && value.length >= maxlength
+$: error = hasReachedMaxLength
 
 onMount(() => {
   resize()
@@ -52,6 +53,9 @@ const focus = async (node) => {
 label {
   width: 100%;
 }
+.error {
+  color: var(--mdc-theme-status-error, var(--mdc-theme-error)) !important;
+}
 </style>
 
 <label
@@ -79,14 +83,14 @@ label {
     on:blur
   />
   {#if maxlength}
-    <span class="mdc-text-field-character-counter">0 / {maxlength}</span>
+    <span class="mdc-text-field-character-counter" class:error>0 / {maxlength}</span>
   {/if}
   <span class="mdc-notched-outline">
     <span class="mdc-notched-outline__leading" />
 
     {#if label}
       <span class="mdc-notched-outline__notch">
-        <span class="mdc-floating-label" id={labelID}>
+        <span class="mdc-floating-label" class:error id={labelID}>
           {label}
         </span>
       </span>

@@ -21,6 +21,8 @@ let mdcTextField = {}
 $: mdcTextField.value = value
 $: width = `${element.offsetWidth}px`
 $: hasReachedMaxLength = maxlength && value.length >= maxlength
+$: error = hasReachedMaxLength
+$: showCounter = maxlength && value.length / maxlength > 0.85
 
 onMount(() => {
   mdcTextField = new MDCTextField(element)
@@ -53,6 +55,9 @@ const focus = (node) => autofocus && node.focus()
   float: right;
   padding-right: 1rem;
 }
+.error {
+  color: var(--mdc-theme-status-error, var(--mdc-theme-error));
+}
 </style>
 
 <label
@@ -82,7 +87,7 @@ const focus = (node) => autofocus && node.focus()
     <span class="mdc-notched-outline__leading" />
     {#if label}
       <span class="mdc-notched-outline__notch">
-        <span class="mdc-floating-label" class:label-margin={icon} id={labelID}>
+        <span class="mdc-floating-label" class:label-margin={icon} class:error id={labelID}>
           {label}
         </span>
       </span>
@@ -94,9 +99,11 @@ const focus = (node) => autofocus && node.focus()
   {#if required && !value}
     <div class="required d-inline">*Required</div>
   {/if}
-  {#if maxlength}
+  {#if showCounter}
     <div class="mdc-text-field-helper-line">
-      <div class="mdc-text-field-character-counter">{value.length} / {maxlength}</div>
+      <div class="mdc-text-field-character-counter" class:error>
+        {value.length} / {maxlength}
+      </div>
     </div>
   {/if}
 </div>
