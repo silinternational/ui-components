@@ -21,7 +21,7 @@ import Progress from './Progress'
 import Select from './Select'
 import Snackbar from './Snackbar'
 import TabBar from './TabBar'
-import { TextArea, TextField } from './TextInput'
+import { TextArea, TextField, MoneyInput } from './TextInput'
 import Tooltip from './Tooltip'
 import TopAppBar from './TopAppBar'
 import { setNotice } from './Snackbar/notice'
@@ -40,6 +40,7 @@ export {
   isAboveTablet,
   List,
   Menu,
+  MoneyInput,
   Progress,
   TabBar,
   TextArea,
