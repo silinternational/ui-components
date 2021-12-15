@@ -18,6 +18,11 @@ let element = {}
 let mdcTextField = {}
 
 $: mdcTextField.value = value
+$: width = `${element.offsetWidth}px`
+$: valueLength = value.toString().length
+$: hasReachedMaxLength = maxlength && valueLength >= maxlength
+$: error = hasReachedMaxLength
+$: showCounter = maxlength && valueLength / maxlength > 0.85
 
 onMount(() => {
   mdcTextField = new MDCTextField(element)
@@ -46,12 +51,17 @@ const focus = (node) => autofocus && node.focus()
 .mdc-text-field--label-floating .mdc-floating-label {
   margin-left: 0;
 }
+.mdc-text-field-helper-line {
+  float: right;
+  padding-right: 1rem;
+}
 </style>
 
 <label
   class="mdc-text-field mdc-text-field--outlined {$$props.class} textfield-radius"
   class:mdc-text-field--no-label={!label}
   class:mdc-text-field--disabled={disabled}
+  class:mdc-text-field--invalid={hasReachedMaxLength}
   bind:this={element}
 >
   <i class="material-icons" aria-hidden="true">attach_money</i>
@@ -72,11 +82,16 @@ const focus = (node) => autofocus && node.focus()
     {disabled}
     {placeholder}
   />
+  {#if hasReachedMaxLength}
+    <span class="mdc-text-field__affix mdc-text-field__affix--suffix"
+      ><i class="material-icons error" aria-hidden="true">error</i></span
+    >
+  {/if}
   <span class="mdc-notched-outline">
     <span class="mdc-notched-outline__leading" />
     {#if label}
       <span class="mdc-notched-outline__notch">
-        <span class="mdc-floating-label label-margin" id={labelID}>
+        <span class="mdc-floating-label label-margin" class:error id={labelID}>
           {label}
         </span>
       </span>
@@ -84,6 +99,15 @@ const focus = (node) => autofocus && node.focus()
     <span class="mdc-notched-outline__trailing" />
   </span>
 </label>
-{#if required && !value}
-  <div class="required">*Required</div>
-{/if}
+<div style="width: {width};">
+  {#if required && !value}
+    <div class="required">*Required</div>
+  {/if}
+  {#if showCounter}
+    <div class="mdc-text-field-helper-line">
+      <div class="mdc-text-field-character-counter" class:error>
+        {valueLength} / {maxlength}
+      </div>
+    </div>
+  {/if}
+</div>
