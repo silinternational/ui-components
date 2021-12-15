@@ -55,9 +55,6 @@ const focus = (node) => autofocus && node.focus()
   float: right;
   padding-right: 1rem;
 }
-.error {
-  color: var(--mdc-theme-status-error, var(--mdc-theme-error));
-}
 </style>
 
 <label
@@ -83,6 +80,12 @@ const focus = (node) => autofocus && node.focus()
     {disabled}
     {placeholder}
   />
+  {#if hasReachedMaxLength}
+    <span class="mdc-text-field__affix mdc-text-field__affix--suffix"
+      ><i class="material-icons error" aria-hidden="true">error</i></span
+    >
+  {/if}
+
   <span class="mdc-notched-outline">
     <span class="mdc-notched-outline__leading" />
     {#if label}

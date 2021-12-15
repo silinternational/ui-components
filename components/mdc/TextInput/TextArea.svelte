@@ -53,9 +53,6 @@ const focus = async (node) => {
 label {
   width: 100%;
 }
-.error {
-  color: var(--mdc-theme-status-error, var(--mdc-theme-error)) !important;
-}
 </style>
 
 <label
