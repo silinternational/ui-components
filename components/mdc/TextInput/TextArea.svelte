@@ -18,6 +18,9 @@ let element = {}
 let textarea = {}
 let height = ''
 
+$: hasReachedMaxLength = maxlength && value.length >= maxlength
+$: error = hasReachedMaxLength
+
 onMount(() => {
   resize()
 
@@ -57,6 +60,7 @@ label {
   class:mdc-text-field--no-label={!label}
   class:mdc-text-field--label-floating={label}
   class:mdc-text-field--with-internal-counter={maxlength}
+  class:mdc-text-field--invalid={hasReachedMaxLength}
   bind:this={element}
 >
   <textarea
@@ -76,14 +80,14 @@ label {
     on:blur
   />
   {#if maxlength}
-    <span class="mdc-text-field-character-counter">0 / {maxlength}</span>
+    <span class="mdc-text-field-character-counter" class:error>0 / {maxlength}</span>
   {/if}
   <span class="mdc-notched-outline">
     <span class="mdc-notched-outline__leading" />
 
     {#if label}
       <span class="mdc-notched-outline__notch">
-        <span class="mdc-floating-label" id={labelID}>
+        <span class="mdc-floating-label" class:error id={labelID}>
           {label}
         </span>
       </span>

@@ -20,6 +20,14 @@ const args = {
 
 <Story name="Default" {args} />
 
-<Story name="Placeholder" args={copyAndModifyArgs(args, { placeholder: 'Enter text here' })} />
+<Story name="Placeholder" args={copyAndModifyArgs(args, { placeholder: 'placeholder' })} />
+
+<Story name="Label" args={copyAndModifyArgs(args, { label: 'label' })} />
+
+<Story name="Maxlength" args={copyAndModifyArgs(args, { maxlength: 2048 })} />
+
+<Story name="rtl" args={copyAndModifyArgs(args, { rtl: true })} />
+
+<Story name="rows" args={copyAndModifyArgs(args, { rows: 2 })} />
 
 <Story name="Autofocus" args={copyAndModifyArgs(args, { autofocus: true })} />

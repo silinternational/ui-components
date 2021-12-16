@@ -15,3 +15,6 @@
 .textfield-radius {
   @include textfield.outline-shape-radius(8px);
 }
+.error {
+  color: var(--mdc-theme-status-error, var(--mdc-theme-error)) !important;
+}

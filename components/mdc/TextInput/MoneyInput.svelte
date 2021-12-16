@@ -2,7 +2,7 @@
 <script>
 import { MDCTextField } from '@material/textfield'
 import { generateRandomID } from '../../../random'
-import { afterUpdate, onMount } from 'svelte'
+import { onMount } from 'svelte'
 
 export let label = ''
 export let value = ''
@@ -11,25 +11,23 @@ export let maxlength = undefined
 export let autofocus = false
 export let disabled = false
 export let required = false
-export let icon = ''
 
 const labelID = generateRandomID('text-label-')
 
 let element = {}
 let mdcTextField = {}
-let width = ''
 
 $: mdcTextField.value = value
-$: hasReachedMaxLength = maxlength && value.length >= maxlength
+$: width = `${element.offsetWidth}px`
+$: valueLength = value.toString().length
+$: hasReachedMaxLength = maxlength && valueLength >= maxlength
 $: error = hasReachedMaxLength
-$: showCounter = maxlength && value.length / maxlength > 0.85
+$: showCounter = maxlength && valueLength / maxlength > 0.85
 
 onMount(() => {
   mdcTextField = new MDCTextField(element)
   return () => mdcTextField.destroy()
 })
-
-afterUpdate(() => (width = `${element.offsetWidth}px`))
 
 const focus = (node) => autofocus && node.focus()
 </script>
@@ -43,12 +41,19 @@ const focus = (node) => autofocus && node.focus()
 }
 .required {
   color: var(--mdc-required-input, var(--mdc-theme-status-error));
+  font-size: small;
+  margin-left: 1rem;
+  margin-top: 0.2rem;
 }
 .label-margin {
   margin-left: 1.1rem;
 }
 .mdc-text-field--label-floating .mdc-floating-label {
   margin-left: 0;
+}
+.mdc-text-field-helper-line {
+  float: right;
+  padding-right: 1rem;
 }
 </style>
 
@@ -59,13 +64,13 @@ const focus = (node) => autofocus && node.focus()
   class:mdc-text-field--invalid={hasReachedMaxLength}
   bind:this={element}
 >
-  <i class="material-icons" aria-hidden="true">{icon}</i>
+  <i class="material-icons" aria-hidden="true">attach_money</i>
   <input
-    type="text"
+    step="0.01"
+    type="number"
+    min="0"
     class="mdc-text-field__input"
     aria-labelledby={labelID}
-    aria-controls="{labelID}-helper-id"
-    aria-describedby="{labelID}-helper-id"
     bind:value
     use:focus
     on:blur
@@ -82,12 +87,11 @@ const focus = (node) => autofocus && node.focus()
       ><i class="material-icons error" aria-hidden="true">error</i></span
     >
   {/if}
-
   <span class="mdc-notched-outline">
     <span class="mdc-notched-outline__leading" />
     {#if label}
       <span class="mdc-notched-outline__notch">
-        <span class="mdc-floating-label" class:label-margin={icon} class:error id={labelID}>
+        <span class="mdc-floating-label label-margin" class:error id={labelID}>
           {label}
         </span>
       </span>
@@ -95,18 +99,15 @@ const focus = (node) => autofocus && node.focus()
     <span class="mdc-notched-outline__trailing" />
   </span>
 </label>
-<div class="mdc-text-field-helper-line" style="width: {width};">
-  <div class="mdc-text-field-helper-text" id="{labelID}-helper-id" aria-hidden="true">
-    {#if required && !value}
-      <span class="required">*Required</span>
-    {/if}
-    {#if showCounter}
-      <span class="error">Maximum {maxlength} characters</span>
-    {/if}
-  </div>
+<div style="width: {width};">
+  {#if required && !value}
+    <div class="required">*Required</div>
+  {/if}
   {#if showCounter}
-    <div class="mdc-text-field-character-counter" class:error>
-      {value.length} / {maxlength}
+    <div class="mdc-text-field-helper-line">
+      <div class="mdc-text-field-character-counter" class:error>
+        {valueLength} / {maxlength}
+      </div>
     </div>
   {/if}
 </div>
