@@ -11,6 +11,8 @@ const args = {
   'on:keypress': (event) => (lastKey = event.key),
   'on:keyup': (event) => console.log('keyup', event),
   class: '', //will only work with global class
+  maxValue: 100,
+  step: '.01',
 }
 
 let lastKey = ''
@@ -33,8 +35,12 @@ let lastKey = ''
 
 <Story name="Label" args={copyAndModifyArgs(args, { label: 'label' })} />
 
+<Story name="MinValue" args={copyAndModifyArgs(args, { minValue: '0' })} />
+
+<Story name="MaxValue" args={copyAndModifyArgs(args, { maxValue: '10' })} />
+
+<Story name="Step" args={copyAndModifyArgs(args, { step: '.5' })} />
+
 <Story name="Autofocus" args={copyAndModifyArgs(args, { autofocus: true })} />
 
 <Story name="Disabled" args={copyAndModifyArgs(args, { disabled: true })} />
-
-<Story name="maxlength" args={copyAndModifyArgs(args, { maxlength: 255 })} />

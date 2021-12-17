@@ -2,32 +2,41 @@
 <script>
 import { MDCTextField } from '@material/textfield'
 import { generateRandomID } from '../../../random'
-import { onMount } from 'svelte'
+import { afterUpdate, onMount } from 'svelte'
 
 export let label = ''
 export let value = ''
+export let step = '0.01'
 export let placeholder = ''
-export let maxlength = undefined
+export let maxValue = undefined
+export let minValue = undefined
 export let autofocus = false
 export let disabled = false
 export let required = false
 
 const labelID = generateRandomID('text-label-')
 
+let maxlength = 524288 /* default */
 let element = {}
 let mdcTextField = {}
+let width = ''
 
 $: mdcTextField.value = value
-$: width = `${element.offsetWidth}px`
-$: valueLength = value.toString().length
-$: hasReachedMaxLength = maxlength && valueLength >= maxlength
-$: error = hasReachedMaxLength
+$: valueLength = value?.toString()?.length
+$: hasExceededMaxLength = maxlength && valueLength > maxlength
+$: hasExceededMaxValue = maxValue && internalValue > maxValue
+$: isLowerThanMinValue = minValue && internalValue < minValue
+$: error = hasExceededMaxValue || isLowerThanMinValue || hasExceededMaxLength || valueNotDivisibleByStep
 $: showCounter = maxlength && valueLength / maxlength > 0.85
+$: valueNotDivisibleByStep = internalValue && (internalValue / Number(step)) % 1 !== 0
+$: internalValue = Number(value) || ''
 
 onMount(() => {
   mdcTextField = new MDCTextField(element)
   return () => mdcTextField.destroy()
 })
+
+afterUpdate(() => (width = `${element.offsetWidth}px`))
 
 const focus = (node) => autofocus && node.focus()
 </script>
@@ -41,9 +50,6 @@ const focus = (node) => autofocus && node.focus()
 }
 .required {
   color: var(--mdc-required-input, var(--mdc-theme-status-error));
-  font-size: small;
-  margin-left: 1rem;
-  margin-top: 0.2rem;
 }
 .label-margin {
   margin-left: 1.1rem;
@@ -51,27 +57,26 @@ const focus = (node) => autofocus && node.focus()
 .mdc-text-field--label-floating .mdc-floating-label {
   margin-left: 0;
 }
-.mdc-text-field-helper-line {
-  float: right;
-  padding-right: 1rem;
-}
 </style>
 
 <label
   class="mdc-text-field mdc-text-field--outlined {$$props.class} textfield-radius"
   class:mdc-text-field--no-label={!label}
   class:mdc-text-field--disabled={disabled}
-  class:mdc-text-field--invalid={hasReachedMaxLength}
+  class:mdc-text-field--invalid={error}
   bind:this={element}
 >
   <i class="material-icons" aria-hidden="true">attach_money</i>
   <input
-    step="0.01"
+    {step}
     type="number"
-    min="0"
+    min={minValue}
+    max={maxValue}
     class="mdc-text-field__input"
     aria-labelledby={labelID}
-    bind:value
+    aria-controls="{labelID}-helper-id"
+    aria-describedby="{labelID}-helper-id"
+    bind:value={internalValue}
     use:focus
     on:blur
     on:keydown
@@ -82,7 +87,7 @@ const focus = (node) => autofocus && node.focus()
     {disabled}
     {placeholder}
   />
-  {#if hasReachedMaxLength}
+  {#if error}
     <span class="mdc-text-field__affix mdc-text-field__affix--suffix"
       ><i class="material-icons error" aria-hidden="true">error</i></span
     >
@@ -99,15 +104,24 @@ const focus = (node) => autofocus && node.focus()
     <span class="mdc-notched-outline__trailing" />
   </span>
 </label>
-<div style="width: {width};">
-  {#if required && !value}
-    <div class="required">*Required</div>
-  {/if}
+<div class="mdc-text-field-helper-line" style="width: {width};">
+  <div class="mdc-text-field-helper-text" id="{labelID}-helper-id" aria-hidden="true">
+    {#if required && !internalValue}
+      <span class="required">*Required</span>
+    {/if}
+    {#if hasExceededMaxValue}
+      <span class="error">Maximum value allowed is {maxValue}</span>
+    {:else if isLowerThanMinValue}
+      <span class="error">Minimun value allowed is ({minValue})</span>
+    {:else if valueNotDivisibleByStep}
+      <span class="error">{internalValue} is not divisible by {step}</span>
+    {:else if hasExceededMaxLength}
+      <span class="error">Maximum {maxlength} characters</span>
+    {/if}
+  </div>
   {#if showCounter}
-    <div class="mdc-text-field-helper-line">
-      <div class="mdc-text-field-character-counter" class:error>
-        {valueLength} / {maxlength}
-      </div>
+    <div class="mdc-text-field-character-counter" class:error>
+      {valueLength} / {maxlength}
     </div>
   {/if}
 </div>
