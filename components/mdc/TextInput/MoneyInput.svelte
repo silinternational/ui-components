@@ -6,23 +6,30 @@ import { afterUpdate, onMount } from 'svelte'
 
 export let label = ''
 export let value = ''
+export let step = '0.01'
 export let placeholder = ''
-export let maxlength = undefined
+export let maxValue = undefined
+export let minValue = undefined
 export let autofocus = false
 export let disabled = false
 export let required = false
 
 const labelID = generateRandomID('text-label-')
 
+let maxlength = 524288 /* default */
 let element = {}
 let mdcTextField = {}
 let width = ''
 
 $: mdcTextField.value = value
-$: valueLength = value.toString().length
-$: hasReachedMaxLength = maxlength && valueLength >= maxlength
-$: error = hasReachedMaxLength
+$: valueLength = value?.toString()?.length
+$: hasExceededMaxLength = maxlength && valueLength > maxlength
+$: hasExceededMaxValue = maxValue && internalValue > maxValue
+$: isLowerThanMinValue = minValue && internalValue < minValue
+$: error = hasExceededMaxValue || isLowerThanMinValue || hasExceededMaxLength || valueNotDivisibleByStep
 $: showCounter = maxlength && valueLength / maxlength > 0.85
+$: valueNotDivisibleByStep = internalValue && (internalValue / Number(step)) % 1 !== 0
+$: internalValue = Number(value) || ''
 
 onMount(() => {
   mdcTextField = new MDCTextField(element)
@@ -56,19 +63,20 @@ const focus = (node) => autofocus && node.focus()
   class="mdc-text-field mdc-text-field--outlined {$$props.class} textfield-radius"
   class:mdc-text-field--no-label={!label}
   class:mdc-text-field--disabled={disabled}
-  class:mdc-text-field--invalid={hasReachedMaxLength}
+  class:mdc-text-field--invalid={error}
   bind:this={element}
 >
   <i class="material-icons" aria-hidden="true">attach_money</i>
   <input
-    step="0.01"
+    {step}
     type="number"
-    min="0"
+    min={minValue}
+    max={maxValue}
     class="mdc-text-field__input"
     aria-labelledby={labelID}
     aria-controls="{labelID}-helper-id"
     aria-describedby="{labelID}-helper-id"
-    bind:value
+    bind:value={internalValue}
     use:focus
     on:blur
     on:keydown
@@ -79,7 +87,7 @@ const focus = (node) => autofocus && node.focus()
     {disabled}
     {placeholder}
   />
-  {#if hasReachedMaxLength}
+  {#if error}
     <span class="mdc-text-field__affix mdc-text-field__affix--suffix"
       ><i class="material-icons error" aria-hidden="true">error</i></span
     >
@@ -98,10 +106,16 @@ const focus = (node) => autofocus && node.focus()
 </label>
 <div class="mdc-text-field-helper-line" style="width: {width};">
   <div class="mdc-text-field-helper-text" id="{labelID}-helper-id" aria-hidden="true">
-    {#if required && !value}
+    {#if required && !internalValue}
       <span class="required">*Required</span>
     {/if}
-    {#if showCounter}
+    {#if hasExceededMaxValue}
+      <span class="error">Maximum value allowed is {maxValue}</span>
+    {:else if isLowerThanMinValue}
+      <span class="error">Minimun value allowed is ({minValue})</span>
+    {:else if valueNotDivisibleByStep}
+      <span class="error">{internalValue} is not divisible by {step}</span>
+    {:else if hasExceededMaxLength}
       <span class="error">Maximum {maxlength} characters</span>
     {/if}
   </div>
