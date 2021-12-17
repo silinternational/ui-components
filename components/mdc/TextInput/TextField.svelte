@@ -77,6 +77,7 @@ const focus = (node) => autofocus && node.focus()
     on:keyup
     {required}
     {disabled}
+    maxlength="524288"
     {placeholder}
   />
   {#if error}

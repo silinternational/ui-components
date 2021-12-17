@@ -1,5 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield -->
 <script>
+import { addOrRemoveInvalidClass } from '.'
 import { MDCTextField } from '@material/textfield'
 import { generateRandomID } from '../../../random'
 import { onMount, tick } from 'svelte'
@@ -18,8 +19,9 @@ let element = {}
 let textarea = {}
 let height = ''
 
-$: hasReachedMaxLength = maxlength && value.length >= maxlength
-$: error = hasReachedMaxLength
+$: hasExceededMaxLength = maxlength && value.length > maxlength
+$: error = hasExceededMaxLength
+$: value & (value !== ' ') && addOrRemoveInvalidClass(error, element)
 
 onMount(() => {
   resize()
@@ -60,15 +62,17 @@ label {
   class:mdc-text-field--no-label={!label}
   class:mdc-text-field--label-floating={label}
   class:mdc-text-field--with-internal-counter={maxlength}
-  class:mdc-text-field--invalid={hasReachedMaxLength}
+  class:mdc-text-field--invalid={error}
   bind:this={element}
 >
   <textarea
     class="mdc-text-field__input"
     class:rtl
     aria-labelledby={labelID}
+    aria-controls="{labelID}-helper-id"
+    aria-describedby="{labelID}-helper-id"
     {rows}
-    {maxlength}
+    maxlength="524288"
     {placeholder}
     bind:value
     use:focus
@@ -96,3 +100,10 @@ label {
     <span class="mdc-notched-outline__trailing" />
   </span>
 </label>
+<div class="mdc-text-field-helper-line">
+  <div class="mdc-text-field-helper-text" id="{labelID}-helper-id" aria-hidden="true">
+    {#if hasExceededMaxLength}
+      <span class="error">Maximum {maxlength} characters</span>
+    {/if}
+  </div>
+</div>
