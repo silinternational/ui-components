@@ -21,7 +21,7 @@ let height = ''
 
 $: hasExceededMaxLength = maxlength && value.length > maxlength
 $: error = hasExceededMaxLength
-$: value & (value !== ' ') && addOrRemoveInvalidClass(error, element)
+$: value && value !== ' ' && addOrRemoveInvalidClass(error, element)
 
 onMount(() => {
   resize()
@@ -55,6 +55,15 @@ const focus = async (node) => {
 label {
   width: 100%;
 }
+.counter {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-caption-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-caption-font-size, 0.75rem);
+  font-weight: var(--mdc-typography-caption-font-weight, 400);
+}
 </style>
 
 <label
@@ -62,7 +71,6 @@ label {
   class:mdc-text-field--no-label={!label}
   class:mdc-text-field--label-floating={label}
   class:mdc-text-field--with-internal-counter={maxlength}
-  class:mdc-text-field--invalid={error}
   bind:this={element}
 >
   <textarea
@@ -84,7 +92,7 @@ label {
     on:blur
   />
   {#if maxlength}
-    <span class="mdc-text-field-character-counter" class:error>0 / {maxlength}</span>
+    <span class="counter gray mr-1 mb-4px" class:error>{value.length} / {maxlength}</span>
   {/if}
   <span class="mdc-notched-outline">
     <span class="mdc-notched-outline__leading" />
