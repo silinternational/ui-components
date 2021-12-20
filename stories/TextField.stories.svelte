@@ -3,10 +3,7 @@ import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 import { TextField } from '../components/mdc'
 import { copyAndModifyArgs } from './helpers.js'
 
-let title = 'TextField'
-
 const args = {
-  label: title,
   'on:keydown': (event) => console.log('TextField keydown', event),
   'on:keypress': (event) => (lastKey = event.key),
   'on:keyup': (event) => console.log('TextField keyup', event),
@@ -27,10 +24,16 @@ let lastKey = ''
 
 <Story name="Default" {args} />
 
-<Story name="Required" args={copyAndModifyArgs(args, { required: true })} />
+<Story name="label" args={copyAndModifyArgs(args, { label: 'label' })} />
 
 <Story name="Placeholder" args={copyAndModifyArgs(args, { placeholder: 'Enter text here' })} />
 
 <Story name="Autofocus" args={copyAndModifyArgs(args, { autofocus: true })} />
 
 <Story name="Disabled" args={copyAndModifyArgs(args, { disabled: true })} />
+
+<Story name="maxlength" args={copyAndModifyArgs(args, { maxlength: 50 })} />
+
+<Story name="icon" args={copyAndModifyArgs(args, { icon: 'home' })} />
+
+<Story name="Required" args={copyAndModifyArgs(args, { required: true })} />

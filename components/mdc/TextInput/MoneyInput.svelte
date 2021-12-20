@@ -1,39 +1,42 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield -->
 <script>
-import { addOrRemoveInvalidClass } from '.'
 import { MDCTextField } from '@material/textfield'
 import { generateRandomID } from '../../../random'
 import { afterUpdate, onMount } from 'svelte'
 
 export let label = ''
 export let value = ''
+export let step = '0.01'
 export let placeholder = ''
-export let maxlength = undefined
+export let maxValue = undefined
+export let minValue = undefined
 export let autofocus = false
 export let disabled = false
 export let required = false
-export let icon = ''
 
 const labelID = generateRandomID('text-label-')
 
+let maxlength = 524288 /* default */
 let element = {}
 let mdcTextField = {}
 let width = ''
 
 $: mdcTextField.value = value
-$: hasExceededMaxLength = maxlength && value.length > maxlength
-$: error = hasExceededMaxLength
-$: showCounter = maxlength && value.length / maxlength > 0.85
-$: value && addOrRemoveInvalidClass(error, element)
+$: valueLength = value?.toString()?.length
+$: hasExceededMaxLength = maxlength && valueLength > maxlength
+$: hasExceededMaxValue = maxValue && internalValue > maxValue
+$: isLowerThanMinValue = minValue && internalValue < minValue
+$: error = hasExceededMaxValue || isLowerThanMinValue || hasExceededMaxLength || valueNotDivisibleByStep
+$: showCounter = maxlength && valueLength / maxlength > 0.85
+$: valueNotDivisibleByStep = internalValue && (internalValue / Number(step)) % 1 !== 0
+$: internalValue = Number(value) || ''
 
 onMount(() => {
   mdcTextField = new MDCTextField(element)
   return () => mdcTextField.destroy()
 })
 
-afterUpdate(() => {
-  width = `${element.offsetWidth}px`
-})
+afterUpdate(() => (width = `${element.offsetWidth}px`))
 
 const focus = (node) => autofocus && node.focus()
 </script>
@@ -60,24 +63,28 @@ const focus = (node) => autofocus && node.focus()
   class="mdc-text-field mdc-text-field--outlined {$$props.class} textfield-radius"
   class:mdc-text-field--no-label={!label}
   class:mdc-text-field--disabled={disabled}
+  class:mdc-text-field--invalid={error}
   bind:this={element}
 >
-  <i class="material-icons" aria-hidden="true">{icon}</i>
+  <i class="material-icons" aria-hidden="true">attach_money</i>
   <input
-    type="text"
+    {step}
+    type="number"
+    min={minValue}
+    max={maxValue}
     class="mdc-text-field__input"
     aria-labelledby={labelID}
     aria-controls="{labelID}-helper-id"
     aria-describedby="{labelID}-helper-id"
-    bind:value
+    bind:value={internalValue}
     use:focus
     on:blur
     on:keydown
     on:keypress
     on:keyup
     {required}
+    {maxlength}
     {disabled}
-    maxlength="524288"
     {placeholder}
   />
   {#if error}
@@ -85,12 +92,11 @@ const focus = (node) => autofocus && node.focus()
       ><i class="material-icons error" aria-hidden="true">error</i></span
     >
   {/if}
-
   <span class="mdc-notched-outline">
     <span class="mdc-notched-outline__leading" />
     {#if label}
       <span class="mdc-notched-outline__notch">
-        <span class="mdc-floating-label" class:label-margin={icon} class:error id={labelID}>
+        <span class="mdc-floating-label label-margin" class:error id={labelID}>
           {label}
         </span>
       </span>
@@ -99,17 +105,23 @@ const focus = (node) => autofocus && node.focus()
   </span>
 </label>
 <div class="mdc-text-field-helper-line" style="width: {width};">
-  <div class="mdc-text-field-helper-text" class:opacity1={required} id="{labelID}-helper-id" aria-hidden="true">
-    {#if required && !value}
+  <div class="mdc-text-field-helper-text" id="{labelID}-helper-id" aria-hidden="true">
+    {#if required && !internalValue}
       <span class="required">*Required</span>
     {/if}
-    {#if error}
+    {#if hasExceededMaxValue}
+      <span class="error">Maximum value allowed is {maxValue}</span>
+    {:else if isLowerThanMinValue}
+      <span class="error">Minimun value allowed is ({minValue})</span>
+    {:else if valueNotDivisibleByStep}
+      <span class="error">{internalValue} is not divisible by {step}</span>
+    {:else if hasExceededMaxLength}
       <span class="error">Maximum {maxlength} characters</span>
     {/if}
   </div>
   {#if showCounter}
     <div class="mdc-text-field-character-counter" class:error>
-      {value.length} / {maxlength}
+      {valueLength} / {maxlength}
     </div>
   {/if}
 </div>
