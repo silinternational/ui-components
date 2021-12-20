@@ -99,7 +99,7 @@ const focus = (node) => autofocus && node.focus()
   </span>
 </label>
 <div class="mdc-text-field-helper-line" style="width: {width};">
-  <div class="mdc-text-field-helper-text" id="{labelID}-helper-id" aria-hidden="true">
+  <div class="mdc-text-field-helper-text" class:opacity1={required} id="{labelID}-helper-id" aria-hidden="true">
     {#if required && !value}
       <span class="required">*Required</span>
     {/if}
