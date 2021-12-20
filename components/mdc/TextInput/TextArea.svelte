@@ -1,5 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield -->
 <script>
+import { addOrRemoveInvalidClass } from '.'
 import { MDCTextField } from '@material/textfield'
 import { generateRandomID } from '../../../random'
 import { onMount, tick } from 'svelte'
@@ -18,8 +19,9 @@ let element = {}
 let textarea = {}
 let height = ''
 
-$: hasReachedMaxLength = maxlength && value.length >= maxlength
-$: error = hasReachedMaxLength
+$: hasExceededMaxLength = maxlength && value.length > maxlength
+$: error = hasExceededMaxLength
+$: value && value !== ' ' && addOrRemoveInvalidClass(error, element)
 
 onMount(() => {
   resize()
@@ -53,6 +55,15 @@ const focus = async (node) => {
 label {
   width: 100%;
 }
+.counter {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--mdc-typography-caption-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: var(--mdc-typography-caption-font-size, 0.75rem);
+  font-weight: var(--mdc-typography-caption-font-weight, 400);
+}
 </style>
 
 <label
@@ -60,15 +71,16 @@ label {
   class:mdc-text-field--no-label={!label}
   class:mdc-text-field--label-floating={label}
   class:mdc-text-field--with-internal-counter={maxlength}
-  class:mdc-text-field--invalid={hasReachedMaxLength}
   bind:this={element}
 >
   <textarea
     class="mdc-text-field__input"
     class:rtl
     aria-labelledby={labelID}
+    aria-controls="{labelID}-helper-id"
+    aria-describedby="{labelID}-helper-id"
     {rows}
-    {maxlength}
+    maxlength="524288"
     {placeholder}
     bind:value
     use:focus
@@ -80,7 +92,7 @@ label {
     on:blur
   />
   {#if maxlength}
-    <span class="mdc-text-field-character-counter" class:error>0 / {maxlength}</span>
+    <span class="counter gray mr-1 mb-4px" class:error>{value.length} / {maxlength}</span>
   {/if}
   <span class="mdc-notched-outline">
     <span class="mdc-notched-outline__leading" />
@@ -96,3 +108,10 @@ label {
     <span class="mdc-notched-outline__trailing" />
   </span>
 </label>
+<div class="mdc-text-field-helper-line">
+  <div class="mdc-text-field-helper-text" id="{labelID}-helper-id" aria-hidden="true">
+    {#if hasExceededMaxLength}
+      <span class="error">Maximum {maxlength} characters</span>
+    {/if}
+  </div>
+</div>

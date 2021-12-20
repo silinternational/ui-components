@@ -1,5 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield -->
 <script>
+import { addOrRemoveInvalidClass } from '.'
 import { MDCTextField } from '@material/textfield'
 import { generateRandomID } from '../../../random'
 import { afterUpdate, onMount } from 'svelte'
@@ -20,16 +21,19 @@ let mdcTextField = {}
 let width = ''
 
 $: mdcTextField.value = value
-$: hasReachedMaxLength = maxlength && value.length >= maxlength
-$: error = hasReachedMaxLength
+$: hasExceededMaxLength = maxlength && value.length > maxlength
+$: error = hasExceededMaxLength
 $: showCounter = maxlength && value.length / maxlength > 0.85
+$: value && addOrRemoveInvalidClass(error, element)
 
 onMount(() => {
   mdcTextField = new MDCTextField(element)
   return () => mdcTextField.destroy()
 })
 
-afterUpdate(() => (width = `${element.offsetWidth}px`))
+afterUpdate(() => {
+  width = `${element.offsetWidth}px`
+})
 
 const focus = (node) => autofocus && node.focus()
 </script>
@@ -56,7 +60,6 @@ const focus = (node) => autofocus && node.focus()
   class="mdc-text-field mdc-text-field--outlined {$$props.class} textfield-radius"
   class:mdc-text-field--no-label={!label}
   class:mdc-text-field--disabled={disabled}
-  class:mdc-text-field--invalid={hasReachedMaxLength}
   bind:this={element}
 >
   <i class="material-icons" aria-hidden="true">{icon}</i>
@@ -73,11 +76,11 @@ const focus = (node) => autofocus && node.focus()
     on:keypress
     on:keyup
     {required}
-    {maxlength}
     {disabled}
+    maxlength="524288"
     {placeholder}
   />
-  {#if hasReachedMaxLength}
+  {#if error}
     <span class="mdc-text-field__affix mdc-text-field__affix--suffix"
       ><i class="material-icons error" aria-hidden="true">error</i></span
     >
@@ -100,7 +103,7 @@ const focus = (node) => autofocus && node.focus()
     {#if required && !value}
       <span class="required">*Required</span>
     {/if}
-    {#if showCounter}
+    {#if error}
       <span class="error">Maximum {maxlength} characters</span>
     {/if}
   </div>
