@@ -1,3 +1,29 @@
+# [3.9.0](https://github.com/silinternational/ui-components/compare/v3.8.0...v3.9.0) (2021-12-20)
+
+
+### Bug Fixes
+
+* **TextArea:** typo and counter rendering "524288" ([94992b6](https://github.com/silinternational/ui-components/commit/94992b6485bd3931317ea3be9ee23d929ab28ca8))
+* **TextField:** *Required was hidden until focused ([d320bca](https://github.com/silinternational/ui-components/commit/d320bca567cf5af0c390eb8d0b15cc4eb22ecf93))
+* **TextField:** allow value to be > maxlengh ([c09def6](https://github.com/silinternational/ui-components/commit/c09def60f1a58948691668bcaf3ae54311cbc936))
+
+
+### Features
+
+* **components:** add MoneyInput and story ([021d291](https://github.com/silinternational/ui-components/commit/021d2912e355de327153983f3c961624d5bbd7e6))
+* **MoneyInput:** add counter & icon on maxlength ([d22bda8](https://github.com/silinternational/ui-components/commit/d22bda8eb9889ec56c1b608ee08ffbaedf8c0f02))
+* **MoneyInput:** add maxlength warning, fix width ([6ce6458](https://github.com/silinternational/ui-components/commit/6ce6458111a987d4fa7f53d3f33a0bfb4500972b))
+* **MoneyInput:** add step, maxValue, minValue and helper text ([db5de95](https://github.com/silinternational/ui-components/commit/db5de959513fd1542fbb759a3f5c093efa9402af))
+* **TextArea:** allow value > maxlength & add warning ([6151b60](https://github.com/silinternational/ui-components/commit/6151b60883aa9e7354eb8bd42d567aa2eea1b00f))
+* **TextArea:** make outline red on maxlength ([70d3920](https://github.com/silinternational/ui-components/commit/70d3920def943c3fea47a9b1cde7d113118793c2))
+* **TextField:** add character counter ([eba6321](https://github.com/silinternational/ui-components/commit/eba6321dbd260d9e06deb88536706e29dbd406d1))
+* **TextField:** Add icon prop ([568f659](https://github.com/silinternational/ui-components/commit/568f6596feda14d1617a890e4ecd5ce6618837ce))
+* **TextField:** add maxlength warning, fix width ([67b145a](https://github.com/silinternational/ui-components/commit/67b145affb014b5c1ac978201be4bccd060490bd))
+* **TextField:** make outline red on maxlength ([44b52dc](https://github.com/silinternational/ui-components/commit/44b52dcca5df813c11a1429541a4dd1a4ca35bd8))
+* **textinput:** use error color on counter and label for maxlength ([364ddba](https://github.com/silinternational/ui-components/commit/364ddbacfab8cab8c1fc388f14ba71fa50f6070c))
+* **utils:** add min, max, height and width utils ([5d737f3](https://github.com/silinternational/ui-components/commit/5d737f3d6200dce6e81f65be42cdbba9f5f584e3))
+* **utils:** change margin and padding up to 50px ([fa3aa85](https://github.com/silinternational/ui-components/commit/fa3aa85d1099b43be47669d19135dfc363345736))
+
 # [3.8.0](https://github.com/silinternational/ui-components/compare/v3.7.0...v3.8.0) (2021-12-13)
 
 
