@@ -27,7 +27,8 @@ $: valueLength = value?.toString()?.length
 $: hasExceededMaxLength = maxlength && valueLength > maxlength
 $: hasExceededMaxValue = maxValue && internalValue > maxValue
 $: isLowerThanMinValue = minValue && internalValue < minValue
-$: error = hasExceededMaxValue || isLowerThanMinValue || hasExceededMaxLength || valueNotDivisibleByStep
+$: showErrorIcon = hasExceededMaxValue || isLowerThanMinValue || hasExceededMaxLength || valueNotDivisibleByStep
+$: error = showErrorIcon || (hasFocused && required && !internalValue)
 $: showCounter = maxlength && valueLength / maxlength > 0.85
 $: valueNotDivisibleByStep = internalValue && (internalValue / Number(step)) % 1 !== 0
 $: internalValue = Number(value) || ''
@@ -64,7 +65,7 @@ const focus = (node) => autofocus && node.focus()
   class:mdc-text-field--invalid={error}
   bind:this={element}
 >
-  <i class="material-icons" aria-hidden="true">attach_money</i>
+  <i class="material-icons" class:error aria-hidden="true">attach_money</i>
   <input
     {step}
     type="number"
@@ -86,7 +87,7 @@ const focus = (node) => autofocus && node.focus()
     {disabled}
     {placeholder}
   />
-  {#if error}
+  {#if showErrorIcon}
     <span class="mdc-text-field__affix mdc-text-field__affix--suffix"
       ><i class="material-icons error" aria-hidden="true">error</i></span
     >
@@ -107,8 +108,7 @@ const focus = (node) => autofocus && node.focus()
   <div class="mdc-text-field-helper-text" class:opacity1={required} id="{labelID}-helper-id" aria-hidden="true">
     {#if required && !internalValue}
       <span class="required" class:error={hasFocused}>*Required</span>
-    {/if}
-    {#if hasExceededMaxValue}
+    {:else if hasExceededMaxValue}
       <span class="error">Maximum value allowed is {maxValue}</span>
     {:else if isLowerThanMinValue}
       <span class="error">Minimun value allowed is ({minValue})</span>

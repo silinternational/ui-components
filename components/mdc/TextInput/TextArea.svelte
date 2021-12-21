@@ -117,8 +117,7 @@ label {
   <div class="mdc-text-field-helper-text" class:opacity1={required} id="{labelID}-helper-id" aria-hidden="true">
     {#if required && valueIsEmpty}
       <span class="required" class:error={hasFocused}>*Required</span>
-    {/if}
-    {#if hasExceededMaxLength}
+    {:else if hasExceededMaxLength}
       <span class="error">Maximum {maxlength} characters</span>
     {/if}
   </div>

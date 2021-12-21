@@ -23,7 +23,7 @@ let hasFocused = false
 
 $: mdcTextField.value = value
 $: hasExceededMaxLength = maxlength && value.length > maxlength
-$: error = hasExceededMaxLength
+$: error = hasExceededMaxLength || (hasFocused && required && !value)
 $: showCounter = maxlength && value.length / maxlength > 0.85
 $: value && addOrRemoveInvalidClass(error, element)
 
@@ -60,7 +60,7 @@ const focus = (node) => autofocus && node.focus()
   class:mdc-text-field--disabled={disabled}
   bind:this={element}
 >
-  <i class="material-icons" aria-hidden="true">{icon}</i>
+  <i class="material-icons" class:error aria-hidden="true">{icon}</i>
   <input
     type="text"
     class="mdc-text-field__input"
@@ -79,7 +79,7 @@ const focus = (node) => autofocus && node.focus()
     maxlength="524288"
     {placeholder}
   />
-  {#if error}
+  {#if hasExceededMaxLength}
     <span class="mdc-text-field__affix mdc-text-field__affix--suffix"
       ><i class="material-icons error" aria-hidden="true">error</i></span
     >
@@ -101,8 +101,7 @@ const focus = (node) => autofocus && node.focus()
   <div class="mdc-text-field-helper-text" class:opacity1={required} id="{labelID}-helper-id" aria-hidden="true">
     {#if required && !value}
       <span class="required" class:error={hasFocused}>*Required</span>
-    {/if}
-    {#if error}
+    {:else if hasExceededMaxLength}
       <span class="error">Maximum {maxlength} characters</span>
     {/if}
   </div>
