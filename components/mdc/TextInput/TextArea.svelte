@@ -20,9 +20,10 @@ let element = {}
 let textarea = {}
 let height = ''
 let hasFocused = false
+let hasBlurred = false
 
 $: hasExceededMaxLength = maxlength && value.length > maxlength
-$: error = hasExceededMaxLength
+$: error = hasExceededMaxLength || (hasFocused && hasBlurred && required && valueIsEmpty)
 $: valueIsEmpty = value === ' ' || !value
 $: !valueIsEmpty && addOrRemoveInvalidClass(error, element)
 
@@ -95,6 +96,7 @@ label {
     on:focus
     on:focus={() => (hasFocused = true)}
     on:blur
+    on:blur={() => (hasBlurred = true)}
   />
   {#if maxlength}
     <span class="counter gray mr-1 mb-4px" class:error>{value.length} / {maxlength}</span>

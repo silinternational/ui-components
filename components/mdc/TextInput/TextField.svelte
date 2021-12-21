@@ -20,10 +20,11 @@ let element = {}
 let mdcTextField = {}
 let width = ''
 let hasFocused = false
+let hasBlurred = false
 
 $: mdcTextField.value = value
 $: hasExceededMaxLength = maxlength && value.length > maxlength
-$: error = hasExceededMaxLength || (hasFocused && required && !value)
+$: error = hasExceededMaxLength || (hasFocused && hasBlurred && required && !value)
 $: showCounter = maxlength && value.length / maxlength > 0.85
 $: value && addOrRemoveInvalidClass(error, element)
 
@@ -70,6 +71,7 @@ const focus = (node) => autofocus && node.focus()
     bind:value
     use:focus
     on:focus={() => (hasFocused = true)}
+    on:blur={() => (hasBlurred = true)}
     on:blur
     on:keydown
     on:keypress
