@@ -21,13 +21,15 @@ let element = {}
 let mdcTextField = {}
 let width = ''
 let hasFocused = false
+let hasBlurred = false
 
 $: mdcTextField.value = value
 $: valueLength = value?.toString()?.length
 $: hasExceededMaxLength = maxlength && valueLength > maxlength
 $: hasExceededMaxValue = maxValue && internalValue > maxValue
 $: isLowerThanMinValue = minValue && internalValue < minValue
-$: error = hasExceededMaxValue || isLowerThanMinValue || hasExceededMaxLength || valueNotDivisibleByStep
+$: showErrorIcon = hasExceededMaxValue || isLowerThanMinValue || hasExceededMaxLength || valueNotDivisibleByStep
+$: error = showErrorIcon || (hasFocused && hasBlurred && required && !value)
 $: showCounter = maxlength && valueLength / maxlength > 0.85
 $: valueNotDivisibleByStep = internalValue && (internalValue / Number(step)) % 1 !== 0
 $: internalValue = Number(value) || ''
@@ -78,6 +80,7 @@ const focus = (node) => autofocus && node.focus()
     use:focus
     on:focus={() => (hasFocused = true)}
     on:blur
+    on:blur={() => (hasBlurred = true)}
     on:keydown
     on:keypress
     on:keyup
@@ -86,10 +89,10 @@ const focus = (node) => autofocus && node.focus()
     {disabled}
     {placeholder}
   />
-  {#if error}
-    <span class="mdc-text-field__affix mdc-text-field__affix--suffix"
-      ><i class="material-icons error" aria-hidden="true">error</i></span
-    >
+  {#if showErrorIcon}
+    <span class="mdc-text-field__affix mdc-text-field__affix--suffix">
+      <i class="material-icons error" aria-hidden="true"> error</i>
+    </span>
   {/if}
   <span class="mdc-notched-outline">
     <span class="mdc-notched-outline__leading" />
