@@ -1,3 +1,19 @@
+# [3.10.0](https://github.com/silinternational/ui-components/compare/v3.9.0...v3.10.0) (2021-12-21)
+
+
+### Bug Fixes
+
+* **MoneyInput:** fix label color for required ([dc9c3ba](https://github.com/silinternational/ui-components/commit/dc9c3ba6dcb273906974252eaf041f9bdcdf4976))
+* **MoneyInput:** remove error state on:focus for required ([3e6c2f5](https://github.com/silinternational/ui-components/commit/3e6c2f5f70ce3b26fb46d0dbd32bb16e566ce6f8))
+* **TextInput:** label not turning red for required ([b9d924a](https://github.com/silinternational/ui-components/commit/b9d924aaf13d7879c7a8bc96c40a0f54362e277e))
+* **TextInput:** Show *Required initially and change backup color ([b84548a](https://github.com/silinternational/ui-components/commit/b84548aed92d97fc0d3ace431866f2101acee5fd))
+* **TextInput:** show appropriate icons/colors ([925a6ac](https://github.com/silinternational/ui-components/commit/925a6accd712b09c7abb29fda3e042b6e5785bf7))
+
+
+### Features
+
+* **TextArea:** add required prop and story ([6045274](https://github.com/silinternational/ui-components/commit/60452747c39381f07efae67e9caf36e29ebdbd13))
+
 # [3.9.0](https://github.com/silinternational/ui-components/compare/v3.8.0...v3.9.0) (2021-12-20)
 
 
