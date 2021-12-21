@@ -29,7 +29,7 @@ $: hasExceededMaxLength = maxlength && valueLength > maxlength
 $: hasExceededMaxValue = maxValue && internalValue > maxValue
 $: isLowerThanMinValue = minValue && internalValue < minValue
 $: showErrorIcon = hasExceededMaxValue || isLowerThanMinValue || hasExceededMaxLength || valueNotDivisibleByStep
-$: error = showErrorIcon || (hasFocused && hasBlurred && required && !value)
+$: error = showErrorIcon || (hasFocused && hasBlurred && required && !internalValue)
 $: showCounter = maxlength && valueLength / maxlength > 0.85
 $: valueNotDivisibleByStep = internalValue && (internalValue / Number(step)) % 1 !== 0
 $: internalValue = Number(value) || ''
