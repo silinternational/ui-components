@@ -20,13 +20,16 @@ let maxlength = 524288 /* default */
 let element = {}
 let mdcTextField = {}
 let width = ''
+let hasFocused = false
+let hasBlurred = false
 
 $: mdcTextField.value = value
 $: valueLength = value?.toString()?.length
 $: hasExceededMaxLength = maxlength && valueLength > maxlength
 $: hasExceededMaxValue = maxValue && internalValue > maxValue
 $: isLowerThanMinValue = minValue && internalValue < minValue
-$: error = hasExceededMaxValue || isLowerThanMinValue || hasExceededMaxLength || valueNotDivisibleByStep
+$: showErrorIcon = hasExceededMaxValue || isLowerThanMinValue || hasExceededMaxLength || valueNotDivisibleByStep
+$: error = showErrorIcon || (hasFocused && hasBlurred && required && !value)
 $: showCounter = maxlength && valueLength / maxlength > 0.85
 $: valueNotDivisibleByStep = internalValue && (internalValue / Number(step)) % 1 !== 0
 $: internalValue = Number(value) || ''
@@ -48,9 +51,6 @@ const focus = (node) => autofocus && node.focus()
   top: 0.4rem;
   right: 0.6rem;
 }
-.required {
-  color: var(--mdc-required-input, var(--mdc-theme-status-error));
-}
 .label-margin {
   margin-left: 1.1rem;
 }
@@ -66,7 +66,7 @@ const focus = (node) => autofocus && node.focus()
   class:mdc-text-field--invalid={error}
   bind:this={element}
 >
-  <i class="material-icons" aria-hidden="true">attach_money</i>
+  <i class="material-icons" class:error aria-hidden="true">attach_money</i>
   <input
     {step}
     type="number"
@@ -78,7 +78,9 @@ const focus = (node) => autofocus && node.focus()
     aria-describedby="{labelID}-helper-id"
     bind:value={internalValue}
     use:focus
+    on:focus={() => (hasFocused = true)}
     on:blur
+    on:blur={() => (hasBlurred = true)}
     on:keydown
     on:keypress
     on:keyup
@@ -87,10 +89,10 @@ const focus = (node) => autofocus && node.focus()
     {disabled}
     {placeholder}
   />
-  {#if error}
-    <span class="mdc-text-field__affix mdc-text-field__affix--suffix"
-      ><i class="material-icons error" aria-hidden="true">error</i></span
-    >
+  {#if showErrorIcon}
+    <span class="mdc-text-field__affix mdc-text-field__affix--suffix">
+      <i class="material-icons error" aria-hidden="true"> error</i>
+    </span>
   {/if}
   <span class="mdc-notched-outline">
     <span class="mdc-notched-outline__leading" />
@@ -105,11 +107,10 @@ const focus = (node) => autofocus && node.focus()
   </span>
 </label>
 <div class="mdc-text-field-helper-line" style="width: {width};">
-  <div class="mdc-text-field-helper-text" id="{labelID}-helper-id" aria-hidden="true">
+  <div class="mdc-text-field-helper-text" class:opacity1={required} id="{labelID}-helper-id" aria-hidden="true">
     {#if required && !internalValue}
-      <span class="required">*Required</span>
-    {/if}
-    {#if hasExceededMaxValue}
+      <span class="required" class:error={hasFocused}>*Required</span>
+    {:else if hasExceededMaxValue}
       <span class="error">Maximum value allowed is {maxValue}</span>
     {:else if isLowerThanMinValue}
       <span class="error">Minimun value allowed is ({minValue})</span>

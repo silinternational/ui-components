@@ -19,10 +19,12 @@ const labelID = generateRandomID('text-label-')
 let element = {}
 let mdcTextField = {}
 let width = ''
+let hasFocused = false
+let hasBlurred = false
 
 $: mdcTextField.value = value
 $: hasExceededMaxLength = maxlength && value.length > maxlength
-$: error = hasExceededMaxLength
+$: error = hasExceededMaxLength || (hasFocused && hasBlurred && required && !value)
 $: showCounter = maxlength && value.length / maxlength > 0.85
 $: value && addOrRemoveInvalidClass(error, element)
 
@@ -45,9 +47,6 @@ const focus = (node) => autofocus && node.focus()
   top: 0.4rem;
   right: 0.6rem;
 }
-.required {
-  color: var(--mdc-required-input, var(--mdc-theme-status-error));
-}
 .label-margin {
   margin-left: 1.1rem;
 }
@@ -62,7 +61,7 @@ const focus = (node) => autofocus && node.focus()
   class:mdc-text-field--disabled={disabled}
   bind:this={element}
 >
-  <i class="material-icons" aria-hidden="true">{icon}</i>
+  <i class="material-icons" class:error aria-hidden="true">{icon}</i>
   <input
     type="text"
     class="mdc-text-field__input"
@@ -71,6 +70,8 @@ const focus = (node) => autofocus && node.focus()
     aria-describedby="{labelID}-helper-id"
     bind:value
     use:focus
+    on:focus={() => (hasFocused = true)}
+    on:blur={() => (hasBlurred = true)}
     on:blur
     on:keydown
     on:keypress
@@ -80,7 +81,7 @@ const focus = (node) => autofocus && node.focus()
     maxlength="524288"
     {placeholder}
   />
-  {#if error}
+  {#if hasExceededMaxLength}
     <span class="mdc-text-field__affix mdc-text-field__affix--suffix"
       ><i class="material-icons error" aria-hidden="true">error</i></span
     >
@@ -101,9 +102,8 @@ const focus = (node) => autofocus && node.focus()
 <div class="mdc-text-field-helper-line" style="width: {width};">
   <div class="mdc-text-field-helper-text" class:opacity1={required} id="{labelID}-helper-id" aria-hidden="true">
     {#if required && !value}
-      <span class="required">*Required</span>
-    {/if}
-    {#if error}
+      <span class="required" class:error={hasFocused}>*Required</span>
+    {:else if hasExceededMaxLength}
       <span class="error">Maximum {maxlength} characters</span>
     {/if}
   </div>
