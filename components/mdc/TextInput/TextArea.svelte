@@ -12,16 +12,19 @@ export let rows = 8
 export let maxlength = undefined
 export let autofocus = false
 export let rtl = false
+export let required = false
 
 const labelID = generateRandomID('textarea-label-')
 
 let element = {}
 let textarea = {}
 let height = ''
+let hasFocused = false
 
 $: hasExceededMaxLength = maxlength && value.length > maxlength
 $: error = hasExceededMaxLength
-$: value && value !== ' ' && addOrRemoveInvalidClass(error, element)
+$: valueIsEmpty = value === ' ' || !value
+$: !valueIsEmpty && addOrRemoveInvalidClass(error, element)
 
 onMount(() => {
   resize()
@@ -81,6 +84,7 @@ label {
     aria-describedby="{labelID}-helper-id"
     {rows}
     maxlength="524288"
+    {required}
     {placeholder}
     bind:value
     use:focus
@@ -89,6 +93,7 @@ label {
     on:input={resize}
     on:keydown
     on:focus
+    on:focus={() => (hasFocused = true)}
     on:blur
   />
   {#if maxlength}
@@ -109,7 +114,10 @@ label {
   </span>
 </label>
 <div class="mdc-text-field-helper-line">
-  <div class="mdc-text-field-helper-text" id="{labelID}-helper-id" aria-hidden="true">
+  <div class="mdc-text-field-helper-text" class:opacity1={required} id="{labelID}-helper-id" aria-hidden="true">
+    {#if required && valueIsEmpty}
+      <span class="required" class:error={hasFocused}>*Required</span>
+    {/if}
     {#if hasExceededMaxLength}
       <span class="error">Maximum {maxlength} characters</span>
     {/if}

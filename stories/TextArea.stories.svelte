@@ -31,3 +31,5 @@ const args = {
 <Story name="rows" args={copyAndModifyArgs(args, { rows: 2 })} />
 
 <Story name="Autofocus" args={copyAndModifyArgs(args, { autofocus: true })} />
+
+<Story name="Required" args={copyAndModifyArgs(args, { required: true })} />
