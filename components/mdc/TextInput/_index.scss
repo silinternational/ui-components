@@ -18,3 +18,6 @@
 .error {
   color: var(--mdc-theme-status-error, var(--mdc-theme-error)) !important;
 }
+.required {
+  color: var(--mdc-required-input, rgba(0, 0, 0, 0.6));
+}

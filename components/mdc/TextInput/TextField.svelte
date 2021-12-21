@@ -19,6 +19,7 @@ const labelID = generateRandomID('text-label-')
 let element = {}
 let mdcTextField = {}
 let width = ''
+let hasFocused = false
 
 $: mdcTextField.value = value
 $: hasExceededMaxLength = maxlength && value.length > maxlength
@@ -45,9 +46,6 @@ const focus = (node) => autofocus && node.focus()
   top: 0.4rem;
   right: 0.6rem;
 }
-.required {
-  color: var(--mdc-required-input, var(--mdc-theme-status-error));
-}
 .label-margin {
   margin-left: 1.1rem;
 }
@@ -71,6 +69,7 @@ const focus = (node) => autofocus && node.focus()
     aria-describedby="{labelID}-helper-id"
     bind:value
     use:focus
+    on:focus={() => (hasFocused = true)}
     on:blur
     on:keydown
     on:keypress
@@ -101,7 +100,7 @@ const focus = (node) => autofocus && node.focus()
 <div class="mdc-text-field-helper-line" style="width: {width};">
   <div class="mdc-text-field-helper-text" class:opacity1={required} id="{labelID}-helper-id" aria-hidden="true">
     {#if required && !value}
-      <span class="required">*Required</span>
+      <span class="required" class:error={hasFocused}>*Required</span>
     {/if}
     {#if error}
       <span class="error">Maximum {maxlength} characters</span>
