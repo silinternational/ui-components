@@ -27,8 +27,7 @@ $: valueLength = value?.toString()?.length
 $: hasExceededMaxLength = maxlength && valueLength > maxlength
 $: hasExceededMaxValue = maxValue && internalValue > maxValue
 $: isLowerThanMinValue = minValue && internalValue < minValue
-$: showErrorIcon = hasExceededMaxValue || isLowerThanMinValue || hasExceededMaxLength || valueNotDivisibleByStep
-$: error = showErrorIcon || (hasFocused && required && !internalValue)
+$: error = hasExceededMaxValue || isLowerThanMinValue || hasExceededMaxLength || valueNotDivisibleByStep
 $: showCounter = maxlength && valueLength / maxlength > 0.85
 $: valueNotDivisibleByStep = internalValue && (internalValue / Number(step)) % 1 !== 0
 $: internalValue = Number(value) || ''
@@ -87,7 +86,7 @@ const focus = (node) => autofocus && node.focus()
     {disabled}
     {placeholder}
   />
-  {#if showErrorIcon}
+  {#if error}
     <span class="mdc-text-field__affix mdc-text-field__affix--suffix"
       ><i class="material-icons error" aria-hidden="true">error</i></span
     >
