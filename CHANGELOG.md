@@ -1,3 +1,10 @@
+## [3.10.1](https://github.com/silinternational/ui-components/compare/v3.10.0...v3.10.1) (2021-12-21)
+
+
+### Bug Fixes
+
+* **MoneyInput:** fix MoneyInput staying red ([2adc91c](https://github.com/silinternational/ui-components/commit/2adc91c73076af2a99c324a0b3b20b5c645ac343))
+
 # [3.10.0](https://github.com/silinternational/ui-components/compare/v3.9.0...v3.10.0) (2021-12-21)
 
 
