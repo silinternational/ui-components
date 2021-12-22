@@ -1,3 +1,11 @@
+## [3.10.2](https://github.com/silinternational/ui-components/compare/v3.10.1...v3.10.2) (2021-12-22)
+
+
+### Bug Fixes
+
+* **MoneyInput:** forgot to add MoneyInput to index ([fceb8e0](https://github.com/silinternational/ui-components/commit/fceb8e093461123f000c32905b26756635263b23))
+* **Textinput:** fix error on reading 'remove' ([1a209f9](https://github.com/silinternational/ui-components/commit/1a209f976abadaf9e5e8f6e543648278c75c1937))
+
 ## [3.10.1](https://github.com/silinternational/ui-components/compare/v3.10.0...v3.10.1) (2021-12-21)
 
 
