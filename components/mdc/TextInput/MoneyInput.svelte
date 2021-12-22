@@ -23,7 +23,6 @@ let width = ''
 let hasFocused = false
 let hasBlurred = false
 
-$: mdcTextField.value = value
 $: valueLength = value?.toString()?.length
 $: hasExceededMaxLength = maxlength && valueLength > maxlength
 $: hasExceededMaxValue = maxValue && internalValue > maxValue
@@ -32,14 +31,14 @@ $: showErrorIcon = hasExceededMaxValue || isLowerThanMinValue || hasExceededMaxL
 $: error = showErrorIcon || (hasFocused && hasBlurred && required && !internalValue)
 $: showCounter = maxlength && valueLength / maxlength > 0.85
 $: valueNotDivisibleByStep = internalValue && (internalValue / Number(step)) % 1 !== 0
-$: internalValue = Number(value) || ''
+$: internalValue = Number(value) || 0
 
 onMount(() => {
   mdcTextField = new MDCTextField(element)
   return () => mdcTextField.destroy()
 })
 
-afterUpdate(() => (width = `${element.offsetWidth}px`))
+afterUpdate(() => (width = `${element?.offsetWidth}px`))
 
 const focus = (node) => autofocus && node.focus()
 </script>
@@ -76,7 +75,7 @@ const focus = (node) => autofocus && node.focus()
     aria-labelledby={labelID}
     aria-controls="{labelID}-helper-id"
     aria-describedby="{labelID}-helper-id"
-    bind:value={internalValue}
+    bind:value
     use:focus
     on:focus={() => (hasFocused = true)}
     on:blur

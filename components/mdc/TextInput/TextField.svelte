@@ -34,7 +34,7 @@ onMount(() => {
 })
 
 afterUpdate(() => {
-  width = `${element.offsetWidth}px`
+  width = `${element?.offsetWidth}px`
 })
 
 const focus = (node) => autofocus && node.focus()
