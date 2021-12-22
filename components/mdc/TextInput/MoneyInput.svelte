@@ -38,7 +38,7 @@ onMount(() => {
   return () => mdcTextField.destroy()
 })
 
-afterUpdate(() => (width = `${element.offsetWidth}px`))
+afterUpdate(() => (width = `${element?.offsetWidth}px`))
 
 const focus = (node) => autofocus && node.focus()
 </script>
