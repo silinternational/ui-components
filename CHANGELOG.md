@@ -1,3 +1,11 @@
+## [3.10.3](https://github.com/silinternational/ui-components/compare/v3.10.2...v3.10.3) (2021-12-22)
+
+
+### Bug Fixes
+
+* **MoneyInput:** fix value two way binding ([7bbf8a5](https://github.com/silinternational/ui-components/commit/7bbf8a529b3abb04f5e548c6ff322823610445b1))
+* **TextInput:** fix offsetWidth error on undefined ([5d2ca72](https://github.com/silinternational/ui-components/commit/5d2ca72c73470a55351a397ef480451f0ef257d7))
+
 ## [3.10.2](https://github.com/silinternational/ui-components/compare/v3.10.1...v3.10.2) (2021-12-22)
 
 
