@@ -1,6 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield -->
 <script>
-import { addOrRemoveInvalidClass } from '.'
+import { addOrRemoveInvalidClass } from './helpers'
 import { MDCTextField } from '@material/textfield'
 import { generateRandomID } from '../../../random'
 import { onMount, tick } from 'svelte'
