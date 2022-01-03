@@ -1,3 +1,10 @@
+## [3.10.4](https://github.com/silinternational/ui-components/compare/v3.10.3...v3.10.4) (2022-01-03)
+
+
+### Bug Fixes
+
+* **TextInputs:** fix circular dependencies ([cb73f9c](https://github.com/silinternational/ui-components/commit/cb73f9cebb1cb97ea054c599627c91f724ffaf41))
+
 ## [3.10.3](https://github.com/silinternational/ui-components/compare/v3.10.2...v3.10.3) (2021-12-22)
 
 
