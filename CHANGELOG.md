@@ -1,3 +1,10 @@
+## [3.10.5](https://github.com/silinternational/ui-components/compare/v3.10.4...v3.10.5) (2022-01-06)
+
+
+### Bug Fixes
+
+* **DataTable:** sort button should be on left side of numeric HeaderItem ([4376c56](https://github.com/silinternational/ui-components/commit/4376c567b53178ff868b242ac183b8bc2cd42c7f))
+
 ## [3.10.4](https://github.com/silinternational/ui-components/compare/v3.10.3...v3.10.4) (2022-01-03)
 
 
