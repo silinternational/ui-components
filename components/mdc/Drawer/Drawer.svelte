@@ -159,10 +159,7 @@ main {
                 {/if}
               </a>
             {:else}
-              <hr
-                class="mdc-list-divider mdc-list-divider--inset-leading mdc-list-divider--inset-trailing"
-                role="separator"
-              />
+              <hr class="mdc-list-divider mdc-list-divider--inset-leading mdc-list-divider--inset-trailing" />
             {/if}
           </Tooltip.Wrapper>
           {#if tooltip}
