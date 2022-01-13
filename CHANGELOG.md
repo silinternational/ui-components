@@ -1,3 +1,10 @@
+## [3.10.6](https://github.com/silinternational/ui-components/compare/v3.10.5...v3.10.6) (2022-01-13)
+
+
+### Bug Fixes
+
+* **Drawer:** fix a11y warning ([3394ec3](https://github.com/silinternational/ui-components/commit/3394ec34e0fa535b761932d3be3b90dd574e4f73))
+
 ## [3.10.5](https://github.com/silinternational/ui-components/compare/v3.10.4...v3.10.5) (2022-01-06)
 
 
