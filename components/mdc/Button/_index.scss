@@ -1,1 +1,11 @@
 @use '@material/button/styles';
+@use '@material/button';
+
+$radius: 4px !default;
+
+.mdc-button {
+  @include button.shape-radius($radius);
+}
+.mdc-button--outlined {
+  @include button.outline-color(var(--mdc-button-outline-color));
+}

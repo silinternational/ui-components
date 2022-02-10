@@ -57,6 +57,14 @@ After installation and bundler configuration all of the components are ready to 
 
 Just include `import { Button } from '@silintl/ui-components'` in your script section to import Button and any other components you want to use.
 
+## overriding default sass variables
+
+In your main sass file just use the following pattern to override any sass variables. See https://github.com/silinternational/ui-components/blob/develop/stories/_index.scss for exposed sass variables.
+
+`@use './components/mdc/Button' with (
+  $radius: 16px
+);`
+
 ## examples
 
 See our Storybook [Docs](https://silinternational.github.io/ui-components/?path=/docs/example-introduction--page) for examples. Just click on the component you want to learn more about.
@@ -136,7 +144,7 @@ Classes from [global.scss](https://github.com/silinternational/ui-components/blo
 
 ## theming
 
-If you are using an [MDC theme](https://material.io/develop/web/docs/theming) and [typography](https://material.io/develop/web/components/typography) then import your \_index.scss file to the App.svelte file so they get applied to the ui-components.
+If you are using an [MDC theme](https://material.io/develop/web/docs/theming) and [typography](https://material.io/develop/web/components/typography) then import your \_index.scss file to the App.svelte file so they get applied to the ui-components. See https://github.com/silinternational/ui-components/blob/develop/stories/_theme.scss for exposed theme properties.
 
 ## contributions
 
