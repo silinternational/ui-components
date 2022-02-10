@@ -59,7 +59,7 @@ Just include `import { Button } from '@silintl/ui-components'` in your script se
 
 ## overriding default sass variables
 
-In your main sass file just use the following pattern to override and sass variables. See <https://github.com/silinternational/ui-components/blob/develop/stories/_index.scss> for exposed sass variables.
+In your main sass file just use the following pattern to override and sass variables. See https://github.com/silinternational/ui-components/blob/develop/stories/_index.scss for exposed sass variables.
 
 `@use './components/mdc/Button' with (
   $radius: 16px
@@ -144,7 +144,7 @@ Classes from [global.scss](https://github.com/silinternational/ui-components/blo
 
 ## theming
 
-If you are using an [MDC theme](https://material.io/develop/web/docs/theming) and [typography](https://material.io/develop/web/components/typography) then import your \_index.scss file to the App.svelte file so they get applied to the ui-components. See <https://github.com/silinternational/ui-components/blob/develop/stories/_theme.scss> for exposed theme properties.
+If you are using an [MDC theme](https://material.io/develop/web/docs/theming) and [typography](https://material.io/develop/web/components/typography) then import your \_index.scss file to the App.svelte file so they get applied to the ui-components. See https://github.com/silinternational/ui-components/blob/develop/stories/_theme.scss for exposed theme properties.
 
 ## contributions
 
