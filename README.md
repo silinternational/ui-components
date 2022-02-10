@@ -59,7 +59,7 @@ Just include `import { Button } from '@silintl/ui-components'` in your script se
 
 ## overriding default sass variables
 
-In your main sass file just use the following pattern to override and sass variables. See https://github.com/silinternational/ui-components/blob/develop/stories/_index.scss for exposed sass variables.
+In your main sass file just use the following pattern to override any sass variables. See https://github.com/silinternational/ui-components/blob/develop/stories/_index.scss for exposed sass variables.
 
 `@use './components/mdc/Button' with (
   $radius: 16px
