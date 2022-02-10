@@ -1,3 +1,11 @@
+# [3.11.0](https://github.com/silinternational/ui-components/compare/v3.10.6...v3.11.0) (2022-02-10)
+
+
+### Features
+
+* **Button:** expose radius and outline color ([90b7fd1](https://github.com/silinternational/ui-components/commit/90b7fd1c0db231f605599a8fe493a8dbd0bd27b1))
+* **TextField:** expose radius var to consumer ([3757b15](https://github.com/silinternational/ui-components/commit/3757b15380d13655ed593e365e53e1473c677660))
+
 ## [3.10.6](https://github.com/silinternational/ui-components/compare/v3.10.5...v3.10.6) (2022-01-13)
 
 
