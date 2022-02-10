@@ -3,3 +3,6 @@
 @use './components/mdc/Button' with (
   $radius: 16px
 );
+@use './components/mdc/TextInput' with (
+  $radius: 16px
+);
