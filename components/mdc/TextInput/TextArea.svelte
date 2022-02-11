@@ -13,6 +13,7 @@ export let maxlength = undefined
 export let autofocus = false
 export let rtl = false
 export let required = false
+export let description = ''
 
 const labelID = generateRandomID('textarea-label-')
 
@@ -124,3 +125,6 @@ label {
     {/if}
   </div>
 </div>
+{#if description}
+  <span class="d-block mdc-theme--neutral">{description}</span>
+{/if}
