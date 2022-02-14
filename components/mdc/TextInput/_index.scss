@@ -23,3 +23,6 @@ $radius: 8px !default;
 .required {
   color: var(--mdc-required-input, rgba(0, 0, 0, 0.6));
 }
+.mdc-theme--neutral {
+  color: var(--mdc-theme-neutral);
+}
