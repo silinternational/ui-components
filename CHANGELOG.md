@@ -1,3 +1,12 @@
+# [3.12.0](https://github.com/silinternational/ui-components/compare/v3.11.0...v3.12.0) (2022-02-14)
+
+
+### Features
+
+* **TextInput:** add description property ([a215a58](https://github.com/silinternational/ui-components/commit/a215a58e37d3bf57f2fdfc642c02adf5371dcb12))
+* **TextInput:** add description story ([a75efd6](https://github.com/silinternational/ui-components/commit/a75efd6e296aebdd4ba4514481ad07f5a688d8e1))
+* **utils:** add quarter/half margin & padding ([feeb42f](https://github.com/silinternational/ui-components/commit/feeb42f96d1d078cd914c61be41d196216fdc124))
+
 # [3.11.0](https://github.com/silinternational/ui-components/compare/v3.10.6...v3.11.0) (2022-02-10)
 
 
