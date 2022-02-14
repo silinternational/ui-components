@@ -82,7 +82,7 @@ $dimensions: (
   padding: auto !important;
 }
 
-// .25rem and .5rem margin and padding
+// padding .25rem and .5rem
 .p-quarter {
   padding: 0.25rem !important;
 }
@@ -92,6 +92,18 @@ $dimensions: (
 }
 .px-quarter {
   padding-right: 0.25rem !important;
+  padding-left: 0.25rem !important;
+}
+.pb-quarter {
+  padding-bottom: 0.25rem !important;
+}
+.pt-quarter {
+  padding-top: 0.25rem !important;
+}
+.pr-quarter {
+  padding-right: 0.25rem !important;
+}
+.pl-quarter {
   padding-left: 0.25rem !important;
 }
 
@@ -106,7 +118,20 @@ $dimensions: (
   padding-right: 0.5rem !important;
   padding-left: 0.5rem !important;
 }
+.pb-half {
+  padding-bottom: 0.5rem !important;
+}
+.pt-half {
+  padding-top: 0.5rem !important;
+}
+.pr-half {
+  padding-right: 0.5rem !important;
+}
+.pl-half {
+  padding-left: 0.5rem !important;
+}
 
+//margin .25rem and .5rem
 .m-quarter {
   margin: 0.25rem !important;
 }
@@ -122,7 +147,13 @@ $dimensions: (
   margin-bottom: .25rem !important;
 }
 .mt-quarter {
-  margin-top: .25rem !important;
+  margin-top: 0.25rem !important;
+}
+.mr-quarter {
+  margin-right: 0.25rem !important;
+}
+.ml-quarter {
+  margin-left: 0.25rem !important;
 }
 
 .m-half {
@@ -141,6 +172,12 @@ $dimensions: (
 }
 .mt-half {
   margin-top: 0.5rem !important;
+}
+.mr-half {
+  margin-right: 0.5rem !important;
+}
+.ml-half {
+  margin-left: 0.5rem !important;
 }
 
 $start: 0 !default;
