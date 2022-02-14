@@ -82,6 +82,67 @@ $dimensions: (
   padding: auto !important;
 }
 
+// .25rem and .5rem margin and padding
+.p-quarter {
+  padding: 0.25rem !important;
+}
+.py-quarter {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+}
+.px-quarter {
+  padding-right: 0.25rem !important;
+  padding-left: 0.25rem !important;
+}
+
+.p-half {
+  padding: 0.5rem !important;
+}
+.py-half {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+.px-half {
+  padding-right: 0.5rem !important;
+  padding-left: 0.5rem !important;
+}
+
+.m-quarter {
+  margin: 0.25rem !important;
+}
+.my-quarter {
+  margin-top: 0.25rem !important;
+  margin-bottom: 0.25rem !important;
+}
+.mx-quarter {
+  margin-right: 0.25rem !important;
+  margin-left: 0.25rem !important;
+}
+.mb-quarter {
+  margin-bottom: .25rem !important;
+}
+.mt-quarter {
+  margin-top: .25rem !important;
+}
+
+.m-half {
+  margin: 0.5rem !important;
+}
+.my-half {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+.mx-half {
+  margin-right: 0.5rem !important;
+  margin-left: 0.5rem !important;
+}
+.mb-half {
+  margin-bottom: 0.5rem !important;
+}
+.mt-half {
+  margin-top: 0.5rem !important;
+}
+
 $start: 0 !default;
 $end: 10 !default;
 
