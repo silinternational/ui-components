@@ -13,6 +13,7 @@ export let minValue = undefined
 export let autofocus = false
 export let disabled = false
 export let required = false
+export let description = ''
 
 const labelID = generateRandomID('text-label-')
 
@@ -125,3 +126,6 @@ const focus = (node) => autofocus && node.focus()
     </div>
   {/if}
 </div>
+{#if description}
+  <span class="d-block mdc-theme--neutral">{description}</span>
+{/if}

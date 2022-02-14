@@ -44,3 +44,5 @@ let lastKey = ''
 <Story name="Autofocus" args={copyAndModifyArgs(args, { autofocus: true })} />
 
 <Story name="Disabled" args={copyAndModifyArgs(args, { disabled: true })} />
+
+<Story name="Description" args={copyAndModifyArgs(args, { description: 'a description' })} />
