@@ -60,14 +60,14 @@
     "@storybook/svelte": "^6.4.19",
     "css-loader": "^5.2.6",
     "material-components-web": "^10.0.0",
-    "prettier": "^2.4.1",
-    "prettier-plugin-svelte": "^2.4.0",
+    "prettier": "^2.5.1",
+    "prettier-plugin-svelte": "^2.6.0",
     "sass": "1.32.x",
     "sass-loader": "^11.0.1",
     "semantic-release": "^19.0.2",
     "style-loader": "^2.0.0",
     "svelte": "^3.x",
     "svelte-loader": "^3.1.2",
-    "svelte-preprocess": "^4.7.3"
+    "svelte-preprocess": "^4.10.3"
   }
 }
