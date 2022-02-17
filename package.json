@@ -42,7 +42,8 @@
   "peerDependencies": {
     "@roxi/routify": "^2.x",
     "material-components-web": "^10.0.0",
-    "svelte": "^3.x"
+    "svelte": "^3.x",
+    "sass": "1.32.x"
   },
   "devDependencies": {
     "@roxi/routify": "^2.x",
