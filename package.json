@@ -40,13 +40,11 @@
   },
   "homepage": "https://github.com/silinternational/ui-components#readme",
   "peerDependencies": {
-    "@roxi/routify": "^2.x",
     "material-components-web": "^10.0.0",
     "svelte": "^3.x",
     "sass": "1.32.x"
   },
   "devDependencies": {
-    "@roxi/routify": "^2.x",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
     "@storybook/addon-actions": "^6.4.19",
