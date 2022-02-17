@@ -8,10 +8,11 @@ const args = {
   class: '', //only works for global classes
   title: 'Title',
   toggle: true,
+  currentUrl: './user',
   menuItems: [
     {},
     {
-      url: './',
+      url: './user',
       icon: 'account_circle',
       label: 'account',
       tooltip: 'user account',

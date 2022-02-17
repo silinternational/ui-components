@@ -4,7 +4,7 @@ Reusable Svelte components for some internal applications
 
 ## installation
 
-To install to your Svelte project, open your project's root directory in a terminal. Type `npm i @silintl/ui-components --save-dev` and press enter.
+To install to your Svelte project, open your project's root directory in a terminal. Type `npm i @silintl/ui-components --save-dev` and press enter. You may also have to run `npm i material-components-web@10.0.0  --save-dev` and possibly `npm i sass@1.32.x  --save-dev` to get sass stuff working if it doesn't work initially or you want to develop additional material web components in your app. It may depend on your version of npm if this is necessary. You should already have svelte@3 installed if you are using this library.
 
 ## bundler configuration
 
@@ -144,7 +144,7 @@ Classes from [global.scss](https://github.com/silinternational/ui-components/blo
 
 ## theming
 
-If you are using an [MDC theme](https://material.io/develop/web/docs/theming) and [typography](https://material.io/develop/web/components/typography) then import your \_index.scss file to the App.svelte file so they get applied to the ui-components. See https://github.com/silinternational/ui-components/blob/develop/stories/_theme.scss for exposed theme properties.
+If you are using an [MDC theme](https://material.io/develop/web/docs/theming) and [typography](https://material.io/develop/web/components/typography) then import your _index.scss or other file(s) that contains stuff like --mdc-theme-primary --mdc-theme-secondary, --mdc-typography-font-family, etc and other root variables to the App.svelte or Index.html file (unless they are in those files already) so they get applied to the ui-components. See https://github.com/silinternational/ui-components/blob/develop/stories/_theme.scss for exposed theme properties.
 
 ## contributions
 

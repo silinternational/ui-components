@@ -5,6 +5,8 @@ import { onMount } from 'svelte'
 
 export let icon
 export let ariaLabel
+export let url = ''
+export let disabled = false
 
 let element = {}
 onMount(() => {
@@ -16,6 +18,28 @@ onMount(() => {
 })
 </script>
 
-<button class="mdc-icon-button material-icons {$$props.class}" aria-label={ariaLabel} on:click bind:this={element}
-  >{icon}</button
->
+{#if url}
+  <a
+    href={url}
+    role="button"
+    class="mdc-icon-button material-icons {$$props.class}"
+    aria-label={ariaLabel}
+    {disabled}
+    on:click
+    on:mousedown
+    on:blur
+    on:focus
+    bind:this={element}>{icon}</a
+  >
+{:else}
+  <button
+    class="mdc-icon-button material-icons {$$props.class}"
+    aria-label={ariaLabel}
+    {disabled}
+    on:click
+    on:mousedown
+    on:blur
+    on:focus
+    bind:this={element}>{icon}</button
+  >
+{/if}

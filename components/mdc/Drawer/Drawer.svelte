@@ -6,7 +6,6 @@ import { MDCList } from '@material/list'
 import Button from '../Button'
 import IconButton from '../IconButton/IconButton.svelte'
 import Tooltip from '../Tooltip/Tooltip.svelte'
-import { beforeUrlChange, goto } from '@roxi/routify'
 import { onMount } from 'svelte'
 import TopAppBar from '../TopAppBar'
 
@@ -21,6 +20,7 @@ export let isFullHeightMenu = false
 export let miniMenu = false
 export let modal = false
 export let toggle = false
+export let currentUrl = ''
 
 let mdcDrawer = {}
 let mdcList = {}
@@ -50,14 +50,7 @@ const isMenuItemActive = (currentUrl, menuItemUrl, urlPattern) => {
   return currentUrl === menuItemUrl || (urlPattern && RegExp(urlPattern).test(currentUrl))
 }
 
-$: currentUrl = window.location.pathname
 $: toggle, toggleDrawer()
-
-$beforeUrlChange(({ url }) => {
-  currentUrl = url
-
-  return true
-})
 
 const showAppropriateThings = () => {
   showAppropriateDrawer()
@@ -140,7 +133,7 @@ main {
             {#if button && isNotMini}
               <Button class="m-1" raised prependIcon={icon} {url}>{label}</Button>
             {:else if button}
-              <IconButton class="mdc-theme--primary pl-1" {icon} ariaLabel={label} on:click={() => $goto(url)} />
+              <IconButton class="mdc-theme--primary pl-1" {icon} ariaLabel={label} {url} />
             {:else if url}
               <a
                 class="mdc-list-item"
