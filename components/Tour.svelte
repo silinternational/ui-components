@@ -77,4 +77,4 @@ function setAlertProps() {
   open={openDialog}
   {buttons}>{@html tourMessage}</Dialog.Alert
 >
-<a bind:this={anchorEl} />
+<a bind:this={anchorEl} href="/"><span /></a>
