@@ -1,3 +1,10 @@
+## [3.12.1](https://github.com/silinternational/ui-components/compare/v3.12.0...v3.12.1) (2022-02-17)
+
+
+### Bug Fixes
+
+* **deps:** add sass to peerDependencies ([08b09de](https://github.com/silinternational/ui-components/commit/08b09de76f7c281cf684f5f7a9da3544aaefffee))
+
 # [3.12.0](https://github.com/silinternational/ui-components/compare/v3.11.0...v3.12.0) (2022-02-14)
 
 
