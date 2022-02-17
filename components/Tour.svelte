@@ -1,7 +1,6 @@
 <script>
 import { Dialog } from '../components/mdc'
 import { onMount, tick } from 'svelte'
-import { goto } from '@roxi/routify'
 
 export let steps = []
 export let data = {}
@@ -12,6 +11,8 @@ let tourTitle = ''
 let tourMessage = '' // tour message can accept html markup -- use caution to not send user-generated content
 let target = ''
 let buttons = []
+
+let anchorEl = {}
 
 $: setAlertProps(step, data)
 
@@ -26,7 +27,8 @@ async function alertChosen(choice) {
 
   if (choice === 'discard') {
     if (target) {
-      $goto(target)
+      anchorEl.href = target
+      anchorEl.click()
       return
     }
     step++
@@ -75,3 +77,4 @@ function setAlertProps() {
   open={openDialog}
   {buttons}>{@html tourMessage}</Dialog.Alert
 >
+<a bind:this={anchorEl} />
