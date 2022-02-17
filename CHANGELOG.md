@@ -1,3 +1,22 @@
+# [4.0.0](https://github.com/silinternational/ui-components/compare/v3.12.1...v4.0.0) (2022-02-17)
+
+
+### Bug Fixes
+
+* **Tour:** resolve a11y warnings ([f4e3132](https://github.com/silinternational/ui-components/commit/f4e31324311ec3ec1b97678c9769168d045ec7f5))
+
+
+### Features
+
+* **Drawer:** add currentUrl prop and remove roxi ([c38dfac](https://github.com/silinternational/ui-components/commit/c38dfac0f96e1c9ad243244c00f9db9d4353b327))
+* **Drawer:** remove beforeUrlChange ([2247b8c](https://github.com/silinternational/ui-components/commit/2247b8c4bfb2164605a9159cbf3ed75e1aff1471))
+* **IconButton:** add url and disabled props ([fba3e6b](https://github.com/silinternational/ui-components/commit/fba3e6bc13ab69fc199b35cda09b06206747669a))
+
+
+### BREAKING CHANGES
+
+* **Drawer:** The consumer must update the currentUrl as a prop
+
 ## [3.12.1](https://github.com/silinternational/ui-components/compare/v3.12.0...v3.12.1) (2022-02-17)
 
 
