@@ -5,6 +5,7 @@ import { createEventDispatcher, onMount } from 'svelte'
 
 export let open = false
 export let title = ''
+export let titleIcon = ''
 export let defaultAction = 'discard'
 
 /** @type {{label, action}[]} */
