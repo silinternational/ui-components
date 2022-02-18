@@ -54,8 +54,11 @@ onMount(() => {
       aria-labelledby="title"
       aria-describedby="content"
     >
-      {#if title}
-        <h2 class="mdc-dialog__title" id="title">{title}</h2>
+      {#if title || titleIcon}
+        <h2 class="mdc-dialog__title" id="title">
+          {#if titleIcon}<i id="title-icon" class="material-icons">{titleIcon}</i>{/if}
+          {title}
+        </h2>
       {/if}
       <div class="mdc-dialog__content" id="content">
         <slot />
