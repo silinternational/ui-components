@@ -28,6 +28,7 @@ let element = {}
 let mdcDialog = {}
 
 $: open && mdcDialog.open && mdcDialog.open()
+$: !open && mdcDialog.close && mdcDialog.close('closed')
 
 onMount(() => {
   mdcDialog = new MDCDialog(element)
