@@ -21,7 +21,7 @@ const args = {
 
 <Story name="Title" args={copyAndModifyArgs(args, { title: 'title' })} />
 
-<Story name="TitleIcon" args={copyAndModifyArgs(args, { titleIcon: 'titleIcon' })} />
+<Story name="TitleIcon" args={copyAndModifyArgs(args, { titleIcon: 'warning' })} />
 
 <Story name="Default action" args={copyAndModifyArgs(args, { defaultAction: 'cancel' })} />
 
