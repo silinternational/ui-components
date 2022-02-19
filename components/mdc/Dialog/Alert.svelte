@@ -5,6 +5,7 @@ import { createEventDispatcher, onMount } from 'svelte'
 
 export let open = false
 export let title = ''
+export let titleIcon = ''
 export let defaultAction = 'discard'
 
 /** @type {{label, action}[]} */
@@ -27,6 +28,7 @@ let element = {}
 let mdcDialog = {}
 
 $: open && mdcDialog.open && mdcDialog.open()
+$: !open && mdcDialog.close && mdcDialog.close('closed')
 
 onMount(() => {
   mdcDialog = new MDCDialog(element)
@@ -52,8 +54,11 @@ onMount(() => {
       aria-labelledby="title"
       aria-describedby="content"
     >
-      {#if title}
-        <h2 class="mdc-dialog__title" id="title">{title}</h2>
+      {#if title || titleIcon}
+        <h2 class="mdc-dialog__title" id="title">
+          {#if titleIcon}<i id="title-icon" class="material-icons">{titleIcon}</i>{/if}
+          {title}
+        </h2>
       {/if}
       <div class="mdc-dialog__content" id="content">
         <slot />

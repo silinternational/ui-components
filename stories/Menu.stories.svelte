@@ -9,6 +9,9 @@ const args = {
   menuOpen: true,
   menuItems: [
     {
+      subtitle: 'Alerts',
+    },
+    {
       icon: 'notifications',
       label: 'Alerts',
       action: () => alert('Hello!'),
