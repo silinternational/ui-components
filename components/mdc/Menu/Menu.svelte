@@ -40,7 +40,7 @@ const closeMenuHandler = () => {
   color: var(--mdc-list-item__subtitle, var(#5f6368));
 }
 i {
-  color: var(--mdc-meny-icon-color, var(#5f6368));
+  color: var(--mdc-menu-icon-color, var(#5f6368));
 }
 </style>
 
