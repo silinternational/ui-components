@@ -1,3 +1,12 @@
+# [4.1.0](https://github.com/silinternational/ui-components/compare/v4.0.0...v4.1.0) (2022-02-21)
+
+
+### Features
+
+* **Dialog.Alert:** add titleIcon prop ([13a9c41](https://github.com/silinternational/ui-components/commit/13a9c41280de3cce064d8a94db1a10be8268c5f1))
+* **Dialog.Alert:** allow modal to close itself ([d4df8e8](https://github.com/silinternational/ui-components/commit/d4df8e826f813f9c9a148fc5bfe1966466cf3822))
+* **Menu:** add subtitle to menuItems prop as splitters ([b23fab6](https://github.com/silinternational/ui-components/commit/b23fab6e349ad9c1fd8a397ee6cf54463db6d0b0))
+
 # [4.0.0](https://github.com/silinternational/ui-components/compare/v3.12.1...v4.0.0) (2022-02-17)
 
 
