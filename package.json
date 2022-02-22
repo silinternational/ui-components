@@ -2,12 +2,16 @@
   "name": "@silintl/ui-components",
   "version": "3.2.0",
   "description": "Reusable Svelte components for some internal applications",
-  "main": "index.js",
+  "svelte": "dist/index.js",
+  "module": "dist/index.mjs",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo test",
     "format-all": "npx prettier --write .",
     "dev": "sass components/global.scss components/global.css; start-storybook -p 6007",
-    "build": "sass components/global.scss components/global.css; build-storybook"
+    "storybook": "sass components/global.scss components/global.css; build-storybook",
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build"
   },
   "release": {
     "branches": [
@@ -41,10 +45,11 @@
   "homepage": "https://github.com/silinternational/ui-components#readme",
   "peerDependencies": {
     "material-components-web": "^10.0.0",
-    "svelte": "^3.x",
-    "sass": "1.32.x"
+    "sass": "1.32.x",
+    "svelte": "^3.x"
   },
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.1.3",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
     "@storybook/addon-actions": "^6.4.19",
@@ -59,8 +64,12 @@
     "@storybook/svelte": "^6.4.19",
     "css-loader": "^6.6.0",
     "material-components-web": "^10.0.0",
+    "postcss": "^8.4.6",
     "prettier": "^2.5.1",
     "prettier-plugin-svelte": "^2.6.0",
+    "rollup": "^2.67.3",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-svelte": "^7.1.0",
     "sass": "1.32.x",
     "sass-loader": "^12.5.0",
     "semantic-release": "^19.0.2",
