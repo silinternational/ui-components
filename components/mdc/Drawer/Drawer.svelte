@@ -9,6 +9,8 @@ import Tooltip from '../Tooltip/Tooltip.svelte'
 import { onMount } from 'svelte'
 import TopAppBar from '../TopAppBar'
 
+const bodyEl = {}
+
 export let title = ''
 export let subtitle = ''
 export let menuItems = []
@@ -34,7 +36,7 @@ onMount(() => {
     mdcDrawer = new MDCDrawer(element)
 
     //MDC docs: restores focus to first focusable element when drawer closes
-    document.body.addEventListener('MDCDrawer:closed', () => mainContentEl.querySelector('input, button').focus())
+    bodyEl.addEventListener('MDCDrawer:closed', () => mainContentEl.querySelector('input, button').focus())
 
     showAppropriateThings()
 
@@ -107,6 +109,8 @@ main {
 </style>
 
 <svelte:window on:resize={showAppropriateThings} />
+
+<svelte:body being:this={bodyEl} />
 
 <aside
   class="mdc-drawer {$$props.class}"
