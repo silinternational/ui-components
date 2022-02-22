@@ -22,12 +22,12 @@ import {
   Tooltip,
   TopAppBar,
   setNotice,
-} from './components/mdc'
+} from './components/mdc/index.js'
 
 import Badge from './components/Badge.svelte'
 import CustomCard from './components/CustomCard.svelte'
 import Form from './components/Form.svelte'
-import Page from './components/page'
+import Page from './components/page/index.js'
 import StaticChip from './components/StaticChip.svelte'
 import Tour from './components/Tour.svelte'
 
