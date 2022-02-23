@@ -22,8 +22,6 @@ export let modal = false
 export let toggle = false
 export let currentUrl = ''
 
-const bodyEl = {}
-
 let mdcDrawer = {}
 let mdcList = {}
 let element = {}
@@ -36,7 +34,7 @@ onMount(() => {
     mdcDrawer = new MDCDrawer(element)
 
     //MDC docs: restores focus to first focusable element when drawer closes
-    bodyEl.addEventListener('MDCDrawer:closed', () => mainContentEl.querySelector('input, button').focus())
+    element.addEventListener('MDCDrawer:closed', () => mainContentEl.querySelector('input, button').focus())
 
     showAppropriateThings()
 
@@ -109,8 +107,6 @@ main {
 </style>
 
 <svelte:window on:resize={showAppropriateThings} />
-
-<svelte:body being:this={bodyEl} />
 
 <aside
   class="mdc-drawer {$$props.class}"
