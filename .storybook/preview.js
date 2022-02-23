@@ -16,7 +16,7 @@ loadIcons()
 function loadIcons() {
   const link = document.createElement('link')
 
-  link.href = 'https://fonts.googleapis.com/icon?family=Material+Icons&display=swap'
+  link.href = 'https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet'
   link.rel = 'stylesheet'
 
   document.head.appendChild(link)
