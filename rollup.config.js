@@ -3,6 +3,7 @@ import resolve from '@rollup/plugin-node-resolve'
 import postcss from 'rollup-plugin-postcss'
 import svelte from 'rollup-plugin-svelte'
 import autoPreprocess from 'svelte-preprocess'
+import {terser} from 'rollup-plugin-terser'
 
 const name = pkg.name
 	.replace(/^(@\S+\/)?(svelte-)?(\S+)/, '$3')
@@ -13,7 +14,8 @@ export default {
 	input: 'index.js',
 	output: [
 		{ file: pkg.module, 'format': 'es' },
-		{ file: pkg.main, 'format': 'umd', name }
+		{ file: pkg.main, 'format': 'umd', name },
+		{ file: pkg.main.replace('.js','.min.js'), format: 'iife', name, plugins: [terser()]}
 	],
 	plugins: [
 		svelte(
