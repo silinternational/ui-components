@@ -1,6 +1,9 @@
 import './_index.css'
+import { browser } from '$app/env'
 
-loadIcons()
+if (browser) {
+  loadIcons()
+}
 
 // https://material.io/resources/icons
 function loadIcons() {
