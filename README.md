@@ -4,8 +4,63 @@ Reusable Svelte components for some internal applications
 
 ## installation
 
-To install to your Svelte project, open your project's root directory in a terminal. Type `npm i @silintl/ui-components --save-dev` and press enter. You may also have to run `npm i material-components-web@10.0.0  --save-dev` and possibly `npm i sass@1.32.x  --save-dev` to get sass stuff working if it doesn't work initially or you want to develop additional material web components in your app. It may depend on your version of npm if this is necessary. You should already have svelte@3 installed if you are using this library. You will also want to include the following code in your index.html for material icons to work,  `<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">`. See https://google.github.io/material-design-icons/#sizing for sizing material icons. See the `themeing and typography` section for importing Google Fonts.
+To install to your Svelte project, open your project's root directory in a terminal. Type `npm i @silintl/ui-components --save-dev` and press enter. You may also have to run `npm i material-components-web@10.0.0  --save-dev` and possibly `npm i sass@1.32.x  --save-dev` to get sass stuff working if it doesn't work initially or you want to develop additional material web components in your app. It may depend on your version of npm if this is necessary. You should already have svelte@3 installed if you are using this library.
+
+You will also want to include the following code in your index.html for material icons to work,
+```
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
+```
+See https://google.github.io/material-design-icons/#sizing for sizing material icons. See the `themeing` and `typography` section for importing Google Fonts.
 `
+
+## theming
+
+If you are using an [MDC theme](https://material.io/develop/web/docs/theming) you may want to include a _typography.scss file and import it into
+_index.scss.
+
+Import _index.scss or other file(s) that contains stuff like --mdc-theme-primary --mdc-theme-secondary and other root variables to the App.svelte (Index.svelte in sveltekit templates) or Index.html (App.html for sveltekit) file (unless they are being declared there already) so they get applied to the ui-components.
+
+See https://github.com/silinternational/ui-components/blob/develop/stories/_theme.scss for exposed theme properties.
+
+## typography
+See [typography](https://material.io/develop/web/components/typography)
+
+In your _typography.scss or similar file include the following snippet:
+```
+@use '@material/typography/mdc-typography';
+```
+
+and something similar to the following:
+```
+:root {
+  --mdc-typography-font-family: Source Sans Pro, Roboto, sans-serif;
+}
+```
+and then import it to your sass entry point like _index.scss. You may prefer to declare your root typography rules elsewhere (eg. index.html) which is ok.
+
+## theme typography and icons example
+
+see https://github.com/material-components/material-web#2-write-html-and-javascript
+
+Your index.html could look something like this
+```
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Example App</title>
+
+    <!-- Add support for Web Components to older browsers. -->
+    <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <!-- Your application must load the Roboto and Material Icons fonts. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
+  </head>
+  ...
+  ```
 
 ## bundler configuration
 
@@ -142,10 +197,6 @@ or run storybook locally. Just copy this repo to your machine and run `npm insta
 ## CSS utility classes
 
 Classes from [global.scss](https://github.com/silinternational/ui-components/blob/develop/components/global.scss) can be applied to all components and even components and elements from your app.
-
-## theming and typography
-
-If you are using an [MDC theme](https://material.io/develop/web/docs/theming) and [typography](https://material.io/develop/web/components/typography) then import your _index.scss or other file(s) that contains stuff like --mdc-theme-primary --mdc-theme-secondary, --mdc-typography-font-family, etc and other root variables to the App.svelte or Index.html file (unless they are in those files already) so they get applied to the ui-components. See https://github.com/silinternational/ui-components/blob/develop/stories/_theme.scss for exposed theme properties.
 
 ## contributions
 
