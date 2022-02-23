@@ -6,7 +6,7 @@ Reusable Svelte components for some internal applications
 
 To install to your Svelte project, open your project's root directory in a terminal. Type `npm i @silintl/ui-components --save-dev` and press enter. You may also have to run `npm i material-components-web@10.0.0  --save-dev` and possibly `npm i sass@1.32.x  --save-dev` to get sass stuff working if it doesn't work initially or you want to develop additional material web components in your app. It may depend on your version of npm if this is necessary. You should already have svelte@3 installed if you are using this library.
 
-You will also want to include the follow the example below in your index.html (app.html for sveltekit templates) for Material Icons to work and for Google fonts to load.
+You will also want to follow the example below for your index.html (app.html for sveltekit templates) for Material Icons to work and for Google fonts to load.
 see https://github.com/material-components/material-web#2-write-html-and-javascript
 
 Your index.html could look something like this
