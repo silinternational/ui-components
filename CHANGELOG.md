@@ -1,3 +1,22 @@
+# [5.0.0](https://github.com/silinternational/ui-components/compare/v4.1.0...v5.0.0) (2022-02-24)
+
+
+### Bug Fixes
+
+* **Drawer:** use element to listen for closed ([111d0e4](https://github.com/silinternational/ui-components/commit/111d0e463d2525cd466960513717c13f3913ac7d))
+* **icons:** icons not loading in sveltekit SSR ([bfa8e19](https://github.com/silinternational/ui-components/commit/bfa8e19c72ab9b522c30cb7daa410a889991f942))
+* **index:** use index.mjs as entry point ([f4aec84](https://github.com/silinternational/ui-components/commit/f4aec84275a4015c1a2d913ef5de618f5a35021c))
+
+
+### Features
+
+* **icons:** remove autoloading material icons ([e3c0483](https://github.com/silinternational/ui-components/commit/e3c0483c0a69a6859146c03834f07233d9b09edd))
+
+
+### BREAKING CHANGES
+
+* **icons:** consumer now imports icons. see README.
+
 # [4.1.0](https://github.com/silinternational/ui-components/compare/v4.0.0...v4.1.0) (2022-02-21)
 
 
