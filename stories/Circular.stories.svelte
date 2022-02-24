@@ -1,5 +1,5 @@
 <script>
-import { Progress } from '../'
+import { Progress } from '../index.mjs'
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 
 const args = {

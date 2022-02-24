@@ -1,5 +1,5 @@
 <script>
-import { Menu, Button } from '../'
+import { Menu, Button } from '../index.mjs'
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 
 let content = 'Menu Button'

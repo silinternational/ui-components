@@ -1,5 +1,5 @@
 <script>
-import { Fab } from '../'
+import { Fab } from '../index.mjs'
 import { copyAndModifyArgs } from './helpers'
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 

@@ -1,5 +1,5 @@
 <script>
-import { Snackbar, setNotice } from '../'
+import { Snackbar, setNotice } from '../index.mjs'
 import { onMount } from 'svelte'
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 

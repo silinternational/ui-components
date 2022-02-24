@@ -1,5 +1,5 @@
 <script>
-import { MoneyInput } from '../'
+import { MoneyInput } from '../index.mjs'
 import { copyAndModifyArgs } from './helpers.js'
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 

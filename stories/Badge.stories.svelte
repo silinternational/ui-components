@@ -1,6 +1,6 @@
 <script>
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-import { Badge } from '../'
+import { Badge } from '../index.mjs'
 import { copyAndModifyArgs } from './helpers.js'
 
 const args = {

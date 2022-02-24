@@ -1,5 +1,5 @@
 <script>
-import { Progress } from '../'
+import { Progress } from '../index.mjs'
 import { copyAndModifyArgs } from './helpers.js'
 import './_index.scss'
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'

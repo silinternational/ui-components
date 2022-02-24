@@ -1,5 +1,5 @@
 <script>
-import { Datatable, isAboveMobile, isAboveTablet, Progress } from '../'
+import { Datatable, isAboveMobile, isAboveTablet, Progress } from '../index.mjs'
 import { copyAndModifyArgs } from './helpers.js'
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 import { onMount } from 'svelte'

@@ -1,5 +1,5 @@
 <script>
-import { Dialog } from '../'
+import { Dialog } from '../index.mjs'
 import { copyAndModifyArgs } from './helpers.js'
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 

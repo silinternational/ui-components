@@ -1,6 +1,6 @@
 <script>
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-import { StaticChip } from '../'
+import { StaticChip } from '../index.mjs'
 
 const args = {
   class: '', //only works for global classes

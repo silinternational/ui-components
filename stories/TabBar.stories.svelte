@@ -1,5 +1,5 @@
 <script>
-import { TabBar } from '../'
+import { TabBar } from '../index.mjs'
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 
 const args = {

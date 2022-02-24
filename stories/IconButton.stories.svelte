@@ -1,5 +1,5 @@
 <script>
-import { IconButton } from '../'
+import { IconButton } from '../index.mjs'
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 </script>
 

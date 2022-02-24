@@ -1,5 +1,5 @@
 <script>
-import { Select } from '../'
+import { Select } from '../index.mjs'
 import { copyAndModifyArgs } from './helpers.js'
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 
