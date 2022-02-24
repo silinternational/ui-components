@@ -9,3 +9,15 @@ export const parameters = {
     },
   },
 }
+
+loadIcons()
+
+// https://material.io/resources/icons
+function loadIcons() {
+  const link = document.createElement('link')
+
+  link.href = 'https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet'
+  link.rel = 'stylesheet'
+
+  document.head.appendChild(link)
+}

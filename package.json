@@ -2,7 +2,8 @@
   "name": "@silintl/ui-components",
   "version": "3.2.0",
   "description": "Reusable Svelte components for some internal applications",
-  "main": "index.js",
+  "main": "index.mjs",
+  "module": "index.mjs",
   "scripts": {
     "test": "echo test",
     "format-all": "npx prettier --write .",
