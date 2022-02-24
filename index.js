@@ -24,7 +24,7 @@ import {
   setNotice,
 } from './components/mdc/index.js'
 
-import { Badge, CustomCard, Form, StaticChip, Tour } from './custom/index.js'
+import { Badge, CustomCard, Form, StaticChip, Tour } from './components/custom/index.js'
 import Page from './components/page/index.js'
 
 export {
