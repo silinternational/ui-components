@@ -4,7 +4,7 @@
 // icons: https://material.io/resources/icons/
 // !! (keep an eye on this):  https://github.com/material-components/material-components-web-components
 import './_index.scss'
-import actions from './TopAppBar/actions'
+import actions from './TopAppBar/actions.js'
 import Button from './Button'
 import Card from './Card'
 import Checkbox from './Checkbox'
