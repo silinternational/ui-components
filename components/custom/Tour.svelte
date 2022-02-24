@@ -1,5 +1,5 @@
 <script>
-import { Dialog } from '../index.mjs'
+import { Dialog } from '../'
 import { onMount, tick } from 'svelte'
 
 export let steps = []
