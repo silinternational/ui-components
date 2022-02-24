@@ -1,7 +1,7 @@
 <script>
-import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-import { Fab } from '../components/mdc'
+import { Fab } from '../'
 import { copyAndModifyArgs } from './helpers'
+import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 
 const args = {
   icon: 'add',

@@ -1,8 +1,8 @@
 <script>
-import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-import { Progress } from '../components/mdc'
+import { Progress } from '../'
 import { copyAndModifyArgs } from './helpers.js'
 import './_index.scss'
+import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 
 const args = {
   class: '', //only works for global classes

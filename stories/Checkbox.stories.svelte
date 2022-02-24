@@ -1,7 +1,7 @@
 <script>
-import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-import { Checkbox } from '../components/mdc'
+import { Checkbox } from '../'
 import { copyAndModifyArgs } from './helpers.js'
+import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 
 const args = {
   label: 'Checkbox',

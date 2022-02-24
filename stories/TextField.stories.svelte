@@ -1,7 +1,7 @@
 <script>
-import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-import { TextField } from '../components/mdc'
+import { TextField } from '../'
 import { copyAndModifyArgs } from './helpers.js'
+import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 
 const args = {
   'on:keydown': (event) => console.log('TextField keydown', event),

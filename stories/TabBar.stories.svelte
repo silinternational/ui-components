@@ -1,6 +1,6 @@
 <script>
+import { TabBar } from '../'
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-import { TabBar } from '../components/mdc'
 
 const args = {
   tab: 0,

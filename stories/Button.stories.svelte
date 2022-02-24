@@ -1,7 +1,7 @@
 <script>
-import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-import { Button } from '../components/mdc'
+import { Button } from '../'
 import { copyAndModifyArgs } from './helpers.js'
+import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 
 let content = 'Button slot'
 

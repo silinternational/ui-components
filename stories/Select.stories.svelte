@@ -1,7 +1,7 @@
 <script>
-import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-import { Select } from '../components/mdc'
+import { Select } from '../'
 import { copyAndModifyArgs } from './helpers.js'
+import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 
 const args = {
   options: [

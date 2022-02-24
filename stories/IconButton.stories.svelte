@@ -1,6 +1,6 @@
 <script>
+import { IconButton } from '../'
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-import { IconButton } from '../components/mdc'
 </script>
 
 <Meta title="Atoms/IconButton" component={IconButton} />

@@ -1,6 +1,6 @@
 <script>
+import { Progress } from '../'
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-import { Progress } from '../components/mdc'
 
 const args = {
   class: '', //only works for global classes

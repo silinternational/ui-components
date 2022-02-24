@@ -1,7 +1,7 @@
 <script>
-import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-import { Snackbar, setNotice } from '../components/mdc'
+import { Snackbar, setNotice } from '../'
 import { onMount } from 'svelte'
+import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 
 const args = {
   class: '', //only works for global classes

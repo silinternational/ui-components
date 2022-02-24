@@ -1,6 +1,6 @@
 <script>
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-import { Page } from '../index'
+import { Page } from '../'
 import { copyAndModifyArgs } from './helpers.js'
 
 const args = {

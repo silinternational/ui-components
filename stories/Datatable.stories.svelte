@@ -1,7 +1,7 @@
 <script>
-import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-import { Datatable, isAboveMobile, isAboveTablet, Progress } from '../components/mdc'
+import { Datatable, isAboveMobile, isAboveTablet, Progress } from '../'
 import { copyAndModifyArgs } from './helpers.js'
+import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 import { onMount } from 'svelte'
 
 const args = {
