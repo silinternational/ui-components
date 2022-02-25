@@ -34,7 +34,7 @@ onMount(() => {
     mdcDrawer = new MDCDrawer(element)
 
     //MDC docs: restores focus to first focusable element when drawer closes
-    document.body.addEventListener('MDCDrawer:closed', () => mainContentEl.querySelector('input, button').focus())
+    element.addEventListener('MDCDrawer:closed', () => mainContentEl.querySelector('input, button').focus())
 
     showAppropriateThings()
 

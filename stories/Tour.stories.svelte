@@ -1,6 +1,6 @@
 <script>
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-import { Tour } from '../'
+import { Tour } from '../components/mdc'
 import { copyAndModifyArgs } from './helpers.js'
 
 const args = {

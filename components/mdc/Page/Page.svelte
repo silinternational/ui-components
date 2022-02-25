@@ -1,6 +1,6 @@
 <script>
-import { Progress } from '../mdc'
-import appBarTitle from '../mdc/TopAppBar/title'
+import { Progress } from '../'
+import appBarTitle from '../TopAppBar/title'
 
 export let loading = false
 export let title = ''
