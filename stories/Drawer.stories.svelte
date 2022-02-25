@@ -1,8 +1,7 @@
 <script>
-import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-import { Button, Datatable, Drawer } from '../components/mdc'
-import Page from '../components/page/Page.svelte'
+import { Button, Datatable, Drawer, Page } from '../components/mdc'
 import { copyAndModifyArgs } from './helpers.js'
+import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 
 const args = {
   class: '', //only works for global classes

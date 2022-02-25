@@ -8,6 +8,7 @@ import actions from './TopAppBar/actions'
 import Button from './Button'
 import Card from './Card'
 import Checkbox from './Checkbox'
+import CustomCard from './CustomCard'
 import Datatable from './Datatable'
 import Dialog from './Dialog'
 import Drawer from './Drawer'
@@ -16,6 +17,7 @@ import IconButton from './IconButton'
 import { isAboveMobile, isAboveTablet } from './breakpoints'
 import List from './List'
 import Menu from './Menu'
+import Page from './Page'
 import Progress from './Progress'
 import Select from './Select'
 import Snackbar from './Snackbar'
@@ -23,6 +25,7 @@ import TabBar from './TabBar'
 import { TextArea, TextField, MoneyInput } from './TextInput'
 import Tooltip from './Tooltip'
 import TopAppBar from './TopAppBar'
+import Tour from './Tour'
 import { setNotice } from './Snackbar/notice'
 
 export {
@@ -30,6 +33,7 @@ export {
   Button,
   Card,
   Checkbox,
+  CustomCard,
   Datatable,
   Dialog,
   Drawer,
@@ -40,12 +44,14 @@ export {
   List,
   Menu,
   MoneyInput,
+  Page,
   Progress,
   TabBar,
   TextArea,
   TextField,
   Tooltip,
   TopAppBar,
+  Tour,
   Snackbar,
   Select,
   setNotice,

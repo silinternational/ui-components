@@ -3,6 +3,7 @@ import {
   Button,
   Card,
   Checkbox,
+  CustomCard,
   Datatable,
   Dialog,
   Drawer,
@@ -13,6 +14,7 @@ import {
   List,
   Menu,
   MoneyInput,
+  Page,
   Progress,
   Select,
   Snackbar,
@@ -20,16 +22,12 @@ import {
   TextArea,
   TextField,
   Tooltip,
+  Tour,
   TopAppBar,
   setNotice,
 } from './components/mdc/index.js'
 
-import Badge from './components/Badge.svelte'
-import CustomCard from './components/CustomCard.svelte'
-import Form from './components/Form.svelte'
-import Page from './components/page/index.js'
-import StaticChip from './components/StaticChip.svelte'
-import Tour from './components/Tour.svelte'
+import { Badge, Form, StaticChip } from './components/custom/index.js'
 
 export {
   actions,
@@ -38,6 +36,7 @@ export {
   isAboveTablet,
   Card,
   Checkbox,
+  CustomCard,
   Datatable,
   Dialog,
   Drawer,
@@ -55,7 +54,6 @@ export {
   Tooltip,
   TopAppBar,
   Badge,
-  CustomCard,
   Form,
   Page,
   StaticChip,
