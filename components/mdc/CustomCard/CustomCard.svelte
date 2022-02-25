@@ -1,5 +1,5 @@
 <script>
-import { Button, Card } from './mdc'
+import { Button, Card } from '../'
 
 export let src = ''
 export let alt = 'image is missing'
