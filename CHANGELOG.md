@@ -1,3 +1,10 @@
+## [5.0.1](https://github.com/silinternational/ui-components/compare/v5.0.0...v5.0.1) (2022-03-04)
+
+
+### Bug Fixes
+
+* **MoneyInput:** fix step bug when 2.01 is entered ([10b8f9c](https://github.com/silinternational/ui-components/commit/10b8f9c79d03640ebf3ce4f161c8a105be042f7d))
+
 # [5.0.0](https://github.com/silinternational/ui-components/compare/v4.1.0...v5.0.0) (2022-02-24)
 
 
