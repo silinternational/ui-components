@@ -2,6 +2,6 @@
 export let ariaDescribedBy
 </script>
 
-<div aria-describedby={ariaDescribedBy}>
+<div class={$$props.class} aria-describedby={ariaDescribedBy}>
   <slot />
 </div>
