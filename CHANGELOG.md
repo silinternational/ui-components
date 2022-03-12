@@ -1,3 +1,10 @@
+# [5.1.0](https://github.com/silinternational/ui-components/compare/v5.0.1...v5.1.0) (2022-03-12)
+
+
+### Features
+
+* **Tooltip:** add class prop to Wrapper ([38a9669](https://github.com/silinternational/ui-components/commit/38a9669cabc56804e78fc0a8869e12a1f53fb587))
+
 ## [5.0.1](https://github.com/silinternational/ui-components/compare/v5.0.0...v5.0.1) (2022-03-04)
 
 
