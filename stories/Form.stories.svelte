@@ -1,6 +1,7 @@
 <script>
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-import { Form, TextField } from '../'
+import { TextField } from '../components/mdc'
+import { Form } from '../components/custom'
 
 const args = {
   class: '', //only works for global classes

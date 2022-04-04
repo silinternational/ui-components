@@ -31,7 +31,7 @@ $: isLowerThanMinValue = minValue && internalValue < minValue
 $: showErrorIcon = hasExceededMaxValue || isLowerThanMinValue || hasExceededMaxLength || valueNotDivisibleByStep
 $: error = showErrorIcon || (hasFocused && hasBlurred && required && !internalValue)
 $: showCounter = maxlength && valueLength / maxlength > 0.85
-$: valueNotDivisibleByStep = internalValue && (internalValue / Number(step)).toFixed(13) % 1 !== 0
+$: valueNotDivisibleByStep = internalValue && (internalValue / Number(step)).toFixed(2) % 1 !== 0
 $: internalValue = Number(value) || 0
 
 onMount(() => {
