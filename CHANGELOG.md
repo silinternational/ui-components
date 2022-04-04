@@ -1,3 +1,11 @@
+## [5.1.1](https://github.com/silinternational/ui-components/compare/v5.1.0...v5.1.1) (2022-04-04)
+
+
+### Bug Fixes
+
+* **imports:** fix circular dependency warnings ([81ca49f](https://github.com/silinternational/ui-components/commit/81ca49f171988be3882c78404d6a2b77f6c3c2d4))
+* **MoneyInput:** fix valueNotDivisibleByStep for most values ([d38c333](https://github.com/silinternational/ui-components/commit/d38c3335a42d04e764404718029ace1647212a21))
+
 # [5.1.0](https://github.com/silinternational/ui-components/compare/v5.0.1...v5.1.0) (2022-03-12)
 
 
