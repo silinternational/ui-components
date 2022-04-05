@@ -10,13 +10,19 @@ export let width = '232px'
 export let maxlength = 255
 export let disabled = false
 
+let element = {}
+
 let randomId = generateRandomID('dataList-')
 
 $: internalChoice = choice
 
 const dispatch = createEventDispatcher()
 
-const onChange = () => options[internalChoice] && dispatch('chosen', options[internalChoice])
+const onChange = () => {
+  options[internalChoice] && dispatch('chosen', options[internalChoice])
+  choice = internalChoice
+  element.blur()
+}
 </script>
 
 <style>
@@ -68,12 +74,10 @@ const onChange = () => options[internalChoice] && dispatch('chosen', options[int
     style="width: {width}"
     list={randomId}
     placeholder="&nbsp;"
+    bind:this={element}
     bind:value={internalChoice}
     on:change={onChange}
-    on:blur={() => {
-      dispatch('check', internalChoice)
-      internalChoice = choice
-    }}
+    on:blur={() => dispatch('check', internalChoice)}
     on:focus={() => (internalChoice = '')}
   />
   <span class="placeholder">{placeholder}</span>

@@ -5,16 +5,14 @@ import { copyAndModifyArgs } from './helpers.js'
 
 const args = {
   options: {
-    'choice 1': '0',
-    'choice 2': '1',
-    'choice 3': '2',
-    'choice 4': '3',
-    'choice 5': '4',
-    'choice 6': '5',
+    'choice 1': 'choice 1',
+    'choice 2': 'choice 2',
+    'choice 3': 'choice 3',
+    'choice 4': 'choice 4',
   },
   placeholder: 'choice 1',
   padding: '12px',
-  choice: '',
+  choice: 'choice 1',
   width: '232px',
   maxlength: 255,
   'on:chosen': (e) => alert(e.detail + ' chosen'),
