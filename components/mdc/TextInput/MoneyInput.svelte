@@ -31,7 +31,9 @@ $: isLowerThanMinValue = minValue && internalValue < minValue
 $: showErrorIcon = hasExceededMaxValue || isLowerThanMinValue || hasExceededMaxLength || valueNotDivisibleByStep
 $: error = showErrorIcon || (hasFocused && hasBlurred && required && !internalValue)
 $: showCounter = maxlength && valueLength / maxlength > 0.85
-$: valueNotDivisibleByStep = internalValue && (internalValue / Number(step)).toFixed(2) % 1 !== 0
+$: valueHasTooManyDecPlaces = getDecimalPlacesLength(internalValue) > getDecimalPlacesLength(step)
+$: valueNotDivisibleByStep =
+  (internalValue && (internalValue / Number(step)).toFixed(2) % 1 !== 0) || valueHasTooManyDecPlaces
 $: internalValue = Number(value) || 0
 
 onMount(() => {
@@ -40,6 +42,12 @@ onMount(() => {
 })
 
 afterUpdate(() => (width = `${element?.offsetWidth}px`))
+
+function getDecimalPlacesLength(number = 0) {
+  const string = String(number)
+  const length = string.includes('e-') ? string.split('e-')?.[1] : string.split('.')[1]?.length
+  return length || 0
+}
 
 const focus = (node) => autofocus && node.focus()
 </script>
