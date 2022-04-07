@@ -1,8 +1,12 @@
 <script>
-import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 import { MoneyInput } from '../components/mdc'
 import { copyAndModifyArgs } from './helpers.js'
+import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
+import { getDecimalPlacesLength } from '../components/mdc/TextInput/helpers'
 
+let arrayOfValues = []
+let dynamicValue
+let lastKey = ''
 let title = 'MoneyInput'
 
 const args = {
@@ -14,14 +18,38 @@ const args = {
   maxValue: 100,
   step: '.01',
 }
+$: arrayOfValues.forEach((v) =>
+  setTimeout(() => {
+    dynamicValue = v
+  }, 100)
+)
 
-let lastKey = ''
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from#sequence_generator_range
+function range(start, stop, step) {
+  const numberOfDecToFix = getDecimalPlacesLength(step)
+  return Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step).toFixed(numberOfDecToFix))
+}
+
+function setValues(max, step) {
+  arrayOfValues = range(0, max, step)
+}
 </script>
 
 <Meta title="Atoms/MoneyInput" component={MoneyInput} />
 
 <Template let:args>
-  <MoneyInput {...args} on:keydown={args['on:keydown']} on:keypress={args['on:keypress']} on:keyup={args['on:keyup']} />
+  {#if !args.label}
+    <div class="opacity0">
+      {setValues(args.maxValue, args.step)}
+    </div>
+  {/if}
+  <MoneyInput
+    value={!args.label && dynamicValue}
+    {...args}
+    on:keydown={args['on:keydown']}
+    on:keypress={args['on:keypress']}
+    on:keyup={args['on:keyup']}
+  />
   {#if lastKey}
     <p>Last key pressed: {lastKey}</p>
   {/if}
@@ -46,3 +74,5 @@ let lastKey = ''
 <Story name="Disabled" args={copyAndModifyArgs(args, { disabled: true })} />
 
 <Story name="Description" args={copyAndModifyArgs(args, { description: 'a description' })} />
+
+<Story name="Test step" args={{ ...args, label: '' }} />

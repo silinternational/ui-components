@@ -1,7 +1,8 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield -->
 <script>
-import { MDCTextField } from '@material/textfield'
+import { getDecimalPlacesLength } from './helpers'
 import { generateRandomID } from '../../../random'
+import { MDCTextField } from '@material/textfield'
 import { afterUpdate, onMount } from 'svelte'
 
 export let label = ''
@@ -42,12 +43,6 @@ onMount(() => {
 })
 
 afterUpdate(() => (width = `${element?.offsetWidth}px`))
-
-function getDecimalPlacesLength(number = 0) {
-  const string = String(number)
-  const length = string.includes('e-') ? string.split('e-')?.[1] : string.split('.')[1]?.length
-  return length || 0
-}
 
 const focus = (node) => autofocus && node.focus()
 </script>
