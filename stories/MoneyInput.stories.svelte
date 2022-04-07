@@ -35,11 +35,18 @@ function setValues(max, step) {
 }
 </script>
 
+<style>
+  .d-none {
+  display: none;
+}
+
+</style>
+
 <Meta title="Atoms/MoneyInput" component={MoneyInput} />
 
 <Template let:args>
   {#if !args.label}
-    <div class="opacity0">
+    <div class="d-none">
       {setValues(args.maxValue, args.step)}
     </div>
   {/if}
