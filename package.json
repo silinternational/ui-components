@@ -41,9 +41,9 @@
   },
   "homepage": "https://github.com/silinternational/ui-components#readme",
   "peerDependencies": {
-    "material-components-web": "^10.0.0",
+    "material-components-web": "^13.0.0",
     "svelte": "^3.x",
-    "sass": "1.32.x"
+    "sass": "1.50.x"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.1",
@@ -59,10 +59,10 @@
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/svelte": "^6.4.20",
     "css-loader": "^6.7.1",
-    "material-components-web": "^10.0.0",
+    "material-components-web": "^13.0.0",
     "prettier": "^2.6.2",
     "prettier-plugin-svelte": "^2.6.0",
-    "sass": "1.32.x",
+    "sass": "1.50.x",
     "sass-loader": "^12.6.0",
     "semantic-release": "^19.0.2",
     "style-loader": "^3.3.1",

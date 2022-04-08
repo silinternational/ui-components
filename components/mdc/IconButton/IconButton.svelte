@@ -29,8 +29,11 @@ onMount(() => {
     on:mousedown
     on:blur
     on:focus
-    bind:this={element}>{icon}</a
-  >
+    bind:this={element}>
+    <div class="mdc-icon-button__ripple"></div>
+    <span class="mdc-icon-button__focus-ring"></span>
+    {icon}
+</a>
 {:else}
   <button
     class="mdc-icon-button material-icons {$$props.class}"
@@ -40,6 +43,9 @@ onMount(() => {
     on:mousedown
     on:blur
     on:focus
-    bind:this={element}>{icon}</button
-  >
+    bind:this={element}>
+    <div class="mdc-icon-button__ripple"></div>
+    <span class="mdc-icon-button__focus-ring"></span>
+    {icon}
+  </button>
 {/if}
