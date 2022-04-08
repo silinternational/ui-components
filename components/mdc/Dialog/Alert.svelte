@@ -49,6 +49,7 @@ onMount(() => {
   i.material-icons {
     position: relative;
     top: 4px;
+    color: var(--mdc-theme-icon-color);
   }
 </style>
 
