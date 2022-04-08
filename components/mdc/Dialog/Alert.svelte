@@ -45,6 +45,13 @@ onMount(() => {
 })
 </script>
 
+<style>
+  i.material-icons {
+    position: relative;
+    top: 4px;
+  }
+</style>
+
 <div class="mdc-dialog" bind:this={element}>
   <div class="mdc-dialog__container">
     <div
