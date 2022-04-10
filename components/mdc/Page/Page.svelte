@@ -1,5 +1,5 @@
 <script>
-import { Progress } from '../'
+import Progress from '../Progress'
 import appBarTitle from '../TopAppBar/title'
 
 export let loading = false

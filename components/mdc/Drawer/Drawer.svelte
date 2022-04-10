@@ -94,11 +94,11 @@ main {
 }
 
 /* TODO: keep an eye on this bug https://github.com/material-components/material-components-web/issues/5242, overriding for now so menu items will take on the themed color */
-.mdc-drawer .mdc-list-item--activated,
-.mdc-drawer .mdc-list-item--activated .mdc-list-item__graphic {
+.mdc-drawer .mdc-deprecated-list-item--activated,
+.mdc-drawer .mdc-deprecated-list-item--activated .mdc-deprecated-list-item__graphic {
   color: var(--mdc-theme-primary-variant, var(--mdc-theme-primary));
 }
-.mdc-list-item {
+.mdc-deprecated-list-item {
   margin: 4px 8px;
 }
 .main-content-height {
@@ -124,7 +124,7 @@ main {
     <slot name="drawer-content-top" />
     <!-- override built-in padding so height 100 works correctly without creating a vertical scroller -->
     <!-- changing the list to flex causes the margins to not collapse -->
-    <nav class="mdc-list flex column p-0" class:h-100={isFullHeightMenu} on:click={onListClick} bind:this={listElement}>
+    <nav class="mdc-deprecated-listflex column p-0" class:h-100={isFullHeightMenu} on:click={onListClick} bind:this={listElement}>
       {#each menuItems as { icon, label, url, urlPattern, hide, button, tooltip }, i}
         {#if label === '--break--'}
           <span class="grow-1" />
@@ -136,23 +136,23 @@ main {
               <IconButton class="mdc-theme--primary pl-1" {icon} ariaLabel={label} {url} />
             {:else if url}
               <a
-                class="mdc-list-item"
-                class:mdc-list-item--activated={isMenuItemActive(currentUrl, url, urlPattern)}
+                class="mdc-deprecated-list-item"
+                class:mdc-deprecated-list-item--activated={isMenuItemActive(currentUrl, url, urlPattern)}
                 href={url}
                 aria-current={isMenuItemActive(currentUrl, url, urlPattern) ? 'page' : null}
                 tabindex={i === 0 ? 0 : undefined}
               >
-                <span class="mdc-list-item__ripple" />
+                <span class="mdc-deprecated-list-item__ripple" />
                 {#if icon}
-                  <i class="material-icons mdc-list-item__graphic" aria-hidden="true">{icon}</i>
+                  <i class="material-icons mdc-deprecated-list-item__graphic" aria-hidden="true">{icon}</i>
                 {/if}
 
                 {#if label && isNotMini}
-                  <span class="mdc-list-item__text">{label}</span>
+                  <span class="mdc-deprecated-list-item__text">{label}</span>
                 {/if}
               </a>
             {:else}
-              <hr class="mdc-list-divider mdc-list-divider--inset-leading mdc-list-divider--inset-trailing" />
+              <hr class="mdc-deprecated-list-divider mdc-deprecated-list-divider--inset-leading mdc-deprecated-list-divider--inset-trailing" />
             {/if}
           </Tooltip.Wrapper>
           {#if tooltip}

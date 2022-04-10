@@ -1,5 +1,6 @@
 <script>
-import { Button, Card } from '../'
+import Button from '../Button'
+import Card from '../Card'
 
 export let src = ''
 export let alt = 'image is missing'

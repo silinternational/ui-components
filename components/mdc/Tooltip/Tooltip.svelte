@@ -33,7 +33,7 @@ onMount(() => {
 </script>
 
 <div bind:this={element} id={tooltipID} class="mdc-tooltip" role="tooltip" aria-hidden="true">
-  <div class="mdc-tooltip__surface {$$props.class}">
+  <div class="mdc-tooltip__surface mdc-tooltip__surface-animation {$$props.class}">
     <slot />
   </div>
 </div>
