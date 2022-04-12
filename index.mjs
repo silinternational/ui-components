@@ -27,7 +27,7 @@ import {
   setNotice,
 } from './components/mdc/index.js'
 
-import { Badge, Form, StaticChip } from './components/custom/index.js'
+import { Badge, Form, SearchableSelect, StaticChip } from './components/custom/index.js'
 
 export {
   actions,
@@ -47,6 +47,7 @@ export {
   MoneyInput,
   Progress,
   Select,
+  SearchableSelect,
   Snackbar,
   TabBar,
   TextArea,
