@@ -3,6 +3,6 @@
 @use '@material/menu/mdc-menu';
 @use '@material/select/styles';
 
-.mdc-floating-label--float-above {
-  color: var(--mdc-theme-primary) !important;
-}
+@use '@material/select' with (
+  $focused-label-color: primary
+)
