@@ -4,12 +4,13 @@ Reusable Svelte components for some internal applications
 
 ## installation
 
-To install to your Svelte project, open your project's root directory in a terminal. Type `npm i @silintl/ui-components --save-dev` and press enter. You may also have to run `npm i material-components-web@10.0.0  --save-dev` and possibly `npm i sass@1.32.x  --save-dev` to get sass stuff working if it doesn't work initially or you want to develop additional material web components in your app. It may depend on your version of npm if this is necessary. You should already have svelte@3 installed if you are using this library.
+To install to your Svelte project, open your project's root directory in a terminal. Type or paste `npm i -D sass@1.50.x material-components-web@13.0.0 @silintl/ui-components` and press enter (versions will vary if you use an older release of this repo). Sass and-material-components web are required to develop additional material web components in your app, but it may depend on your version of npm if they are necessary even if you don't. You should already have svelte@3 installed if you are using this library. If you are using typescript you will probaly need to run `npm i -D tslib` to avoid a material-components-web type error.
 
 You will also want to follow the example below for your index.html (app.html for sveltekit templates) for Material Icons to work and for Google fonts to load.
 see https://github.com/material-components/material-web#2-write-html-and-javascript
 
 Your index.html could look something like this
+
 ```
 <!doctype html>
 <html>
@@ -27,35 +28,40 @@ Your index.html could look something like this
     <link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
   </head>
   ...
-  ```
+```
+
 See `theming` and `typography` for more details on how to configure fonts and themes.
 
 See https://google.github.io/material-design-icons/#sizing for sizing material icons.
 
 ## theming
 
-If you are using an [MDC theme](https://material.io/develop/web/docs/theming) you may want to include a _typography.scss file and import it into
-_index.scss.
+If you are using an [MDC theme](https://material.io/develop/web/docs/theming) you may want to include a \_typography.scss file and import it into
+\_index.scss.
 
-Import _index.scss or other file(s) that contains stuff like --mdc-theme-primary --mdc-theme-secondary and other root variables to the App.svelte (Index.svelte in sveltekit templates) or Index.html (App.html for sveltekit) file (unless they are being declared there already) so they get applied to the ui-components.
+Import \_index.scss or other file(s) that contains stuff like --mdc-theme-primary --mdc-theme-secondary and other root variables to the App.svelte (Index.svelte in sveltekit templates) or Index.html (App.html for sveltekit) file (unless they are being declared there already) so they get applied to the ui-components.
 
 See https://github.com/silinternational/ui-components/blob/develop/stories/_theme.scss for exposed theme properties.
 
 ## typography
+
 See [typography](https://material.io/develop/web/components/typography)
 
-In your _typography.scss or similar file include the following snippet:
+In your \_typography.scss or similar file include the following snippet:
+
 ```
 @use '@material/typography/mdc-typography';
 ```
 
 and something similar to the following:
+
 ```
 :root {
   --mdc-typography-font-family: Source Sans Pro, Roboto, sans-serif;
 }
 ```
-and then import it to your sass entry point like _index.scss. You may prefer to declare your root typography rules elsewhere (eg. index.html) which is ok.
+
+and then import it to your sass entry point like \_index.scss. You may prefer to declare your root typography rules elsewhere (eg. index.html) which is ok.
 
 ## bundler configuration
 
@@ -112,9 +118,7 @@ Just include `import { Button } from '@silintl/ui-components'` in your script se
 
 In your main sass file just use the following pattern to override any sass variables. See https://github.com/silinternational/ui-components/blob/develop/stories/_index.scss for exposed sass variables.
 
-`@use './components/mdc/Button' with (
-  $radius: 16px
-);`
+`@use './components/mdc/Button' with ( $radius: 16px );`
 
 ## examples
 

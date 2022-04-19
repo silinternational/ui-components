@@ -45,11 +45,11 @@ function open(msg) {
 }
 </script>
 
-<div class="mdc-snackbar" bind:this={element}>
-  <div class="mdc-snackbar__surface mdc-theme--secondary-variant {$$props.class}">
-    <div class="mdc-snackbar__label" role="status" aria-live="polite" />
+<aside class="mdc-snackbar" bind:this={element}>
+  <div class="mdc-snackbar__surface mdc-theme--secondary-variant {$$props.class}" role="status" aria-relevant="additions">
+    <div class="mdc-snackbar__label" aria-atomic="false" />
     {#if action}
-      <div class="mdc-snackbar__actions">
+      <div class="mdc-snackbar__actions" aria-atomic="true">
         <button type="button" class="mdc-button mdc-snackbar__action" on:click={clickHandler}>
           <div class="mdc-button__ripple" />
           <span class="mdc-button__label">{action}</span>
@@ -57,4 +57,4 @@ function open(msg) {
       </div>
     {/if}
   </div>
-</div>
+</aside>

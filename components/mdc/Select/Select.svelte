@@ -75,10 +75,10 @@ afterUpdate(() => {
   </div>
 
   <div class="mdc-select__menu mdc-menu mdc-menu-surface" style="width: {width}" role="listbox">
-    <ul class="mdc-list">
+    <ul class="mdc-deprecated-list">
       {#each options as { id, name } (id)}
-        <li class="mdc-list-item" data-value={id} role="option">
-          <span class="mdc-list-item__text">{name}</span>
+        <li class="mdc-deprecated-list-item" data-value={id} role="option">
+          <span class="mdc-deprecated-list-item__text">{name}</span>
         </li>
       {/each}
     </ul>
