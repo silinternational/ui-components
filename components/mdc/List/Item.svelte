@@ -36,39 +36,39 @@ img {
 
 <li
   bind:this={element}
-  class="mdc-list-item"
-  class:mdc-list-item--activated={activated}
-  class:mdc-list-item--disabled={nonInteractive}
+  class="mdc-deprecated-list-item"
+  class:mdc-deprecated-list-item--activated={activated}
+  class:mdc-deprecated-list-item--disabled={nonInteractive}
   data-mdc-dialog-action={$$props['data-mdc-dialog-action']}
   on:click
   {tabindex}
 >
   {#if graphicURL}
-    <div class="mdc-list-item__graphic">
+    <div class="mdc-deprecated-list-item__graphic">
       <img class="br-50" alt={graphicAlt} src={graphicURL} />
     </div>
   {:else if icon}
-    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">{icon}</i>
+    <i class="material-icons mdc-deprecated-list-item__graphic" aria-hidden="true">{icon}</i>
   {/if}
 
-  <span class="mdc-list-item__ripple" />
+  <span class="mdc-deprecated-list-item__ripple" />
 
-  <span class="mdc-list-item__text" class:nonInteractive>
+  <span class="mdc-deprecated-list-item__text" class:nonInteractive>
     {#if primary || secondary}
-      <span class="mdc-list-item__primary-text">{primary}</span>
-      <span class="mdc-list-item__secondary-text">{secondary}</span>
+      <span class="mdc-deprecated-list-item__primary-text">{primary}</span>
+      <span class="mdc-deprecated-list-item__secondary-text">{secondary}</span>
     {:else}
       {text}
       <slot />
     {/if}
   </span>
 
-  <div class="mdc-list-item__meta">
+  <div class="mdc-deprecated-list-item__meta">
     {meta}
     <slot name="meta" />
   </div>
 </li>
 
 {#if withDivider}
-  <li role="separator" class="mdc-list-divider" />
+  <li role="separator" class="mdc-deprecated-list-divider" />
 {/if}

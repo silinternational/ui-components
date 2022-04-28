@@ -20,9 +20,9 @@ ul {
 </style>
 
 <ul
-  class="mdc-list {$$props.class}"
-  class:mdc-list--two-line={twoLine}
-  class:mdc-list--avatar-list={avatar}
+  class="mdc-deprecated-list {$$props.class}"
+  class:mdc-deprecated-list--two-line={twoLine}
+  class:mdc-deprecated-list--avatar-list={avatar}
   bind:this={element}
 >
   <slot />
