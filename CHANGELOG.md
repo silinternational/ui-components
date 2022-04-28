@@ -1,3 +1,28 @@
+# [6.0.0](https://github.com/silinternational/ui-components/compare/v5.1.1...v6.0.0) (2022-04-28)
+
+
+### Bug Fixes
+
+* **Dialog:** fix Alert titleIcon position ([be8bac7](https://github.com/silinternational/ui-components/commit/be8bac77c3b69cf82859bb2b5247bce168b7784f))
+* **MoneyInput:** fix 1x10e-n not being caught by step ([84a6cef](https://github.com/silinternational/ui-components/commit/84a6cefac85b34865283b4880c6ece0267ad41c6))
+* **Select:** fix floating label color ([12d120d](https://github.com/silinternational/ui-components/commit/12d120da7f8095a55de976a1a391260777c19cba))
+
+
+### Build System
+
+* **deps:** update material-components-web and sass ([6e44b76](https://github.com/silinternational/ui-components/commit/6e44b7644e28083646bcaaedc9dbfedaf0f978b4))
+
+
+### Features
+
+* **components:** add SearchableSelect ([2de1351](https://github.com/silinternational/ui-components/commit/2de13515ac43d56a63ee0ed3092b01a146a689c4))
+* **Diaolog.Alert:** expose titleIcon color to --mdc-theme-icon-color ([f8c9ad0](https://github.com/silinternational/ui-components/commit/f8c9ad0c6c82872896baf6898488ee56aab901cb))
+
+
+### BREAKING CHANGES
+
+* **deps:** Consumer must install sass@1.50.x and material-components-web@13. See https://github.com/material-components/material-components-web/blob/master/CHANGELOG.md
+
 ## [5.1.1](https://github.com/silinternational/ui-components/compare/v5.1.0...v5.1.1) (2022-04-04)
 
 
