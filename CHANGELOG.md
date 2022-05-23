@@ -1,3 +1,10 @@
+## [6.0.1](https://github.com/silinternational/ui-components/compare/v6.0.0...v6.0.1) (2022-05-23)
+
+
+### Bug Fixes
+
+* **Drawer:** fix find and replace typo ([11943d3](https://github.com/silinternational/ui-components/commit/11943d33bfd41a2e94f37afe58a825a63d7e29d0))
+
 # [6.0.0](https://github.com/silinternational/ui-components/compare/v5.1.1...v6.0.0) (2022-04-28)
 
 
