@@ -1,7 +1,8 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield -->
 <script>
-import { MDCTextField } from '@material/textfield'
+import { getDecimalPlacesLength } from './helpers'
 import { generateRandomID } from '../../../random'
+import { MDCTextField } from '@material/textfield'
 import { afterUpdate, onMount } from 'svelte'
 
 export let label = ''
@@ -31,7 +32,9 @@ $: isLowerThanMinValue = minValue && internalValue < minValue
 $: showErrorIcon = hasExceededMaxValue || isLowerThanMinValue || hasExceededMaxLength || valueNotDivisibleByStep
 $: error = showErrorIcon || (hasFocused && hasBlurred && required && !internalValue)
 $: showCounter = maxlength && valueLength / maxlength > 0.85
-$: valueNotDivisibleByStep = internalValue && (internalValue / Number(step)).toFixed(2) % 1 !== 0
+$: valueHasTooManyDecPlaces = getDecimalPlacesLength(internalValue) > getDecimalPlacesLength(step)
+$: valueNotDivisibleByStep =
+  (internalValue && (internalValue / Number(step)).toFixed(2) % 1 !== 0) || valueHasTooManyDecPlaces
 $: internalValue = Number(value) || 0
 
 onMount(() => {
