@@ -21,6 +21,7 @@ import Page from './Page'
 import Progress from './Progress'
 import Select from './Select'
 import Snackbar from './Snackbar'
+import Switch from './Switch'
 import TabBar from './TabBar'
 import { TextArea, TextField, MoneyInput } from './TextInput'
 import Tooltip from './Tooltip'
@@ -55,4 +56,5 @@ export {
   Snackbar,
   Select,
   setNotice,
+  Switch,
 }
