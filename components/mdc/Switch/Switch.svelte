@@ -1,5 +1,6 @@
 <!--  https://github.com/material-components/material-components-web/tree/master/packages/mdc-switch -->
 <script>
+import { generateRandomID } from '../../../random'
 import { MDCSwitch } from '@material/switch'
 import { createEventDispatcher, onMount } from 'svelte'
 
@@ -18,8 +19,10 @@ export let selected = false
 
 let element = {}
 let switchControl = {}
+let id = ''
 
 onMount(() => {
+  id = generateRandomID('switch-')
   switchControl = new MDCSwitch(element)
 })
 
@@ -40,7 +43,7 @@ function onClick() {
 <button
   on:click={onClick}
   bind:this={element}
-  id="basic-switch"
+  {id}
   class="mdc-switch"
   class:mdc-switch--selected={selected}
   class:mdc-switch--unselected={!selected}
@@ -70,4 +73,4 @@ function onClick() {
     <div class="mdc-switch__focus-ring" />
   </span>
 </button>
-<label for="basic-switch">{label}</label>
+<label for={id}>{label}</label>
