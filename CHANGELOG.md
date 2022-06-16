@@ -1,3 +1,10 @@
+# [6.1.0](https://github.com/silinternational/ui-components/compare/v6.0.1...v6.1.0) (2022-06-16)
+
+
+### Features
+
+* **components:** add Switch story ([8889e11](https://github.com/silinternational/ui-components/commit/8889e1197edad4ddaeae767a2508533f5cb220b4))
+
 ## [6.0.1](https://github.com/silinternational/ui-components/compare/v6.0.0...v6.0.1) (2022-05-23)
 
 
