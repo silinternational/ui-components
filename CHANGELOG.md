@@ -1,3 +1,10 @@
+## [6.1.1](https://github.com/silinternational/ui-components/compare/v6.1.0...v6.1.1) (2022-06-23)
+
+
+### Bug Fixes
+
+* **index.mjs:** Switch was not exported ([b3bb6ac](https://github.com/silinternational/ui-components/commit/b3bb6ac203c84eaed6b52dbe24a76042a1883f72))
+
 # [6.1.0](https://github.com/silinternational/ui-components/compare/v6.0.1...v6.1.0) (2022-06-16)
 
 
