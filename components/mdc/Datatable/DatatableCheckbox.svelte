@@ -1,12 +1,14 @@
 <script>
 import { generateRandomID } from '../../../random'
-import { createEventDispatcher } from 'svelte'
+import { createEventDispatcher, onMount } from 'svelte'
 
 export let disabled = false
 
-let checked = false
+let checked
 
 const inputID = generateRandomID('checkbox-')
+
+onMount(() => dispatch('mounted'))
 
 $: checked, handleChange()
 

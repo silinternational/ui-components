@@ -2,15 +2,24 @@
 <script>
 import { MDCDataTable } from '@material/data-table'
 import { createEventDispatcher, onMount } from 'svelte'
-
+/**
+ * @prop {string}
+ * @description used for aria-label
+ */
 export let label = ''
+/**
+ * @prop {any}
+ * @description used to register new Datatable Checkboxes when length changes
+ */
+export let checkboxIsMountedArray = []
 
 const dispatch = createEventDispatcher()
+let dataTable = {}
 
 let element = {}
 
 onMount(() => {
-  const dataTable = new MDCDataTable(element)
+  dataTable = new MDCDataTable(element)
 
   dataTable.listen('MDCDataTable:sorted', (event) => {
     dispatch('sorted', event.detail)
@@ -30,8 +39,10 @@ onMount(() => {
 
   // This does not work because of an MDC bug. See https://github.com/material-components/material-components-web/issues/6385
   // If checkboxes are needed, check for a release of the PR linked to the above issue, or pull in the destroy code here.
-  //return () => dataTable.destroy()
+  return () => dataTable.destroy()
 })
+
+$: checkboxIsMountedArray.length && dataTable?.layout()
 </script>
 
 <div class="mdc-data-table w-100 {$$props.class}" bind:this={element}>
