@@ -1,3 +1,17 @@
+# [6.2.0](https://github.com/silinternational/ui-components/compare/v6.1.1...v6.2.0) (2022-07-05)
+
+
+### Bug Fixes
+
+* **Datatable:** expose DataRow rowId as slot prop ([46aa49c](https://github.com/silinternational/ui-components/commit/46aa49c114aecf241a2fb91745986c17e76528a8))
+* **Datatable:** fix exception when using checkbox ([f4d3433](https://github.com/silinternational/ui-components/commit/f4d34338c9b3c5fb757eaee12a44707f89a8203f))
+
+
+### Features
+
+* **components:** add DatatableCheckbox and DatatableCheckboxHeader ([5c2da10](https://github.com/silinternational/ui-components/commit/5c2da10e8fe7e53b5b1e31531887c98dfa6a9560))
+* **Datatable:** add numberOfCheckboxes to register new Checkboxes ([01aa5d0](https://github.com/silinternational/ui-components/commit/01aa5d0e146216aa88d99b1a1dcd32f0e30f1881))
+
 ## [6.1.1](https://github.com/silinternational/ui-components/compare/v6.1.0...v6.1.1) (2022-06-23)
 
 
