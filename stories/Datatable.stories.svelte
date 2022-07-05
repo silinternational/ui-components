@@ -83,8 +83,8 @@ onMount(() =>
     </Datatable.Header>
 
     <Datatable.Data>
-      <Datatable.Data.Row clickable={args.clickable}>
-        <Datatable.Checkbox />
+      <Datatable.Data.Row clickable={args.clickable} let:rowId>
+        <Datatable.Checkbox {rowId} />
         <Datatable.Data.Row.Item>item</Datatable.Data.Row.Item>
         <Datatable.Data.Row.Item>today</Datatable.Data.Row.Item>
       </Datatable.Data.Row>

@@ -37,8 +37,6 @@ onMount(() => {
     dispatch('rowSelectionChanged', event.detail)
   })
 
-  // This does not work because of an MDC bug. See https://github.com/material-components/material-components-web/issues/6385
-  // If checkboxes are needed, check for a release of the PR linked to the above issue, or pull in the destroy code here.
   return () => dataTable.destroy()
 })
 
