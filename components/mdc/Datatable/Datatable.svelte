@@ -2,24 +2,45 @@
 <script>
 import { MDCDataTable } from '@material/data-table'
 import { createEventDispatcher, onMount } from 'svelte'
-
+/**
+ * @prop {string}
+ * @description used for aria-label
+ */
 export let label = ''
+/**
+ * @prop {number}
+ * @description used to register new Datatable Checkboxes when value changes
+ */
+export let numberOfCheckboxes = 0
 
 const dispatch = createEventDispatcher()
+let dataTable = {}
 
 let element = {}
 
 onMount(() => {
-  const dataTable = new MDCDataTable(element)
+  dataTable = new MDCDataTable(element)
 
   dataTable.listen('MDCDataTable:sorted', (event) => {
     dispatch('sorted', event.detail)
   })
 
-  // This does not work because of an MDC bug. See https://github.com/material-components/material-components-web/issues/6385
-  // If checkboxes are needed, check for a release of the PR linked to the above issue, or pull in the destroy code here.
-  //return () => dataTable.destroy()
+  dataTable.listen('MDCDataTable:selectedAll', () => {
+    dispatch('selectedAll')
+  })
+
+  dataTable.listen('MDCDataTable:unselectedAll', () => {
+    dispatch('unselectedAll')
+  })
+
+  dataTable.listen('MDCDataTable:rowSelectionChanged', (event) => {
+    dispatch('rowSelectionChanged', event.detail)
+  })
+
+  return () => dataTable.destroy()
 })
+
+$: numberOfCheckboxes && dataTable?.layout()
 </script>
 
 <div class="mdc-data-table w-100 {$$props.class}" bind:this={element}>
