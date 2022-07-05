@@ -13,6 +13,7 @@ const args = {
 }
 
 let loaded = false
+let numberOfCheckboxes = 0
 
 onMount(() =>
   setTimeout(() => {
@@ -70,6 +71,7 @@ onMount(() =>
 
 <Story name="Checkbox" {args}>
   <Datatable
+    {numberOfCheckboxes}
     class={args.class}
     on:sorted={args['on:sorted']}
     on:rowSelectionChanged={args['on:rowSelectionChanged']}
@@ -84,19 +86,19 @@ onMount(() =>
 
     <Datatable.Data>
       <Datatable.Data.Row clickable={args.clickable} let:rowId>
-        <Datatable.Checkbox {rowId} />
+        <Datatable.Checkbox on:mounted={() => numberOfCheckboxes++} {rowId} />
         <Datatable.Data.Row.Item>item</Datatable.Data.Row.Item>
         <Datatable.Data.Row.Item>today</Datatable.Data.Row.Item>
       </Datatable.Data.Row>
 
       <Datatable.Data.Row>
-        <Datatable.Checkbox />
+        <Datatable.Checkbox on:mounted={() => numberOfCheckboxes++} />
         <Datatable.Data.Row.Item>item2</Datatable.Data.Row.Item>
         <Datatable.Data.Row.Item>tomorrow</Datatable.Data.Row.Item>
       </Datatable.Data.Row>
 
       <Datatable.Data.Row>
-        <Datatable.Checkbox />
+        <Datatable.Checkbox on:mounted={() => numberOfCheckboxes++} />
         <Datatable.Data.Row.Item colspan={isAboveMobile() ? 6 : 2}>
           {#if loaded}
             Done loading

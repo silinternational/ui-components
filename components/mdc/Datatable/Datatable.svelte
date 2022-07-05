@@ -8,10 +8,10 @@ import { createEventDispatcher, onMount } from 'svelte'
  */
 export let label = ''
 /**
- * @prop {any}
- * @description used to register new Datatable Checkboxes when length changes
+ * @prop {number}
+ * @description used to register new Datatable Checkboxes when value changes
  */
-export let checkboxIsMountedArray = []
+export let numberOfCheckboxes = 0
 
 const dispatch = createEventDispatcher()
 let dataTable = {}
@@ -40,7 +40,7 @@ onMount(() => {
   return () => dataTable.destroy()
 })
 
-$: checkboxIsMountedArray.length && dataTable?.layout()
+$: numberOfCheckboxes && dataTable?.layout()
 </script>
 
 <div class="mdc-data-table w-100 {$$props.class}" bind:this={element}>
