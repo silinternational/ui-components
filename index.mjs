@@ -28,7 +28,7 @@ import {
   setNotice,
 } from './components/mdc/index.js'
 
-import { Badge, Form, SearchableSelect, StaticChip } from './components/custom/index.js'
+import { Badge, FileDropArea, Form, SearchableSelect, StaticChip } from './components/custom/index.js'
 
 export {
   actions,
@@ -42,6 +42,7 @@ export {
   Dialog,
   Drawer,
   Fab,
+  FileDropArea,
   IconButton,
   List,
   Menu,
