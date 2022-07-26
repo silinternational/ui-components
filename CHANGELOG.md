@@ -1,3 +1,10 @@
+# [6.3.0](https://github.com/silinternational/ui-components/compare/v6.2.0...v6.3.0) (2022-07-26)
+
+
+### Features
+
+* **components:** Add FileDropArea ([475fbd9](https://github.com/silinternational/ui-components/commit/475fbd9787e1ca49e447535f5097fc065d3c39b4))
+
 # [6.2.0](https://github.com/silinternational/ui-components/compare/v6.1.1...v6.2.0) (2022-07-05)
 
 
