@@ -30,6 +30,8 @@ import {
 
 import { Badge, FileDropArea, Form, SearchableSelect, StaticChip } from './components/custom/index.js'
 
+import * as uiComponentTypes from './components/ui-components.d.ts'
+
 export {
   actions,
   Button,
@@ -63,4 +65,5 @@ export {
   StaticChip,
   setNotice,
   Tour,
+  uiComponentTypes,
 }
