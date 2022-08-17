@@ -272,6 +272,14 @@ declare module '@silintl/ui-components' {
   }
   export class CustomCard extends SvelteComponentTyped<CustomCardProps> {}
 
+  interface FileDropAreaProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+    raised?: boolean
+    outlined?: boolean
+    mimeType?: string
+    uploading?: boolean
+  }
+  export class FileDropArea extends SvelteComponentTyped<FileDropAreaProps> {}
+
   interface FormProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
     // no exported members
   }
@@ -292,6 +300,17 @@ declare module '@silintl/ui-components' {
   export class StaticChip extends SvelteComponentTyped<StaticChipProps> {}
 
   export function setNotice(label: string, action?: string, callback?: Function): void
+
+  interface SearchableSelectProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+    options: { [key: string]: string }
+    choice?: string
+    placeholder?: string
+    padding?: string
+    width?: string
+    maxlength?: string
+    disabled?: boolean
+  }
+  export class SearchableSelect extends SvelteComponentTyped<SearchableSelectProps> {}
 
   interface TourProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
     steps?: any[]
