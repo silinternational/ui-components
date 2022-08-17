@@ -12,10 +12,12 @@ If you are using typescript you will need to run `npm i -D tslib` to avoid a mat
 
 ```
 "compilerOptions": {
-    "types": [
-			"@silintl/ui-components",
-			...
-
+	"types": [
+		"@silintl/ui-components",
+		...
+	],
+	...
+},
 ```
 
 You will also want to follow the example below for your index.html (app.html for sveltekit templates) for Material Icons to work and for Google fonts to load.
