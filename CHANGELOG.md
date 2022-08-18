@@ -1,3 +1,10 @@
+# [6.4.0](https://github.com/silinternational/ui-components/compare/v6.3.0...v6.4.0) (2022-08-18)
+
+
+### Features
+
+* **components:** add type support ([c2abfbc](https://github.com/silinternational/ui-components/commit/c2abfbc22f37e9ac9c724fdf81d237a204d6c9fa))
+
 # [6.3.0](https://github.com/silinternational/ui-components/compare/v6.2.0...v6.3.0) (2022-07-26)
 
 
