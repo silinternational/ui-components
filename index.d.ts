@@ -5,12 +5,12 @@ declare module '@silintl/ui-components' {
   export type actions = writable<any[]>
 
   interface ButtonProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
-    disabled?: any
-    outlined?: any
-    raised?: any
-    prependIcon?: any
-    appendIcon?: any
-    url?: any
+    disabled?: boolean
+    outlined?: boolean
+    raised?: boolean
+    prependIcon?: string
+    appendIcon?: string
+    url?: string
   }
   export class Button extends SvelteComponentTyped<ButtonProps> {}
 
@@ -106,7 +106,9 @@ declare module '@silintl/ui-components' {
   interface DrawerProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
     title?: string
     subtitle?: string
-    menuItems?: any[]
+    menuItems?: {
+      icon: string, label: string, url: string, urlPattern: string, hide: boolean, button: boolean, tooltip: string
+    }[]
     dismissible?: boolean
     hasTopAppBar?: boolean
     hideForTablet?: boolean
@@ -125,15 +127,15 @@ declare module '@silintl/ui-components' {
     mini?: boolean
     extended?: boolean
     url?: string
-    action?: any
+    action?: Function
   }
   export class Fab extends SvelteComponentTyped<FabProps> {}
 
   interface IconButtonProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
-    icon?: any
-    ariaLabel?: any
-    url?: any
-    disabled?: any
+    icon?: string
+    ariaLabel?: string
+    url?: string
+    disabled?: boolean
   }
   export class IconButton extends SvelteComponentTyped<IconButtonProps> {}
 
@@ -182,7 +184,7 @@ declare module '@silintl/ui-components' {
   }
 
   interface SelectProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
-    options?: any[]
+    options?: { name: string, id: number }[]
     width?: string
     disabled?: boolean
     selectedID?: string
@@ -232,7 +234,7 @@ declare module '@silintl/ui-components' {
   export class TextField extends SvelteComponentTyped<TextFieldProps> {}
 
   interface TooltipProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
-    tooltipID?: any
+    tooltipID?: string
     positionX?: 'start' | 'center' | 'end'
     positionY?: 'above' | 'below'
   }
@@ -240,7 +242,7 @@ declare module '@silintl/ui-components' {
 
   export namespace Tooltip {
     interface TooltipWrapperProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
-      ariaDescribedBy?: any
+      ariaDescribedBy?: string
     }
     export class Wrapper extends SvelteComponentTyped<TooltipWrapperProps> {}
   }
@@ -267,7 +269,7 @@ declare module '@silintl/ui-components' {
     title?: string
     icon?: string
     disabled?: boolean
-    buttons?: any
+    buttons?: { label: string, url: string }[]
     footerText?: string
   }
   export class CustomCard extends SvelteComponentTyped<CustomCardProps> {}
@@ -286,11 +288,11 @@ declare module '@silintl/ui-components' {
   export class Form extends SvelteComponentTyped<FormProps> {}
 
   interface PageProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
-    loading?: any
-    title?: any
-    layout?: any
-    center?: any
-    noProgress?: any
+    loading?: boolean
+    title?: string
+    layout?: string
+    center?: boolean
+    noProgress?: boolean
   }
   export class Page extends SvelteComponentTyped<PageProps> {}
 
@@ -312,9 +314,11 @@ declare module '@silintl/ui-components' {
   }
   export class SearchableSelect extends SvelteComponentTyped<SearchableSelectProps> {}
 
+  type steps = 'title' | 'content' | 'left' | 'right' | 'previous' | 'next' | 'target'
+
   interface TourProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
-    steps?: any[]
-    data?: any
+    steps?: { [key in steps]: string | number }[]
+    data?: { [key: string]: string }
   }
   export class Tour extends SvelteComponentTyped<TourProps> {}
 }
