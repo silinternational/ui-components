@@ -1,3 +1,10 @@
+## [6.4.2](https://github.com/silinternational/ui-components/compare/v6.4.1...v6.4.2) (2022-08-24)
+
+
+### Bug Fixes
+
+* **types:** fix Scroller type warning ([d867aa0](https://github.com/silinternational/ui-components/commit/d867aa0c95bc63fbd23172c61c44ab6840cc8762))
+
 ## [6.4.1](https://github.com/silinternational/ui-components/compare/v6.4.0...v6.4.1) (2022-08-24)
 
 
