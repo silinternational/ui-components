@@ -1,3 +1,10 @@
+## [6.4.1](https://github.com/silinternational/ui-components/compare/v6.4.0...v6.4.1) (2022-08-24)
+
+
+### Bug Fixes
+
+* **types:** Add Scroller and Tab to TabBar type ([dd08278](https://github.com/silinternational/ui-components/commit/dd0827884c38da7137c4831882f533e1269c1df1))
+
 # [6.4.0](https://github.com/silinternational/ui-components/compare/v6.3.0...v6.4.0) (2022-08-18)
 
 
