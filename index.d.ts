@@ -215,7 +215,8 @@ declare module '@silintl/ui-components' {
   export class TabBar extends SvelteComponentTyped<TabBarProps> {}
 
   export namespace TabBar {
-    export class Scroller extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {}
+    interface ScrollerProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {}
+    export class Scroller extends SvelteComponentTyped<ScrollerProps> {}
 
     interface TabProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
       active?: boolean
