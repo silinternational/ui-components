@@ -339,7 +339,7 @@ declare module '@silintl/ui-components' {
   }
   export class Tour extends SvelteComponentTyped<TourProps> {}
 }
-b
+
 module '@silintl/ui-components/random' {
   export function generateRandomID(prefix?: string): string
 }
