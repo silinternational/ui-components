@@ -107,7 +107,13 @@ declare module '@silintl/ui-components' {
     title?: string
     subtitle?: string
     menuItems?: {
-      icon: string, label: string, url: string, urlPattern: string, hide: boolean, button: boolean, tooltip: string
+      icon: string
+      label: string
+      url: string
+      urlPattern: string
+      hide: boolean
+      button: boolean
+      tooltip: string
     }[]
     dismissible?: boolean
     hasTopAppBar?: boolean
@@ -184,7 +190,7 @@ declare module '@silintl/ui-components' {
   }
 
   interface SelectProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
-    options?: { name: string, id: number }[]
+    options?: { name: string; id: number }[]
     width?: string
     disabled?: boolean
     selectedID?: string
@@ -207,6 +213,16 @@ declare module '@silintl/ui-components' {
     tab?: number
   }
   export class TabBar extends SvelteComponentTyped<TabBarProps> {}
+
+  export namespace TabBar {
+    export class Scroller extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {}
+
+    interface TabProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+      active?: boolean
+      label?: string
+    }
+    export class Tab extends SvelteComponentTyped<TabProps> {}
+  }
 
   interface TextAreaProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
     label?: string
@@ -269,7 +285,7 @@ declare module '@silintl/ui-components' {
     title?: string
     icon?: string
     disabled?: boolean
-    buttons?: { label: string, url: string }[]
+    buttons?: { label: string; url: string }[]
     footerText?: string
   }
   export class CustomCard extends SvelteComponentTyped<CustomCardProps> {}
