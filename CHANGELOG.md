@@ -1,3 +1,10 @@
+# [6.5.0](https://github.com/silinternational/ui-components/compare/v6.4.2...v6.5.0) (2022-09-26)
+
+
+### Features
+
+* **SearchableSelect:** add required prop ([053af32](https://github.com/silinternational/ui-components/commit/053af32385578630d8253f5feee9cf5097baa2ab))
+
 ## [6.4.2](https://github.com/silinternational/ui-components/compare/v6.4.1...v6.4.2) (2022-08-24)
 
 
