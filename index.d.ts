@@ -321,13 +321,14 @@ declare module '@silintl/ui-components' {
   export function setNotice(label: string, action?: string, callback?: Function): void
 
   interface SearchableSelectProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
-    options: { [key: string]: string }
     choice?: string
-    placeholder?: string
-    padding?: string
-    width?: string
-    maxlength?: string
     disabled?: boolean
+    maxlength?: string
+    options: { [key: string]: string }
+    padding?: string
+    placeholder?: string
+    required?: boolean
+    width?: string
   }
   export class SearchableSelect extends SvelteComponentTyped<SearchableSelectProps> {}
 
