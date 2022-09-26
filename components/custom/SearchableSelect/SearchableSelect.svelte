@@ -9,6 +9,7 @@ export let padding = '12px'
 export let width = '232px'
 export let maxlength = 255
 export let disabled = false
+export let required = false
 
 let element = {}
 
@@ -73,6 +74,7 @@ const onChange = () => {
     {maxlength}
     class="fs-14 {$$props.class}"
     style="width: {width}"
+    {required}
     list={randomId}
     placeholder="&nbsp;"
     bind:this={element}
