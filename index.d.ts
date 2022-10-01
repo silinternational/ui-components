@@ -167,6 +167,7 @@ declare module '@silintl/ui-components' {
   interface MoneyInputProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
     label?: string
     value?: number
+    name?: string
     placeholder?: string
     autofocus?: boolean
     disabled?: boolean
@@ -228,6 +229,7 @@ declare module '@silintl/ui-components' {
   interface TextAreaProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
     label?: string
     value?: string
+    name?: string
     placeholder?: string
     rows?: number | string
     required?: boolean
@@ -241,6 +243,7 @@ declare module '@silintl/ui-components' {
   interface TextFieldProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
     label?: string
     value?: string
+    name?: string
     placeholder?: string
     maxlength?: number
     autofocus?: boolean
@@ -300,7 +303,8 @@ declare module '@silintl/ui-components' {
   export class FileDropArea extends SvelteComponentTyped<FileDropAreaProps> {}
 
   interface FormProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
-    // no exported members
+    id?: string
+    saveToLocalStorage?: boolean
   }
   export class Form extends SvelteComponentTyped<FormProps> {}
 
