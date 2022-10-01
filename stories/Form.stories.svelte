@@ -1,6 +1,6 @@
 <script>
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-import { TextField } from '../components/mdc'
+import { TextField, MoneyInput, TextArea } from '../components/mdc'
 import { Form } from '../components/custom'
 import { copyAndModifyArgs } from './helpers'
 
@@ -16,7 +16,11 @@ const args = {
 
 <Template let:args>
   <Form on:submit={args.onSubmit} {...args}>
-    <TextField name='first'/>
+    <TextField label='first' name='first'/>
+
+    <TextArea label='second' name='second' />
+
+    <MoneyInput label='third' name='third' />
   </Form>
 </Template>
 
