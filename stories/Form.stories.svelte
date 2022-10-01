@@ -8,7 +8,7 @@ const args = {
   class: '', //only works for global classes
   id: '',
   saveToLocalStorage: false,
-  onSubmit: () => {},
+  'on:submit': () => {},
 }
 </script>
 
