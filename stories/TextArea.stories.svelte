@@ -7,6 +7,7 @@ let title = 'TextArea'
 
 const args = {
   label: title,
+  name: ''
   row: 8,
   class: '', //only works for global classes
 }
@@ -35,3 +36,5 @@ const args = {
 <Story name="Required" args={copyAndModifyArgs(args, { required: true })} />
 
 <Story name="Description" args={copyAndModifyArgs(args, { description: 'a description' })} />
+
+<Story name="Name" args={copyAndModifyArgs(args, { name: 'area' })} />

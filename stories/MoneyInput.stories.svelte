@@ -83,3 +83,6 @@ function setValues(max, step) {
 <Story name="Description" args={copyAndModifyArgs(args, { description: 'a description' })} />
 
 <Story name="Test step" args={{ ...args, label: '' }} />
+
+<Story name="Name" args={copyAndModifyArgs(args, { name: 'money' })} />
+

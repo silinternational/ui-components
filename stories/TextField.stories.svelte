@@ -39,3 +39,5 @@ let lastKey = ''
 <Story name="Required" args={copyAndModifyArgs(args, { required: true })} />
 
 <Story name="Description" args={copyAndModifyArgs(args, { description: 'a description' })} />
+
+<Story name="Name" args={copyAndModifyArgs(args, { name: 'field' })} />

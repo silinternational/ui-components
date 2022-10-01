@@ -14,6 +14,7 @@ export let disabled = false
 export let required = false
 export let icon = ''
 export let description = ''
+export let name = ''
 
 const labelID = generateRandomID('text-label-')
 
@@ -77,6 +78,7 @@ const focus = (node) => autofocus && node.focus()
     on:keydown
     on:keypress
     on:keyup
+    {name}
     {required}
     {disabled}
     maxlength="524288"

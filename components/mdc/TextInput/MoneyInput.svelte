@@ -9,6 +9,7 @@ export let label = ''
 export let value = ''
 export let step = '0.01'
 export let placeholder = ''
+export let name = ''
 export let maxValue = undefined
 export let minValue = undefined
 export let autofocus = false
@@ -87,10 +88,11 @@ const focus = (node) => autofocus && node.focus()
     on:keydown
     on:keypress
     on:keyup
-    {required}
-    {maxlength}
     {disabled}
+    {maxlength}
+    {name}
     {placeholder}
+    {required}
   />
   {#if showErrorIcon}
     <span class="mdc-text-field__affix mdc-text-field__affix--suffix">
