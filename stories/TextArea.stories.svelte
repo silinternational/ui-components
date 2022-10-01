@@ -7,7 +7,7 @@ let title = 'TextArea'
 
 const args = {
   label: title,
-  name: ''
+  name: '',
   row: 8,
   class: '', //only works for global classes
 }
