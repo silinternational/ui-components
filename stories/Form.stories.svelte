@@ -1,6 +1,6 @@
 <script>
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-import { TextField, MoneyInput, TextArea } from '../components/mdc'
+import { TextField, MoneyInput, TextArea, Button } from '../components/mdc'
 import { Form } from '../components/custom'
 import { copyAndModifyArgs } from './helpers'
 
@@ -15,12 +15,14 @@ const args = {
 <Meta title="Molecule/Form" component={Form} />
 
 <Template let:args>
-  <Form on:submit={args.onSubmit} {...args}>
+  <Form on:submit={args['on:submit']} {...args}>
     <TextField label='first' name='first'/>
 
-    <TextArea label='second' name='second' />
+    <TextArea label='second' name='second' rows={4}/>
 
     <MoneyInput label='third' name='third' />
+
+    <Button raised>Submit</Button>
   </Form>
 </Template>
 

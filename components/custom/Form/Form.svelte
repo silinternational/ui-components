@@ -8,7 +8,7 @@ export let saveToLocalStorage = false
 let form = {}
 
 onMount(() => {
-  listenForBlurOnForm(form)
+  saveToLocalStorage && listenForBlurOnForm(form)
 })
 
 $: saveToLocalStorage && restoreFormValues(form)
