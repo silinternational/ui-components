@@ -8,7 +8,11 @@ const args = {
   class: '', //only works for global classes
   id: '',
   saveToLocalStorage: false,
-  'on:submit': () => {},
+  'on:submit': function () {
+    sessionStorage.removeItem(this.id)
+    alert('submitted, reloading page')
+    location.reload()
+  },
 }
 </script>
 
