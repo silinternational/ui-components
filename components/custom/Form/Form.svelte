@@ -1,6 +1,6 @@
 <script>
 import { onMount } from 'svelte'
-import generateRandomID from '../../../random'
+import { generateRandomID } from '../../../random'
 
 export let id = generateRandomID('form-')
 export let saveToLocalStorage = false
