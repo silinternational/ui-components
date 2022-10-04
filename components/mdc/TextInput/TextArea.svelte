@@ -14,6 +14,7 @@ export let autofocus = false
 export let rtl = false
 export let required = false
 export let description = ''
+export let name = ''
 
 const labelID = generateRandomID('textarea-label-')
 
@@ -86,6 +87,7 @@ label {
     aria-describedby="{labelID}-helper-id"
     {rows}
     maxlength="524288"
+    {name}
     {required}
     {placeholder}
     bind:value
