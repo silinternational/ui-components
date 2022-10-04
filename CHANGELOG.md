@@ -1,3 +1,11 @@
+# [6.6.0](https://github.com/silinternational/ui-components/compare/v6.5.0...v6.6.0) (2022-10-04)
+
+
+### Features
+
+* **components:** add name prop to MoneyInput, TextArea and TextField ([142b27e](https://github.com/silinternational/ui-components/commit/142b27e41751e635a4ef02745074c619fde10571))
+* **Form:** add id and saveToLocalStorage props to Form ([8216ae1](https://github.com/silinternational/ui-components/commit/8216ae10e82834ab7f3b1f0a775c12172daa171c))
+
 # [6.5.0](https://github.com/silinternational/ui-components/compare/v6.4.2...v6.5.0) (2022-09-26)
 
 
