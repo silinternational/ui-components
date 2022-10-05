@@ -33,7 +33,6 @@ const restoreFormValues = (form) => {
     const valuesForForm = JSON.parse(formValuesJson)
     if (valuesForForm) {
       setValuesOnForm(form, valuesForForm)
-      sessionStorage.removeItem(sessionStorageKey)
     }
   }
 }
