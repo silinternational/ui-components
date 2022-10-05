@@ -2,7 +2,7 @@
   "name": "@silintl/ui-components",
   "version": "3.2.0",
   "description": "Reusable Svelte components for some internal applications",
-  "svelte": "index.mjs",
+  "svelte": "dist/index.min.js",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
   "scripts": {
