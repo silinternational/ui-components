@@ -305,6 +305,7 @@ declare module '@silintl/ui-components' {
   interface FormProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
     id?: string
     saveToLocalStorage?: boolean
+    success?: boolean
   }
   export class Form extends SvelteComponentTyped<FormProps> {}
 
