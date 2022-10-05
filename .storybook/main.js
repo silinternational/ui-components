@@ -10,6 +10,7 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-svelte-csf",
     "@storybook/preset-scss",
+    "@storybook/addon-actions",
     "@storybook/addon-postcss"
   ],
   "svelteOptions": {

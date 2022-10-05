@@ -24,7 +24,7 @@ export default {
     }),
     resolve(),
     postcss({
-      extract: false, // create a css file alongside the output.file
+      extract: true, // create a css file alongside the output.file
       use: {
         sass: {
           includePaths: ['node_modules'],
