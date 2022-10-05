@@ -8,10 +8,10 @@ const args = {
   class: '', //only works for global classes
   id: '',
   saveToLocalStorage: false,
+  success: false,
   'on:submit': function () {
-    sessionStorage.removeItem(this.id)
-    alert('submitted, reloading page')
-    location.reload()
+    alert('submitted successfully, form will now reset and remove any saved values')
+    this.success = true
   },
 }
 </script>
@@ -20,11 +20,11 @@ const args = {
 
 <Template let:args>
   <Form on:submit={args['on:submit']} {...args}>
-    <TextField label='first' name='first'/>
+    <TextField label="first" name="first" />
 
-    <TextArea label='second' name='second' rows={4}/>
+    <TextArea label="second" name="second" rows={4} />
 
-    <MoneyInput label='third' name='third' />
+    <MoneyInput label="third" name="third" />
 
     <Button raised>Submit</Button>
   </Form>

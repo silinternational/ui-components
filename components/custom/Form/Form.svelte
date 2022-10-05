@@ -4,6 +4,7 @@ import { generateRandomID } from '../../../random'
 
 export let id = generateRandomID('form-')
 export let saveToLocalStorage = false
+export let success = false
 
 let form = {}
 
@@ -12,6 +13,12 @@ onMount(() => {
 })
 
 $: saveToLocalStorage && restoreFormValues(form)
+$: success && resetForm(form)
+
+const resetForm = (form) => {
+  form.reset()
+  sessionStorage.removeItem(id)
+}
 
 const getValuesFromForm = (form) => Object.fromEntries(new FormData(form))
 
@@ -33,7 +40,6 @@ const restoreFormValues = (form) => {
     const valuesForForm = JSON.parse(formValuesJson)
     if (valuesForForm) {
       setValuesOnForm(form, valuesForForm)
-      sessionStorage.removeItem(sessionStorageKey)
     }
   }
 }
