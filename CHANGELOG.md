@@ -1,3 +1,15 @@
+# [6.7.0](https://github.com/silinternational/ui-components/compare/v6.6.0...v6.7.0) (2022-10-05)
+
+
+### Bug Fixes
+
+* **Form:** don't remove storage when restoring form values ([44ba3a9](https://github.com/silinternational/ui-components/commit/44ba3a9e2834f6687115441b05a1b87dd688d8a2))
+
+
+### Features
+
+* **Form:** add success prop so Form can remove stored values internally ([8aedd72](https://github.com/silinternational/ui-components/commit/8aedd726d267ce5ce806a8f82b2bd4331f39da96))
+
 # [6.6.0](https://github.com/silinternational/ui-components/compare/v6.5.0...v6.6.0) (2022-10-04)
 
 
