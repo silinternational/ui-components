@@ -70,7 +70,7 @@
     "sass-loader": "^12.6.0",
     "semantic-release": "^19.0.2",
     "style-loader": "^3.3.1",
-    "svelte": "^3.x",
+    "svelte": "3.39.0",
     "svelte-loader": "^3.1.2",
     "svelte-preprocess": "^4.10.5"
   }
