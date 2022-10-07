@@ -108,8 +108,9 @@ module.exports = {
 
 ## Sveltekit
 
-Using this library in (Sveltekit)[https://github.com/sveltejs/kit] is experimental (as of writing this Sveltekit is still in beta).
-You may get lots of source map source warnings as referenced (here)[https://github.com/vitejs/vite/issues/2892] and it may take several seconds and/or refreshes for your app to start with `npm run dev`. Building and previewing your build should run smoothly. Below are a number of references that may be relevant to your experience.
+Using this library in [Sveltekit](https://github.com/sveltejs/kit) is experimental (as of writing this Sveltekit is still in beta).
+You may get lots of source map source warnings as referenced [here](https://github.com/vitejs/vite/issues/2892) and it may take several seconds and/or refreshes for your app to start with `npm run dev`. Building and previewing your build should run smoothly. Below are a number of references that may be relevant to your experience:
+
 https://kit.svelte.dev/faq#packages
 https://vitejs.dev/guide/dep-pre-bundling.html
 https://github.com/sveltejs/vite-plugin-svelte/blob/main/docs/faq.md#what-is-going-on-with-vite-and-pre-bundling-dependencies
