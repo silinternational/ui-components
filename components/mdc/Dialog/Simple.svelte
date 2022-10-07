@@ -1,4 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-dialog -->
+<svelte:options tag="sil-simple" />
+
 <script>
 import List from '../List'
 import { MDCDialog } from '@material/dialog'

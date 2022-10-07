@@ -1,4 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-tab -->
+<svelte:options tag="sil-tab" />
+
 <script>
 import Indicator from './Indicator.svelte'
 import { MDCTab } from '@material/tab'

@@ -1,4 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-tab-bar -->
+<svelte:options tag="sil-tab-bar" />
+
 <script>
 import { MDCTabBar } from '@material/tab-bar'
 import { onMount } from 'svelte'

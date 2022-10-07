@@ -1,3 +1,5 @@
+<svelte:options tag="sil-static-chip" />
+
 <script>
 export let bgColor = '#e5e5e5'
 </script>

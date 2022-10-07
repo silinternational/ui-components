@@ -1,4 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-tab-indicator -->
+<svelte:options tag="sil-indicator" />
+
 <script>
 import { MDCTabIndicator } from '@material/tab-indicator'
 import { onMount } from 'svelte'

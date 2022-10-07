@@ -1,3 +1,5 @@
+<svelte:options tag="sil-page" />
+
 <script>
 import Progress from '../Progress'
 import appBarTitle from '../TopAppBar/title'

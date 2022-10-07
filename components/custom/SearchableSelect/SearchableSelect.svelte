@@ -1,3 +1,5 @@
+<svelte:options tag="sil-searchable-select" />
+
 <script>
 import { generateRandomID } from '../../../random'
 import { createEventDispatcher } from 'svelte'

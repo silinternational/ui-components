@@ -1,3 +1,5 @@
+<svelte:options tag="sil-custom-card" />
+
 <script>
 import Button from '../Button'
 import Card from '../Card'

@@ -1,4 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield -->
+<svelte:options tag="sil-text-area" />
+
 <script>
 import { addOrRemoveInvalidClass } from './helpers'
 import { MDCTextField } from '@material/textfield'

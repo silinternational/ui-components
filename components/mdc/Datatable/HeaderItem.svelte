@@ -1,4 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-data-table#data-table-with-column-sorting -->
+<svelte:options tag="sil-data-header-row-item" />
+
 <script>
 import IconButton from '../IconButton'
 import { generateRandomID } from '../../../random'

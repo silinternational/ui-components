@@ -1,4 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-menu -->
+<svelte:options tag="sil-menu" />
+
 <script>
 import { MDCMenu } from '@material/menu'
 import { onMount } from 'svelte'

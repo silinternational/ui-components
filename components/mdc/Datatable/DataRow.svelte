@@ -1,3 +1,5 @@
+<svelte:options tag="sil-data-row" />
+
 <script>
 export let clickable = false
 </script>

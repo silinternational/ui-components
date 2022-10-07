@@ -1,4 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-dialog -->
+<svelte:options tag="sil-alert" />
+
 <script>
 import { MDCDialog } from '@material/dialog'
 import { createEventDispatcher, onMount } from 'svelte'
@@ -46,11 +48,11 @@ onMount(() => {
 </script>
 
 <style>
-  i.material-icons {
-    position: relative;
-    top: 4px;
-    color: var(--mdc-theme-icon-color);
-  }
+i.material-icons {
+  position: relative;
+  top: 4px;
+  color: var(--mdc-theme-icon-color);
+}
 </style>
 
 <div class="mdc-dialog" bind:this={element}>

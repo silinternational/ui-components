@@ -1,4 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-top-app-bar -->
+<svelte:options tag="sil-top-app-bar" />
+
 <script>
 import actions from './actions'
 import { MDCTopAppBar } from '@material/top-app-bar'

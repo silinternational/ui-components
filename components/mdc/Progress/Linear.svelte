@@ -1,4 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-linear-progress -->
+<svelte:options tag="sil-linear" />
+
 <script>
 import { MDCLinearProgress } from '@material/linear-progress'
 import { onMount } from 'svelte'

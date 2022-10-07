@@ -1,4 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-drawer -->
+<svelte:options tag="sil-drawer" />
+
 <script>
 import { isAboveTablet as isDesktop, isAboveMobile } from '../breakpoints'
 import { MDCDrawer } from '@material/drawer'
@@ -124,7 +126,12 @@ main {
     <slot name="drawer-content-top" />
     <!-- override built-in padding so height 100 works correctly without creating a vertical scroller -->
     <!-- changing the list to flex causes the margins to not collapse -->
-    <nav class="mdc-deprecated-list flex column p-0" class:h-100={isFullHeightMenu} on:click={onListClick} bind:this={listElement}>
+    <nav
+      class="mdc-deprecated-list flex column p-0"
+      class:h-100={isFullHeightMenu}
+      on:click={onListClick}
+      bind:this={listElement}
+    >
       {#each menuItems as { icon, label, url, urlPattern, hide, button, tooltip }, i}
         {#if label === '--break--'}
           <span class="grow-1" />
@@ -152,7 +159,9 @@ main {
                 {/if}
               </a>
             {:else}
-              <hr class="mdc-deprecated-list-divider mdc-deprecated-list-divider--inset-leading mdc-deprecated-list-divider--inset-trailing" />
+              <hr
+                class="mdc-deprecated-list-divider mdc-deprecated-list-divider--inset-leading mdc-deprecated-list-divider--inset-trailing"
+              />
             {/if}
           </Tooltip.Wrapper>
           {#if tooltip}

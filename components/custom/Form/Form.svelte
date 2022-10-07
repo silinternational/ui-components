@@ -1,3 +1,5 @@
+<svelte:options tag="sil-form" />
+
 <style>
 :global(form > *) {
   margin-top: 2rem;

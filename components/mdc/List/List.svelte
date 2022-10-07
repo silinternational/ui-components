@@ -1,4 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-list -->
+<svelte:options tag="sil-list" />
+
 <script>
 import { MDCList } from '@material/list'
 import { onMount } from 'svelte'

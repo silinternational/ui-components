@@ -1,4 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield -->
+<svelte:options tag="sil-money-input" />
+
 <script>
 import { getDecimalPlacesLength } from './helpers'
 import { generateRandomID } from '../../../random'

@@ -1,4 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-card -->
+<svelte:options tag="sil-card" />
+
 <script>
 export let secondary = ''
 export let outlined = false

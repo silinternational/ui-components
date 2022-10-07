@@ -1,3 +1,5 @@
+<svelte:options tag="sil-tour" />
+
 <script>
 import Dialog from '../Dialog'
 import { onMount, tick } from 'svelte'

@@ -1,4 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-checkbox -->
+<svelte:options tag="sil-checkbox" />
+
 <script>
 import { MDCFormField } from '@material/form-field'
 import { MDCCheckbox } from '@material/checkbox'

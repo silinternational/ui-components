@@ -1,4 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-tab-scroller -->
+<svelte:options tag="sil-scroller" />
+
 <script>
 import { MDCTabScroller } from '@material/tab-scroller'
 import { onMount } from 'svelte'

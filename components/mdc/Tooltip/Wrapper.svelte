@@ -1,3 +1,5 @@
+<svelte:options tag="sil-wrapper" />
+
 <script>
 export let ariaDescribedBy
 </script>

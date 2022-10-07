@@ -1,4 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-fab -->
+<svelte:options tag="sil-fab" />
+
 <script>
 import { MDCRipple } from '@material/ripple'
 import { onMount } from 'svelte'

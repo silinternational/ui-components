@@ -1,4 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-tooltip -->
+<svelte:options tag="sil-tooltip" />
+
 <script>
 import { MDCTooltip, XPosition, YPosition } from '@material/tooltip'
 import { onMount } from 'svelte'

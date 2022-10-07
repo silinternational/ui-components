@@ -1,4 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-circular-progress -->
+<svelte:options tag="sil-circular" />
+
 <script>
 import { MDCCircularProgress } from '@material/circular-progress'
 import { onMount } from 'svelte'

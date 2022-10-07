@@ -21,6 +21,9 @@ export default {
     svelte({
       emitCss: true, // give component style to postcss() for processing
       preprocess: autoPreprocess(),
+      compilerOptions: {
+        customElement: true,
+      },
     }),
     resolve(),
     postcss({

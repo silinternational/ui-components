@@ -1,4 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-select -->
+<svelte:options tag="sil-select" />
+
 <script>
 import { MDCSelect } from '@material/select'
 import { generateRandomID } from '../../../random'

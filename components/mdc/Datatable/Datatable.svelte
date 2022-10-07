@@ -1,4 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-data-table -->
+<svelte:options tag="sil-data-table" />
+
 <script>
 import { MDCDataTable } from '@material/data-table'
 import { createEventDispatcher, onMount } from 'svelte'

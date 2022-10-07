@@ -1,3 +1,5 @@
+<svelte:options tag="sil-badge" />
+
 <script>
 export let color = 'gray'
 export let borderRadius = '50%'

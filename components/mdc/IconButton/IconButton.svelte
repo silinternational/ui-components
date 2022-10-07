@@ -1,4 +1,6 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-icon-button -->
+<svelte:options tag="sil-icon-button" />
+
 <script>
 import { MDCRipple } from '@material/ripple'
 import { onMount } from 'svelte'
@@ -29,11 +31,12 @@ onMount(() => {
     on:mousedown
     on:blur
     on:focus
-    bind:this={element}>
-    <div class="mdc-icon-button__ripple"></div>
-    <span class="mdc-icon-button__focus-ring"></span>
+    bind:this={element}
+  >
+    <div class="mdc-icon-button__ripple" />
+    <span class="mdc-icon-button__focus-ring" />
     {icon}
-</a>
+  </a>
 {:else}
   <button
     class="mdc-icon-button material-icons {$$props.class}"
@@ -43,9 +46,10 @@ onMount(() => {
     on:mousedown
     on:blur
     on:focus
-    bind:this={element}>
-    <div class="mdc-icon-button__ripple"></div>
-    <span class="mdc-icon-button__focus-ring"></span>
+    bind:this={element}
+  >
+    <div class="mdc-icon-button__ripple" />
+    <span class="mdc-icon-button__focus-ring" />
     {icon}
   </button>
 {/if}
