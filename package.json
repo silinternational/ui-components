@@ -4,6 +4,7 @@
   "description": "Reusable Svelte components for some internal applications",
   "main": "index.mjs",
   "module": "index.mjs",
+  "svelte": "index.mjs",
   "scripts": {
     "test": "echo test",
     "format-all": "npx prettier --write .",

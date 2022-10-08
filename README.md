@@ -106,6 +106,19 @@ module.exports = {
 		// ...
 ```
 
+## Sveltekit
+
+Using this library in [Sveltekit](https://github.com/sveltejs/kit) is experimental (as of writing this Sveltekit is still in beta).
+You may get lots of source map source warnings as referenced [here](https://github.com/vitejs/vite/issues/2892) and it may take several seconds and/or refreshes for your app to start with `npm run dev`. Building and previewing your build should run smoothly. Below are a number of references that may be relevant to your experience:
+
+https://kit.svelte.dev/faq#packages
+https://vitejs.dev/guide/dep-pre-bundling.html
+https://vitejs.dev/guide/features.html#npm-dependency-resolving-and-pre-bundling
+https://github.com/sveltejs/vite-plugin-svelte/blob/main/docs/faq.md#what-is-going-on-with-vite-and-pre-bundling-dependencies
+https://github.com/sveltejs/vite-plugin-svelte/blob/main/docs/config.md#prebundlesveltelibraries
+https://github.com/vitejs/vite/issues/2892
+https://github.com/sveltejs/kit/issues/885
+
 ## components
 
 A list of all components and their props can be found in our running instance of [Storybook](https://silinternational.github.io/ui-components/).
@@ -114,7 +127,7 @@ A list of all components and their props can be found in our running instance of
 
 After installation and bundler configuration all of the components are ready to be imported.
 
-Just include `import { Button } from '@silintl/ui-components'` in your script section to import Button and any other components you want to use.
+Just include `import { Button } from '@silintl/ui-components'` (Sveltekit/Vite will need to use the full url) in your script section to import Button and any other components you want to use.
 
 ## overriding default sass variables
 
