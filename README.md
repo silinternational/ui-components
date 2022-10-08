@@ -113,6 +113,7 @@ You may get lots of source map source warnings as referenced [here](https://gith
 
 https://kit.svelte.dev/faq#packages
 https://vitejs.dev/guide/dep-pre-bundling.html
+https://vitejs.dev/guide/features.html#npm-dependency-resolving-and-pre-bundling
 https://github.com/sveltejs/vite-plugin-svelte/blob/main/docs/faq.md#what-is-going-on-with-vite-and-pre-bundling-dependencies
 https://github.com/sveltejs/vite-plugin-svelte/blob/main/docs/config.md#prebundlesveltelibraries
 https://github.com/vitejs/vite/issues/2892
@@ -126,7 +127,7 @@ A list of all components and their props can be found in our running instance of
 
 After installation and bundler configuration all of the components are ready to be imported.
 
-Just include `import { Button } from '@silintl/ui-components'` in your script section to import Button and any other components you want to use.
+Just include `import { Button } from '@silintl/ui-components'` (Sveltekit/Vite will need to use the full url) in your script section to import Button and any other components you want to use.
 
 ## overriding default sass variables
 
