@@ -4,7 +4,7 @@ Reusable Svelte components for some internal applications
 
 ## installation
 
-To install to your Svelte project, open your project's root directory in a terminal. Type or paste `npm i -D sass@1.50.x material-components-web@13.0.0 @silintl/ui-components` and press enter (versions will vary if you use an older release of this repo). Sass and-material-components web are required to develop additional material web components in your app, but it may depend on your version of npm if they are necessary even if you don't. You should already have svelte@3 installed if you are using this library.
+To install to your Svelte project, open your project's root directory in a terminal. Type or paste `npm i -D sass@1.55.x material-components-web@14.0.0 @silintl/ui-components` and press enter (versions will vary if you use an older release of this repo). Sass and-material-components web are required to develop additional material web components in your app, but it may depend on your version of npm if they are necessary even if you don't. You should already have svelte@3 installed if you are using this library.
 
 If you are using typescript you will need to run `npm i -D tslib` to avoid a material-components-web type error.
 
@@ -108,7 +108,7 @@ module.exports = {
 
 ## Sveltekit
 
-Using this library in [Sveltekit](https://github.com/sveltejs/kit) is experimental (as of writing this Sveltekit is still in beta).
+Using this library in [Sveltekit](https://github.com/sveltejs/kit) is experimental (as of writing this Sveltekit is in release candidate phase).
 You may get lots of source map source warnings as referenced [here](https://github.com/vitejs/vite/issues/2892) and it may take several seconds and/or refreshes for your app to start with `npm run dev`. Building and previewing your build should run smoothly. Below are a number of references that may be relevant to your experience:
 
 https://kit.svelte.dev/faq#packages
