@@ -1,3 +1,21 @@
+# [7.0.0](https://github.com/silinternational/ui-components/compare/v6.7.0...v7.0.0) (2022-11-07)
+
+
+### Build System
+
+* **dependencies:** update multiple deps ([4553e7f](https://github.com/silinternational/ui-components/commit/4553e7fcbe97003fa776bacd5ae2f17c5700f9ad))
+
+
+### Features
+
+* **Form:** change Form children top margin ([0ca845f](https://github.com/silinternational/ui-components/commit/0ca845fb8ec115d25d91dec6caa6b01e2052e6f1))
+
+
+### BREAKING CHANGES
+
+* **dependencies:** update material-components-web to 15 adn sass to 1.55
+* **Form:** Form children will now have 1rem instead of 2rem
+
 # [6.7.0](https://github.com/silinternational/ui-components/compare/v6.6.0...v6.7.0) (2022-10-05)
 
 
