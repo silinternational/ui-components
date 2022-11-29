@@ -42,9 +42,9 @@
   },
   "homepage": "https://github.com/silinternational/ui-components#readme",
   "peerDependencies": {
-    "material-components-web": "^13.0.0",
+    "material-components-web": "^14.0.0",
     "svelte": "^3.x",
-    "sass": "1.50.x"
+    "sass": "1.55.x"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.1",
