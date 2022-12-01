@@ -1,3 +1,22 @@
+# [8.0.0](https://github.com/silinternational/ui-components/compare/v7.0.0...v8.0.0) (2022-12-01)
+
+
+### Bug Fixes
+
+* **peerDependencies:** update material-components-web and sass to match devDependencies. Fixes an npm error for consumers using material and sass. ([7d929fd](https://github.com/silinternational/ui-components/commit/7d929fd82f9f08983c167c6595e4aaaf0b58215e))
+
+
+### buid
+
+* **peerDependencies:** update peerDependencies ([a524f48](https://github.com/silinternational/ui-components/commit/a524f4845e85e05c379b24593ca49312d6abebef))
+
+
+### BREAKING CHANGES
+
+* **peerDependencies:** update peer deps
+
+Change material-components-web to 14 and sass to 1.55. If installed in your project you can now update them to these versions without an error or warning.
+
 # [7.0.0](https://github.com/silinternational/ui-components/compare/v6.7.0...v7.0.0) (2022-11-07)
 
 
