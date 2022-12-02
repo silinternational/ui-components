@@ -9,7 +9,7 @@ onMount(() => dispatch('mounted'))
 const dispatch = createEventDispatcher()
 </script>
 
-<td class="mdc-data-table__cell mdc-data-table__cell--checkbox" on:click>
+<td class="mdc-data-table__cell mdc-data-table__cell--checkbox" on:click on:keypress on:keyup on:keydown>
   <div class="mdc-checkbox mdc-data-table__row-checkbox">
     <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby={rowId} {disabled} />
     <div class="mdc-checkbox__background">

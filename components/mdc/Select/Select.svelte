@@ -26,6 +26,8 @@ $: if (options && mdcSelect.layoutOptions) mdcSelect.layoutOptions()
 
 const recordSelectedID = (event) => (selectedID = event.detail.value)
 
+const isOptionSelected = (option) => option.id === selectedID
+
 onMount(() => {
   mdcSelect = new MDCSelect(element)
   mdcSelect.listen('MDCSelect:change', recordSelectedID)
@@ -77,7 +79,7 @@ afterUpdate(() => {
   <div class="mdc-select__menu mdc-menu mdc-menu-surface" style="width: {width}" role="listbox">
     <ul class="mdc-deprecated-list">
       {#each options as { id, name } (id)}
-        <li class="mdc-deprecated-list-item" data-value={id} role="option">
+        <li class="mdc-deprecated-list-item" data-value={id} role="option" aria-selected={isOptionSelected(id)}>
           <span class="mdc-deprecated-list-item__text">{name}</span>
         </li>
       {/each}

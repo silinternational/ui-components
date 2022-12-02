@@ -3,8 +3,6 @@ import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 import { Button } from '../components/mdc'
 import { copyAndModifyArgs } from './helpers.js'
 
-let content = 'Button slot'
-
 const args = {
   raised: true,
   class: '',
@@ -15,7 +13,7 @@ const args = {
 <Meta title="Atoms/Button" component={Button} />
 
 <Template let:args>
-  <Button {...args} on:click={args['on:click']}>{content}</Button>
+  <Button {...args} on:click={args['on:click']}>Button slot</Button>
 </Template>
 
 <Story name="Primary" {args} />
@@ -27,3 +25,8 @@ const args = {
 <Story name="Icon After" args={copyAndModifyArgs(args, { appendIcon: 'arrow_forward' })} />
 
 <Story name="Icon Before" args={copyAndModifyArgs(args, { prependIcon: 'work' })} />
+
+<Story
+  name="Url"
+  args={copyAndModifyArgs(args, { url: 'https://github.com/silinternational', raised: false, 'on:click': () => {} })}
+/>

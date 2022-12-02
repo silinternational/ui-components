@@ -6,7 +6,7 @@ export let color = 'white'
 export let isClickable = false
 export let noPadding = false
 
-$: tabindex = isClickable ? '0' : undefined
+$: tabindex = isClickable ? 0 : undefined
 </script>
 
 <style>
