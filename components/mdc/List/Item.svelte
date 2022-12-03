@@ -41,6 +41,9 @@ img {
   class:mdc-deprecated-list-item--disabled={nonInteractive}
   data-mdc-dialog-action={$$props['data-mdc-dialog-action']}
   on:click
+  on:keydown
+  on:keypress
+  on:keyup
   {tabindex}
 >
   {#if graphicURL}
