@@ -1,3 +1,10 @@
+## [8.0.1](https://github.com/silinternational/ui-components/compare/v8.0.0...v8.0.1) (2022-12-03)
+
+
+### Bug Fixes
+
+* **components:** resolve A11y warning in that show up in rollup-plugin-svelte ([42229e2](https://github.com/silinternational/ui-components/commit/42229e2a047cf71ce526eb0db582757a845f0b7e))
+
 # [8.0.0](https://github.com/silinternational/ui-components/compare/v7.0.0...v8.0.0) (2022-12-01)
 
 
