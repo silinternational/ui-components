@@ -4,7 +4,7 @@ import { generateRandomID } from '../../../random'
 
 export let id = generateRandomID('form-')
 export let saveToLocalStorage = false
-export let success = false
+export let success = false //deprecated
 
 let form = {}
 
@@ -17,6 +17,11 @@ $: success && resetForm(form)
 
 const resetForm = (form) => {
   form.reset()
+  sessionStorage.removeItem(id)
+}
+
+const resetSelf = (event) => {
+  event.target.reset()
   sessionStorage.removeItem(id)
 }
 
@@ -66,6 +71,13 @@ const listenForBlurOnForm = (form) => {
 }
 </style>
 
-<form bind:this={form} {id} class="w-100 {$$props.class}" on:submit|preventDefault autocomplete="off">
+<form
+  bind:this={form}
+  on:reset={resetSelf}
+  {id}
+  class="w-100 {$$props.class}"
+  on:submit|preventDefault
+  autocomplete="off"
+>
   <slot />
 </form>
