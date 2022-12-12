@@ -1,3 +1,10 @@
+# [8.1.0](https://github.com/silinternational/ui-components/compare/v8.0.1...v8.1.0) (2022-12-12)
+
+
+### Features
+
+* **Form:** deprecate success and listen for reset to clear local storage ([38fad25](https://github.com/silinternational/ui-components/commit/38fad257bbb3056ea9132ba6f370d8d724d841fe))
+
 ## [8.0.1](https://github.com/silinternational/ui-components/compare/v8.0.0...v8.0.1) (2022-12-03)
 
 
