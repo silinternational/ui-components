@@ -16,6 +16,9 @@ $: saveToLocalStorage && restoreFormValues(form)
 $: success && resetForm(form)
 
 const resetForm = (form) => {
+  console.warn(
+    '@silintl/ui-components: success prop is deprecated, use `form on:submit={(event) => event.target.reset()} instead'
+  )
   form.reset()
   sessionStorage.removeItem(id)
 }
