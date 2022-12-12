@@ -4,7 +4,12 @@ import { generateRandomID } from '../../../random'
 
 export let id = generateRandomID('form-')
 export let saveToLocalStorage = false
-export let success = false //deprecated
+/**
+ * @deprecated The 'success' prop has been deprecated in favor of using
+ * 'event.target.reset' on the form's submit event.
+ * Please use 'event.target.reset' instead.
+ */
+export let success = false
 
 let form = {}
 
