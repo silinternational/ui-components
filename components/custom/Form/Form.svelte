@@ -22,7 +22,7 @@ $: success && resetForm(form)
 
 const resetForm = (form) => {
   console.warn(
-    '@silintl/ui-components: success prop is deprecated, use `Form on:submit={(event) => event.target.reset()} instead'
+    '@silintl/ui-components: success prop is deprecated, use `Form on:submit={(event) => event.target.reset()}` instead'
   )
   form.reset()
   sessionStorage.removeItem(id)
