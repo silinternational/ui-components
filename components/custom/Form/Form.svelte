@@ -4,6 +4,11 @@ import { generateRandomID } from '../../../random'
 
 export let id = generateRandomID('form-')
 export let saveToLocalStorage = false
+/**
+ * @deprecated The 'success' prop has been deprecated in favor of using
+ * 'event.target.reset' on the form's submit event.
+ * Please use 'event.target.reset' instead.
+ */
 export let success = false
 
 let form = {}
@@ -16,7 +21,15 @@ $: saveToLocalStorage && restoreFormValues(form)
 $: success && resetForm(form)
 
 const resetForm = (form) => {
+  console.warn(
+    '@silintl/ui-components: success prop is deprecated, use `Form on:submit={(event) => event.target.reset()}` instead'
+  )
   form.reset()
+  sessionStorage.removeItem(id)
+}
+
+const resetSelf = (event) => {
+  event.target.reset()
   sessionStorage.removeItem(id)
 }
 
@@ -66,6 +79,13 @@ const listenForBlurOnForm = (form) => {
 }
 </style>
 
-<form bind:this={form} {id} class="w-100 {$$props.class}" on:submit|preventDefault autocomplete="off">
+<form
+  bind:this={form}
+  on:reset={resetSelf}
+  {id}
+  class="w-100 {$$props.class}"
+  on:submit|preventDefault
+  autocomplete="off"
+>
   <slot />
 </form>
