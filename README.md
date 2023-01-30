@@ -4,9 +4,9 @@ Reusable Svelte components for some internal applications
 
 ## installation
 
-To install to your Svelte project, open your project's root directory in a terminal. Type or paste `npm i -D sass@1.55.x material-components-web@14.0.0 @silintl/ui-components` and press enter (versions will vary if you use an older release of this repo). Sass and-material-components web are required to develop additional material web components in your app, but it may depend on your version of npm if they are necessary even if you don't. You should already have svelte@3 installed if you are using this library.
+To install to your Svelte project, open your project's root directory in a terminal. Type or paste `npm i -D @silintl/ui-components` and press enter. Sass and-material-components web are required to develop additional material web components in your app, but it may depend on your version of npm if they are necessary even if you don't (I haven't figured out which versions require them). Paste in `npm i -D sass@1.55.x material-components-web@14.0.0` and hit enter (versions will vary if you use an older release of this repo). You should already have svelte@3 installed if you are using this library.
 
-If you are using typescript you will need to run `npm i -D tslib` to avoid a material-components-web type error.
+If you are using typescript you will need to run `npm i -D tslib` to avoid a material-components-web type error. This will already be installed if you have set up SvelteKit with typescript using `npm create svelte@latest app-name`.
 
 You will also want to follow the example below for your index.html (app.html for sveltekit templates) for Material Icons to work and for Google fonts to load.
 see https://github.com/material-components/material-web#2-write-html-and-javascript
@@ -38,10 +38,10 @@ See https://google.github.io/material-design-icons/#sizing for sizing material i
 
 ## theming
 
-If you are using an [MDC theme](https://material.io/develop/web/docs/theming) you may want to include a \_typography.scss file and import it into
+If you are using an [MDC theme](https://material.io/develop/web/docs/theming) you may want to include a \_theme.scss file and import it into
 \_index.scss.
 
-Import \_index.scss or other file(s) that contains stuff like --mdc-theme-primary --mdc-theme-secondary and other root variables to the App.svelte (Index.svelte in sveltekit templates) or Index.html (App.html for sveltekit) file (unless they are being declared there already) so they get applied to the ui-components.
+Import \_index.scss or other file(s) that contains material styling variables like --mdc-theme-primary --mdc-theme-secondary and other root variables to the App.svelte (your base +page.svelte or +layout.svelte in sveltekit templates) or Index.html (app.html for sveltekit) file so they get applied to the ui-components.
 
 See https://github.com/silinternational/ui-components/blob/develop/stories/_theme.scss for exposed theme properties.
 
@@ -63,11 +63,11 @@ and something similar to the following:
 }
 ```
 
-and then import it to your sass entry point like \_index.scss. You may prefer to declare your root typography rules elsewhere (eg. index.html) which is ok.
+and then import it to your sass entry point like \_index.scss. You may prefer to declare your root typography rules elsewhere (eg. index.html) which is also valid.
 
 ## bundler configuration
 
-Your Svelte project will need the bundler (rollup most likely) configured to compile Sass files. If you are using rollup your plugins in your "rollup.config.js" should look something like this taking special note of postcss and svelte:
+SvelteKit won't need a bundler as it uses Vite, but Svelte projects will need a bundler (rollup or webpack most likely) configuration. If you are using rollup your plugins in your "rollup.config.js" should look something like this taking special note of postcss and svelte:
 
 ```
 import postcss from 'rollup-plugin-postcss';
@@ -108,8 +108,8 @@ module.exports = {
 
 ## Sveltekit
 
-Using this library in [Sveltekit](https://github.com/sveltejs/kit) is experimental (as of writing this Sveltekit is in release candidate phase).
-You may get lots of source map source warnings as referenced [here](https://github.com/vitejs/vite/issues/2892) and it may take several seconds and/or refreshes for your app to start with `npm run dev`. Building and previewing your build should run smoothly. Below are a number of references that may be relevant to your experience:
+Using this library in [Sveltekit](https://github.com/sveltejs/kit) is still experimental, but it seems to be working well.
+Below are a number of issues that helped me get it working.
 
 https://kit.svelte.dev/faq#packages
 https://vitejs.dev/guide/dep-pre-bundling.html
@@ -127,7 +127,8 @@ A list of all components and their props can be found in our running instance of
 
 After installation and bundler configuration all of the components are ready to be imported.
 
-Just include `import { Button } from '@silintl/ui-components'` (Sveltekit/Vite will need to use the full url) in your script section to import Button and any other components you want to use.
+Just include `import { Button } from '@silintl/ui-components'` (Sveltekit/Vite will need the full url: 	`import { Button } from '../../node_modules/@silintl/ui-components/index.mjs`
+) in your script section to import Button and any other components you want to use.
 
 ## overriding default sass variables
 
@@ -135,16 +136,15 @@ In your main sass file just use the following pattern to override any sass varia
 
 `@use './components/mdc/Button' with ( $radius: 16px );`
 
-## examples
+## examples and templates
 
 See our Storybook [Docs](https://silinternational.github.io/ui-components/?path=/docs/example-introduction--page) for examples. Just click on the component you want to learn more about.
 
-Here is a demo app with more examples of how to use components.
-https://github.com/hobbitronics/svelte-ui-components-app
+An opinionated Svelte template using rollup https://github.com/silinternational/the-way-svelte
+A template using Vite https://github.com/hobbitronics/mikes-svelte-template
+A template using SvelteKit https://github.com/hobbitronics/sveltekit-ui-components
 
-It was buit from https://github.com/sveltejs/template
-
-If you are building a single page app with routify then it is recommended to use this template https://github.com/roxiness/routify-starter
+If you dont' want to use Sveltekit or the templates above and are building a single page app with routify then it is recommended to use this template https://github.com/roxiness/routify-starter (this library not pre-installed)
 
 An example of using Button and Card:
 
