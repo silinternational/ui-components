@@ -112,11 +112,17 @@ Using this library in [Sveltekit](https://github.com/sveltejs/kit) is still expe
 Below are a number of issues that helped me get it working.
 
 https://kit.svelte.dev/faq#packages
+
 https://vitejs.dev/guide/dep-pre-bundling.html
+
 https://vitejs.dev/guide/features.html#npm-dependency-resolving-and-pre-bundling
+
 https://github.com/sveltejs/vite-plugin-svelte/blob/main/docs/faq.md#what-is-going-on-with-vite-and-pre-bundling-dependencies
+
 https://github.com/sveltejs/vite-plugin-svelte/blob/main/docs/config.md#prebundlesveltelibraries
+
 https://github.com/vitejs/vite/issues/2892
+
 https://github.com/sveltejs/kit/issues/885
 
 ## components
@@ -141,7 +147,9 @@ In your main sass file just use the following pattern to override any sass varia
 See our Storybook [Docs](https://silinternational.github.io/ui-components/?path=/docs/example-introduction--page) for examples. Just click on the component you want to learn more about.
 
 An opinionated Svelte template using rollup https://github.com/silinternational/the-way-svelte
+
 A template using Vite https://github.com/hobbitronics/mikes-svelte-template
+
 A template using SvelteKit https://github.com/hobbitronics/sveltekit-ui-components
 
 If you dont' want to use Sveltekit or the templates above and are building a single page app with routify then it is recommended to use this template https://github.com/roxiness/routify-starter (this library not pre-installed)
