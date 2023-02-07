@@ -41,7 +41,7 @@ See https://google.github.io/material-design-icons/#sizing for sizing material i
 If you are using an [MDC theme](https://material.io/develop/web/docs/theming) you may want to include a \_theme.scss file and import it into
 \_index.scss.
 
-Import \_index.scss or other file(s) that contains material styling variables like --mdc-theme-primary --mdc-theme-secondary and other root variables to the App.svelte (your base +page.svelte or +layout.svelte in sveltekit templates) or Index.html (app.html for sveltekit) file so they get applied to the ui-components.
+Import \_index.scss or other file(s) that contains material styling variables like --mdc-theme-primary --mdc-theme-secondary and other root variables to the App.svelte (your base +layout.svelte in sveltekit templates) file so they get applied to the ui-components.
 
 See https://github.com/silinternational/ui-components/blob/develop/stories/_theme.scss for exposed theme properties.
 
@@ -133,7 +133,7 @@ A list of all components and their props can be found in our running instance of
 
 After installation and bundler configuration all of the components are ready to be imported.
 
-Just include `import { Button } from '@silintl/ui-components'` (Sveltekit/Vite will need the full url: 	`import { Button } from '../../node_modules/@silintl/ui-components/index.mjs`
+Just include `import { Button } from '@silintl/ui-components'` (~~Sveltekit/~~Vite only projects will need the full url: 	`import { Button } from '../../node_modules/@silintl/ui-components/index.mjs`
 ) in your script section to import Button and any other components you want to use.
 
 ## overriding default sass variables
