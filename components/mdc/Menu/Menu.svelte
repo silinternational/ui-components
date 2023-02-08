@@ -5,11 +5,11 @@ import { onMount } from 'svelte'
 
 export let menuItems = []
 export let menuOpen = false
+export let currentUrl = ''
 
 let menu = {}
 let element = {}
 
-$: currentUrl = window.location.pathname
 $: menu.open = menuOpen
 
 onMount(() => {
