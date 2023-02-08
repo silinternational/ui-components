@@ -161,6 +161,7 @@ declare module '@silintl/ui-components' {
   interface MenuProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
     menuItems?: MenuItem[]
     menuOpen?: boolean
+    currentUrl?: string
   }
   export class Menu extends SvelteComponentTyped<MenuProps> {}
 
