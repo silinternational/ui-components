@@ -7,6 +7,7 @@ let content = 'Menu Button'
 const args = {
   class: 'dib relative opacity1', //for some reason the menu isn't behaving in storybook
   menuOpen: true,
+  currentUrl: '/?path=/story/atoms-menu--primary',
   menuItems: [
     {
       subtitle: 'Alerts',
@@ -15,16 +16,17 @@ const args = {
       icon: 'notifications',
       label: 'Alerts',
       action: () => alert('Hello!'),
+      url: '/?path=/story/atoms-menu--primary',
     },
     {
       icon: 'settings',
       label: 'User settings',
-      url: '/household/settings',
+      url: '/',
     },
     {
       icon: 'logout',
       label: 'Sign out',
-      url: '/logout',
+      url: '/',
     },
   ],
   toggleMenu() {
