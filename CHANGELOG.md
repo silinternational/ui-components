@@ -1,3 +1,21 @@
+# [9.0.0](https://github.com/silinternational/ui-components/compare/v8.1.0...v9.0.0) (2023-02-08)
+
+
+### Bug Fixes
+
+* **Menu:** fix ssr for Menu using window ([e4b0b03](https://github.com/silinternational/ui-components/commit/e4b0b03fc6f2f9c9587008f826b5d6b3cdc0343f))
+
+
+### Features
+
+* **Menu:** remove focus of menuItem based on path. Add currentUrl story ([b0aca32](https://github.com/silinternational/ui-components/commit/b0aca3233d4c0aa0bbfa1df1830da44ff6ef72d9))
+* **Menu:** remove window & add currentUrl to props ([1e982ad](https://github.com/silinternational/ui-components/commit/1e982ade89b81e8a5a8e89e7c880e9e6d7a0efd3))
+
+
+### BREAKING CHANGES
+
+* **Menu:** remove checking of current path to focus menu item
+
 # [8.1.0](https://github.com/silinternational/ui-components/compare/v8.0.1...v8.1.0) (2022-12-12)
 
 
