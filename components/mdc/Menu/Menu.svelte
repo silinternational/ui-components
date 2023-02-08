@@ -10,8 +10,6 @@ export let currentUrl = ''
 let menu = {}
 let element = {}
 
-//don't use window for ssr
-$: currentUrl = window?.location?.pathname || currentUrl
 $: menu.open = menuOpen
 
 onMount(() => {
