@@ -9,6 +9,7 @@ export let raised = false
 export let prependIcon = undefined
 export let appendIcon = undefined
 export let url = undefined
+export let target = ''
 
 let element = {}
 onMount(() => {
@@ -24,6 +25,7 @@ onMount(() => {
     role="button"
     class:mdc-button--outlined={outlined}
     class:mdc-button--raised={raised}
+    {target}
     {disabled}
     on:click
     bind:this={element}

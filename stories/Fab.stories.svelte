@@ -20,3 +20,6 @@ const args = {
 <Story name="Default" {args} />
 <Story name="Mini" args={copyAndModifyArgs(args, { mini: true })} />
 <Story name="Extended" args={copyAndModifyArgs(args, { extended: true })} />
+<Story name="Action" args={copyAndModifyArgs(args, { action: () => alert('This is an action') })} />
+<Story name="Target" args={copyAndModifyArgs(args, { target: '_blank', url: '/?path=/story/atoms-fab--target' })} />
+<Story name="Url" args={copyAndModifyArgs(args, { url: '/?path=/story/atoms-fab--url' })} />

@@ -9,6 +9,7 @@ export let mini = false
 export let extended = false
 export let url = ''
 export let action = {}
+export let target = ''
 
 let element = {}
 
@@ -38,7 +39,7 @@ onMount(() => {
     <span class="mdc-fab__label">{label}</span>
   </button>
 {:else if url}
-  <a class="mdc-fab {$$props.class}" aria-label={label} bind:this={element} href={url}>
+  <a class="mdc-fab {$$props.class}" aria-label={label} bind:this={element} href={url} {target}>
     <div class="mdc-fab__ripple" />
     <span class="mdc-fab__icon material-icons">{icon}</span>
   </a>
