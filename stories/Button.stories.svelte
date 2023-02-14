@@ -28,5 +28,19 @@ const args = {
 
 <Story
   name="Url"
-  args={copyAndModifyArgs(args, { url: 'https://github.com/silinternational', raised: false, 'on:click': () => {} })}
+  args={copyAndModifyArgs(args, {
+    url: '/?path=/story/atoms-button--url',
+    raised: false,
+    'on:click': () => {},
+  })}
+/>
+
+<Story
+  name="Target"
+  args={copyAndModifyArgs(args, {
+    url: '/?path=/story/atoms-button--url',
+    target: '_blank',
+    raised: false,
+    'on:click': () => {},
+  })}
 />

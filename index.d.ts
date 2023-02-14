@@ -5,11 +5,12 @@ declare module '@silintl/ui-components' {
   export type actions = writable<any[]>
 
   interface ButtonProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+    appendIcon?: string
     disabled?: boolean
     outlined?: boolean
-    raised?: boolean
     prependIcon?: string
-    appendIcon?: string
+    raised?: boolean
+    target?: string
     url?: string
   }
   export class Button extends SvelteComponentTyped<ButtonProps> {}
@@ -134,14 +135,16 @@ declare module '@silintl/ui-components' {
     extended?: boolean
     url?: string
     action?: Function
+    target?: string
   }
   export class Fab extends SvelteComponentTyped<FabProps> {}
 
   interface IconButtonProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
-    icon?: string
     ariaLabel?: string
-    url?: string
     disabled?: boolean
+    icon?: string
+    target?: string
+    url?: string
   }
   export class IconButton extends SvelteComponentTyped<IconButtonProps> {}
 
