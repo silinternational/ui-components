@@ -1,3 +1,10 @@
+## [9.1.1](https://github.com/silinternational/ui-components/compare/v9.1.0...v9.1.1) (2023-02-22)
+
+
+### Bug Fixes
+
+* **TextArea:** fix text overlapping with counter ([c0bb58e](https://github.com/silinternational/ui-components/commit/c0bb58ef45a8d8ec83bf13bf16f89fedd0442e82))
+
 # [9.1.0](https://github.com/silinternational/ui-components/compare/v9.0.0...v9.1.0) (2023-02-22)
 
 
