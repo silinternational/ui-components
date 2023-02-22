@@ -1,3 +1,10 @@
+# [9.1.0](https://github.com/silinternational/ui-components/compare/v9.0.0...v9.1.0) (2023-02-22)
+
+
+### Features
+
+* **Components:** add target prop to Button, Fab, and IconButton ([d0e92bc](https://github.com/silinternational/ui-components/commit/d0e92bc6b052ad20ca2379dd26cfde2e7aff0f55))
+
 # [9.0.0](https://github.com/silinternational/ui-components/compare/v8.1.0...v9.0.0) (2023-02-08)
 
 
