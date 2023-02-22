@@ -7,6 +7,7 @@ export let icon
 export let ariaLabel
 export let url = ''
 export let disabled = false
+export let target = ''
 
 let element = {}
 onMount(() => {
@@ -25,15 +26,17 @@ onMount(() => {
     class="mdc-icon-button material-icons {$$props.class}"
     aria-label={ariaLabel}
     {disabled}
+    {target}
     on:click
     on:mousedown
     on:blur
     on:focus
-    bind:this={element}>
-    <div class="mdc-icon-button__ripple"></div>
-    <span class="mdc-icon-button__focus-ring"></span>
+    bind:this={element}
+  >
+    <div class="mdc-icon-button__ripple" />
+    <span class="mdc-icon-button__focus-ring" />
     {icon}
-</a>
+  </a>
 {:else}
   <button
     class="mdc-icon-button material-icons {$$props.class}"
@@ -43,9 +46,10 @@ onMount(() => {
     on:mousedown
     on:blur
     on:focus
-    bind:this={element}>
-    <div class="mdc-icon-button__ripple"></div>
-    <span class="mdc-icon-button__focus-ring"></span>
+    bind:this={element}
+  >
+    <div class="mdc-icon-button__ripple" />
+    <span class="mdc-icon-button__focus-ring" />
     {icon}
   </button>
 {/if}
