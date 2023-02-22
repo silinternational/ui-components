@@ -61,15 +61,6 @@ const focus = async (node) => {
 label {
   width: 100%;
 }
-.counter {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  -webkit-font-smoothing: antialiased;
-  font-family: var(--mdc-typography-caption-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
-  font-size: var(--mdc-typography-caption-font-size, 0.75rem);
-  font-weight: var(--mdc-typography-caption-font-weight, 400);
-}
 </style>
 
 <label
@@ -102,7 +93,7 @@ label {
     on:blur={() => (hasBlurred = true)}
   />
   {#if maxlength}
-    <span class="counter gray mr-1 mb-4px" class:error>{value.length} / {maxlength}</span>
+    <span class="mdc-text-field-character-counter" class:error>{value.length} / {maxlength}</span>
   {/if}
   <span class="mdc-notched-outline">
     <span class="mdc-notched-outline__leading" />
