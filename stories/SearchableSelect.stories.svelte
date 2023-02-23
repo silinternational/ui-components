@@ -17,7 +17,7 @@ const args = {
   choice: 'choice 1',
   width: '232px',
   maxlength: 255,
-  'on:chosen': (e) => alert(e.detail + ' chosen'),
+  'on:chosen': (e) => alert(e.detail + ' chosen (accessed by event.detail)'),
   'on:check': (e) => {
     !args.options[e.detail] && alert(e.detail + ' not available')
   },
