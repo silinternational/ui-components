@@ -45,6 +45,8 @@ const args = {
 
 <Story name="value" args={copyAndModifyArgs(args, { value })} />
 
+<Story name="name" args={copyAndModifyArgs(args, { name: 'Anniversary' })} />
+
 <Story name="disabled" args={copyAndModifyArgs(args, { disabled: true })} />
 
 <Story name="autofocus" args={copyAndModifyArgs(args, { autofocus: true })} />

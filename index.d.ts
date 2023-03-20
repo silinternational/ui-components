@@ -89,6 +89,7 @@ declare module '@silintl/ui-components' {
     padding?: string
     width?: string
     fontSize?: string
+    name?: string
     value?: string
     disabled?: boolean
     autofocus?: boolean
