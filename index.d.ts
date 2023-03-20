@@ -2,7 +2,7 @@ declare module '@silintl/ui-components' {
   import type { SvelteComponentTyped } from 'svelte'
   import type { writable } from 'svelte/store'
 
-  export type actions = writable<any[]>
+  export type actions = typeof writable<any[]>
 
   interface ButtonProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
     appendIcon?: string
@@ -81,6 +81,21 @@ declare module '@silintl/ui-components' {
       }
     }
   }
+
+  interface DateInputProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+    color?: string
+    borderColor?: string
+    errorColor?: string
+    padding?: string
+    width?: string
+    fontSize?: string
+    value?: string
+    disabled?: boolean
+    autofocus?: boolean
+    required?: boolean
+  }
+
+  export class DateInput extends SvelteComponentTyped<DateInputProps> {}
 
   export namespace Dialog {
     export type AlertButton = {
