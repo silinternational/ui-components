@@ -41,6 +41,12 @@ export let width = '220px'
 export let fontSize = '14px'
 
 /**
+ * @prop {string}
+ * @description sets name of input
+ */
+export let name = ''
+
+/**
  * @prop {string} date in locale with no time data
  * @description sets initial date of input
  */
@@ -106,6 +112,7 @@ const focus = (node) => autofocus && node.focus()
     type="date"
     {required}
     {disabled}
+    {name}
     bind:value
     on:blur={onBlur}
     on:input={onInput}
