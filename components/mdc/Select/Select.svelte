@@ -6,7 +6,7 @@ import { afterUpdate, createEventDispatcher, onMount } from 'svelte'
 
 export let label = 'Select'
 
-/** @type {{id, name}[]} */
+/** @type {{id: string, name: string}[]} */
 export let options = []
 export let width = '280px'
 export let disabled = false
