@@ -186,15 +186,15 @@ declare module '@silintl/ui-components' {
 
   interface MoneyInputProps {
     label?: string
-    value?: number
+    value?: number | string
     name?: string
     placeholder?: string
     autofocus?: boolean
     disabled?: boolean
     required?: boolean
-    minValue?: string
-    maxValue?: string
-    step?: string
+    minValue?: number | string
+    maxValue?: number | string
+    step?: number | string
     description?: string
   }
   export class MoneyInput extends SvelteComponentTyped<MoneyInputProps> {}
@@ -211,7 +211,7 @@ declare module '@silintl/ui-components' {
   }
 
   interface SelectProps {
-    options?: { name: string; id: number }[]
+    options?: { name: string; id: string }[]
     width?: string
     disabled?: boolean
     selectedID?: string
