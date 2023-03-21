@@ -325,7 +325,6 @@ declare module '@silintl/ui-components' {
   interface FormProps {
     id?: string
     saveToLocalStorage?: boolean
-    success?: boolean
   }
   export class Form extends SvelteComponentTyped<FormProps> {}
 
