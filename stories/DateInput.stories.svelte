@@ -7,9 +7,9 @@ import Snackbar from '../components/mdc/Snackbar/Snackbar.svelte'
 import { copyAndModifyArgs } from './helpers.js'
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 
-const date = new Date().toISOString()
+let valueForValueStory = new Date().toISOString().split('T')[0]
 
-let value = date.split('T')[0]
+let value
 
 const args = {
   class: '', //only works for global classes
@@ -22,8 +22,8 @@ const args = {
 <Meta title="Atoms/DateInput" component={DateInput} />
 
 <Template let:args>
-  <Form class="flex column" on:submit={() => setNotice(args.value || 'No date selected')}>
-    <DateInput {...args} on:blur={args['on:blur']} color />
+  <Form class="flex column" on:submit={() => setNotice(value || 'No date selected')}>
+    <DateInput {...args} on:blur={args['on:blur']} bind:value />
 
     <Button raised>Submit</Button>
 
@@ -43,7 +43,15 @@ const args = {
 
 <Story name="fontSize" args={copyAndModifyArgs(args, { fontSize: '18px' })} />
 
-<Story name="value" args={copyAndModifyArgs(args, { value })} />
+<Story name="value">
+  <Form class="flex column" on:submit={() => setNotice(valueForValueStory || 'No date selected')}>
+    <DateInput on:blur={args['on:blur']} bind:value={valueForValueStory} />
+
+    <Button raised>Submit</Button>
+
+    <Snackbar />
+  </Form>
+</Story>
 
 <Story name="name" args={copyAndModifyArgs(args, { name: 'Anniversary' })} />
 
