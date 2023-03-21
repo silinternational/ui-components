@@ -36,7 +36,7 @@ $: showCounter = maxlength && valueLength / maxlength > 0.85
 $: valueHasTooManyDecPlaces = getDecimalPlacesLength(internalValue) > getDecimalPlacesLength(step)
 $: valueNotDivisibleByStep =
   (internalValue && (internalValue / Number(step)).toFixed(2) % 1 !== 0) || valueHasTooManyDecPlaces
-$: internalValue = Number(value) || 0 //this causes problems with require input as 0 is a valid string
+$: internalValue = Number(value) || 0
 
 onMount(() => {
   mdcTextField = new MDCTextField(element)
