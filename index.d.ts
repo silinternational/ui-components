@@ -2,9 +2,9 @@ declare module '@silintl/ui-components' {
   import type { SvelteComponentTyped } from 'svelte'
   import type { writable } from 'svelte/store'
 
-  export type actions = writable<any[]>
+  export type actions = typeof writable<any[]>
 
-  interface ButtonProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface ButtonProps {
     appendIcon?: string
     disabled?: boolean
     outlined?: boolean
@@ -19,7 +19,7 @@ declare module '@silintl/ui-components' {
 
   export function isAboveTablet(): boolean
 
-  interface CardProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface CardProps {
     secondary?: string
     outlined?: boolean
     color?: string
@@ -28,7 +28,7 @@ declare module '@silintl/ui-components' {
   }
   export class Card extends SvelteComponentTyped<CardProps> {}
 
-  interface CheckboxProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface CheckboxProps {
     label?: string
     checked?: boolean
     disabled?: boolean
@@ -37,7 +37,7 @@ declare module '@silintl/ui-components' {
   export class Checkbox extends SvelteComponentTyped<CheckboxProps> {}
 
   //Datatable
-  interface DatatableProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface DatatableProps {
     label?: string
     numberOfCheckboxes?: number
   }
@@ -47,14 +47,14 @@ declare module '@silintl/ui-components' {
     type HeaderProps = svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']>
     export class Header extends SvelteComponentTyped<HeaderProps> {}
 
-    interface DatatableCheckboxProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+    interface DatatableCheckboxProps {
       disabled?: boolean
       rowId?: string
     }
     export class Checkbox extends SvelteComponentTyped<DatatableCheckboxProps> {}
 
     export namespace Header {
-      interface ItemProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+      interface ItemProps {
         numeric?: boolean
         columnID?: string
         sortable?: boolean
@@ -67,13 +67,13 @@ declare module '@silintl/ui-components' {
     export class Data extends SvelteComponentTyped<DataProps> {}
 
     export namespace Data {
-      interface RowProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+      interface RowProps {
         clickable?: boolean
       }
       export class Row extends SvelteComponentTyped<RowProps> {}
 
       export namespace Row {
-        interface ItemProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+        interface ItemProps {
           numeric?: boolean
           colspan?: number
         }
@@ -82,13 +82,30 @@ declare module '@silintl/ui-components' {
     }
   }
 
+  interface DateInputProps {
+    color?: string
+    borderColor?: string
+    errorColor?: string
+    padding?: string
+    width?: string
+    fontSize?: string
+    name?: string
+    value?: string
+    disabled?: boolean
+    autofocus?: boolean
+    required?: boolean
+    class?: string
+  }
+
+  export class DateInput extends SvelteComponentTyped<DateInputProps> {}
+
   export namespace Dialog {
     export type AlertButton = {
       label: string
       action: string
       class: string
     }
-    interface AlertProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+    interface AlertProps {
       open?: boolean
       title?: string
       titleIcon?: string
@@ -97,14 +114,14 @@ declare module '@silintl/ui-components' {
     }
     export class Alert extends SvelteComponentTyped<AlertProps> {}
 
-    interface SimpleProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+    interface SimpleProps {
       open?: boolean
       title?: string
     }
     export class Simple extends SvelteComponentTyped<SimpleProps> {}
   }
 
-  interface DrawerProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface DrawerProps {
     title?: string
     subtitle?: string
     menuItems?: {
@@ -128,7 +145,7 @@ declare module '@silintl/ui-components' {
   }
   export class Drawer extends SvelteComponentTyped<DrawerProps> {}
 
-  interface FabProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface FabProps {
     icon?: string
     label?: string
     mini?: boolean
@@ -139,7 +156,7 @@ declare module '@silintl/ui-components' {
   }
   export class Fab extends SvelteComponentTyped<FabProps> {}
 
-  interface IconButtonProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface IconButtonProps {
     ariaLabel?: string
     disabled?: boolean
     icon?: string
@@ -148,7 +165,7 @@ declare module '@silintl/ui-components' {
   }
   export class IconButton extends SvelteComponentTyped<IconButtonProps> {}
 
-  interface ListProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface ListProps {
     twoLine?: boolean
     avatar?: boolean
   }
@@ -161,76 +178,76 @@ declare module '@silintl/ui-components' {
     action?: VoidFunction
     subtitle?: string
   }
-  interface MenuProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface MenuProps {
     menuItems?: MenuItem[]
     menuOpen?: boolean
     currentUrl?: string
   }
   export class Menu extends SvelteComponentTyped<MenuProps> {}
 
-  interface MoneyInputProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface MoneyInputProps {
     label?: string
-    value?: number
+    value?: number | string
     name?: string
     placeholder?: string
     autofocus?: boolean
     disabled?: boolean
     required?: boolean
-    minValue?: string
-    maxValue?: string
-    step?: string
+    minValue?: number | string
+    maxValue?: number | string
+    step?: number | string
     description?: string
   }
   export class MoneyInput extends SvelteComponentTyped<MoneyInputProps> {}
 
   export namespace Progress {
-    type CircularProps = svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']>
+    type CircularProps = {}
     export class Circular extends SvelteComponentTyped<CircularProps> {}
 
-    interface LinearProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+    interface LinearProps {
       indeterminate?: boolean
       value?: number
     }
     export class Linear extends SvelteComponentTyped<LinearProps> {}
   }
 
-  interface SelectProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
-    options?: { name: string; id: number }[]
+  interface SelectProps {
+    options?: { name: string; id: string }[]
     width?: string
     disabled?: boolean
     selectedID?: string
   }
   export class Select extends SvelteComponentTyped<SelectProps> {}
 
-  interface SwitchProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface SwitchProps {
     label?: string
     disabled?: boolean
     selected?: boolean
   }
   export class Switch extends SvelteComponentTyped<SwitchProps> {}
 
-  interface SnackbarProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface SnackbarProps {
     // no exported members
   }
   export class Snackbar extends SvelteComponentTyped<SnackbarProps> {}
 
-  interface TabBarProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface TabBarProps {
     tab?: number
   }
   export class TabBar extends SvelteComponentTyped<TabBarProps> {}
 
   export namespace TabBar {
-    interface ScrollerProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {}
+    interface ScrollerProps {}
     export class Scroller extends SvelteComponentTyped<ScrollerProps> {}
 
-    interface TabProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+    interface TabProps {
       active?: boolean
       label?: string
     }
     export class Tab extends SvelteComponentTyped<TabProps> {}
   }
 
-  interface TextAreaProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface TextAreaProps {
     label?: string
     value?: string
     name?: string
@@ -244,7 +261,7 @@ declare module '@silintl/ui-components' {
   }
   export class TextArea extends SvelteComponentTyped<TextAreaProps> {}
 
-  interface TextFieldProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface TextFieldProps {
     label?: string
     value?: string
     name?: string
@@ -257,7 +274,7 @@ declare module '@silintl/ui-components' {
   }
   export class TextField extends SvelteComponentTyped<TextFieldProps> {}
 
-  interface TooltipProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface TooltipProps {
     tooltipID?: string
     positionX?: 'start' | 'center' | 'end'
     positionY?: 'above' | 'below'
@@ -265,13 +282,13 @@ declare module '@silintl/ui-components' {
   export class Tooltip extends SvelteComponentTyped<TooltipProps> {}
 
   export namespace Tooltip {
-    interface TooltipWrapperProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+    interface TooltipWrapperProps {
       ariaDescribedBy?: string
     }
     export class Wrapper extends SvelteComponentTyped<TooltipWrapperProps> {}
   }
 
-  interface TopAppBarProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface TopAppBarProps {
     bgColorIsVariant?: boolean
     dense?: boolean
     fixed?: boolean
@@ -279,7 +296,7 @@ declare module '@silintl/ui-components' {
   }
   export class TopAppBar extends SvelteComponentTyped<TopAppBarProps> {}
 
-  interface BadgeProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface BadgeProps {
     color?: string
     borderRadius?: string
     padding?: string
@@ -287,7 +304,7 @@ declare module '@silintl/ui-components' {
   }
   export class Badge extends SvelteComponentTyped<BadgeProps> {}
 
-  interface CustomCardProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface CustomCardProps {
     src?: string
     alt?: string
     title?: string
@@ -298,7 +315,7 @@ declare module '@silintl/ui-components' {
   }
   export class CustomCard extends SvelteComponentTyped<CustomCardProps> {}
 
-  interface FileDropAreaProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface FileDropAreaProps {
     raised?: boolean
     outlined?: boolean
     mimeType?: string
@@ -306,14 +323,13 @@ declare module '@silintl/ui-components' {
   }
   export class FileDropArea extends SvelteComponentTyped<FileDropAreaProps> {}
 
-  interface FormProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface FormProps {
     id?: string
     saveToLocalStorage?: boolean
-    success?: boolean
   }
   export class Form extends SvelteComponentTyped<FormProps> {}
 
-  interface PageProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface PageProps {
     loading?: boolean
     title?: string
     layout?: string
@@ -322,14 +338,14 @@ declare module '@silintl/ui-components' {
   }
   export class Page extends SvelteComponentTyped<PageProps> {}
 
-  interface StaticChipProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface StaticChipProps {
     bgColor?: string
   }
   export class StaticChip extends SvelteComponentTyped<StaticChipProps> {}
 
   export function setNotice(label: string, action?: string, callback?: Function): void
 
-  interface SearchableSelectProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface SearchableSelectProps {
     choice?: string
     disabled?: boolean
     maxlength?: string
@@ -343,13 +359,13 @@ declare module '@silintl/ui-components' {
 
   type steps = 'title' | 'content' | 'left' | 'right' | 'previous' | 'next' | 'target'
 
-  interface TourProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  interface TourProps {
     steps?: { [key in steps]: string | number }[]
     data?: { [key: string]: string }
   }
   export class Tour extends SvelteComponentTyped<TourProps> {}
 }
 
-module '@silintl/ui-components/random' {
+declare module '@silintl/ui-components/random' {
   export function generateRandomID(prefix?: string): string
 }

@@ -8,7 +8,6 @@ const args = {
   class: '', //only works for global classes
   id: '',
   saveToLocalStorage: false,
-  success: false, //deprecated
   'on:submit': function (e) {
     alert('submitted successfully, form will now reset and remove any saved values')
     e.target.reset()
