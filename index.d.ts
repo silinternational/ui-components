@@ -94,6 +94,7 @@ declare module '@silintl/ui-components' {
     disabled?: boolean
     autofocus?: boolean
     required?: boolean
+    class?: string
   }
 
   export class DateInput extends SvelteComponentTyped<DateInputProps> {}
