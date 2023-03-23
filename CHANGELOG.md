@@ -3,7 +3,7 @@
 
 ### Bug Fixes
 
-* **exorts:** fix broken DateInput export ([d841278](https://github.com/silinternational/ui-components/commit/d84127837248d2581b424b2fa1f36ce4f4f5f11a))
+* **exports:** fix broken DateInput export ([d841278](https://github.com/silinternational/ui-components/commit/d84127837248d2581b424b2fa1f36ce4f4f5f11a))
 
 # [10.0.0](https://github.com/silinternational/ui-components/compare/v9.1.1...v10.0.0) (2023-03-23)
 
