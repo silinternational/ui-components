@@ -11,7 +11,7 @@ const labelID = generateRandomID('column-label-')
 </script>
 
 <th
-  class="mdc-data-table__header-cell {$$props.class} mdc-data-table__header-cell--with-sort"
+  class="mdc-data-table__header-cell {$$props.class || ''} mdc-data-table__header-cell--with-sort"
   class:mdc-data-table__header-cell--numeric={numeric}
   role="columnheader"
   scope="col"

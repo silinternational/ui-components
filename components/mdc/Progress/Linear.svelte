@@ -20,7 +20,7 @@ onMount(() => {
 
 <div
   role="progressbar"
-  class="mdc-linear-progress {$$props.class}"
+  class="mdc-linear-progress {$$props.class || ''}"
   class:mdc-linear-progress--indeterminate={indeterminate}
   aria-label="Progress Bar"
   aria-valuemin="0"

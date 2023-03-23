@@ -64,7 +64,7 @@ label {
 </style>
 
 <label
-  class="mdc-text-field mdc-text-field--outlined mdc-text-field--textarea {$$props.class} textfield-radius"
+  class="mdc-text-field mdc-text-field--outlined mdc-text-field--textarea {$$props.class || ''} textfield-radius"
   class:mdc-text-field--no-label={!label}
   class:mdc-text-field--label-floating={label}
   class:mdc-text-field--with-internal-counter={maxlength}
