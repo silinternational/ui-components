@@ -1,3 +1,24 @@
+# [10.0.0](https://github.com/silinternational/ui-components/compare/v9.1.1...v10.0.0) (2023-03-23)
+
+
+### Bug Fixes
+
+* **types:** fix Select and MoneyInput types ([f2c6f73](https://github.com/silinternational/ui-components/commit/f2c6f73b289d0277b99a5e51cba8778fbd49ddd8))
+* **types:** JSX.HTMLAttributes is deprecated ([f8c593b](https://github.com/silinternational/ui-components/commit/f8c593b91528ecf47c5fffd8652bd5bc357b70f3))
+
+
+### Features
+
+* **components:** Add DateInput components ([a83dc70](https://github.com/silinternational/ui-components/commit/a83dc7079d70a26fa1b2800b0fb909719e52ae8d))
+* **Form:** remove success ([5f3537c](https://github.com/silinternational/ui-components/commit/5f3537c6fa8a41891d1f36a1f5ac3a697bf9fdbc))
+
+
+### BREAKING CHANGES
+
+* **Form:** remove success prop
+
+To reset `Form` use `on:submit` and `event.target.reset()` instead of setting `success` to `true`
+
 ## [9.1.1](https://github.com/silinternational/ui-components/compare/v9.1.0...v9.1.1) (2023-02-22)
 
 
