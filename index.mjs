@@ -5,7 +5,6 @@ import {
   Checkbox,
   CustomCard,
   Datatable,
-  DateInput,
   Dialog,
   Drawer,
   Fab,
@@ -29,7 +28,7 @@ import {
   setNotice,
 } from './components/mdc/index.js'
 
-import { Badge, FileDropArea, Form, SearchableSelect, StaticChip } from './components/custom/index.js'
+import { Badge, DateInput, FileDropArea, Form, SearchableSelect, StaticChip } from './components/custom/index.js'
 
 export {
   actions,
