@@ -30,7 +30,7 @@ onMount(() => {
 const handleChange = () => dispatch(checkbox.checked ? 'checked' : 'unchecked')
 </script>
 
-<div class="mdc-form-field {$$props.class || ''}" bind:this={formFieldElement}>
+<div class="mdc-form-field {$$props.class}" bind:this={formFieldElement}>
   <div class="mdc-checkbox" bind:this={checkboxElement}>
     <input type="checkbox" {disabled} on:change={handleChange} class="mdc-checkbox__native-control" id={inputID} />
     <div class="mdc-checkbox__background">

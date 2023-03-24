@@ -38,7 +38,7 @@ const fromAction = (s) => JSON.parse(s)
 <div class="mdc-dialog" bind:this={element}>
   <div class="mdc-dialog__container">
     <div
-      class="mdc-dialog__surface {$$props.class || ''}"
+      class="mdc-dialog__surface {$$props.class}"
       role="alertdialog"
       aria-modal="true"
       aria-labelledby="dialog-title"

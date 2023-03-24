@@ -32,7 +32,7 @@ span {
 </style>
 
 <span
-  class="mdc-typography dib text-align-center white fs-16 {$$props.class || ''}"
+  class="mdc-typography dib text-align-center white fs-16 {$$props.class}"
   class:bordered
   style="--theme-color: {color}; --bg-color: {transparentColor}; --border-radius: {borderRadius}; --padding: {padding}"
 >

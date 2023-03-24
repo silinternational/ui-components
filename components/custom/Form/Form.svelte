@@ -68,7 +68,7 @@ const listenForBlurOnForm = (form) => {
   bind:this={form}
   on:reset={resetSelf}
   {id}
-  class="w-100 {$$props.class || ''}"
+  class="w-100 {$$props.class}"
   on:submit|preventDefault
   autocomplete="off"
 >

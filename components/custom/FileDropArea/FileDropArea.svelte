@@ -71,7 +71,7 @@ form > * {
 
 <div
   id="drop-area"
-  class="br-8px {$$props.class || ''}"
+  class="br-8px {$$props.class}"
   class:highlighted
   on:dragenter|preventDefault|stopPropagation={highlight}
   on:dragleave|preventDefault|stopPropagation={unhighlight}

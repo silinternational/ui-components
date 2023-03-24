@@ -51,7 +51,7 @@ afterUpdate(() => {
 })
 </script>
 
-<div class="mdc-select mdc-select--outlined {$$props.class || ''}" bind:this={element} style="width: {width}">
+<div class="mdc-select mdc-select--outlined {$$props.class}" bind:this={element} style="width: {width}">
   <div class="mdc-select__anchor" role="button" aria-haspopup="listbox" aria-labelledby="{labelID} {selectedTextID}">
     <span class="mdc-select__selected-text-container">
       <span id={selectedTextID} class="mdc-select__selected-text" />

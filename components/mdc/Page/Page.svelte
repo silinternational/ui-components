@@ -14,7 +14,7 @@ $: $appBarTitle = title
 </script>
 
 <slot name="tabbar" />
-<div class="mdc-layout-grid {$$props.class || ''}">
+<div class="mdc-layout-grid {$$props.class}">
   <div class="mdc-layout-grid__inner">
     {#if layout == 'default'}
       <div class={center ? `${cell12} flex column align-items-center` : `${cell12}`}>

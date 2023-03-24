@@ -71,7 +71,7 @@ function setAlertProps() {
 </script>
 
 <Dialog.Alert
-  class={$$props.class || ''}
+  class={$$props.class}
   title={tourTitle}
   on:chosen={(event) => alertChosen(event.detail)}
   open={openDialog}

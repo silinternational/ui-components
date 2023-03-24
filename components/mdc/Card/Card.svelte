@@ -27,7 +27,7 @@ $: tabindex = isClickable ? 0 : undefined
 
 <div
   {tabindex}
-  class="mdc-card mdc-typography {$$props.class || ''}"
+  class="mdc-card mdc-typography {$$props.class}"
   style="background-color: {color}"
   class:mdc-card--outlined={outlined}
   class:mdc-card__primary-action={isClickable}

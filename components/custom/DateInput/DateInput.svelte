@@ -107,7 +107,7 @@ const focus = (node) => autofocus && node.focus()
 }
 </style>
 
-<label class="{$$props.class || ''} custom-field">
+<label class="{$$props.class} custom-field">
   <input
     type="date"
     {required}

@@ -23,7 +23,7 @@ onMount(() => {
   <a
     href={url}
     role="button"
-    class="mdc-icon-button material-icons {$$props.class || ''}"
+    class="mdc-icon-button material-icons {$$props.class}"
     aria-label={ariaLabel}
     {disabled}
     {target}
@@ -39,7 +39,7 @@ onMount(() => {
   </a>
 {:else}
   <button
-    class="mdc-icon-button material-icons {$$props.class || ''}"
+    class="mdc-icon-button material-icons {$$props.class}"
     aria-label={ariaLabel}
     {disabled}
     on:click
