@@ -24,8 +24,12 @@
         },
         "presetConfig": {
           "types": [
-            {"type": "feat", "section": "Added"},
+            {"type": "add", "section": "Added"},
             {"type": "fix", "section": "Fixed"},
+            {"type": "change", "section": "Changed"},
+            {"type": "deprecate", "section": "Deprecated"},
+            {"type": "remove", "section": "Removed"},
+            {"type": "security", "section": "Security"},
             {"type": "chore", "hidden": true},
             {"type": "docs", "hidden": true},
             {"type": "style", "hidden": true},
