@@ -16,28 +16,135 @@
       "main"
     ],
     "plugins": [
-      "@semantic-release/commit-analyzer",
-      ["@semantic-release/release-notes-generator", {
-        "preset": "conventionalcommits",
-        "parserOpts": {
-          "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES", "BREAKING"]
-        },
-        "presetConfig": {
-          "types": [
-            {"type": "add", "section": "Added"},
-            {"type": "fix", "section": "Fixed"},
-            {"type": "change", "section": "Changed"},
-            {"type": "deprecate", "section": "Deprecated"},
-            {"type": "remove", "section": "Removed"},
-            {"type": "security", "section": "Security"},
-            {"type": "chore", "hidden": true},
-            {"type": "docs", "hidden": true},
-            {"type": "style", "hidden": true},
-            {"type": "refactor", "hidden": true},
-            {"type": "perf", "hidden": true},
-            {"type": "test", "hidden": true}
-        ]}
-      }],
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "conventionalcommits",
+          "releaseRules": [
+            {
+              "type": "add",
+              "release": "minor"
+            },
+            {
+              "type": "fix",
+              "release": "patch"
+            },
+            {
+              "type": "change",
+              "release": "minor"
+            },
+            {
+              "type": "deprecate",
+              "release": "false"
+            },
+            {
+              "type": "remove",
+              "release": "minor"
+            },
+            {
+              "type": "security",
+              "release": "patch"
+            },
+            {
+              "type": "chore",
+              "release": "patch"
+            },
+            {
+              "type": "docs",
+              "scope": "README",
+              "release": false
+            },
+            {
+              "type": "refactor",
+              "release": "patch"
+            },
+            {
+              "type": "style",
+              "release": "patch"
+            },
+            {
+              "type": "perf",
+              "release": "patch"
+            },
+            {
+              "type": "test",
+              "release": false
+            }
+          ],
+          "parserOpts": {
+            "noteKeywords": [
+              "BREAKING CHANGE",
+              "BREAKING CHANGES",
+              "BREAKING"
+            ]
+          }
+        }
+      ],
+      [
+        "@semantic-release/release-notes-generator",
+        {
+          "preset": "conventionalcommits",
+          "parserOpts": {
+            "noteKeywords": [
+              "BREAKING CHANGE",
+              "BREAKING CHANGES",
+              "BREAKING"
+            ]
+          },
+          "presetConfig": {
+            "types": [
+              {
+                "type": "add",
+                "section": "Added"
+              },
+              {
+                "type": "fix",
+                "section": "Fixed"
+              },
+              {
+                "type": "change",
+                "section": "Changed"
+              },
+              {
+                "type": "deprecate",
+                "section": "Deprecated"
+              },
+              {
+                "type": "remove",
+                "section": "Removed"
+              },
+              {
+                "type": "security",
+                "section": "Security"
+              },
+              {
+                "type": "chore",
+                "hidden": true
+              },
+              {
+                "type": "docs",
+                "hidden": "Changed"
+              },
+              {
+                "type": "style",
+                "hidden": "Changed"
+              },
+              {
+                "type": "refactor",
+                "hidden": "Changed"
+              },
+              {
+                "type": "perf",
+                "hidden": "Changed"
+              },
+              {
+                "type": "test",
+                "hidden": "Changed"
+              }
+            ]
+          }
+        }
+      ],
       "@semantic-release/changelog",
       "@semantic-release/npm",
       "@semantic-release/git",
