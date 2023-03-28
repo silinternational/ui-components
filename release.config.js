@@ -1,145 +1,137 @@
-const { execSync } = require('child_process');
+const { execSync } = require('child_process')
 
 const plugins = [
   [
-    "@semantic-release/commit-analyzer",
+    '@semantic-release/commit-analyzer',
     {
-      "preset": "conventionalcommits",
-      "releaseRules": [
+      preset: 'conventionalcommits',
+      releaseRules: [
         {
-          "type": "add",
-          "release": "minor"
+          type: 'add',
+          release: 'minor',
         },
         {
-          "type": "fix",
-          "release": "patch"
+          type: 'fix',
+          release: 'patch',
         },
         {
-          "type": "change",
-          "release": "minor"
+          type: 'change',
+          release: 'minor',
         },
         {
-          "type": "deprecate",
-          "release": "minor"
+          type: 'deprecate',
+          release: 'minor',
         },
         {
-          "type": "remove",
-          "release": "minor"
+          type: 'remove',
+          release: 'minor',
         },
         {
-          "type": "security",
-          "release": "patch"
+          type: 'security',
+          release: 'patch',
         },
         {
-          "type": "chore",
-          "release": "patch"
+          type: 'chore',
+          release: 'patch',
         },
         {
-          "type": "docs",
-          "scope": "README",
-          "release": "patch"
+          type: 'docs',
+          scope: 'README',
+          release: 'patch',
         },
         {
-          "type": "refactor",
-          "release": "patch"
+          type: 'refactor',
+          release: 'patch',
         },
         {
-          "type": "style",
-          "release": "patch"
+          type: 'style',
+          release: 'patch',
         },
         {
-          "type": "perf",
-          "release": "patch"
+          type: 'perf',
+          release: 'patch',
         },
         {
-          "type": "test",
-          "release": "patch"
-        }
+          type: 'test',
+          release: 'patch',
+        },
       ],
-      "parserOpts": {
-        "noteKeywords": [
-          "BREAKING CHANGE",
-          "BREAKING CHANGES",
-          "BREAKING"
-        ]
-      }
-    }
+      parserOpts: {
+        noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES', 'BREAKING'],
+      },
+    },
   ],
   [
-    "@semantic-release/release-notes-generator",
+    '@semantic-release/release-notes-generator',
     {
-      "preset": "conventionalcommits",
-      "parserOpts": {
-        "noteKeywords": [
-          "BREAKING CHANGE",
-          "BREAKING CHANGES",
-          "BREAKING"
-        ]
+      preset: 'conventionalcommits',
+      parserOpts: {
+        noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES', 'BREAKING'],
       },
-      "presetConfig": {
-        "types": [
+      presetConfig: {
+        types: [
           {
-            "type": "add",
-            "section": "Added"
+            type: 'add',
+            section: 'Added',
           },
           {
-            "type": "fix",
-            "section": "Fixed"
+            type: 'fix',
+            section: 'Fixed',
           },
           {
-            "type": "change",
-            "section": "Changed"
+            type: 'change',
+            section: 'Changed',
           },
           {
-            "type": "deprecate",
-            "section": "Deprecated"
+            type: 'deprecate',
+            section: 'Deprecated',
           },
           {
-            "type": "remove",
-            "section": "Removed"
+            type: 'remove',
+            section: 'Removed',
           },
           {
-            "type": "security",
-            "section": "Security"
+            type: 'security',
+            section: 'Security',
           },
           {
-            "type": "chore",
-            "hidden": true
+            type: 'chore',
+            hidden: true,
           },
           {
-            "type": "docs",
-            "section": "Changed"
+            type: 'docs',
+            section: 'Changed',
           },
           {
-            "type": "style",
-            "section": "Changed"
+            type: 'style',
+            section: 'Changed',
           },
           {
-            "type": "refactor",
-            "section": "Changed"
+            type: 'refactor',
+            section: 'Changed',
           },
           {
-            "type": "perf",
-            "section": "Changed"
+            type: 'perf',
+            section: 'Changed',
           },
           {
-            "type": "test",
-            "section": "Changed"
-          }
-        ]
-      }
-    }
+            type: 'test',
+            section: 'Changed',
+          },
+        ],
+      },
+    },
   ],
 ]
 
-module.exports = isDryRun() ? getDryRunConfig() : getCIConfig();
+module.exports = isDryRun() ? getDryRunConfig() : getCIConfig()
 
 function getDryRunConfig() {
   return {
     repositoryUrl: getLocalRepoUrl(),
     branches: getCurrentBranch(),
-    plugins: plugins
-  };
+    plugins: plugins,
+  }
 }
 
 function getCIConfig() {
@@ -147,28 +139,25 @@ function getCIConfig() {
   // this will be used on your CI environment
   return {
     plugins: [
-    ...plugins,
-    "@semantic-release/changelog",
-    "@semantic-release/npm",
-    "@semantic-release/git",
-    "@semantic-release/github"]
-  };
+      ...plugins,
+      '@semantic-release/changelog',
+      '@semantic-release/npm',
+      '@semantic-release/git',
+      '@semantic-release/github',
+    ],
+  }
 }
 
 function isDryRun() {
-  return process.argv.includes('--dry-run');
+  return process.argv.includes('--dry-run')
 }
 
 function getLocalRepoUrl() {
-  const topLevelDir = execSync('git rev-parse --show-toplevel')
-    .toString()
-    .trim();
+  const topLevelDir = execSync('git rev-parse --show-toplevel').toString().trim()
 
-  return `file://${topLevelDir}/.git`;
+  return `file://${topLevelDir}/.git`
 }
 
 function getCurrentBranch() {
-  return execSync('git rev-parse --abbrev-ref HEAD')
-    .toString()
-    .trim();
+  return execSync('git rev-parse --abbrev-ref HEAD').toString().trim()
 }
