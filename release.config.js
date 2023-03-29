@@ -11,12 +11,16 @@ const plugins = [
           release: 'minor',
         },
         {
+          type: 'feat',
+          release: 'minor',
+        },
+        {
           type: 'fix',
           release: 'patch',
         },
         {
           type: 'change',
-          release: 'minor',
+          release: 'patch',
         },
         {
           type: 'deprecate',
@@ -72,6 +76,10 @@ const plugins = [
         types: [
           {
             type: 'add',
+            section: 'Added',
+          },
+          {
+            type: 'feat',
             section: 'Added',
           },
           {
