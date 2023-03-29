@@ -44,7 +44,7 @@ function onClick() {
   on:click={onClick}
   bind:this={element}
   {id}
-  class="mdc-switch"
+  class="mdc-switch {$$props.class}"
   class:mdc-switch--selected={selected}
   class:mdc-switch--unselected={!selected}
   type="button"
