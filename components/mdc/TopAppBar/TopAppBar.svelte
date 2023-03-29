@@ -32,7 +32,7 @@ onMount(() => {
 </style>
 
 <header
-  class="mdc-top-app-bar absolute"
+  class="mdc-top-app-bar absolute {$$props.class}"
   class:mdc-top-app-bar--dense={dense}
   class:mdc-top-app-bar--fixed={fixed}
   class:bg-color-variant={bgColorIsVariant}
