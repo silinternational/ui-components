@@ -1,6 +1,16 @@
 <script>
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 import { IconButton } from '../components/mdc'
+import { copyAndModifyArgs } from './helpers'
+
+const args = {
+  icon: 'done',
+  ariaLabel: 'ariaLabel',
+  class: '', //will only work with global class
+  url: '',
+  disabled: false,
+  'on:click': () => alert('click'),
+}
 </script>
 
 <Meta title="Atoms/IconButton" component={IconButton} />
@@ -9,48 +19,10 @@ import { IconButton } from '../components/mdc'
   <IconButton {...args} on:click={args['on:click']} />
 </Template>
 
-<Story
-  name="Primary"
-  args={{
-    icon: 'done',
-    ariaLabel: 'ariaLabel',
-    class: '', //will only work with global class
-    url: '',
-    disabled: false,
-    'on:click': () => alert('click'),
-  }}
-/>
-<Story
-  name="Url"
-  args={{
-    icon: 'done',
-    ariaLabel: 'ariaLabel',
-    class: '', //will only work with global class
-    url: '/?path=/story/atoms-iconbutton--url',
-    disabled: false,
-    'on:click': () => alert('click'),
-  }}
-/>
-<Story
-  name="Target"
-  args={{
-    icon: 'done',
-    ariaLabel: 'ariaLabel',
-    class: '', //will only work with global class
-    url: '/?path=/story/atoms-iconbutton--target',
-    target: '_blank',
-    disabled: false,
-    'on:click': () => alert('click'),
-  }}
-/>
-<Story
-  name="Disabled"
-  args={{
-    icon: 'done',
-    ariaLabel: 'ariaLabel',
-    class: '', //will only work with global class
-    url: '',
-    disabled: true,
-    'on:click': () => alert('click'),
-  }}
-/>
+<Story name="Primary" {args} />
+
+<Story name="Url" args={copyAndModifyArgs(args, { url: '/' })} />
+
+<Story name="Target" args={copyAndModifyArgs(args, { target: '_blank' })} />
+
+<Story name="Disabled" args={copyAndModifyArgs(args, { disabled: true })} />

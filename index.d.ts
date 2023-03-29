@@ -12,6 +12,7 @@ declare module '@silintl/ui-components' {
     raised?: boolean
     target?: string
     url?: string
+    class?: string
   }
   export class Button extends SvelteComponentTyped<ButtonProps> {}
 
@@ -25,6 +26,7 @@ declare module '@silintl/ui-components' {
     color?: string
     isClickable?: boolean
     noPadding?: boolean
+    class?: string
   }
   export class Card extends SvelteComponentTyped<CardProps> {}
 
@@ -33,6 +35,7 @@ declare module '@silintl/ui-components' {
     checked?: boolean
     disabled?: boolean
     uppercase?: boolean
+    class?: string
   }
   export class Checkbox extends SvelteComponentTyped<CheckboxProps> {}
 
@@ -40,6 +43,7 @@ declare module '@silintl/ui-components' {
   interface DatatableProps {
     label?: string
     numberOfCheckboxes?: number
+    class?: string
   }
   export class Datatable extends SvelteComponentTyped<DatatableProps> {}
 
@@ -50,6 +54,7 @@ declare module '@silintl/ui-components' {
     interface DatatableCheckboxProps {
       disabled?: boolean
       rowId?: string
+      class?: string
     }
     export class Checkbox extends SvelteComponentTyped<DatatableCheckboxProps> {}
 
@@ -58,6 +63,7 @@ declare module '@silintl/ui-components' {
         numeric?: boolean
         columnID?: string
         sortable?: boolean
+        class?: string
       }
       export class Item extends SvelteComponentTyped<ItemProps> {}
       export class Checkbox extends SvelteComponentTyped<HeaderProps> {}
@@ -69,6 +75,7 @@ declare module '@silintl/ui-components' {
     export namespace Data {
       interface RowProps {
         clickable?: boolean
+        class?: string
       }
       export class Row extends SvelteComponentTyped<RowProps> {}
 
@@ -76,6 +83,7 @@ declare module '@silintl/ui-components' {
         interface ItemProps {
           numeric?: boolean
           colspan?: number
+          class?: string
         }
         export class Item extends SvelteComponentTyped<ItemProps> {}
       }
@@ -111,12 +119,14 @@ declare module '@silintl/ui-components' {
       titleIcon?: string
       defaultAction?: string
       buttons?: AlertButton[]
+      class?: string
     }
     export class Alert extends SvelteComponentTyped<AlertProps> {}
 
     interface SimpleProps {
       open?: boolean
       title?: string
+      class?: string
     }
     export class Simple extends SvelteComponentTyped<SimpleProps> {}
   }
@@ -142,6 +152,7 @@ declare module '@silintl/ui-components' {
     modal?: boolean
     toggle?: boolean
     currentUrl?: string
+    class?: string
   }
   export class Drawer extends SvelteComponentTyped<DrawerProps> {}
 
@@ -153,6 +164,7 @@ declare module '@silintl/ui-components' {
     url?: string
     action?: Function
     target?: string
+    class?: string
   }
   export class Fab extends SvelteComponentTyped<FabProps> {}
 
@@ -162,12 +174,14 @@ declare module '@silintl/ui-components' {
     icon?: string
     target?: string
     url?: string
+    class?: string
   }
   export class IconButton extends SvelteComponentTyped<IconButtonProps> {}
 
   interface ListProps {
     twoLine?: boolean
     avatar?: boolean
+    class?: string
   }
   export class List extends SvelteComponentTyped<ListProps> {}
 
@@ -177,11 +191,13 @@ declare module '@silintl/ui-components' {
     url?: string
     action?: VoidFunction
     subtitle?: string
+    class?: string
   }
   interface MenuProps {
     menuItems?: MenuItem[]
     menuOpen?: boolean
     currentUrl?: string
+    class?: string
   }
   export class Menu extends SvelteComponentTyped<MenuProps> {}
 
@@ -197,6 +213,7 @@ declare module '@silintl/ui-components' {
     maxValue?: number | string
     step?: number | string
     description?: string
+    class?: string
   }
   export class MoneyInput extends SvelteComponentTyped<MoneyInputProps> {}
 
@@ -207,6 +224,7 @@ declare module '@silintl/ui-components' {
     interface LinearProps {
       indeterminate?: boolean
       value?: number
+      class?: string
     }
     export class Linear extends SvelteComponentTyped<LinearProps> {}
   }
@@ -216,6 +234,7 @@ declare module '@silintl/ui-components' {
     width?: string
     disabled?: boolean
     selectedID?: string
+    class?: string
   }
   export class Select extends SvelteComponentTyped<SelectProps> {}
 
@@ -223,6 +242,7 @@ declare module '@silintl/ui-components' {
     label?: string
     disabled?: boolean
     selected?: boolean
+    class?: string
   }
   export class Switch extends SvelteComponentTyped<SwitchProps> {}
 
@@ -233,6 +253,7 @@ declare module '@silintl/ui-components' {
 
   interface TabBarProps {
     tab?: number
+    class?: string
   }
   export class TabBar extends SvelteComponentTyped<TabBarProps> {}
 
@@ -243,6 +264,7 @@ declare module '@silintl/ui-components' {
     interface TabProps {
       active?: boolean
       label?: string
+      class?: string
     }
     export class Tab extends SvelteComponentTyped<TabProps> {}
   }
@@ -258,6 +280,7 @@ declare module '@silintl/ui-components' {
     autofocus?: boolean
     rtl?: boolean
     description?: string
+    class?: string
   }
   export class TextArea extends SvelteComponentTyped<TextAreaProps> {}
 
@@ -271,6 +294,7 @@ declare module '@silintl/ui-components' {
     disabled?: boolean
     required?: boolean
     description?: string
+    class?: string
   }
   export class TextField extends SvelteComponentTyped<TextFieldProps> {}
 
@@ -278,12 +302,14 @@ declare module '@silintl/ui-components' {
     tooltipID?: string
     positionX?: 'start' | 'center' | 'end'
     positionY?: 'above' | 'below'
+    class?: string
   }
   export class Tooltip extends SvelteComponentTyped<TooltipProps> {}
 
   export namespace Tooltip {
     interface TooltipWrapperProps {
       ariaDescribedBy?: string
+      class?: string
     }
     export class Wrapper extends SvelteComponentTyped<TooltipWrapperProps> {}
   }
@@ -293,6 +319,7 @@ declare module '@silintl/ui-components' {
     dense?: boolean
     fixed?: boolean
     navIconBreakpointClass?: string
+    class?: string
   }
   export class TopAppBar extends SvelteComponentTyped<TopAppBarProps> {}
 
@@ -301,6 +328,7 @@ declare module '@silintl/ui-components' {
     borderRadius?: string
     padding?: string
     bordered?: boolean
+    class?: string
   }
   export class Badge extends SvelteComponentTyped<BadgeProps> {}
 
@@ -312,6 +340,7 @@ declare module '@silintl/ui-components' {
     disabled?: boolean
     buttons?: { label: string; url: string }[]
     footerText?: string
+    class?: string
   }
   export class CustomCard extends SvelteComponentTyped<CustomCardProps> {}
 
@@ -320,12 +349,14 @@ declare module '@silintl/ui-components' {
     outlined?: boolean
     mimeType?: string
     uploading?: boolean
+    class?: string
   }
   export class FileDropArea extends SvelteComponentTyped<FileDropAreaProps> {}
 
   interface FormProps {
     id?: string
     saveToLocalStorage?: boolean
+    class?: string
   }
   export class Form extends SvelteComponentTyped<FormProps> {}
 
@@ -335,11 +366,13 @@ declare module '@silintl/ui-components' {
     layout?: string
     center?: boolean
     noProgress?: boolean
+    class?: string
   }
   export class Page extends SvelteComponentTyped<PageProps> {}
 
   interface StaticChipProps {
     bgColor?: string
+    class?: string
   }
   export class StaticChip extends SvelteComponentTyped<StaticChipProps> {}
 
@@ -354,6 +387,7 @@ declare module '@silintl/ui-components' {
     placeholder?: string
     required?: boolean
     width?: string
+    class?: string
   }
   export class SearchableSelect extends SvelteComponentTyped<SearchableSelectProps> {}
 
@@ -362,6 +396,7 @@ declare module '@silintl/ui-components' {
   interface TourProps {
     steps?: { [key in steps]: string | number }[]
     data?: { [key: string]: string }
+    class?: string
   }
   export class Tour extends SvelteComponentTyped<TourProps> {}
 }

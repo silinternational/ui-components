@@ -9,20 +9,8 @@
     "test": "echo test",
     "format-all": "npx prettier --write .",
     "dev": "sass components/global.scss components/global.css; start-storybook -p 6007",
-    "build": "sass components/global.scss components/global.css; build-storybook"
-  },
-  "release": {
-    "branches": [
-      "main"
-    ],
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/changelog",
-      "@semantic-release/npm",
-      "@semantic-release/git",
-      "@semantic-release/github"
-    ]
+    "build": "sass components/global.scss components/global.css; build-storybook",
+    "dry": "npx semantic-release --dry-run"
   },
   "repository": {
     "type": "git",
@@ -43,8 +31,8 @@
   "homepage": "https://github.com/silinternational/ui-components#readme",
   "peerDependencies": {
     "material-components-web": "^14.0.0",
-    "svelte": "^3.x",
-    "sass": "1.55.x"
+    "sass": "1.55.x",
+    "svelte": "^3.x"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.2",
@@ -59,6 +47,7 @@
     "@storybook/manager-webpack5": "^6.5.16",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/svelte": "^6.5.16",
+    "conventional-changelog": "^3.1.25",
     "css-loader": "^6.7.3",
     "material-components-web": "^14.0.0",
     "prettier": "^2.8.5",

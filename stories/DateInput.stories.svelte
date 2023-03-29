@@ -1,9 +1,5 @@
 <script>
-import { DateInput } from '../components/custom'
-import Form from '../components/custom/Form/Form.svelte'
-import { setNotice } from '../components/mdc'
-import Button from '../components/mdc/Button/Button.svelte'
-import Snackbar from '../components/mdc/Snackbar/Snackbar.svelte'
+import { Button, DateInput, Form, Snackbar, setNotice } from '../'
 import { copyAndModifyArgs } from './helpers.js'
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 
