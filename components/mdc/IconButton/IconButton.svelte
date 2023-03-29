@@ -8,6 +8,7 @@ export let ariaLabel
 export let url = ''
 export let disabled = false
 export let target = ''
+export let preventDefault = false
 
 let element = {}
 onMount(() => {
@@ -42,7 +43,7 @@ onMount(() => {
     class="mdc-icon-button material-icons {$$props.class}"
     aria-label={ariaLabel}
     {disabled}
-    on:click
+    on:click|preventDefault={preventDefault}
     on:mousedown
     on:blur
     on:focus
