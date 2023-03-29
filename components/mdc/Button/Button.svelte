@@ -10,6 +10,7 @@ export let prependIcon = undefined
 export let appendIcon = undefined
 export let url = undefined
 export let target = ''
+export let preventDefault = false
 
 let element = {}
 onMount(() => {
@@ -48,7 +49,7 @@ onMount(() => {
     class:mdc-button--outlined={outlined}
     class:mdc-button--raised={raised}
     {disabled}
-    on:click
+    on:click|preventDefault={preventDefault}
     on:mousedown
     on:blur
     on:focus
