@@ -20,7 +20,7 @@ const plugins = [
         },
         {
           type: 'change',
-          release: 'patch',
+          release: 'minor',
         },
         {
           type: 'deprecate',
