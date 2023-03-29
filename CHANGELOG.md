@@ -1,3 +1,25 @@
+## [10.1.0](https://github.com/silinternational/ui-components/compare/v10.0.1...v10.1.0) (2023-03-29)
+
+
+### Added
+
+* **DatatableCheckbox:** Add class prop ([1959e3d](https://github.com/silinternational/ui-components/commit/1959e3d05792606a2c60a6d6e0a1f50d97ce3510))
+* **DatatableCheckboxHeader:** Add prop class ([8618a4f](https://github.com/silinternational/ui-components/commit/8618a4f156965fd67febf61516d7c814ed01b149))
+* **Divider:** Add class prop ([ae03e35](https://github.com/silinternational/ui-components/commit/ae03e35f4c3c9314b9be4813bae28fcfba30494e))
+* **List.Item:** Add class prop ([bfd35c1](https://github.com/silinternational/ui-components/commit/bfd35c1e5c90df30aa9f84317795ff24ebe63863))
+* **Subheader:** Add class prop ([af9990a](https://github.com/silinternational/ui-components/commit/af9990a46abeef3f884d1ae82ef2c5c6755b9a9c))
+* **Switch:** Add class prop ([4ca247d](https://github.com/silinternational/ui-components/commit/4ca247dfc807d7ff4835b00a45ad4c6b92b533ca))
+* **TabBar.Indicator:** Add class prop ([f60bf46](https://github.com/silinternational/ui-components/commit/f60bf4628ddf52ed179e26c1e462f23e48995702))
+* **TabBar.Scroller:** Add class prop ([1f4e7d5](https://github.com/silinternational/ui-components/commit/1f4e7d527c772b5a3d25611ae0b04d7eac3a7168))
+* **TabBar.Tab:** add class prop ([9ca980f](https://github.com/silinternational/ui-components/commit/9ca980fc4f0a6aad36563b34e74109a46b7347d1))
+* **TopAppBar:** Add class prop ([077363e](https://github.com/silinternational/ui-components/commit/077363e18ac9b3c5ddd0577ed254a2df952da152))
+
+
+### Changed
+
+* **release-config:** use conventionalcommits and custom release rules and notes with semantic release ([3537856](https://github.com/silinternational/ui-components/commit/3537856be3d599a89a6b054039c3965eb09b9c19))
+* **types:** update index.d.ts types ([edd3f87](https://github.com/silinternational/ui-components/commit/edd3f870f81da61a60bf9bc41b133a48cbd57abe))
+
 ## [10.0.1](https://github.com/silinternational/ui-components/compare/v10.0.0...v10.0.1) (2023-03-23)
 
 
