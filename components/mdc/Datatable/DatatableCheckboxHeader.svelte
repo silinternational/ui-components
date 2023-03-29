@@ -1,4 +1,8 @@
-<th class="mdc-data-table__header-cell mdc-data-table__header-cell--checkbox" role="columnheader" scope="col">
+<th
+  class="mdc-data-table__header-cell mdc-data-table__header-cell--checkbox {$$props.class}"
+  role="columnheader"
+  scope="col"
+>
   <div class="mdc-checkbox mdc-data-table__header-row-checkbox">
     <input type="checkbox" class="mdc-checkbox__native-control" aria-label="Toggle all rows" />
     <div class="mdc-checkbox__background">

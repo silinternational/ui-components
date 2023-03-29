@@ -46,11 +46,11 @@ onMount(() => {
 </script>
 
 <style>
-  i.material-icons {
-    position: relative;
-    top: 4px;
-    color: var(--mdc-theme-icon-color);
-  }
+i.material-icons {
+  position: relative;
+  top: 4px;
+  color: var(--mdc-theme-icon-color);
+}
 </style>
 
 <div class="mdc-dialog" bind:this={element}>
