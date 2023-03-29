@@ -20,7 +20,7 @@ ul {
 </style>
 
 <ul
-  class="mdc-deprecated-list {$$props.class}"
+  class="mdc-deprecated-list {$$props.class || ''}"
   class:mdc-deprecated-list--two-line={twoLine}
   class:mdc-deprecated-list--avatar-list={avatar}
   bind:this={element}

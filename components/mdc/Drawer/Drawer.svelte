@@ -111,7 +111,7 @@ main {
 <svelte:window on:resize={showAppropriateThings} />
 
 <aside
-  class="mdc-drawer {$$props.class}"
+  class="mdc-drawer {$$props.class || ''}"
   class:mdc-drawer--modal={modal}
   class:mdc-drawer--dismissible={dismissible}
   bind:this={element}

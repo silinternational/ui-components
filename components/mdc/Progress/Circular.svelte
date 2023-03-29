@@ -23,7 +23,7 @@ onMount(() => {
 
 <!-- from docs: IMPORTANT: Do not introduce space between the adjacent </div><div> tags below. Doing so will produce unwanted visual artifacts. -->
 <div
-  class="mdc-circular-progress {$$props.class}"
+  class="mdc-circular-progress {$$props.class || ''}"
   style="width:48px;height:48px;"
   role="progressbar"
   aria-label="Progress Circle"

@@ -1,1 +1,1 @@
-<li role="separator" class="mdc-deprecated-list-divider {$$props.class}" />
+<li role="separator" class="mdc-deprecated-list-divider {$$props.class || ''}" />

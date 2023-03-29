@@ -10,7 +10,7 @@ const dispatch = createEventDispatcher()
 </script>
 
 <td
-  class="mdc-data-table__cell mdc-data-table__cell--checkbox {$$props.class}"
+  class="mdc-data-table__cell mdc-data-table__cell--checkbox {$$props.class || ''}"
   on:click
   on:keypress
   on:keyup
