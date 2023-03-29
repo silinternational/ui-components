@@ -146,6 +146,7 @@ function getCIConfig() {
   // contains your normal semantic-release config
   // this will be used on your CI environment
   return {
+    branches: ['main'],
     plugins: [
       ...plugins,
       '@semantic-release/changelog',
