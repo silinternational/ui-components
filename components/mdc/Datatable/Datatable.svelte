@@ -43,7 +43,7 @@ onMount(() => {
 $: numberOfCheckboxes && dataTable?.layout()
 </script>
 
-<div class="mdc-data-table w-100 {$$props.class}" bind:this={element}>
+<div class="mdc-data-table w-100 {$$props.class || ''}" bind:this={element}>
   <div class="mdc-data-table__table-container">
     <table class="mdc-data-table__table" aria-label={label}>
       <slot />

@@ -19,6 +19,6 @@ onMount(() => {
 }
 </style>
 
-<span class="mdc-tab-indicator {$$props.class}" class:mdc-tab-indicator--active={active} bind:this={element}>
+<span class="mdc-tab-indicator {$$props.class || ''}" class:mdc-tab-indicator--active={active} bind:this={element}>
   <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" />
 </span>

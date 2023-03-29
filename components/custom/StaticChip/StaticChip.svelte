@@ -15,7 +15,7 @@ export let bgColor = '#e5e5e5'
 </style>
 
 <div
-  class="mdc-typography chip black flex justify-center align-items-center mb-1 mr-2 fs-14 br-16px {$$props.class}"
+  class="mdc-typography chip black flex justify-center align-items-center mb-1 mr-2 fs-14 br-16px {$$props.class || ''}"
   style="--theme-color: {bgColor}"
 >
   <div class="chip-content flex align-items-center">
