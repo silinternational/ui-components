@@ -222,4 +222,28 @@ Classes from [global.scss](https://github.com/silinternational/ui-components/blo
 
 ## contributions
 
-All commit messages must follow [Angular Commit Message Conventions](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format) for a release to be triggered upon merging to main. Here is a basic example: `feat(pencil): add 'graphiteWidth' option`. This will trigger a minor release. If this is not done, an empty commit with the proper format can be pushed to trigger the release. See https://github.com/semantic-release/semantic-release for more details. Semantic Release will also update the version and the CHANGELOG based on the commit messages.
+All commit messages must follow the format defined in our [release.config.js file](https://github.com/silinternational/ui-components/blob/develop/release.config.js) for a release to be triggered upon merging to main. Here are basic examples:
+
+- `add(Button): Added 'class' prop` (minor release)
+
+- `feat(components): Add Slider componenent and story` (minor release)
+
+- `fix(Button): fixed url prop not working` (patch release)
+
+- `remove(Card): Removed secondary text padding` (major release)
+
+	`<BLANK LINE>`
+
+	`BREAKING CHANGE: The secondary text padding is now 0 by default. Use the secondary-text class to adjust padding as desired.`
+
+- `change(dependencies): updated to sass 1.58` (major release)
+
+	`<BLANK LINE>`
+
+	`BREAKING: update sass to match this version if installed`
+
+- `security(dependencies): updated deps with npm update` (patch release)
+
+-  `deprecate(CustomCard): Deprecated CustomCard as it will be removed` (minor release)
+
+These will trigger a patch or minor release depending on the config. A major release can be triggered by including 'BREAKING CHANGE', 'BREAKING CHANGES', 'BREAKING' in the footer section. If this is not done, an empty commit with the proper format can be pushed to trigger the release. See https://github.com/semantic-release/semantic-release for more details. Semantic Release will also update the version and the CHANGELOG based on the commit messages. Use tags/types that correspond to the release type and if you need to you can change it in the Changelog after release.
