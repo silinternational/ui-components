@@ -49,7 +49,7 @@
 
 ### BREAKING CHANGES
 
-#### Removed
+### Removed
 
 * **Form:** remove success prop ([5f3537c](https://github.com/silinternational/ui-components/commit/5f3537c6fa8a41891d1f36a1f5ac3a697bf9fdbc))
 
