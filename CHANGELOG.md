@@ -30,58 +30,60 @@
 ## [10.0.1](https://github.com/silinternational/ui-components/compare/v10.0.0...v10.0.1) (2023-03-23)
 
 
-### Bug Fixes
+### Fixed
 
 * **exports:** fix broken DateInput export ([d841278](https://github.com/silinternational/ui-components/commit/d84127837248d2581b424b2fa1f36ce4f4f5f11a))
 
 # [10.0.0](https://github.com/silinternational/ui-components/compare/v9.1.1...v10.0.0) (2023-03-23)
 
 
-### Bug Fixes
+### Fixed
 
 * **types:** fix Select and MoneyInput types ([f2c6f73](https://github.com/silinternational/ui-components/commit/f2c6f73b289d0277b99a5e51cba8778fbd49ddd8))
 * **types:** JSX.HTMLAttributes is deprecated ([f8c593b](https://github.com/silinternational/ui-components/commit/f8c593b91528ecf47c5fffd8652bd5bc357b70f3))
 
 
-### Features
+### Added
 
 * **components:** Add DateInput components ([a83dc70](https://github.com/silinternational/ui-components/commit/a83dc7079d70a26fa1b2800b0fb909719e52ae8d))
-* **Form:** remove success ([5f3537c](https://github.com/silinternational/ui-components/commit/5f3537c6fa8a41891d1f36a1f5ac3a697bf9fdbc))
-
 
 ### BREAKING CHANGES
 
-* **Form:** remove success prop
+### Removed
+
+* **Form:** remove success prop ([5f3537c](https://github.com/silinternational/ui-components/commit/5f3537c6fa8a41891d1f36a1f5ac3a697bf9fdbc))
 
 To reset `Form` use `on:submit` and `event.target.reset()` instead of setting `success` to `true`
 
 ## [9.1.1](https://github.com/silinternational/ui-components/compare/v9.1.0...v9.1.1) (2023-02-22)
 
 
-### Bug Fixes
+### Fixed
 
 * **TextArea:** fix text overlapping with counter ([c0bb58e](https://github.com/silinternational/ui-components/commit/c0bb58ef45a8d8ec83bf13bf16f89fedd0442e82))
 
 # [9.1.0](https://github.com/silinternational/ui-components/compare/v9.0.0...v9.1.0) (2023-02-22)
 
 
-### Features
+### Added
 
 * **Components:** add target prop to Button, Fab, and IconButton ([d0e92bc](https://github.com/silinternational/ui-components/commit/d0e92bc6b052ad20ca2379dd26cfde2e7aff0f55))
 
 # [9.0.0](https://github.com/silinternational/ui-components/compare/v8.1.0...v9.0.0) (2023-02-08)
 
 
-### Bug Fixes
+### Fixed
 
 * **Menu:** fix ssr for Menu using window ([e4b0b03](https://github.com/silinternational/ui-components/commit/e4b0b03fc6f2f9c9587008f826b5d6b3cdc0343f))
 
 
-### Features
+### Added
 
-* **Menu:** remove focus of menuItem based on path. Add currentUrl story ([b0aca32](https://github.com/silinternational/ui-components/commit/b0aca3233d4c0aa0bbfa1df1830da44ff6ef72d9))
 * **Menu:** remove window & add currentUrl to props ([1e982ad](https://github.com/silinternational/ui-components/commit/1e982ade89b81e8a5a8e89e7c880e9e6d7a0efd3))
 
+### Removed
+
+* **Menu:** remove focus of menuItem based on path. Add currentUrl story ([b0aca32](https://github.com/silinternational/ui-components/commit/b0aca3233d4c0aa0bbfa1df1830da44ff6ef72d9))
 
 ### BREAKING CHANGES
 
@@ -90,70 +92,74 @@ To reset `Form` use `on:submit` and `event.target.reset()` instead of setting `s
 # [8.1.0](https://github.com/silinternational/ui-components/compare/v8.0.1...v8.1.0) (2022-12-12)
 
 
-### Features
+### Deprecated
 
 * **Form:** deprecate success and listen for reset to clear local storage ([38fad25](https://github.com/silinternational/ui-components/commit/38fad257bbb3056ea9132ba6f370d8d724d841fe))
+
+### Changed
+
+* **Form:** listen for reset to clear local storage ([38fad25](https://github.com/silinternational/ui-components/commit/38fad257bbb3056ea9132ba6f370d8d724d841fe))
 
 ## [8.0.1](https://github.com/silinternational/ui-components/compare/v8.0.0...v8.0.1) (2022-12-03)
 
 
-### Bug Fixes
+### Fixed
 
 * **components:** resolve A11y warning in that show up in rollup-plugin-svelte ([42229e2](https://github.com/silinternational/ui-components/commit/42229e2a047cf71ce526eb0db582757a845f0b7e))
 
 # [8.0.0](https://github.com/silinternational/ui-components/compare/v7.0.0...v8.0.0) (2022-12-01)
 
 
-### Bug Fixes
+### Fixed
 
 * **peerDependencies:** update material-components-web and sass to match devDependencies. Fixes an npm error for consumers using material and sass. ([7d929fd](https://github.com/silinternational/ui-components/commit/7d929fd82f9f08983c167c6595e4aaaf0b58215e))
 
 
-### buid
+### Changed
 
 * **peerDependencies:** update peerDependencies ([a524f48](https://github.com/silinternational/ui-components/commit/a524f4845e85e05c379b24593ca49312d6abebef))
 
 
 ### BREAKING CHANGES
 
-* **peerDependencies:** update peer deps
+* **peerDependencies:** update peerDependencies
 
 Change material-components-web to 14 and sass to 1.55. If installed in your project you can now update them to these versions without an error or warning.
 
 # [7.0.0](https://github.com/silinternational/ui-components/compare/v6.7.0...v7.0.0) (2022-11-07)
 
 
-### Build System
+### Changed
 
 * **dependencies:** update multiple deps ([4553e7f](https://github.com/silinternational/ui-components/commit/4553e7fcbe97003fa776bacd5ae2f17c5700f9ad))
 
 
-### Features
+### Added
 
 * **Form:** change Form children top margin ([0ca845f](https://github.com/silinternational/ui-components/commit/0ca845fb8ec115d25d91dec6caa6b01e2052e6f1))
 
 
 ### BREAKING CHANGES
 
-* **dependencies:** update material-components-web to 15 adn sass to 1.55
+* **dependencies:** update material-components-web to 15 and sass to 1.55
 * **Form:** Form children will now have 1rem instead of 2rem
 
 # [6.7.0](https://github.com/silinternational/ui-components/compare/v6.6.0...v6.7.0) (2022-10-05)
 
 
-### Bug Fixes
+### Fixed
 
 * **Form:** don't remove storage when restoring form values ([44ba3a9](https://github.com/silinternational/ui-components/commit/44ba3a9e2834f6687115441b05a1b87dd688d8a2))
 
 
-### Features
+### Added
 
 * **Form:** add success prop so Form can remove stored values internally ([8aedd72](https://github.com/silinternational/ui-components/commit/8aedd726d267ce5ce806a8f82b2bd4331f39da96))
 
 # [6.6.0](https://github.com/silinternational/ui-components/compare/v6.5.0...v6.6.0) (2022-10-04)
 
 
-### Features
+### Added
 
 * **components:** add name prop to MoneyInput, TextArea and TextField ([142b27e](https://github.com/silinternational/ui-components/commit/142b27e41751e635a4ef02745074c619fde10571))
 * **Form:** add id and saveToLocalStorage props to Form ([8216ae1](https://github.com/silinternational/ui-components/commit/8216ae10e82834ab7f3b1f0a775c12172daa171c))
@@ -161,48 +167,51 @@ Change material-components-web to 14 and sass to 1.55. If installed in your proj
 # [6.5.0](https://github.com/silinternational/ui-components/compare/v6.4.2...v6.5.0) (2022-09-26)
 
 
-### Features
+### Added
 
 * **SearchableSelect:** add required prop ([053af32](https://github.com/silinternational/ui-components/commit/053af32385578630d8253f5feee9cf5097baa2ab))
 
 ## [6.4.2](https://github.com/silinternational/ui-components/compare/v6.4.1...v6.4.2) (2022-08-24)
 
 
-### Bug Fixes
+### Fixed
 
 * **types:** fix Scroller type warning ([d867aa0](https://github.com/silinternational/ui-components/commit/d867aa0c95bc63fbd23172c61c44ab6840cc8762))
 
 ## [6.4.1](https://github.com/silinternational/ui-components/compare/v6.4.0...v6.4.1) (2022-08-24)
 
 
-### Bug Fixes
+### Fixed
 
 * **types:** Add Scroller and Tab to TabBar type ([dd08278](https://github.com/silinternational/ui-components/commit/dd0827884c38da7137c4831882f533e1269c1df1))
 
 # [6.4.0](https://github.com/silinternational/ui-components/compare/v6.3.0...v6.4.0) (2022-08-18)
 
 
-### Features
+### Added
 
 * **components:** add type support ([c2abfbc](https://github.com/silinternational/ui-components/commit/c2abfbc22f37e9ac9c724fdf81d237a204d6c9fa))
 
 # [6.3.0](https://github.com/silinternational/ui-components/compare/v6.2.0...v6.3.0) (2022-07-26)
 
 
-### Features
+### Added
 
 * **components:** Add FileDropArea ([475fbd9](https://github.com/silinternational/ui-components/commit/475fbd9787e1ca49e447535f5097fc065d3c39b4))
 
 # [6.2.0](https://github.com/silinternational/ui-components/compare/v6.1.1...v6.2.0) (2022-07-05)
 
 
-### Bug Fixes
+### Changed
 
 * **Datatable:** expose DataRow rowId as slot prop ([46aa49c](https://github.com/silinternational/ui-components/commit/46aa49c114aecf241a2fb91745986c17e76528a8))
+
+### Fixed
+
 * **Datatable:** fix exception when using checkbox ([f4d3433](https://github.com/silinternational/ui-components/commit/f4d34338c9b3c5fb757eaee12a44707f89a8203f))
 
 
-### Features
+### Added
 
 * **components:** add DatatableCheckbox and DatatableCheckboxHeader ([5c2da10](https://github.com/silinternational/ui-components/commit/5c2da10e8fe7e53b5b1e31531887c98dfa6a9560))
 * **Datatable:** add numberOfCheckboxes to register new Checkboxes ([01aa5d0](https://github.com/silinternational/ui-components/commit/01aa5d0e146216aa88d99b1a1dcd32f0e30f1881))
@@ -210,43 +219,43 @@ Change material-components-web to 14 and sass to 1.55. If installed in your proj
 ## [6.1.1](https://github.com/silinternational/ui-components/compare/v6.1.0...v6.1.1) (2022-06-23)
 
 
-### Bug Fixes
+### Fixed
 
 * **index.mjs:** Switch was not exported ([b3bb6ac](https://github.com/silinternational/ui-components/commit/b3bb6ac203c84eaed6b52dbe24a76042a1883f72))
 
 # [6.1.0](https://github.com/silinternational/ui-components/compare/v6.0.1...v6.1.0) (2022-06-16)
 
 
-### Features
+### Added
 
 * **components:** add Switch story ([8889e11](https://github.com/silinternational/ui-components/commit/8889e1197edad4ddaeae767a2508533f5cb220b4))
 
 ## [6.0.1](https://github.com/silinternational/ui-components/compare/v6.0.0...v6.0.1) (2022-05-23)
 
 
-### Bug Fixes
+### Fixed
 
 * **Drawer:** fix find and replace typo ([11943d3](https://github.com/silinternational/ui-components/commit/11943d33bfd41a2e94f37afe58a825a63d7e29d0))
 
 # [6.0.0](https://github.com/silinternational/ui-components/compare/v5.1.1...v6.0.0) (2022-04-28)
 
 
-### Bug Fixes
+### Fixed
 
 * **Dialog:** fix Alert titleIcon position ([be8bac7](https://github.com/silinternational/ui-components/commit/be8bac77c3b69cf82859bb2b5247bce168b7784f))
 * **MoneyInput:** fix 1x10e-n not being caught by step ([84a6cef](https://github.com/silinternational/ui-components/commit/84a6cefac85b34865283b4880c6ece0267ad41c6))
 * **Select:** fix floating label color ([12d120d](https://github.com/silinternational/ui-components/commit/12d120da7f8095a55de976a1a391260777c19cba))
 
 
-### Build System
+### Changed
 
 * **deps:** update material-components-web and sass ([6e44b76](https://github.com/silinternational/ui-components/commit/6e44b7644e28083646bcaaedc9dbfedaf0f978b4))
 
+* **Diaolog.Alert:** expose titleIcon color to --mdc-theme-icon-color ([f8c9ad0](https://github.com/silinternational/ui-components/commit/f8c9ad0c6c82872896baf6898488ee56aab901cb))
 
-### Features
+### Added
 
 * **components:** add SearchableSelect ([2de1351](https://github.com/silinternational/ui-components/commit/2de13515ac43d56a63ee0ed3092b01a146a689c4))
-* **Diaolog.Alert:** expose titleIcon color to --mdc-theme-icon-color ([f8c9ad0](https://github.com/silinternational/ui-components/commit/f8c9ad0c6c82872896baf6898488ee56aab901cb))
 
 
 ### BREAKING CHANGES
@@ -256,7 +265,7 @@ Change material-components-web to 14 and sass to 1.55. If installed in your proj
 ## [5.1.1](https://github.com/silinternational/ui-components/compare/v5.1.0...v5.1.1) (2022-04-04)
 
 
-### Bug Fixes
+### Fixed
 
 * **imports:** fix circular dependency warnings ([81ca49f](https://github.com/silinternational/ui-components/commit/81ca49f171988be3882c78404d6a2b77f6c3c2d4))
 * **MoneyInput:** fix valueNotDivisibleByStep for most values ([d38c333](https://github.com/silinternational/ui-components/commit/d38c3335a42d04e764404718029ace1647212a21))
@@ -264,28 +273,28 @@ Change material-components-web to 14 and sass to 1.55. If installed in your proj
 # [5.1.0](https://github.com/silinternational/ui-components/compare/v5.0.1...v5.1.0) (2022-03-12)
 
 
-### Features
+### Added
 
 * **Tooltip:** add class prop to Wrapper ([38a9669](https://github.com/silinternational/ui-components/commit/38a9669cabc56804e78fc0a8869e12a1f53fb587))
 
 ## [5.0.1](https://github.com/silinternational/ui-components/compare/v5.0.0...v5.0.1) (2022-03-04)
 
 
-### Bug Fixes
+### Fixed
 
 * **MoneyInput:** fix step bug when 2.01 is entered ([10b8f9c](https://github.com/silinternational/ui-components/commit/10b8f9c79d03640ebf3ce4f161c8a105be042f7d))
 
 # [5.0.0](https://github.com/silinternational/ui-components/compare/v4.1.0...v5.0.0) (2022-02-24)
 
 
-### Bug Fixes
+### Fixed
 
 * **Drawer:** use element to listen for closed ([111d0e4](https://github.com/silinternational/ui-components/commit/111d0e463d2525cd466960513717c13f3913ac7d))
 * **icons:** icons not loading in sveltekit SSR ([bfa8e19](https://github.com/silinternational/ui-components/commit/bfa8e19c72ab9b522c30cb7daa410a889991f942))
 * **index:** use index.mjs as entry point ([f4aec84](https://github.com/silinternational/ui-components/commit/f4aec84275a4015c1a2d913ef5de618f5a35021c))
 
 
-### Features
+### Removed
 
 * **icons:** remove autoloading material icons ([e3c0483](https://github.com/silinternational/ui-components/commit/e3c0483c0a69a6859146c03834f07233d9b09edd))
 
@@ -297,7 +306,7 @@ Change material-components-web to 14 and sass to 1.55. If installed in your proj
 # [4.1.0](https://github.com/silinternational/ui-components/compare/v4.0.0...v4.1.0) (2022-02-21)
 
 
-### Features
+### Added
 
 * **Dialog.Alert:** add titleIcon prop ([13a9c41](https://github.com/silinternational/ui-components/commit/13a9c41280de3cce064d8a94db1a10be8268c5f1))
 * **Dialog.Alert:** allow modal to close itself ([d4df8e8](https://github.com/silinternational/ui-components/commit/d4df8e826f813f9c9a148fc5bfe1966466cf3822))
@@ -306,17 +315,19 @@ Change material-components-web to 14 and sass to 1.55. If installed in your proj
 # [4.0.0](https://github.com/silinternational/ui-components/compare/v3.12.1...v4.0.0) (2022-02-17)
 
 
-### Bug Fixes
+### Fixed
 
 * **Tour:** resolve a11y warnings ([f4e3132](https://github.com/silinternational/ui-components/commit/f4e31324311ec3ec1b97678c9769168d045ec7f5))
 
 
-### Features
+### Added
 
 * **Drawer:** add currentUrl prop and remove roxi ([c38dfac](https://github.com/silinternational/ui-components/commit/c38dfac0f96e1c9ad243244c00f9db9d4353b327))
-* **Drawer:** remove beforeUrlChange ([2247b8c](https://github.com/silinternational/ui-components/commit/2247b8c4bfb2164605a9159cbf3ed75e1aff1471))
 * **IconButton:** add url and disabled props ([fba3e6b](https://github.com/silinternational/ui-components/commit/fba3e6bc13ab69fc199b35cda09b06206747669a))
 
+### Removed
+
+* **Drawer:** remove beforeUrlChange ([2247b8c](https://github.com/silinternational/ui-components/commit/2247b8c4bfb2164605a9159cbf3ed75e1aff1471))
 
 ### BREAKING CHANGES
 
@@ -325,14 +336,14 @@ Change material-components-web to 14 and sass to 1.55. If installed in your proj
 ## [3.12.1](https://github.com/silinternational/ui-components/compare/v3.12.0...v3.12.1) (2022-02-17)
 
 
-### Bug Fixes
+### Fixed
 
 * **deps:** add sass to peerDependencies ([08b09de](https://github.com/silinternational/ui-components/commit/08b09de76f7c281cf684f5f7a9da3544aaefffee))
 
 # [3.12.0](https://github.com/silinternational/ui-components/compare/v3.11.0...v3.12.0) (2022-02-14)
 
 
-### Features
+### Added
 
 * **TextInput:** add description property ([a215a58](https://github.com/silinternational/ui-components/commit/a215a58e37d3bf57f2fdfc642c02adf5371dcb12))
 * **TextInput:** add description story ([a75efd6](https://github.com/silinternational/ui-components/commit/a75efd6e296aebdd4ba4514481ad07f5a688d8e1))
@@ -341,7 +352,7 @@ Change material-components-web to 14 and sass to 1.55. If installed in your proj
 # [3.11.0](https://github.com/silinternational/ui-components/compare/v3.10.6...v3.11.0) (2022-02-10)
 
 
-### Features
+### Changed
 
 * **Button:** expose radius and outline color ([90b7fd1](https://github.com/silinternational/ui-components/commit/90b7fd1c0db231f605599a8fe493a8dbd0bd27b1))
 * **TextField:** expose radius var to consumer ([3757b15](https://github.com/silinternational/ui-components/commit/3757b15380d13655ed593e365e53e1473c677660))
@@ -349,28 +360,28 @@ Change material-components-web to 14 and sass to 1.55. If installed in your proj
 ## [3.10.6](https://github.com/silinternational/ui-components/compare/v3.10.5...v3.10.6) (2022-01-13)
 
 
-### Bug Fixes
+### Fixed
 
 * **Drawer:** fix a11y warning ([3394ec3](https://github.com/silinternational/ui-components/commit/3394ec34e0fa535b761932d3be3b90dd574e4f73))
 
 ## [3.10.5](https://github.com/silinternational/ui-components/compare/v3.10.4...v3.10.5) (2022-01-06)
 
 
-### Bug Fixes
+### Fixed
 
 * **DataTable:** sort button should be on left side of numeric HeaderItem ([4376c56](https://github.com/silinternational/ui-components/commit/4376c567b53178ff868b242ac183b8bc2cd42c7f))
 
 ## [3.10.4](https://github.com/silinternational/ui-components/compare/v3.10.3...v3.10.4) (2022-01-03)
 
 
-### Bug Fixes
+### Fixed
 
 * **TextInputs:** fix circular dependencies ([cb73f9c](https://github.com/silinternational/ui-components/commit/cb73f9cebb1cb97ea054c599627c91f724ffaf41))
 
 ## [3.10.3](https://github.com/silinternational/ui-components/compare/v3.10.2...v3.10.3) (2021-12-22)
 
 
-### Bug Fixes
+### Fixed
 
 * **MoneyInput:** fix value two way binding ([7bbf8a5](https://github.com/silinternational/ui-components/commit/7bbf8a529b3abb04f5e548c6ff322823610445b1))
 * **TextInput:** fix offsetWidth error on undefined ([5d2ca72](https://github.com/silinternational/ui-components/commit/5d2ca72c73470a55351a397ef480451f0ef257d7))
@@ -378,7 +389,7 @@ Change material-components-web to 14 and sass to 1.55. If installed in your proj
 ## [3.10.2](https://github.com/silinternational/ui-components/compare/v3.10.1...v3.10.2) (2021-12-22)
 
 
-### Bug Fixes
+### Fixed
 
 * **MoneyInput:** forgot to add MoneyInput to index ([fceb8e0](https://github.com/silinternational/ui-components/commit/fceb8e093461123f000c32905b26756635263b23))
 * **Textinput:** fix error on reading 'remove' ([1a209f9](https://github.com/silinternational/ui-components/commit/1a209f976abadaf9e5e8f6e543648278c75c1937))
@@ -386,14 +397,14 @@ Change material-components-web to 14 and sass to 1.55. If installed in your proj
 ## [3.10.1](https://github.com/silinternational/ui-components/compare/v3.10.0...v3.10.1) (2021-12-21)
 
 
-### Bug Fixes
+### Fixed
 
 * **MoneyInput:** fix MoneyInput staying red ([2adc91c](https://github.com/silinternational/ui-components/commit/2adc91c73076af2a99c324a0b3b20b5c645ac343))
 
 # [3.10.0](https://github.com/silinternational/ui-components/compare/v3.9.0...v3.10.0) (2021-12-21)
 
 
-### Bug Fixes
+### Fixed
 
 * **MoneyInput:** fix label color for required ([dc9c3ba](https://github.com/silinternational/ui-components/commit/dc9c3ba6dcb273906974252eaf041f9bdcdf4976))
 * **MoneyInput:** remove error state on:focus for required ([3e6c2f5](https://github.com/silinternational/ui-components/commit/3e6c2f5f70ce3b26fb46d0dbd32bb16e566ce6f8))
@@ -402,28 +413,27 @@ Change material-components-web to 14 and sass to 1.55. If installed in your proj
 * **TextInput:** show appropriate icons/colors ([925a6ac](https://github.com/silinternational/ui-components/commit/925a6accd712b09c7abb29fda3e042b6e5785bf7))
 
 
-### Features
+### Added
 
 * **TextArea:** add required prop and story ([6045274](https://github.com/silinternational/ui-components/commit/60452747c39381f07efae67e9caf36e29ebdbd13))
 
 # [3.9.0](https://github.com/silinternational/ui-components/compare/v3.8.0...v3.9.0) (2021-12-20)
 
 
-### Bug Fixes
+### Fixed
 
 * **TextArea:** typo and counter rendering "524288" ([94992b6](https://github.com/silinternational/ui-components/commit/94992b6485bd3931317ea3be9ee23d929ab28ca8))
 * **TextField:** *Required was hidden until focused ([d320bca](https://github.com/silinternational/ui-components/commit/d320bca567cf5af0c390eb8d0b15cc4eb22ecf93))
 * **TextField:** allow value to be > maxlengh ([c09def6](https://github.com/silinternational/ui-components/commit/c09def60f1a58948691668bcaf3ae54311cbc936))
 
 
-### Features
+### Added
 
 * **components:** add MoneyInput and story ([021d291](https://github.com/silinternational/ui-components/commit/021d2912e355de327153983f3c961624d5bbd7e6))
 * **MoneyInput:** add counter & icon on maxlength ([d22bda8](https://github.com/silinternational/ui-components/commit/d22bda8eb9889ec56c1b608ee08ffbaedf8c0f02))
 * **MoneyInput:** add maxlength warning, fix width ([6ce6458](https://github.com/silinternational/ui-components/commit/6ce6458111a987d4fa7f53d3f33a0bfb4500972b))
 * **MoneyInput:** add step, maxValue, minValue and helper text ([db5de95](https://github.com/silinternational/ui-components/commit/db5de959513fd1542fbb759a3f5c093efa9402af))
 * **TextArea:** allow value > maxlength & add warning ([6151b60](https://github.com/silinternational/ui-components/commit/6151b60883aa9e7354eb8bd42d567aa2eea1b00f))
-* **TextArea:** make outline red on maxlength ([70d3920](https://github.com/silinternational/ui-components/commit/70d3920def943c3fea47a9b1cde7d113118793c2))
 * **TextField:** add character counter ([eba6321](https://github.com/silinternational/ui-components/commit/eba6321dbd260d9e06deb88536706e29dbd406d1))
 * **TextField:** Add icon prop ([568f659](https://github.com/silinternational/ui-components/commit/568f6596feda14d1617a890e4ecd5ce6618837ce))
 * **TextField:** add maxlength warning, fix width ([67b145a](https://github.com/silinternational/ui-components/commit/67b145affb014b5c1ac978201be4bccd060490bd))
@@ -432,66 +442,70 @@ Change material-components-web to 14 and sass to 1.55. If installed in your proj
 * **utils:** add min, max, height and width utils ([5d737f3](https://github.com/silinternational/ui-components/commit/5d737f3d6200dce6e81f65be42cdbba9f5f584e3))
 * **utils:** change margin and padding up to 50px ([fa3aa85](https://github.com/silinternational/ui-components/commit/fa3aa85d1099b43be47669d19135dfc363345736))
 
+### Changed
+
+* **TextArea:** make outline red on maxlength ([70d3920](https://github.com/silinternational/ui-components/commit/70d3920def943c3fea47a9b1cde7d113118793c2))
+
 # [3.8.0](https://github.com/silinternational/ui-components/compare/v3.7.0...v3.8.0) (2021-12-13)
 
 
-### Features
+
+### Added
+
+* **Page:** add $$props.class ([d292cf1](https://github.com/silinternational/ui-components/commit/d292cf13b1f091b39eb607fdb23cdd5fd69c8419))
+* **TextField:** add required field option ([2b594ae](https://github.com/silinternational/ui-components/commit/2b594ae8c0fde5ba509270d17be962484a4a89ca))
+
+### Changed
+
+* **Page:** unset height ([d292cf1](https://github.com/silinternational/ui-components/commit/d292cf13b1f091b39eb607fdb23cdd5fd69c8419))
 
 * **Drawer:** use var to set main content height ([79c4a51](https://github.com/silinternational/ui-components/commit/79c4a51e77ffc2596f146b234fb959d910bdd882))
-* **Page:** unset height and add $$props.class ([d292cf1](https://github.com/silinternational/ui-components/commit/d292cf13b1f091b39eb607fdb23cdd5fd69c8419))
-* **TextField:** add required field option ([2b594ae](https://github.com/silinternational/ui-components/commit/2b594ae8c0fde5ba509270d17be962484a4a89ca))
 
 # [3.7.0](https://github.com/silinternational/ui-components/compare/v3.6.0...v3.7.0) (2021-11-22)
 
 
-### Features
+### Added
 
 * **Drawer:** add url pattern matching ([4ad5821](https://github.com/silinternational/ui-components/commit/4ad5821d72a6eee282c0f3d2cf8529b1a54e9531))
 
 # [3.6.0](https://github.com/silinternational/ui-components/compare/v3.5.0...v3.6.0) (2021-11-05)
 
 
-### Features
+### Added
 
 * **TextField:** add keydown, keypress, and keyup events ([da1b1bd](https://github.com/silinternational/ui-components/commit/da1b1bd46782514b23a795bad12d11b049057be8))
 
 # [3.5.0](https://github.com/silinternational/ui-components/compare/v3.4.0...v3.5.0) (2021-10-19)
 
 
-### Features
+### Added
 
 * **Drawer:** Add optional content slot above menu in Drawer ([6aa7ddb](https://github.com/silinternational/ui-components/commit/6aa7ddb98b11a97e19fd9fb0139ab1f9d9ee22bd))
 
 # [3.4.0](https://github.com/silinternational/ui-components/compare/v3.3.0...v3.4.0) (2021-10-18)
 
 
-### Bug Fixes
+### Fixed
 
 * **Datatable:** Fix text-alignment in numeric Datatable cells ([8f733da](https://github.com/silinternational/ui-components/commit/8f733da8c46a059bfd7a98c40d82f94f9ce30366))
 
 
-### Features
+### Added
 
 * **Drawer:** Add support for tooltips on menu items ([27cd6f9](https://github.com/silinternational/ui-components/commit/27cd6f92e5de773054989cabbc3b2a272f59a801))
 
 # [3.3.0](https://github.com/silinternational/ui-components/compare/v3.2.0...v3.3.0) (2021-10-13)
 
 
-### Bug Fixes
-
-* **TextInput:** remove Noto Sans ([3591a21](https://github.com/silinternational/ui-components/commit/3591a214ae96b722b0c1945676fe2a5df1e7ef74))
 
 
-### Features
+### Added
 
 * **Menu:** add support for actions in MenuItems ([ce271f2](https://github.com/silinternational/ui-components/commit/ce271f22d444bfc6bb9e5e73605eb0079eca76c9))
 
-# Changelog
+### Removed
 
-All notable changes to this project will be documented in this file.
-
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+* **TextInput:** remove Noto Sans ([3591a21](https://github.com/silinternational/ui-components/commit/3591a214ae96b722b0c1945676fe2a5df1e7ef74))
 
 ## [Unreleased]
 
