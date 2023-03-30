@@ -36,7 +36,7 @@ img {
 
 <li
   bind:this={element}
-  class="mdc-deprecated-list-item {$$props.class}"
+  class="mdc-deprecated-list-item {$$props.class || ''}"
   class:mdc-deprecated-list-item--activated={activated}
   class:mdc-deprecated-list-item--disabled={nonInteractive}
   data-mdc-dialog-action={$$props['data-mdc-dialog-action']}

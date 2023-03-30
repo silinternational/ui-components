@@ -26,7 +26,7 @@ img {
 }
 </style>
 
-<Card class="h-100 py-1 {$$props.class}">
+<Card class="h-100 py-1 {$$props.class || ''}">
   <div class="flex justify-center">
     <img class="w-100" {src} {alt} class:disabled />
   </div>

@@ -28,7 +28,7 @@ onMount(() => {
 </style>
 
 <button
-  class="mdc-tab mdc-tab--stacked mdc-tab--min-width {$$props.class}"
+  class="mdc-tab mdc-tab--stacked mdc-tab--min-width {$$props.class || ''}"
   class:mdc-tab--active={active}
   role="tab"
   aria-selected={active}

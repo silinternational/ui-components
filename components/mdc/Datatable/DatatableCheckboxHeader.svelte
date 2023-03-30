@@ -1,5 +1,5 @@
 <th
-  class="mdc-data-table__header-cell mdc-data-table__header-cell--checkbox {$$props.class}"
+  class="mdc-data-table__header-cell mdc-data-table__header-cell--checkbox {$$props.class || ''}"
   role="columnheader"
   scope="col"
 >

@@ -47,7 +47,7 @@ i {
 <!-- mdc-menu doesn't have a method to let us know when it closes so this listens for clicks -->
 <svelte:body on:click={closeMenuHandler} />
 <div id="toolbar" class="toolbar mdc-menu-surface--anchor">
-  <div class="mdc-menu mdc-menu-surface {$$props.class}" bind:this={element}>
+  <div class="mdc-menu mdc-menu-surface {$$props.class || ''}" bind:this={element}>
     <ul class="mdc-deprecated-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
       {#each menuItems as { icon, label, url, subtitle, action }, i}
         <!-- svelte-ignore a11y-invalid-attribute -->

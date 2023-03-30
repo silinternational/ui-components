@@ -11,7 +11,7 @@ onMount(() => {
 })
 </script>
 
-<div class="mdc-tab-scroller {$$props.class}" bind:this={element}>
+<div class="mdc-tab-scroller {$$props.class || ''}" bind:this={element}>
   <div class="mdc-tab-scroller__scroll-area">
     <div class="mdc-tab-scroller__scroll-content">
       <slot />

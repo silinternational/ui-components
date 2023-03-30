@@ -23,6 +23,6 @@ onMount(() => {
 }
 </style>
 
-<div class="mdc-tab-bar {$$props.class}" role="tablist" bind:this={element}>
+<div class="mdc-tab-bar {$$props.class || ''}" role="tablist" bind:this={element}>
   <slot />
 </div>
