@@ -1,3 +1,10 @@
+### [10.1.1](https://github.com/silinternational/ui-components/compare/v10.1.0...v10.1.1) (2023-03-30)
+
+
+### Fixed
+
+* **components:** fix undefined appearing in class ([51a6d28](https://github.com/silinternational/ui-components/commit/51a6d28a3c7f4bf7af05578082d89ffc56d8c255))
+
 ## [10.1.0](https://github.com/silinternational/ui-components/compare/v10.0.1...v10.1.0) (2023-03-29)
 
 
