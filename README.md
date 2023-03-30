@@ -108,9 +108,7 @@ module.exports = {
 
 ## Sveltekit
 
-Using this library in [Sveltekit](https://github.com/sveltejs/kit) is still experimental, but it seems to be working well.
-Below are a number of issues that helped me get it working.
-
+Using this library in [Sveltekit](https://github.com/sveltejs/kit) is now fully supported. Below were a number of issues which may still apply if you are trying to use Vite without Svelte-kit.
 https://kit.svelte.dev/faq#packages
 
 https://vitejs.dev/guide/dep-pre-bundling.html
@@ -144,7 +142,7 @@ In your main sass file just use the following pattern to override any sass varia
 
 ## examples and templates
 
-See our Storybook [Docs](https://silinternational.github.io/ui-components/?path=/docs/example-introduction--page) for examples. Just click on the component you want to learn more about.
+See our [Storybook](https://silinternational.github.io/ui-components/?path=/docs/example-introduction--page) for examples. Just click on the component you want to learn more about. You can also click on the "Docs" tab to right of "Canvas" in the top left of the page and then click "Show code" to see code examples. See our [Button](https://silinternational.github.io/ui-components/?path=/docs/atoms-button--primary) Docs for example.
 
 An opinionated Svelte template using rollup https://github.com/silinternational/the-way-svelte
 
@@ -213,12 +211,12 @@ An example of using Drawer:
 
 ## storybook
 
-Try out our components and see examples at https://silinternational.github.io/ui-components/
-or run storybook locally. Just copy this repo to your machine and run `npm install` then `npm run dev` in your terminal. Storybook should open a browser window when it finishes building.
+Try out our components and see usage examples at https://silinternational.github.io/ui-components/.
+You can also run storybook locally. Just run `git clone git@github.com:silinternational/ui-components.git` on your machine and run `npm install` then `npm run dev` in your terminal. Storybook should open a browser window when it finishes building.
 
 ## CSS utility classes
 
-Classes from [global.scss](https://github.com/silinternational/ui-components/blob/develop/components/global.scss) can be applied to all components and even components and elements from your app.
+Classes from [global.scss](https://github.com/silinternational/ui-components/blob/develop/components/global.scss) can be applied to all components and even components and elements from your app. Since classes applied to Svelte components using `$$props.class` (e.g. `Button class="my-class"`) need to be global in scope these utility classes can be handy. Alternatively you can use `:global(.my-class) {...}` inside your `<style>` tags (which makes them truly global css styles so be careful!) or declare global styles elsewhere.
 
 ## contributions
 
