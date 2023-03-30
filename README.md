@@ -108,9 +108,7 @@ module.exports = {
 
 ## Sveltekit
 
-Using this library in [Sveltekit](https://github.com/sveltejs/kit) is still experimental, but it seems to be working well.
-Below are a number of issues that helped me get it working.
-
+Using this library in [Sveltekit](https://github.com/sveltejs/kit) is now fully supported. Below were a number of issues which may still apply if you are trying to use Vite without Svelte-kit.
 https://kit.svelte.dev/faq#packages
 
 https://vitejs.dev/guide/dep-pre-bundling.html
@@ -144,7 +142,7 @@ In your main sass file just use the following pattern to override any sass varia
 
 ## examples and templates
 
-See our Storybook [Docs](https://silinternational.github.io/ui-components/?path=/docs/example-introduction--page) for examples. Just click on the component you want to learn more about.
+See our [Storybook](https://silinternational.github.io/ui-components/?path=/docs/example-introduction--page) for examples. Just click on the component you want to learn more about. You can also click on the "Docs" tab to right of "Canvas" in the top left of the page and then click "Show code" to see code examples. See our [Button](https://silinternational.github.io/ui-components/?path=/docs/atoms-button--primary) Docs for example.
 
 An opinionated Svelte template using rollup https://github.com/silinternational/the-way-svelte
 
@@ -213,13 +211,37 @@ An example of using Drawer:
 
 ## storybook
 
-Try out our components and see examples at https://silinternational.github.io/ui-components/
-or run storybook locally. Just copy this repo to your machine and run `npm install` then `npm run dev` in your terminal. Storybook should open a browser window when it finishes building.
+Try out our components and see usage examples at https://silinternational.github.io/ui-components/.
+You can also run storybook locally. Just run `git clone git@github.com:silinternational/ui-components.git` on your machine and run `npm install` then `npm run dev` in your terminal. Storybook should open a browser window when it finishes building.
 
 ## CSS utility classes
 
-Classes from [global.scss](https://github.com/silinternational/ui-components/blob/develop/components/global.scss) can be applied to all components and even components and elements from your app.
+Classes from [global.scss](https://github.com/silinternational/ui-components/blob/develop/components/global.scss) can be applied to all components and even components and elements from your app. Since classes applied to Svelte components using `$$props.class` (e.g. `Button class="my-class"`) need to be global in scope these utility classes can be handy. Alternatively you can use `:global(.my-class) {...}` inside your `<style>` tags (which makes them truly global css styles so be careful!) or declare global styles elsewhere.
 
 ## contributions
 
-All commit messages must follow [Angular Commit Message Conventions](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format) for a release to be triggered upon merging to main. Here is a basic example: `feat(pencil): add 'graphiteWidth' option`. This will trigger a minor release. If this is not done, an empty commit with the proper format can be pushed to trigger the release. See https://github.com/semantic-release/semantic-release for more details. Semantic Release will also update the version and the CHANGELOG based on the commit messages.
+All commit messages must follow the format defined in our [release.config.js file](https://github.com/silinternational/ui-components/blob/develop/release.config.js) for a release to be triggered upon merging to main. Here are basic examples:
+
+- `add(Button): Added 'class' prop` (minor release)
+
+- `feat(components): Add Slider componenent and story` (minor release)
+
+- `fix(Button): fixed url prop not working` (patch release)
+
+- `remove(Card): Removed secondary text padding` (major release)
+
+	`<BLANK LINE>`
+
+	`BREAKING CHANGE: The secondary text padding is now 0 by default. Use the secondary-text class to adjust padding as desired.`
+
+- `change(dependencies): updated to sass 1.58` (major release)
+
+	`<BLANK LINE>`
+
+	`BREAKING: update sass to match this version if installed`
+
+- `security(dependencies): updated deps with npm update` (patch release)
+
+-  `deprecate(CustomCard): Deprecated CustomCard as it will be removed` (minor release)
+
+These will trigger a patch or minor release depending on the config. A major release can be triggered by including 'BREAKING CHANGE', 'BREAKING CHANGES', 'BREAKING' in the footer section. If this is not done, an empty commit with the proper format can be pushed to trigger the release. See https://github.com/semantic-release/semantic-release for more details. Semantic Release will also update the version and the CHANGELOG based on the commit messages. Use tags/types that correspond to the release type and if you need to you can change it in the Changelog after release.
