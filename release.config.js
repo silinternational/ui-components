@@ -108,7 +108,7 @@ const plugins = [
           },
           {
             type: 'chore',
-            hidden: true,
+            hidden: 'Changed',
           },
           {
             type: 'docs',
