@@ -150,7 +150,7 @@ A template using Vite https://github.com/hobbitronics/mikes-svelte-template
 
 A template using SvelteKit https://github.com/hobbitronics/sveltekit-ui-components
 
-If you dont' want to use Sveltekit or the templates above and are building a single page app with routify then it is recommended to use this template https://github.com/roxiness/routify-starter (this library not pre-installed)
+If you don't want to use Sveltekit or the templates above and are building a single page app with routify then it is recommended to use this template https://github.com/roxiness/routify-starter (this library not pre-installed)
 
 An example of using Button and Card:
 
@@ -224,7 +224,7 @@ All commit messages must follow the format defined in our [release.config.js fil
 
 - `add(Button): Added 'class' prop` (minor release)
 
-- `feat(components): Add Slider componenent and story` (minor release)
+- `feat(components): Add Slider component and story` (minor release)
 
 - `fix(Button): fixed url prop not working` (patch release)
 
