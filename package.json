@@ -46,7 +46,7 @@
     "@storybook/builder-webpack5": "^6.5.16",
     "@storybook/manager-webpack5": "^6.5.16",
     "@storybook/preset-scss": "^1.0.3",
-    "@storybook/svelte": "^6.5.16",
+    "@storybook/svelte": "^7.0.6",
     "conventional-changelog": "^3.1.25",
     "css-loader": "^6.7.3",
     "material-components-web": "^14.0.0",
