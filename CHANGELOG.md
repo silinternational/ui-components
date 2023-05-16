@@ -1,3 +1,16 @@
+# Changelog
+All notable changes to this project will be documented in this file.
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
+
+## [10.2.0](https://github.com/silinternational/ui-components/compare/v10.1.1...v10.2.0) (2023-05-16)
+
+
+### Added
+
+* **docs:** Update contribution section [release skip] ([ae8ae0c](https://github.com/silinternational/ui-components/commit/ae8ae0cb7672503fafec3565495babc2a24f95c8))
+* **TextArea:** Add input event dispatch to TextArea ([c10f29f](https://github.com/silinternational/ui-components/commit/c10f29fe59c6acb88f595a969b285e221a4bbe9b))
+* **TextField:** Add input event dispatch to TextField ([951221e](https://github.com/silinternational/ui-components/commit/951221ebf40aa0c7a33ff5cc741df0e3cf28ad3d))
+
 ### [10.1.1](https://github.com/silinternational/ui-components/compare/v10.1.0...v10.1.1) (2023-03-30)
 
 
