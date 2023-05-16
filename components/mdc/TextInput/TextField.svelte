@@ -78,6 +78,7 @@ const focus = (node) => autofocus && node.focus()
     on:keydown
     on:keypress
     on:keyup
+    on:input
     {name}
     {required}
     {disabled}
