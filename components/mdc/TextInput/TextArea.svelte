@@ -86,6 +86,7 @@ label {
     bind:this={textarea}
     style="height:{height}px"
     on:input={resize}
+    on:input
     on:keydown
     on:focus
     on:focus={() => (hasFocused = true)}
