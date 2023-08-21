@@ -104,19 +104,24 @@ const focus = (node) => autofocus && node.focus()
   </span>
 </label>
 <div class="mdc-text-field-helper-line" style="width: {width};">
-  <div class="mdc-text-field-helper-text" class:opacity1={required} id="{labelID}-helper-id" aria-hidden="true">
-    {#if required && !value}
-      <span class="required" class:error={hasFocused}>*Required</span>
+  <div
+    class="mdc-text-field-helper-text
+    mdc-text-field-helper-text--{error ? 'validation-msg' : 'persistent'}"
+    id="{labelID}-helper-id"
+    aria-hidden="true"
+  >
+    {#if !error && description}
+      {description}
+    {:else if required && !value}
+      ✴Required
     {:else if hasExceededMaxLength}
-      <span class="error">Maximum {maxlength} characters</span>
+      Maximum {maxlength} characters
     {/if}
   </div>
+
   {#if showCounter}
     <div class="mdc-text-field-character-counter" class:error>
       {value.length} / {maxlength}
     </div>
   {/if}
 </div>
-{#if description}
-  <span class="d-block mdc-theme--neutral">{description}</span>
-{/if}
