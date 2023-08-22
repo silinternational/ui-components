@@ -11,12 +11,11 @@ export let label = ''
 export let checked = false
 export let disabled = false
 export let uppercase = false
+export let inputID = generateRandomID('checkbox-')
 
 let checkboxElement = {}
 let formFieldElement = {}
 let checkbox
-
-const inputID = generateRandomID('checkbox-')
 
 $: if (checkbox) checkbox.checked = checked
 
@@ -32,7 +31,14 @@ const handleChange = () => dispatch(checkbox.checked ? 'checked' : 'unchecked')
 
 <div class="mdc-form-field {$$props.class || ''}" bind:this={formFieldElement}>
   <div class="mdc-checkbox" bind:this={checkboxElement}>
-    <input type="checkbox" {disabled} on:change={handleChange} class="mdc-checkbox__native-control" id={inputID} />
+    <input
+      type="checkbox"
+      {disabled}
+      on:change={handleChange}
+      on:change
+      class="mdc-checkbox__native-control"
+      id={inputID}
+    />
     <div class="mdc-checkbox__background">
       <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
         <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
