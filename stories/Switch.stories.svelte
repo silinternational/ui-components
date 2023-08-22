@@ -6,13 +6,19 @@ const args = {
   class: '',
   'on:selected': () => alert('switch is on'),
   'on:deselected': () => alert('switch is off'),
+  'on:click': () => alert('click'),
 }
 </script>
 
 <Meta title="Atoms/Switch" component={Switch} />
 
 <Template let:args>
-  <Switch {...args} on:selected={args['on:selected']} on:deselected={args['on:deselected']} />
+  <Switch
+    {...args}
+    on:selected={args['on:selected']}
+    on:deselected={args['on:deselected']}
+    on:click={args['on:click']}
+  />
 </Template>
 
 <Story name="Primary" {args} />

@@ -42,6 +42,7 @@ function onClick() {
 
 <button
   on:click={onClick}
+  on:click
   bind:this={element}
   {id}
   class="mdc-switch {$$props.class || ''}"
