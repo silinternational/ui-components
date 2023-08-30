@@ -2,6 +2,17 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
 
+## [10.3.0](https://github.com/silinternational/ui-components/compare/v10.2.0...v10.3.0) (2023-08-30)
+
+
+### Added
+
+* **release:** trigger v10.3.0 release ([196c716](https://github.com/silinternational/ui-components/commit/196c716c6e15b52fb57c8f58f0969bde3c347edd))
+* **TextField:** Add all fields to default Storybook story ([96965f5](https://github.com/silinternational/ui-components/commit/96965f5f7943d60799f34513757fdb22604e2ed4))
+* **TextField:** Add Description as helper text ([2e22040](https://github.com/silinternational/ui-components/commit/2e22040057815a9e2a107e13bb088a2f57337179))
+* **TextField:** Description as helper text ([b6fd540](https://github.com/silinternational/ui-components/commit/b6fd540164d4f10d370a320d6c2416149d607eeb))
+* **TextField:** Description as helper text ([5d017c3](https://github.com/silinternational/ui-components/commit/5d017c38530af6124169d2eecf8b158d9282fc56))
+
 ## [10.2.0](https://github.com/silinternational/ui-components/compare/v10.1.1...v10.2.0) (2023-05-16)
 
 
