@@ -84,6 +84,7 @@ declare module '@silintl/ui-components' {
           numeric?: boolean
           colspan?: number
           class?: string
+          lowContrast?: boolean
         }
         export class Item extends SvelteComponentTyped<ItemProps> {}
       }

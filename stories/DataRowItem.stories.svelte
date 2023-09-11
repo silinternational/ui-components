@@ -5,6 +5,9 @@ import { copyAndModifyArgs } from './helpers.js'
 
 const args = {
   class: '', //only works for global classes
+  numeric: false,
+  colspan: 1,
+  lowContrast: false,
 }
 </script>
 
@@ -16,6 +19,8 @@ const args = {
 
 <Story name="Default" {args} />
 
-<Story name="Numberic" args={copyAndModifyArgs(args, { numeric: 'true' })} />
+<Story name="Numeric" args={copyAndModifyArgs(args, { numeric: 'true' })} />
+
+<Story name="LowContrast" args={copyAndModifyArgs(args, { lowContrast: 'true' })} />
 
 <Story name="Colspan 1" args={copyAndModifyArgs(args, { colspan: 1 })} />
