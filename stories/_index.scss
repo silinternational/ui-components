@@ -1,5 +1,4 @@
 @use './theme';
-@use './typography';
 @use './components/mdc/Button' with (
   $radius: 16px
 );
