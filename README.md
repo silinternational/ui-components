@@ -131,7 +131,7 @@ A list of all components and their props can be found in our running instance of
 
 After installation and bundler configuration all of the components are ready to be imported.
 
-Just include `import { Button } from '@silintl/ui-components'` (~~Sveltekit/~~Vite only projects will need the full url: 	`import { Button } from '../../node_modules/@silintl/ui-components/index.mjs`
+Just include `import { Button } from '@silintl/ui-components'` (~~Sveltekit/~~Vite only projects will need the full url: `import { Button } from '../../node_modules/@silintl/ui-components/index.mjs`
 ) in your script section to import Button and any other components you want to use.
 
 ## overriding default sass variables
@@ -230,19 +230,19 @@ All commit messages must follow the format defined in our [release.config.js fil
 
 - `remove(Card): Removed secondary text padding` (major release)
 
-	`<BLANK LINE>`
+  `<BLANK LINE>`
 
-	`BREAKING CHANGE: The secondary text padding is now 0 by default. Use the secondary-text class to adjust padding as desired.`
+  `BREAKING CHANGE: The secondary text padding is now 0 by default. Use the secondary-text class to adjust padding as desired.`
 
 - `change(dependencies): updated to sass 1.58` (major release)
 
-	`<BLANK LINE>`
+  `<BLANK LINE>`
 
-	`BREAKING: update sass to match this version if installed`
+  `BREAKING: update sass to match this version if installed`
 
 - `security(dependencies): updated deps with npm update` (patch release)
 
--  `deprecate(CustomCard): Deprecated CustomCard as it will be removed` (minor release)
+- `deprecate(CustomCard): Deprecated CustomCard as it will be removed` (minor release)
 
 These will trigger a patch or minor release depending on the config. A major release can be triggered by including 'BREAKING CHANGE', 'BREAKING CHANGES', 'BREAKING' in the footer section followed by ': <description/instructions>' where <description/instructions> details what the breaking change is and/or how to migrate. If this is not done, an empty commit with the proper format can be pushed to trigger the release or by using `git rebase -i` to rewrite the commit messages. commits that contains '[skip release]' or '[release skip]' in their message will be excluded from the commit analysis and won't participate in the release type determination. See https://github.com/semantic-release/semantic-release, https://semantic-release.gitbook.io/semantic-release/support/faq and https://www.conventionalcommits.org/en/v1.0.0/#specification for more details.
 
