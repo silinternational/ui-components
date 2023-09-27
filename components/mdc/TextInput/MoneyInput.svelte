@@ -112,17 +112,24 @@ const focus = (node) => autofocus && node.focus()
   </span>
 </label>
 <div class="mdc-text-field-helper-line" style="width: {width};">
-  <div class="mdc-text-field-helper-text" class:opacity1={required} id="{labelID}-helper-id" aria-hidden="true">
-    {#if required && !internalValue}
-      <span class="required" class:error={hasFocused}>*Required</span>
+  <div
+    class="mdc-text-field-helper-text
+      mdc-text-field-helper-text--{error ? 'validation-msg' : 'persistent'}"
+    id="{labelID}-helper-id"
+    aria-hidden="true"
+  >
+    {#if !error && description}
+      {description}
+    {:else if required && !internalValue}
+      ✴Required
     {:else if hasExceededMaxValue}
-      <span class="error">Maximum value allowed is {maxValue}</span>
+      Maximum value allowed is {maxValue}
     {:else if isLowerThanMinValue}
-      <span class="error">Minimun value allowed is ({minValue})</span>
+      Minimun value allowed is ({minValue})
     {:else if valueNotDivisibleByStep}
-      <span class="error">{internalValue} is not divisible by {step}</span>
+      {internalValue} is not divisible by {step}
     {:else if hasExceededMaxLength}
-      <span class="error">Maximum {maxlength} characters</span>
+      Maximum {maxlength} characters
     {/if}
   </div>
   {#if showCounter}
@@ -131,6 +138,3 @@ const focus = (node) => autofocus && node.focus()
     </div>
   {/if}
 </div>
-{#if description}
-  <span class="d-block mdc-theme--neutral">{description}</span>
-{/if}
