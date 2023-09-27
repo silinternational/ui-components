@@ -79,6 +79,7 @@ const onChange = (e) => {
     value={choice}
     on:change={onChange}
     on:blur={(e) => dispatch('check', e.target.value)}
+    on:focus
   />
   <span class="placeholder">{placeholder}</span>
 </label>
