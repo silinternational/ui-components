@@ -12,14 +12,12 @@ export let disabled = false
 export let required = false
 
 let element = {}
-
 let randomId = generateRandomID('dataList-')
-
-$: internalChoice = choice
 
 const dispatch = createEventDispatcher()
 
-const onChange = () => {
+const onChange = (e) => {
+  const internalChoice = e.target.value
   options[internalChoice] && dispatch('chosen', options[internalChoice])
   choice = internalChoice
   element.blur()
@@ -78,10 +76,9 @@ const onChange = () => {
     list={randomId}
     placeholder="&nbsp;"
     bind:this={element}
-    bind:value={internalChoice}
+    value={choice}
     on:change={onChange}
-    on:blur={() => dispatch('check', internalChoice)}
-    on:focus={() => (internalChoice = '')}
+    on:blur={(e) => dispatch('check', e.target.value)}
   />
   <span class="placeholder">{placeholder}</span>
 </label>
