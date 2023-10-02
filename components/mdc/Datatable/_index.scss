@@ -1,5 +1,5 @@
-@use "@material/checkbox"; // Required only for data table with row selection.
-@use "@material/data-table/data-table";
+@use '@material/checkbox'; // Required only for data table with row selection.
+@use '@material/data-table/data-table';
 
 @include checkbox.core-styles;
 @include data-table.core-styles;
