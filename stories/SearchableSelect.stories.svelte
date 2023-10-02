@@ -1,8 +1,11 @@
 <script>
 import { SearchableSelect, Form } from '../components/custom'
-import { Button, Snackbar, setNotice } from '../components/mdc'
+import { Button, Progress, Snackbar, setNotice } from '../components/mdc'
 import { copyAndModifyArgs } from './helpers.js'
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
+
+let choice
+let loading = true
 
 const args = {
   options: {
@@ -22,15 +25,24 @@ const args = {
   },
   class: '', //only works for global classes
 }
+
+setTimeout(() => {
+  choice = 'choice 2'
+  loading = false
+}, 1500)
 </script>
 
 <Meta title="Atoms/SearchableSelect" component={SearchableSelect} />
 
 <Template let:args>
   <Form on:submit={() => setNotice('submitted')}>
-    <SearchableSelect {...args} on:chosen={args['on:chosen']} on:check={args['on:check']} />
+    <SearchableSelect {choice} {...args} on:chosen={args['on:chosen']} on:check={args['on:check']} />
     <Button>Submit</Button>
   </Form>
+
+  {#if loading}
+    <Progress.Circular />
+  {/if}
 
   <Snackbar />
 </Template>
