@@ -3,12 +3,19 @@
 import { MDCRipple } from '@material/ripple'
 import { onMount } from 'svelte'
 
+/** @type {string} The icon to be displayed on the button. default is 'add' */
 export let icon = 'add'
+/** @type {string} The aria-label for the button. */
 export let label = ''
+/** @type {boolean} Whether the button is mini or not. */
 export let mini = false
+/** @type {boolean} Whether the button is extended or not. */
 export let extended = false
+/** @type {string} The url to be used if the button is a link. */
 export let url = ''
+/** @type {Function} The function to be executed for the button click event. */
 export let action = {}
+/** @type {string} The target for the link. */
 export let target = ''
 
 let element = {}

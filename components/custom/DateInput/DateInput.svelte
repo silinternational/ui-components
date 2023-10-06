@@ -1,73 +1,25 @@
 <script>
-/**
- * @component DateInput
- * @description Date input with custom styling
- */
-
-/**
- * @prop {string}
- * @description sets color of input text
- */
+/** @type {string} sets color of input text */
 export let color = 'black'
-
-/**
- * @prop {string}
- * @description sets color of input border
- */
+/** @type {string} sets color of input border */
 export let borderColor = 'black'
-
-/**
- * @prop {string}
- * @description sets color of input text after blur when required and empty
- */
+/** @type {string} sets color of input text after blur when required and empty */
 export let errorColor = 'red'
-
-/**
- * @prop {string}
- * @description sets padding of input
- */
+/** @type {string} sets padding of input */
 export let padding = '12px'
-
-/**
- * @prop {string}
- * @description sets width of input
- */
+/** @type {string} sets width of input */
 export let width = '220px'
-
-/**
- * @prop {string}
- * @description sets font size input text
- */
+/** @type {string} sets font size input text */
 export let fontSize = '14px'
-
-/**
- * @prop {string}
- * @description sets name of input
- */
+/** @type {string} sets name of input */
 export let name = ''
-
-/**
- * @prop {string} date in locale with no time data
- * @description sets initial date of input
- */
+/** @type {string} sets initial date of input in locale with no time data */
 export let value = ''
-
-/**
- * @prop {boolean}
- * @description sets whether input is disabled
- */
+/** @type {boolean} sets whether input is disabled */
 export let disabled = false
-
-/**
- * @prop {boolean}
- * @description sets whether input is focused on load
- */
+/** @type {boolean} sets whether input is focused on load */
 export let autofocus = false
-
-/**
- * @prop {boolean}
- * @description sets whether input is required and has error color when empty after blur
- */
+/** @type {boolean} sets whether input is required and has error color when empty after blur */
 export let required = false
 
 const onBlur = (e) => {

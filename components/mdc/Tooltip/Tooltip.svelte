@@ -3,9 +3,12 @@
 import { MDCTooltip, XPosition, YPosition } from '@material/tooltip'
 import { onMount } from 'svelte'
 
+/** @type {string} the id for the tooltip corresponding to ariaDescribedBy for the wrapper */
 export let tooltipID
-export let positionX = undefined // can be one of: "start", "center", or "end"
-export let positionY = undefined // can be one of: "above" or "below"
+/** @type {string} can be one of: "start", "center", or "end"*/
+export let positionX = undefined
+/** @type {string} can be one of: "above" or "below" */
+export let positionY = undefined
 
 let element = {}
 let mdcToolTip = {}

@@ -2,7 +2,9 @@
 import Dialog from '../Dialog'
 import { onMount, tick } from 'svelte'
 
+/** @type {any[]} array of objects with keys 'title' | 'content' | 'left' | 'right' | 'previous' | 'next' | 'target' and value of string | number representing the step integer starting from 0 */
 export let steps = []
+/** @type {any} an object key and value of type string to set the tour title, message and target */
 export let data = {}
 
 let openDialog = false

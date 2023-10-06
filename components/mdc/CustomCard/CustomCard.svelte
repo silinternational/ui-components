@@ -2,12 +2,19 @@
 import Button from '../Button'
 import Card from '../Card'
 
+/** @type {string} the image source */
 export let src = ''
+/** @type {string} the image alt text, default to "image is missing" */
 export let alt = 'image is missing'
+/** @type {string} the card title, default to "Title" */
 export let title = 'Title'
+/** @type {string} the icon name */
 export let icon = ''
+/** @type {boolean} if the card is disabled or not */
 export let disabled = false
+/** @type {{label, url}[]} */
 export let buttons
+/** @type {string} the footer text */
 export let footerText = ''
 </script>
 

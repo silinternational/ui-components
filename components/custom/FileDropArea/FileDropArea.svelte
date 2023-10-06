@@ -2,9 +2,13 @@
 import { isAboveMobile } from '../../mdc'
 import { createEventDispatcher } from 'svelte'
 
+/** @type {boolean} if the button uses raised styling or not */
 export let raised = false
+/** @type {boolean} if the button uses outlined styling or not */
 export let outlined = false
+/** @type {boolean} if the button is disabled or not */
 export let uploading = false
+/** @type {string} the mime type of the file. Defaults to 'application/pdf,image/*' */
 export let mimeType = 'application/pdf,image/*'
 
 let fileInput = {}

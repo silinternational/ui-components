@@ -6,10 +6,13 @@ import { afterUpdate, createEventDispatcher, onMount } from 'svelte'
 
 export let label = 'Select'
 
-/** @type {{id: string, name: string}[]} */
+/** @type {{id: string, name: string}[]} The options to be displayed in the select list. */
 export let options = []
+/** @type {string} The width of the select list. E.g. '280px' */
 export let width = '280px'
+/** @type {boolean} Disables the select list. */
 export let disabled = false
+/** @type {string} The ID of the selected option. */
 export let selectedID = ''
 
 const dispatch = createEventDispatcher()

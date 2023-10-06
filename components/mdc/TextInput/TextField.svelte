@@ -5,15 +5,25 @@ import { MDCTextField } from '@material/textfield'
 import { generateRandomID } from '../../../random'
 import { afterUpdate, onMount } from 'svelte'
 
+/**@type {string} The label for the text input field. */
 export let label = ''
+/** @type {string} The value of the text input field. */
 export let value = ''
+/** @type {string} The placeholder for the text input field. */
 export let placeholder = ''
+/** @type {number} The maximum number of characters allowed in the text input field. */
 export let maxlength = undefined
+/** @type {boolean} If true, the text input field will be focused on mount. */
 export let autofocus = false
+/** @type {boolean} If true, the text input field will be disabled. */
 export let disabled = false
+/** @type {boolean} If true, the text input field will be required. */
 export let required = false
+/** @type {string} The icon to display in the text input field. */
 export let icon = ''
+/** @type {string} The description to display below the text input field. */
 export let description = ''
+/** @type {string} The name of the text input field. */
 export let name = ''
 
 const labelID = generateRandomID('text-label-')

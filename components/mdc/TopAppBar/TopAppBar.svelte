@@ -5,9 +5,13 @@ import { MDCTopAppBar } from '@material/top-app-bar'
 import { createEventDispatcher, onMount } from 'svelte'
 import title from './title'
 
+/** @type {boolean} flag to set background color to --mdc-theme-primary-variant*/
 export let bgColorIsVariant = false
+/** @type {boolean} if true uses .mdc-top-app-bar--dense in the header */
 export let dense = false
+/** @type {boolean} if true uses .mdc-top-app-bar--fixed in the header */
 export let fixed = false
+/** @type {string} A class that is added to button.mdc-top-app-bar__navigation-icon */
 export let navIconBreakpointClass = ''
 
 const dispatch = createEventDispatcher()
