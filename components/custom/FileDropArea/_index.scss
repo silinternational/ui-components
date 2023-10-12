@@ -1,8 +1,8 @@
 @use '@material/button/styles';
-@use "@material/button";
+@use '@material/button';
 
 label.custom-text-button {
   --mdc-theme-primary: var(--mdc-theme-upload-button-color, hsla(214, 11%, 37%, 1));
 
-  @include button.ink-color(var(--mdc-theme-upload-button-ink-color, hsla(0,0%, 100%, 1)));
+  @include button.ink-color(var(--mdc-theme-upload-button-ink-color, hsla(0, 0%, 100%, 1)));
 }

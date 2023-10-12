@@ -289,6 +289,7 @@ declare module '@silintl/ui-components' {
     label?: string
     value?: string
     name?: string
+    icon?: string
     placeholder?: string
     maxlength?: number
     autofocus?: boolean

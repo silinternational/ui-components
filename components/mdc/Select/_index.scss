@@ -4,6 +4,6 @@
 @use '@material/select/styles';
 
 /* MDC select floating label */
-.mdc-select:not(.mdc-select--disabled).mdc-select--focused .mdc-floating-label{
+.mdc-select:not(.mdc-select--disabled).mdc-select--focused .mdc-floating-label {
   color: var(--mdc-theme-primary);
 }
