@@ -1,4 +1,22 @@
 # Changelog
+All notable changes to this project will be documented in this file.
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
+
+## [10.5.0](https://github.com/silinternational/ui-components/compare/v10.4.0...v10.5.0) (2023-10-12)
+
+
+### Added
+
+* **MoneyInput:** description in helper text like TextField ([b9d4b7d](https://github.com/silinternational/ui-components/commit/b9d4b7d3629e44316e5e682e36cfbe9512f0f629))
+* **SearchableSelect:** expose on:focus ([60667e0](https://github.com/silinternational/ui-components/commit/60667e04abd5a7fd7fd33a8f7ef5a3928bba8864))
+
+
+### Fixed
+
+* **SearchableSelect:** let consumer clear input ([885a8bd](https://github.com/silinternational/ui-components/commit/885a8bdc4ded967ccc520050f835c46aa101b1cc))
+* **TextField:** add missing type for icon prop ([9ac0c6a](https://github.com/silinternational/ui-components/commit/9ac0c6a59be72d19cda78b19e51557fe44c5de48))
+
+# Changelog
 
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
