@@ -8,7 +8,7 @@ export let raised = false
 export let outlined = false
 /** @type {boolean} if the button is disabled or not */
 export let uploading = false
-/** @type {string} the mime type of the file. Defaults to 'application/pdf,image/*' */
+/** @type {string} the mime type of the file. */
 export let mimeType = 'application/pdf,image/*'
 
 let fileInput = {}

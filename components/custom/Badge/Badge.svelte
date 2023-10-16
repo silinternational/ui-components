@@ -1,9 +1,9 @@
 <script>
-/** @type {string} the background color of the badge. Defaults to "gray" */
+/** @type {string} the background color of the badge. */
 export let color = 'gray'
-/** @type {string} the border radius of the badge. Defaults to "50%" */
+/** @type {string} the border radius of the badge. */
 export let borderRadius = '50%'
-/** @type {string} the padding of the badge. Defaults to ".2em" */
+/** @type {string} the padding of the badge. */
 export let padding = '.2em'
 /** @type {boolean} if the badge is bordered or not */
 export let bordered = false

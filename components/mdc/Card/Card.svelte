@@ -4,7 +4,7 @@
 export let secondary = ''
 /** @type {boolean} if the card is outlined or not */
 export let outlined = false
-/** @type {string} the background color. Defaults to "white" */
+/** @type {string} the background color. */
 export let color = 'white'
 /** @type {boolean} if the card is clickable or not */
 export let isClickable = false
