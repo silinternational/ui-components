@@ -3,7 +3,7 @@
 import { MDCRipple } from '@material/ripple'
 import { onMount } from 'svelte'
 
-/** @type {string} The icon to be displayed on the button. default is 'add' */
+/** @type {string} The icon to be displayed on the button. */
 export let icon = 'add'
 /** @type {string} The aria-label for the button. */
 export let label = ''

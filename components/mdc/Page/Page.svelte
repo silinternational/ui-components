@@ -7,7 +7,7 @@ import appBarTitle from '../TopAppBar/title'
 export let loading = false
 /** @type {string} page title */
 export let title = ''
-/** @type {string} Default is 'default' which applies "flex column align-items-center", any other value will use the grid layout */
+/** @type {string} 'default' which applies "flex column align-items-center", any other value will use the grid layout */
 export let layout = 'default'
 /** @type {boolean} center page content, only applicable if using default layout */
 export let center = false // center page content, only applicable if using default layout
