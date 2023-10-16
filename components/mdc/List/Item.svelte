@@ -3,16 +3,27 @@
 import { MDCRipple } from '@material/ripple'
 import { onMount } from 'svelte'
 
+/** @type {boolean} if the list item is activated or not */
 export let activated = false
+/** @type {string} the URL of the graphic */
 export let graphicURL = ''
+/** @type {string} the alt text of the graphic */
 export let graphicAlt = ''
+/** @type {string} the icon name */
 export let icon = ''
+/** @type {string} the meta text above the "meta" slot */
 export let meta = ''
+/** @type {string} the primary text (above 'secondary' and 'text' props) */
 export let primary = ''
+/** @type {string} the secondary text (below primary text) */
 export let secondary = ''
+/** @type {string} the text above the default slot */
 export let text = ''
+/** @type {boolean} if the list item has a divider or not */
 export let withDivider = false
+/** @type {boolean} if the list item is non-interactive or not */
 export let nonInteractive = false
+/** @type {number} the tabindex of the list item */
 export let tabindex = undefined
 
 let element = {}

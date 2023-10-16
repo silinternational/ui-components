@@ -4,10 +4,13 @@ import List from '../List'
 import { MDCDialog } from '@material/dialog'
 import { createEventDispatcher, onMount } from 'svelte'
 
+/** @type {boolean} controls whether the dialog is open or closed */
 export let open = false
+
+/** @type {string} The title of the dialog */
 export let title = 'Choose one'
 
-/** @type {{id, name}[]} */
+/** @type {{id, name}[]} A list of action items and dispatched with chosen */
 export let items = []
 
 const dispatch = createEventDispatcher()

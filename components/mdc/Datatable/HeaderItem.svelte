@@ -3,8 +3,11 @@
 import IconButton from '../IconButton'
 import { generateRandomID } from '../../../random'
 
+/** @type {boolean} if the value is numeric or not */
 export let numeric = false
+/** @type {string} the column ID */
 export let columnID = ''
+/** @type {boolean} if the column is sortable or not */
 export let sortable = false
 
 const labelID = generateRandomID('column-label-')
