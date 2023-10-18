@@ -20,7 +20,7 @@ const args = {
 
 <Story name="Default" {args} />
 
-<Story name="Blue" args={copyAndModifyArgs(args, { color: 'blue' })} />
+<Story name="Color" args={copyAndModifyArgs(args, { color: 'blue' })} />
 
 <Story name="Pill" args={copyAndModifyArgs(args, { borderRadius: '12px', padding: '.1em .5em' })} />
 
