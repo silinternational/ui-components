@@ -43,7 +43,7 @@ const args = {
   <Form class="flex column" on:submit={() => setNotice(valueForValueStory || 'No date selected')}>
     <DateInput on:blur={args['on:blur']} bind:value={valueForValueStory} />
 
-    <Button raised>Submit</Button>
+    <Button class="w-8" raised>Submit</Button>
 
     <Snackbar />
   </Form>
