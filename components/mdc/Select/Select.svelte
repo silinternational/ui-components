@@ -21,11 +21,16 @@ const selectedTextID = generateRandomID('select-selected-text-')
 
 let element = {}
 let mdcSelect = {}
+let previousOptionsIDsCSV = ''
 
 $: selectedIndex = options.findIndex((option) => option.id === selectedID)
 $: dispatch('change', options[selectedIndex] || {})
 $: mdcSelect.disabled = disabled
 $: if (options && mdcSelect.layoutOptions) mdcSelect.layoutOptions()
+
+const getIDsCSV = (options) => options.map(option => option.id).join(',')
+
+const optionsHaveChanged = (options) => previousOptionsIDsCSV !== getIDsCSV(options)
 
 const recordSelectedID = (event) => (selectedID = event.detail.value)
 
@@ -43,10 +48,11 @@ afterUpdate(() => {
   // This makes sure the index is updated AFTER the select list contains the full list of options.
   mdcSelect.selectedIndex = selectedIndex
 
-  // If options have been provided, give the current processes time to finish
+  // If options have been provided or changed, give the current processes time to finish
   // what they're doing, then indicate that this Select is now populated with
   // options. At this point, it's safe for the selectedID to be initialized.
-  if (options.length > 0) {
+  if (options.length > 0 && optionsHaveChanged(options)) {
+    previousOptionsIDsCSV = getIDsCSV(options)
     setTimeout(() => {
       dispatch('populated')
     })
