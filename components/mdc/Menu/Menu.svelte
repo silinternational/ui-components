@@ -3,8 +3,11 @@
 import { MDCMenu } from '@material/menu'
 import { onMount } from 'svelte'
 
+/** @type {boolean} Whether or not the menu is open. */
 export let menuItems = []
+/** @type {boolean} Whether or not the menu is open. */
 export let menuOpen = false
+/** @type {string} The current url of the page. */
 export let currentUrl = ''
 
 let menu = {}

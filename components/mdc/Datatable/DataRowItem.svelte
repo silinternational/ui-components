@@ -1,18 +1,9 @@
 <script>
-/**
- * @prop {boolean}
- * @description Whether the cell contains numeric data.
- */
+/** @type {boolean} Whether the cell contains numeric data. */
 export let numeric = false
-/**
- * @prop {number}
- * @description The number of columns the cell spans.
- */
+/** @type {number} The number of columns the cell spans. */
 export let colspan = 1
-/**
- * @prop {boolean}
- * @description Whether the cell has low contrast.
- */
+/** @type {boolean} Whether the cell has low contrast. */
 export let lowContrast = false
 </script>
 

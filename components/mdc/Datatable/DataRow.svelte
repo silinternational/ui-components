@@ -1,6 +1,7 @@
 <script>
 import { generateRandomID } from '../../../random'
 
+/** @type {boolean} if the row is clickable or not */
 export let clickable = false
 
 const rowId = generateRandomID('row-id-')

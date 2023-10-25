@@ -5,15 +5,25 @@ import { MDCTextField } from '@material/textfield'
 import { generateRandomID } from '../../../random'
 import { onMount, tick } from 'svelte'
 
+/** @type {string} The label for the text input field. */
 export let label = ''
+/** @type {string} The value of the text input field. */
 export let value = ' ' // whitespace is needed here, see comment below
+/** @type {string} The placeholder for the text input field. */
 export let placeholder = ''
+/** @type {number} The number of rows to display in the textarea. */
 export let rows = 8
+/** @type {number} The maximum number of characters allowed in the text input field. */
 export let maxlength = undefined
+/** @type {boolean} If true, the text input field will be focused on mount. */
 export let autofocus = false
+/** @type {boolean}  If true, the text input field will be right to left, otherwise left to right. */
 export let rtl = false
+/** @type {boolean} If true, the text input field will be required. */
 export let required = false
+/** @type {string} The description to display below the text input field. */
 export let description = ''
+/** @type {string} The name of the textarea field. */
 export let name = ''
 
 const labelID = generateRandomID('textarea-label-')

@@ -127,6 +127,7 @@ declare module '@silintl/ui-components' {
     interface SimpleProps {
       open?: boolean
       title?: string
+      items?: { id: string; name: string }[]
       class?: string
     }
     export class Simple extends SvelteComponentTyped<SimpleProps> {}

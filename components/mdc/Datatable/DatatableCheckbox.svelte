@@ -1,7 +1,9 @@
 <script>
 import { createEventDispatcher, onMount } from 'svelte'
 
+/** @type {boolean} if the checkbox is disabled or not */
 export let disabled = false
+/** @type {string} the row ID */
 export let rowId = ''
 
 onMount(() => dispatch('mounted'))
