@@ -2,6 +2,19 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
 
+## [10.6.0](https://github.com/silinternational/ui-components/compare/v10.5.0...v10.6.0) (2023-10-25)
+
+
+### Added
+
+* **types:** Add and improve JSDOC types to props ([0f8a51f](https://github.com/silinternational/ui-components/commit/0f8a51f960a319716a87c28094c1be5bb8de2694))
+
+
+### Fixed
+
+* **Select:** Only dispatch `populated` event when appropriate ([8624b08](https://github.com/silinternational/ui-components/commit/8624b08494b210e559e27daf743bb9cb34694154))
+* **types:** Add missing items type to Alert.Simple ([1193e03](https://github.com/silinternational/ui-components/commit/1193e0351ebbdcbbff699dbd07f4a1bddeea05f2))
+
 ## [10.5.0](https://github.com/silinternational/ui-components/compare/v10.4.0...v10.5.0) (2023-10-12)
 
 
