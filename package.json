@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "svelte": "^3.x",
-    "material-components-web": "^14.0.0",
+    "material-components-web": "^14.0.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.5.16",
