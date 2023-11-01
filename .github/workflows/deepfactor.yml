@@ -1,0 +1,16 @@
+name: deepfactor-scan
+on:
+  push:
+    branches: [ main, develop, feature/deepfactor ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: public.ecr.aws/deepfactor/df/runtime:3.3.3-2346
+      env:
+        DF_RUN_TOKEN: ${{ secrets.DF_RUN_TOKEN }}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Scan with Deepfactor
+      run: dfctl scan -s fs -a ${{ github.event.repository.name }} -c ${{ github.event.repository.name }} -V ${{ github.ref_name }} .
