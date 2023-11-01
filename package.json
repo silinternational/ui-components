@@ -41,7 +41,8 @@
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-docs": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
-    "@storybook/addon-links": "^6.5.16"
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/svelte": "^6.5.16"
   },
   "devDependencies": {
     "@storybook/addon-svelte-csf": "^2.0.11",
@@ -49,7 +50,6 @@
     "@storybook/manager-webpack5": "^6.5.16",
     "@storybook/addon-postcss": "^2.0.0",
     "@storybook/preset-scss": "^1.0.3",
-    "@storybook/svelte": "^6.5.16",
     "@semantic-release/changelog": "^6.0.2",
     "@semantic-release/git": "^10.0.1",
     "conventional-changelog": "^3.1.25",
