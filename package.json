@@ -37,17 +37,17 @@
   "dependencies": {
     "sass": "1.55.x",
     "svelte": "^3.x",
-    "material-components-web": "^14.0.0"
-  },
-  "devDependencies": {
+    "material-components-web": "^14.0.0",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-docs": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
-    "@storybook/addon-links": "^6.5.16",
-    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/addon-links": "^6.5.16"
+  },
+  "devDependencies": {
     "@storybook/addon-svelte-csf": "^2.0.11",
     "@storybook/builder-webpack5": "^6.5.16",
     "@storybook/manager-webpack5": "^6.5.16",
+    "@storybook/addon-postcss": "^2.0.0",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/svelte": "^6.5.16",
     "@semantic-release/changelog": "^6.0.2",
@@ -56,10 +56,8 @@
     "css-loader": "^6.7.3",
     "prettier": "^3.0.3",
     "prettier-plugin-svelte": "^3.0.3",
-    "sass-loader": "^12.6.0",
     "semantic-release": "^19.0.5",
     "style-loader": "^3.3.2",
-    "svelte-loader": "^3.1.7",
     "svelte-preprocess": "^4.10.7"
   }
 }
