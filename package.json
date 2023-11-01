@@ -31,7 +31,6 @@
   "homepage": "https://github.com/silinternational/ui-components#readme",
   "peerDependencies": {
     "material-components-web": "^14.0.0",
-    "sass": "1.55.x",
     "svelte": "^3.x"
   },
   "dependencies": {
