@@ -36,10 +36,9 @@ function setValues(max, step) {
 </script>
 
 <style>
-  .d-none {
+.d-none {
   display: none;
 }
-
 </style>
 
 <Meta title="Atoms/MoneyInput" component={MoneyInput} />
@@ -85,4 +84,3 @@ function setValues(max, step) {
 <Story name="Test step" args={{ ...args, label: '' }} />
 
 <Story name="Name" args={copyAndModifyArgs(args, { name: 'money' })} />
-

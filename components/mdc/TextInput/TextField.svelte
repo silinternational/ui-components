@@ -5,15 +5,25 @@ import { MDCTextField } from '@material/textfield'
 import { generateRandomID } from '../../../random'
 import { afterUpdate, onMount } from 'svelte'
 
+/**@type {string} The label for the text input field. */
 export let label = ''
+/** @type {string} The value of the text input field. */
 export let value = ''
+/** @type {string} The placeholder for the text input field. */
 export let placeholder = ''
+/** @type {number} The maximum number of characters allowed in the text input field. */
 export let maxlength = undefined
+/** @type {boolean} If true, the text input field will be focused on mount. */
 export let autofocus = false
+/** @type {boolean} If true, the text input field will be disabled. */
 export let disabled = false
+/** @type {boolean} If true, the text input field will be required. */
 export let required = false
+/** @type {string} The icon to display in the text input field. */
 export let icon = ''
+/** @type {string} The description to display below the text input field. */
 export let description = ''
+/** @type {string} The name of the text input field. */
 export let name = ''
 
 const labelID = generateRandomID('text-label-')
@@ -104,19 +114,24 @@ const focus = (node) => autofocus && node.focus()
   </span>
 </label>
 <div class="mdc-text-field-helper-line" style="width: {width};">
-  <div class="mdc-text-field-helper-text" class:opacity1={required} id="{labelID}-helper-id" aria-hidden="true">
-    {#if required && !value}
-      <span class="required" class:error={hasFocused}>*Required</span>
+  <div
+    class="mdc-text-field-helper-text
+    mdc-text-field-helper-text--{error ? 'validation-msg' : 'persistent'}"
+    id="{labelID}-helper-id"
+    aria-hidden="true"
+  >
+    {#if !error && description}
+      {description}
+    {:else if required && !value}
+      ✴Required
     {:else if hasExceededMaxLength}
-      <span class="error">Maximum {maxlength} characters</span>
+      Maximum {maxlength} characters
     {/if}
   </div>
+
   {#if showCounter}
     <div class="mdc-text-field-character-counter" class:error>
       {value.length} / {maxlength}
     </div>
   {/if}
 </div>
-{#if description}
-  <span class="d-block mdc-theme--neutral">{description}</span>
-{/if}

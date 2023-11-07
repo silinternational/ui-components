@@ -5,6 +5,8 @@
   "singleQuote": true,
   "useTabs": false,
 
+  "plugins": ["prettier-plugin-svelte"],
+
   "svelteSortOrder": "options-scripts-styles-markup",
   "svelteAllowShorthand": true,
   "svelteIndentScriptAndStyle": false

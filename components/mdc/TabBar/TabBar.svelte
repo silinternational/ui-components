@@ -3,6 +3,7 @@
 import { MDCTabBar } from '@material/tab-bar'
 import { onMount } from 'svelte'
 
+/** @type {number} The current active tab index. */
 export let tab = 0
 
 let element = {}

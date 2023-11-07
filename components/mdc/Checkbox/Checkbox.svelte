@@ -7,9 +7,13 @@ import { createEventDispatcher, onMount } from 'svelte'
 
 const dispatch = createEventDispatcher()
 
+/** @type {string} the label text*/
 export let label = ''
+/** @type {boolean} if the checkbox is checked or not */
 export let checked = false
+/** @type {boolean} if the checkbox is disabled or not */
 export let disabled = false
+/** @type {boolean} if the label should be uppercase or not */
 export let uppercase = false
 export let inputID = generateRandomID('checkbox-')
 

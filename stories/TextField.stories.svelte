@@ -8,6 +8,16 @@ const args = {
   'on:keypress': (event) => (lastKey = event.key),
   'on:keyup': (event) => console.log('TextField keyup', event),
   class: '', //will only work with global class
+  label: '',
+  value: '',
+  placeholder: '',
+  maxlength: 0,
+  autofocus: false,
+  disabled: false,
+  required: false,
+  icon: '',
+  description: '',
+  name: '',
 }
 
 let lastKey = ''

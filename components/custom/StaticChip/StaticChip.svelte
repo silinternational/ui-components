@@ -1,4 +1,5 @@
 <script>
+/** @type {string} the background color of the chip */
 export let bgColor = '#e5e5e5'
 </script>
 

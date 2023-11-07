@@ -4,7 +4,9 @@ import Indicator from './Indicator.svelte'
 import { MDCTab } from '@material/tab'
 import { onMount } from 'svelte'
 
+/** @type {boolean} Whether the tab is currently active or not. */
 export let active = false
+/** @type {string} The label to be displayed on the tab. */
 export let label
 
 let element = {}

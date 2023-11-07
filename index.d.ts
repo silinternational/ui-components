@@ -85,6 +85,7 @@ declare module '@silintl/ui-components' {
           numeric?: boolean
           colspan?: number
           class?: string
+          lowContrast?: boolean
         }
         export class Item extends SvelteComponentTyped<ItemProps> {}
       }
@@ -127,6 +128,7 @@ declare module '@silintl/ui-components' {
     interface SimpleProps {
       open?: boolean
       title?: string
+      items?: { id: string; name: string }[]
       class?: string
     }
     export class Simple extends SvelteComponentTyped<SimpleProps> {}
@@ -289,6 +291,7 @@ declare module '@silintl/ui-components' {
     label?: string
     value?: string
     name?: string
+    icon?: string
     placeholder?: string
     maxlength?: number
     autofocus?: boolean

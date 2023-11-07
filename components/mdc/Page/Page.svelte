@@ -3,10 +3,15 @@
 import Progress from '../Progress'
 import appBarTitle from '../TopAppBar/title'
 
+/** @type {boolean} show progress indicator */
 export let loading = false
+/** @type {string} page title */
 export let title = ''
+/** @type {string} 'default' which applies "flex column align-items-center", any other value will use the grid layout */
 export let layout = 'default'
+/** @type {boolean} center page content, only applicable if using default layout */
 export let center = false // center page content, only applicable if using default layout
+/** @type {boolean} disable progress indicator */
 export let noProgress = false
 let cell12 = 'mdc-layout-grid__cell mdc-layout-grid__cell--span-12'
 

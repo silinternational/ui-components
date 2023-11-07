@@ -1,4 +1,5 @@
 <script>
+/** @type {string} The id of the element that describes the tooltip. */
 export let ariaDescribedBy
 </script>
 

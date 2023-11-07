@@ -3,12 +3,19 @@
 import { MDCRipple } from '@material/ripple'
 import { onMount } from 'svelte'
 
+/** @type {boolean} if the button is disabled or not */
 export let disabled = false
+/** @type {boolean} if the button used outlined styling or not */
 export let outlined = false
+/** @type {boolean} if the button uses raised styling or not */
 export let raised = false
+/** @type {string} the prepend icon */
 export let prependIcon = undefined
+/** @type {string} the append icon */
 export let appendIcon = undefined
+/** @type {string} the URL of the button. If used the element will be an anchor. */
 export let url = undefined
+/** @type {string} the `target` attribute of the anchor element if `url` is used */
 export let target = ''
 
 let element = {}

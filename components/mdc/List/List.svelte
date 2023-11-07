@@ -3,7 +3,9 @@
 import { MDCList } from '@material/list'
 import { onMount } from 'svelte'
 
+/** @type {boolean} if the list is two line or not */
 export let twoLine = false
+/** @type {boolean} if the list is avatar or not */
 export let avatar = false
 
 let element = {}

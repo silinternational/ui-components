@@ -2,15 +2,10 @@
 <script>
 import { MDCDataTable } from '@material/data-table'
 import { createEventDispatcher, onMount } from 'svelte'
-/**
- * @prop {string}
- * @description used for aria-label
- */
+
+/** @type {string} used for aria-label */
 export let label = ''
-/**
- * @prop {number}
- * @description used to register new Datatable Checkboxes when value changes
- */
+/** @type {number} used to register new Datatable Checkboxes when value changes */
 export let numberOfCheckboxes = 0
 
 const dispatch = createEventDispatcher()

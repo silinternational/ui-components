@@ -4,17 +4,11 @@ import { generateRandomID } from '../../../random'
 import { MDCSwitch } from '@material/switch'
 import { createEventDispatcher, onMount } from 'svelte'
 
-/**
- * displayed right of the switch
- */
+/** @type {string} The label to be displayed right of the switch */
 export let label = 'off/on'
-/**
- * disables the switch
- */
+/** @type {boolean} disables the switch */
 export let disabled = false
-/**
- * used to set the switch initial state
- */
+/** @type {boolean} used to set the switch initial state */
 export let selected = false
 
 let element = {}
@@ -35,8 +29,7 @@ function onClick() {
 </script>
 
 <!--
-  @component
-  Used to toggle an item on tablet and mobile devices or immediately activate/deactive something
+  Used to toggle an item on tablet and mobile devices or immediately activate/deactivate something
   see https://silinternational.github.io/ui-components/?path=/docs/atoms-switch--primary for usage
 -->
 

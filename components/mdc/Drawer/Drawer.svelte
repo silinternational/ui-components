@@ -9,17 +9,29 @@ import Tooltip from '../Tooltip/Tooltip.svelte'
 import { onMount } from 'svelte'
 import TopAppBar from '../TopAppBar'
 
+/** @type {string} The title to be displayed in the drawer. */
 export let title = ''
+/** @type {string} The subtitle to be displayed in the drawer. */
 export let subtitle = ''
+/** @type {array} The menu items to be displayed in the drawer. */
 export let menuItems = []
+/** @type {boolean} Whether the drawer is dismissible or not. */
 export let dismissible = false
+/** @type {boolean} Whether the drawer has a top app bar or not. */
 export let hasTopAppBar = false
+/** @type {boolean} Whether the drawer should be hidden for tablet and above. */
 export let hideForTablet = false
+/** @type {boolean} Whether the drawer should be hidden for phones only. */
 export let hideForPhonesOnly = false
+/** @type {boolean} Whether the drawer menu should be full height or not. */
 export let isFullHeightMenu = false
+/** @type {boolean} Whether the drawer menu should be mini or not. */
 export let miniMenu = false
+/** @type {boolean} Whether the drawer should be modal or not. */
 export let modal = false
+/** @type {boolean} Whether the drawer should be open or not. */
 export let toggle = false
+/** @type {string} The current url of the page. */
 export let currentUrl = ''
 
 let mdcDrawer = {}

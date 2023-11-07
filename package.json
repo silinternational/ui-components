@@ -1,6 +1,6 @@
 {
   "name": "@silintl/ui-components",
-  "version": "10.1.1",
+  "version": "10.4.0",
   "description": "Reusable Svelte components for some internal applications",
   "main": "index.mjs",
   "module": "index.mjs",
@@ -31,33 +31,32 @@
   "homepage": "https://github.com/silinternational/ui-components#readme",
   "peerDependencies": {
     "material-components-web": "^14.0.0",
-    "sass": "1.55.x",
     "svelte": "^3.x"
   },
+  "dependencies": {
+    "svelte": "^3.x",
+    "material-components-web": "^14.0.0"
+  },
   "devDependencies": {
-    "@semantic-release/changelog": "^6.0.2",
-    "@semantic-release/git": "^10.0.1",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-docs": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-links": "^6.5.16",
-    "@storybook/addon-postcss": "^2.0.0",
     "@storybook/addon-svelte-csf": "^2.0.11",
     "@storybook/builder-webpack5": "^6.5.16",
     "@storybook/manager-webpack5": "^6.5.16",
+    "@storybook/addon-postcss": "^2.0.0",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/svelte": "^6.5.16",
+    "@semantic-release/changelog": "^6.0.2",
+    "@semantic-release/git": "^10.0.1",
     "conventional-changelog": "^3.1.25",
     "css-loader": "^6.7.3",
-    "material-components-web": "^14.0.0",
-    "prettier": "^2.8.5",
-    "prettier-plugin-svelte": "^2.9.0",
+    "prettier": "^3.0.3",
+    "prettier-plugin-svelte": "^3.0.3",
     "sass": "1.55.x",
-    "sass-loader": "^12.6.0",
     "semantic-release": "^19.0.5",
     "style-loader": "^3.3.2",
-    "svelte": "^3.x",
-    "svelte-loader": "^3.1.7",
     "svelte-preprocess": "^4.10.7"
   }
 }

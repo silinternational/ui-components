@@ -1,8 +1,11 @@
 <script>
-import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-import { SearchableSelect } from '../components/custom'
-import { Button } from '../components/mdc'
+import { SearchableSelect, Form } from '../components/custom'
+import { Button, Progress, Snackbar, setNotice } from '../components/mdc'
 import { copyAndModifyArgs } from './helpers.js'
+import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
+
+let choice
+let loading = true
 
 const args = {
   options: {
@@ -14,24 +17,34 @@ const args = {
   placeholder: 'choice 1',
   padding: '12px',
   required: false,
-  choice: 'choice 1',
   width: '232px',
   maxlength: 255,
-  'on:chosen': (e) => alert(e.detail + ' chosen (accessed by event.detail)'),
+  'on:chosen': (e) => setNotice(e.detail + ' chosen (accessed by event.detail)'),
   'on:check': (e) => {
-    !args.options[e.detail] && alert(e.detail + ' not available')
+    !args.options[e.detail] && setNotice(e.detail + ' not available')
   },
   class: '', //only works for global classes
 }
+
+setTimeout(() => {
+  choice = 'choice 2'
+  loading = false
+}, 1500)
 </script>
 
 <Meta title="Atoms/SearchableSelect" component={SearchableSelect} />
 
 <Template let:args>
-  <form on:submit={() => console.log('submitted')}>
-    <SearchableSelect {...args} on:chosen={args['on:chosen']} on:check={args['on:check']} />
+  <Form on:submit={() => setNotice('submitted')}>
+    <SearchableSelect {choice} {...args} on:chosen={args['on:chosen']} on:check={args['on:check']} />
     <Button>Submit</Button>
-  </form>
+  </Form>
+
+  {#if loading}
+    <Progress.Circular />
+  {/if}
+
+  <Snackbar />
 </Template>
 
 <Story name="Default" {args} />

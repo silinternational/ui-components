@@ -3,9 +3,13 @@
 import { MDCDialog } from '@material/dialog'
 import { createEventDispatcher, onMount } from 'svelte'
 
+/** @type {boolean} controls if the dialog is open*/
 export let open = false
+/** @type {string} the title of the dialog */
 export let title = ''
+/** @type {string} the title icon */
 export let titleIcon = ''
+/** @type {string} the default action name */
 export let defaultAction = 'discard'
 
 /** @type {{label, action}[]} */

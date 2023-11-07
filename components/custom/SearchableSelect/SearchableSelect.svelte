@@ -2,24 +2,30 @@
 import { generateRandomID } from '../../../random'
 import { createEventDispatcher } from 'svelte'
 
+/** @type {object} the options to choose from. The keys are displayed in the dropdown and the value is dispatched with the change event */
 export let options = {}
+/** @type {string} the currently selected option value */
 export let choice = ''
+/** @type {string} the placeholder text which is also used as a floating label */
 export let placeholder = ''
+/** @type {string} the padding around the input label */
 export let padding = '12px'
+/** @type {string} the width of the input */
 export let width = '232px'
+/** @type {number} the maximum length of the input */
 export let maxlength = 255
+/** @type {boolean} if the input is disabled or not */
 export let disabled = false
+/** @type {boolean} if the input is required or not */
 export let required = false
 
 let element = {}
-
 let randomId = generateRandomID('dataList-')
-
-$: internalChoice = choice
 
 const dispatch = createEventDispatcher()
 
-const onChange = () => {
+const onChange = (e) => {
+  const internalChoice = e.target.value
   options[internalChoice] && dispatch('chosen', options[internalChoice])
   choice = internalChoice
   element.blur()
@@ -56,7 +62,10 @@ const onChange = () => {
   text-overflow: ellipsis;
   left: var(--field-padding);
   width: calc(100% - (var(--field-padding) * 2));
-  transition: top 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+  transition:
+    top 0.3s ease,
+    color 0.3s ease,
+    font-size 0.3s ease;
 }
 
 .custom-field input:not(:placeholder-shown) + .placeholder,
@@ -78,10 +87,10 @@ const onChange = () => {
     list={randomId}
     placeholder="&nbsp;"
     bind:this={element}
-    bind:value={internalChoice}
+    value={choice}
     on:change={onChange}
-    on:blur={() => dispatch('check', internalChoice)}
-    on:focus={() => (internalChoice = '')}
+    on:blur={(e) => dispatch('check', e.target.value)}
+    on:focus
   />
   <span class="placeholder">{placeholder}</span>
 </label>
