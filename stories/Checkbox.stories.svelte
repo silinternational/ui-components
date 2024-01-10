@@ -8,19 +8,13 @@ const args = {
   class: '', //only works for global classes
   'on:checked': () => setNotice('checked'),
   'on:unchecked': () => setNotice('unchecked'),
-  'on:change': () => setNotice('change'),
 }
 </script>
 
 <Meta title="Atoms/Checkbox" component={Checkbox} />
 
 <Template let:args>
-  <Checkbox
-    {...args}
-    on:unchecked={args['on:unchecked']}
-    on:checked={args['on:checked']}
-    on:change={args['on:change']}
-  />
+  <Checkbox {...args} on:unchecked={args['on:unchecked']} on:checked={args['on:checked']} />
 </Template>
 
 <Story name="Default" {args} />
@@ -31,4 +25,4 @@ const args = {
 
 <Story name="Disabled" args={copyAndModifyArgs(args, { disabled: true })} />
 
-<Snackbar/>
+<Snackbar />
