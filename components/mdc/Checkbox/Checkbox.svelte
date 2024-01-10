@@ -15,12 +15,12 @@ export let checked = false
 export let disabled = false
 /** @type {boolean} if the label should be uppercase or not */
 export let uppercase = false
+/** @type {string} random id prefixed with checkbox- for the input id*/
+export let inputID = generateRandomID('checkbox-')
 
 let checkboxElement = {}
 let formFieldElement = {}
 let checkbox
-
-const inputID = generateRandomID('checkbox-')
 
 $: if (checkbox) checkbox.checked = checked
 
