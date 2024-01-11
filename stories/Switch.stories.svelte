@@ -1,11 +1,11 @@
 <script>
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-import { Switch } from '../components/mdc'
+import { Switch, setNotice, Snackbar } from '../'
 
 const args = {
   class: '',
-  'on:selected': () => alert('switch is on'),
-  'on:deselected': () => alert('switch is off'),
+  'on:selected': () => setNotice('switch is on'),
+  'on:deselected': () => setNotice('switch is off'),
 }
 </script>
 
@@ -22,3 +22,5 @@ const args = {
 <Story name="Disabled" args={{ ...args, disabled: true }} />
 
 <Story name="Initially Selected" args={{ ...args, selected: true }} />
+
+<Snackbar />
