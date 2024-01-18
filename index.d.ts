@@ -376,6 +376,7 @@ declare module '@silintl/ui-components' {
 
   interface StaticChipProps {
     bgColor?: string
+    height?: string
     class?: string
   }
   export class StaticChip extends SvelteComponentTyped<StaticChipProps> {}
