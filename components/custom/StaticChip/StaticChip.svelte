@@ -10,6 +10,8 @@ export let height = '36px'
   background-color: var(--theme-color);
   height: var(--theme-height);
   display: inline-flex;
+  margin: 0 2rem 1rem 0;
+  border-radius: 16px;
 }
 
 .chip-content {
@@ -22,10 +24,7 @@ export let height = '36px'
 }
 </style>
 
-<div
-  class="mdc-typography chip br-16px {$$props.class || ''}"
-  style="--theme-color: {bgColor}; --theme-height: {height}"
->
+<div class="mdc-typography chip {$$props.class || ''}" style="--theme-color: {bgColor}; --theme-height: {height}">
   <div class="chip-content">
     <slot />
   </div>
