@@ -2,6 +2,24 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
 
+## [10.7.0](https://github.com/silinternational/ui-components/compare/v10.6.0...v10.7.0) (2024-01-23)
+
+
+### Security
+
+* **dependencies:** add deepfactor and move svelte, sass and material to dependencies ([8ac3b5a](https://github.com/silinternational/ui-components/commit/8ac3b5a0019806b261fbeeb00809cb835c166e50))
+
+
+### Fixed
+
+* **dependencies:** remove sass from peerDependencies ([c973f25](https://github.com/silinternational/ui-components/commit/c973f2549a10cde99b95f37c3f997dc3ed6552a7))
+
+
+### Added
+
+* **Checkbox:** add inputID as prop to Checkbox ([4f9e0ea](https://github.com/silinternational/ui-components/commit/4f9e0ea60cad064277521fa49bbaae38c1f10eee))
+* **StaticChip:** add height prop, improve defaults styles, width expands with content. styles overridable ([1cbdaba](https://github.com/silinternational/ui-components/commit/1cbdaba84b86dae4667196b8caa6080c6a9e43b4))
+
 ## [10.6.0](https://github.com/silinternational/ui-components/compare/v10.5.0...v10.6.0) (2023-10-25)
 
 
