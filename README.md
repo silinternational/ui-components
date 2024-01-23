@@ -4,7 +4,7 @@ Reusable Svelte components for some internal applications
 
 ## installation
 
-To install to your Svelte project, open your project's root directory in a terminal. Type or paste `npm i -D @silintl/ui-components` and press enter. Sass and-material-components web are required to develop additional material web components in your app, but it may depend on your version of npm if they are necessary even if you don't (I haven't figured out which versions require them). Paste in `npm i -D sass@1.55.x material-components-web@14.0.0` and hit enter (versions will vary if you use an older release of this repo). You should already have svelte@3 installed if you are using this library.
+To install to your Svelte project, open your project's root directory in a terminal. Type or paste `npm i -D @silintl/ui-components` and press enter. Sass (depending on your bundler and plugins) and material-components-web are required to develop additional material web components in your app, but it may depend on your version of npm if they are necessary even if you don't (I haven't figured out which versions require them). Enter the commands `npm i -D material-components-web@14` and `npm i -D sass@1` (versions will vary if you use an older release of this library). You should already have svelte@3 installed if you are using this library.
 
 If you are using typescript you will need to run `npm i -D tslib` to avoid a material-components-web type error. This will already be installed if you have set up SvelteKit with typescript using `npm create svelte@latest app-name`.
 

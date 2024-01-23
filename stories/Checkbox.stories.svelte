@@ -1,13 +1,13 @@
 <script>
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-import { Checkbox } from '../components/mdc'
+import { Checkbox, setNotice, Snackbar } from '../'
 import { copyAndModifyArgs } from './helpers.js'
 
 const args = {
   label: 'Checkbox',
   class: '', //only works for global classes
-  'on:checked': () => alert('checked'),
-  'on:unchecked': () => alert('unchecked'),
+  'on:checked': () => setNotice('checked'),
+  'on:unchecked': () => setNotice('unchecked'),
 }
 </script>
 
@@ -24,3 +24,5 @@ const args = {
 <Story name="Uppercase" args={copyAndModifyArgs(args, { uppercase: true })} />
 
 <Story name="Disabled" args={copyAndModifyArgs(args, { disabled: true })} />
+
+<Snackbar />
