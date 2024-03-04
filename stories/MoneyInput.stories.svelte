@@ -21,7 +21,7 @@ const args = {
 $: arrayOfValues.forEach((v) =>
   setTimeout(() => {
     dynamicValue = v
-  }, 100)
+  }, 100),
 )
 
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from#sequence_generator_range
@@ -41,7 +41,7 @@ function setValues(max, step) {
 }
 </style>
 
-<Meta title="Atoms/MoneyInput" component={MoneyInput} />
+<Meta tags={['autodocs']} title="Atoms/MoneyInput" component={MoneyInput} />
 
 <Template let:args>
   {#if !args.label}

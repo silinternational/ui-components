@@ -15,7 +15,7 @@ const args = {
 }
 </script>
 
-<Meta title="Atoms/DateInput" component={DateInput} />
+<Meta tags={['autodocs']} title="Atoms/DateInput" component={DateInput} />
 
 <Template let:args>
   <Form class="flex column" on:submit={() => setNotice(value || 'No date selected')}>

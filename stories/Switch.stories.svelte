@@ -9,7 +9,7 @@ const args = {
 }
 </script>
 
-<Meta title="Atoms/Switch" component={Switch} />
+<Meta tags={['autodocs']} title="Atoms/Switch" component={Switch} />
 
 <Template let:args>
   <Switch {...args} on:selected={args['on:selected']} on:deselected={args['on:deselected']} />

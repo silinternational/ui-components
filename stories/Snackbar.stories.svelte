@@ -12,7 +12,7 @@ onMount(() => {
 })
 </script>
 
-<Meta title="Atoms/Snackbar" component={Snackbar} />
+<Meta tags={['autodocs']} title="Atoms/Snackbar" component={Snackbar} />
 
 <Template let:args>
   <Snackbar {...args} />

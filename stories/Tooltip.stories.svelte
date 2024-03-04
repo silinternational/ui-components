@@ -9,7 +9,7 @@ const args = {
 }
 </script>
 
-<Meta title="Atoms/Tooltip" component={Tooltip} />
+<Meta tags={['autodocs']} title="Atoms/Tooltip" component={Tooltip} />
 
 <Template let:args>
   <div class="flex justify-center my-4">
