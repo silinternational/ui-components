@@ -59,7 +59,7 @@
     "prettier-plugin-svelte": "^3.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sass": "1.55.x",
+    "sass": "1.71.x",
     "semantic-release": "^19.0.5",
     "storybook": "^7.6.17"
   }
