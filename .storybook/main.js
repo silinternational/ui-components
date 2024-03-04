@@ -5,23 +5,22 @@ module.exports = {
     "../**/*.stories.mdx",
     "../**/*.stories.@(js|jsx|ts|tsx|svelte)"
   ],
+
   "addons": [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-svelte-csf",
     "@storybook/preset-scss",
+    "@storybook/addon-mdx-gfm",
     "@storybook/addon-postcss"
   ],
-  "svelteOptions": {
-    "emitCss": true,
-    "preprocess": require("svelte-preprocess")()
-  },
-  "core": {
-    "builder": "webpack5"
-  },
-  babel: async (options) => {
-    options.presets[0][1].loose = true
-    return options
+
+  "framework": {
+    "name": "@storybook/svelte-webpack5",
+    "svelteOptions": {
+      "emitCss": true,
+      "preprocess": require("svelte-preprocess")()
+    },
   },
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
@@ -41,4 +40,8 @@ module.exports = {
 
     return config;
   },
+
+  docs: {
+    autodocs: true
+  }
 }
