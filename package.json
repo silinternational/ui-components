@@ -40,8 +40,6 @@
     "svelte": "^4.0.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.24.0",
-    "@babel/preset-typescript": "^7.23.3",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@storybook/addon-actions": "^7.6.17",
