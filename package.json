@@ -10,7 +10,9 @@
     "format-all": "npx prettier --write .",
     "dev": "sass components/global.scss components/global.css; storybook dev -p 6007",
     "build": "sass components/global.scss components/global.css; storybook build",
-    "dry": "npx semantic-release --dry-run"
+    "dry": "npx semantic-release --dry-run",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "repository": {
     "type": "git",
@@ -45,13 +47,16 @@
     "@storybook/addon-actions": "^7.6.17",
     "@storybook/addon-docs": "^7.6.17",
     "@storybook/addon-essentials": "^7.6.17",
+    "@storybook/addon-interactions": "^7.6.17",
     "@storybook/addon-links": "^7.6.17",
     "@storybook/addon-mdx-gfm": "^7.6.17",
     "@storybook/addon-postcss": "^2.0.0",
     "@storybook/addon-svelte-csf": "^4.1.1",
+    "@storybook/blocks": "^7.6.17",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/svelte": "^7.6.17",
     "@storybook/svelte-webpack5": "^7.6.17",
+    "@storybook/test": "^7.6.17",
     "conventional-changelog": "^3.1.25",
     "css-loader": "^6.7.3",
     "prettier": "^3.0.3",
