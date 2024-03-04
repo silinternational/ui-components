@@ -10,7 +10,7 @@ const args = {
 }
 </script>
 
-<MetaStory title="Atoms/List.Item" component={List.Item} />
+<Meta tags={['autodocs']} title="Atoms/List.Item" component={List.Item} />
 
 <Template let:args>
   <List.Item {...args} on:click={args['on:click']} />

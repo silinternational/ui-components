@@ -7,7 +7,7 @@ const args = {
 }
 </script>
 
-<Meta title="Atoms/Progress.Circular" component={Progress.Circular} />
+<Meta tags={['autodocs']} title="Atoms/Progress.Circular" component={Progress.Circular} />
 
 <Template let:args>
   <Progress.Circular {...args} />

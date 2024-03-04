@@ -36,7 +36,7 @@ const args = {
 }
 </script>
 
-<Meta title="Atoms/Menu" component={Menu} {args} />
+<Meta tags={['autodocs']} title="Atoms/Menu" component={Menu} {args} />
 
 <Template let:args>
   <Button class="mdc-menu-surface--anchor" on:click={args.toggleMenu}>{content}</Button>

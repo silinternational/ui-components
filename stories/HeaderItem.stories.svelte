@@ -8,7 +8,7 @@ const args = {
 }
 </script>
 
-<Meta title="Atoms/Datatable.Header.Item" component={Datatable.Header.Item} />
+<Meta tags={['autodocs']} title="Atoms/Datatable.Header.Item" component={Datatable.Header.Item} />
 
 <Template let:args>
   <Datatable.Header.Item {...args}>42</Datatable.Header.Item>
