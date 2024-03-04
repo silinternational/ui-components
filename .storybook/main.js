@@ -13,7 +13,6 @@ const config = {
     "@storybook/addon-svelte-csf",
     "@storybook/preset-scss",
     "@storybook/addon-mdx-gfm",
-    // "@storybook/addon-postcss"
   ],
 
   framework: {
