@@ -54,7 +54,7 @@
     "@storybook/blocks": "^7.6.17",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/svelte": "^7.6.17",
-    "@storybook/svelte-webpack5": "^7.6.17",
+    "@storybook/svelte-vite": "^7.6.17",
     "@storybook/test": "^7.6.17",
     "conventional-changelog": "^3.1.25",
     "css-loader": "^6.7.3",
@@ -64,8 +64,6 @@
     "react-dom": "^18.2.0",
     "sass": "1.55.x",
     "semantic-release": "^19.0.5",
-    "storybook": "^7.6.17",
-    "style-loader": "^3.3.2",
-    "svelte-preprocess": "^5.1.3"
+    "storybook": "^7.6.17"
   }
 }

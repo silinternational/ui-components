@@ -1,6 +1,4 @@
-import preprocess from 'svelte-preprocess'
-/** @type { import('@storybook/svelte-webpack5').StorybookConfig } */
-
+/** @type { import('@storybook/svelte-vite').StorybookConfig } */
 const config = {
   "stories": [
     "../**/*.stories.mdx",
@@ -16,11 +14,10 @@ const config = {
   ],
 
   framework: {
-    name: '@storybook/svelte-webpack5',
+    name: '@storybook/svelte-vite',
     options: {
-      "emitCss": true,
-      "preprocess": preprocess()
-  },
+      emitCss: true,
+    },
 },
   docs: {
     autodocs: 'tag',
