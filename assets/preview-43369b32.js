@@ -1,0 +1,1 @@
+const t={actions:{argTypesRegex:"^on[A-Z].*"},controls:{matchers:{color:/(background|color)$/i,date:/Date$/}}};e();function e(){const o=document.createElement("link");o.href="https://fonts.googleapis.com/css?family=Material+Icons&display=block",o.rel="stylesheet",document.head.appendChild(o)}export{t as parameters};
