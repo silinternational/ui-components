@@ -35,7 +35,7 @@ const args = {
 }
 </script>
 
-<Meta title="Molecule/Tour" component={Tour} />
+<Meta tags={['autodocs']} title="Molecule/Tour" component={Tour} />
 
 <Template let:args>
   <Tour on:AlertChosen={args.onAlertChosen} {...args} />

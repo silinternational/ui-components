@@ -18,7 +18,7 @@ const args = {
 }
 </script>
 
-<Meta title="Atoms/Select" component={Select} />
+<Meta tags={['autodocs']} title="Atoms/Select" component={Select} />
 
 <Template let:args>
   <Select {...args} on:change={args['on:change']} on:populated={args['on:populated']} />

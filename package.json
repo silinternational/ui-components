@@ -8,9 +8,11 @@
   "scripts": {
     "test": "echo test",
     "format-all": "npx prettier --write .",
-    "dev": "sass components/global.scss components/global.css; start-storybook -p 6007",
-    "build": "sass components/global.scss components/global.css; build-storybook",
-    "dry": "npx semantic-release --dry-run"
+    "dev": "sass components/global.scss components/global.css; storybook dev -p 6007",
+    "build": "sass components/global.scss components/global.css; storybook build",
+    "dry": "npx semantic-release --dry-run",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "repository": {
     "type": "git",
@@ -31,32 +33,34 @@
   "homepage": "https://github.com/silinternational/ui-components#readme",
   "peerDependencies": {
     "material-components-web": "^14.0.0",
-    "svelte": "^3.x"
+    "svelte": "^4.0.0"
   },
   "dependencies": {
-    "svelte": "^3.x",
-    "material-components-web": "^14.0.0"
+    "material-components-web": "^14.0.0",
+    "svelte": "^4.0.0"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^6.0.2",
+    "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@storybook/addon-actions": "^6.5.16",
-    "@storybook/addon-docs": "^6.5.16",
-    "@storybook/addon-essentials": "^6.5.16",
-    "@storybook/addon-links": "^6.5.16",
-    "@storybook/addon-postcss": "^2.0.0",
-    "@storybook/addon-svelte-csf": "^2.0.11",
-    "@storybook/builder-webpack5": "^6.5.16",
-    "@storybook/manager-webpack5": "^6.5.16",
+    "@storybook/addon-actions": "^7.6.17",
+    "@storybook/addon-docs": "^7.6.17",
+    "@storybook/addon-essentials": "^7.6.17",
+    "@storybook/addon-interactions": "^7.6.17",
+    "@storybook/addon-links": "^7.6.17",
+    "@storybook/addon-mdx-gfm": "^7.6.17",
+    "@storybook/addon-svelte-csf": "^4.1.1",
+    "@storybook/blocks": "^7.6.17",
     "@storybook/preset-scss": "^1.0.3",
-    "@storybook/svelte": "^6.5.16",
+    "@storybook/svelte": "^7.6.17",
+    "@storybook/svelte-vite": "^7.6.17",
+    "@storybook/test": "^7.6.17",
     "conventional-changelog": "^3.1.25",
-    "css-loader": "^6.7.3",
     "prettier": "^3.0.3",
-    "prettier-plugin-svelte": "^3.0.3",
-    "sass": "1.55.x",
+    "prettier-plugin-svelte": "^3.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "1.71.x",
     "semantic-release": "^19.0.5",
-    "style-loader": "^3.3.2",
-    "svelte-preprocess": "^4.10.7"
+    "storybook": "^7.6.17"
   }
 }

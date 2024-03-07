@@ -10,7 +10,7 @@ const args = {
 }
 </script>
 
-<Meta title="Atoms/TopAppBar" component={TopAppBar} />
+<Meta tags={['autodocs']} title="Atoms/TopAppBar" component={TopAppBar} />
 
 <Template let:args>
   <TopAppBar {...args} on:nav={args.onNav} />

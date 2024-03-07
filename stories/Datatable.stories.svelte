@@ -18,11 +18,12 @@ let numberOfCheckboxes = 0
 onMount(() =>
   setTimeout(() => {
     loaded = true
-  }, 5000)
+  }, 5000),
 )
 </script>
 
 <Meta
+  tags={['autodocs']}
   title="Molecule/Datatable"
   component={Datatable}
   argTypes={{

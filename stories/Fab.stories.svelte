@@ -11,7 +11,7 @@ const args = {
 }
 </script>
 
-<Meta title="Atoms/Fab" component={Fab} />
+<Meta tags={['autodocs']} title="Atoms/Fab" component={Fab} />
 
 <Template let:args>
   <Fab {...args} />
