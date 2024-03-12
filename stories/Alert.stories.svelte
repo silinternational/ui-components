@@ -11,7 +11,7 @@ const args = {
 }
 </script>
 
-<Meta title="Atoms/Dialog.Alert" tags={['autodocs']} component={Dialog.Alert} />
+<Meta title="Atoms/Dialog.Alert" component={Dialog.Alert} />
 
 <Template let:args>
   <Dialog.Alert {...args} on:chosen={args['on:chosen']} on:closed={args['on:closed']}>Main slot here</Dialog.Alert>

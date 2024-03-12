@@ -12,7 +12,7 @@ const args = {
 }
 </script>
 
-<Meta title="Atoms/Badge" tags={['autodocs']} component={Badge} />
+<Meta title="Atoms/Badge" component={Badge} />
 
 <Template let:args>
   <Badge {...args}>S</Badge>

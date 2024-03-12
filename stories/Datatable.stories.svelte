@@ -23,7 +23,6 @@ onMount(() =>
 </script>
 
 <Meta
-  tags={['autodocs']}
   title="Molecule/Datatable"
   component={Datatable}
   argTypes={{

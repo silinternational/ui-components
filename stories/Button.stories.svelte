@@ -10,7 +10,7 @@ const args = {
 }
 </script>
 
-<Meta title="Atoms/Button" tags={['autodocs']} component={Button} />
+<Meta title="Atoms/Button" component={Button} />
 
 <Template let:args>
   <Button {...args} on:click={args['on:click']}>Button slot</Button>
