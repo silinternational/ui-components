@@ -11,7 +11,7 @@ const args = {
 }
 </script>
 
-<Meta tags={['autodocs']} title="Atoms/Progress.Linear" component={Progress.Linear} />
+<Meta title="Atoms/Progress.Linear" component={Progress.Linear} />
 
 <Template let:args>
   <Progress.Linear {...args} />

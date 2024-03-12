@@ -12,7 +12,7 @@ const args = {
 const chips = ['chip 1', 'CHIP TWO', 'chip three is longer...................']
 </script>
 
-<Meta tags={['autodocs']} title="Atoms/StaticChip" component={StaticChip} />
+<Meta title="Atoms/StaticChip" component={StaticChip} />
 
 <Template let:args>
   <div>

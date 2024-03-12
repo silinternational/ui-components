@@ -11,7 +11,7 @@ const args = {
 }
 </script>
 
-<Meta tags={['autodocs']} title="Atoms/Checkbox" component={Checkbox} />
+<Meta title="Atoms/Checkbox" component={Checkbox} />
 
 <Template let:args>
   <Checkbox {...args} on:unchecked={args['on:unchecked']} on:checked={args['on:checked']} />

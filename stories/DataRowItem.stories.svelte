@@ -11,7 +11,7 @@ const args = {
 }
 </script>
 
-<Meta tags={['autodocs']} title="Atoms/Datatable.Data.Row.Item" component={Datatable.Data.Row.Item} />
+<Meta title="Atoms/Datatable.Data.Row.Item" component={Datatable.Data.Row.Item} />
 
 <Template let:args>
   <Datatable.Data.Row.Item {...args}>42</Datatable.Data.Row.Item>

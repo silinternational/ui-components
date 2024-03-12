@@ -32,7 +32,7 @@ setTimeout(() => {
 }, 1500)
 </script>
 
-<Meta tags={['autodocs']} title="Atoms/SearchableSelect" component={SearchableSelect} />
+<Meta title="Atoms/SearchableSelect" component={SearchableSelect} />
 
 <Template let:args>
   <Form on:submit={() => setNotice('submitted')}>

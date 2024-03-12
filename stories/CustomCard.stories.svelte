@@ -8,7 +8,7 @@ const args = {
 }
 </script>
 
-<Meta tags={['autodocs']} title="Molecule/CustomCard" component={CustomCard} />
+<Meta title="Molecule/CustomCard" component={CustomCard} />
 
 <Template let:args>
   <CustomCard {...args} />

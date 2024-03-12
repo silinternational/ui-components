@@ -9,7 +9,7 @@ const args = {
 }
 </script>
 
-<Meta tags={['autodocs']} title="Molecule/TabBar" component={TabBar} />
+<Meta title="Molecule/TabBar" component={TabBar} />
 
 <Story name="Default" {args}>
   <TabBar tab={args.tab}>

@@ -15,7 +15,7 @@ const args = {
 }
 </script>
 
-<Meta tags={['autodocs']} title="Molecule/Form" component={Form} />
+<Meta title="Molecule/Form" component={Form} />
 
 <Template let:args>
   <Form on:submit={args['on:submit']} {...args}>

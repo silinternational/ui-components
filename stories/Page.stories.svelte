@@ -13,7 +13,7 @@ const args = {
 }
 </script>
 
-<Meta tags={['autodocs']} title="Atoms/Page" component={Page} />
+<Meta title="Atoms/Page" component={Page} />
 
 <Template let:args>
   <Page {...args}>

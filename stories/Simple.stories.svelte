@@ -14,7 +14,7 @@ const args = {
 }
 </script>
 
-<Meta tags={['autodocs']} title="Atoms/Dialog.Simple" component={Dialog.Simple} />
+<Meta title="Atoms/Dialog.Simple" component={Dialog.Simple} />
 
 <Template let:args>
   <Dialog.Simple {...args} on:chosen={args['on:chosen']} />

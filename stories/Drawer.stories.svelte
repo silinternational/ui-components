@@ -55,7 +55,7 @@ a {
 }
 </style>
 
-<Meta tags={['autodocs']} title="Molecule/Drawer" component={Drawer} />
+<Meta title="Molecule/Drawer" component={Drawer} />
 
 <Template let:args>
   <body>

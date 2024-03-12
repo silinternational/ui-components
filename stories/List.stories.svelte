@@ -10,7 +10,7 @@ const args = {
 const onClick = () => alert('you clicked')
 </script>
 
-<Meta tags={['autodocs']} title="Molecule/List" component={List} />
+<Meta title="Molecule/List" component={List} />
 
 <Template let:args>
   <List {...args}>

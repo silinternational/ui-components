@@ -13,7 +13,7 @@ const args = {
 }
 </script>
 
-<Meta tags={['autodocs']} title="Atoms/FileDropArea" component={FileDropArea} />
+<Meta title="Atoms/FileDropArea" component={FileDropArea} />
 
 <Template let:args>
   <FileDropArea {...args} on:upload={args['on:upload']} />

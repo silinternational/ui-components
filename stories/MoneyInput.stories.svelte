@@ -41,7 +41,7 @@ function setValues(max, step) {
 }
 </style>
 
-<Meta tags={['autodocs']} title="Atoms/MoneyInput" component={MoneyInput} />
+<Meta title="Atoms/MoneyInput" component={MoneyInput} />
 
 <Template let:args>
   {#if !args.label}

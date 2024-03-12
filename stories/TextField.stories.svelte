@@ -23,7 +23,7 @@ const args = {
 let lastKey = ''
 </script>
 
-<Meta tags={['autodocs']} title="Atoms/TextField" component={TextField} />
+<Meta title="Atoms/TextField" component={TextField} />
 
 <Template let:args>
   <TextField {...args} on:keydown={args['on:keydown']} on:keypress={args['on:keypress']} on:keyup={args['on:keyup']} />
