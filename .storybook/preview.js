@@ -1,4 +1,4 @@
-import '!style-loader!css-loader!../components/global.css'
+import '../components/global.css'
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -16,8 +16,7 @@ loadIcons()
 function loadIcons() {
   const link = document.createElement('link')
 
-  link.href = 'https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet'
+  link.href = 'https://fonts.googleapis.com/css?family=Material+Icons&display=block'
   link.rel = 'stylesheet'
-
   document.head.appendChild(link)
 }

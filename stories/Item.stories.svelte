@@ -1,5 +1,5 @@
 <script>
-import { Meta as MetaStory, Template, Story } from '@storybook/addon-svelte-csf'
+import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
 import { List } from '../components/mdc'
 import { copyAndModifyArgs } from './helpers.js'
 
@@ -10,7 +10,7 @@ const args = {
 }
 </script>
 
-<MetaStory title="Atoms/List.Item" component={List.Item} />
+<Meta title="Atoms/List.Item" component={List.Item} />
 
 <Template let:args>
   <List.Item {...args} on:click={args['on:click']} />

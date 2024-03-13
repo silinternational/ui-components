@@ -11,6 +11,6 @@ jobs:
         DF_RUN_TOKEN: ${{ secrets.DF_RUN_TOKEN }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     - name: Scan with Deepfactor
       run: dfctl scan -s fs -a ${{ github.event.repository.name }} -c ${{ github.event.repository.name }} -V ${{ github.ref_name }} .

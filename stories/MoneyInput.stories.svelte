@@ -21,7 +21,7 @@ const args = {
 $: arrayOfValues.forEach((v) =>
   setTimeout(() => {
     dynamicValue = v
-  }, 100)
+  }, 100),
 )
 
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from#sequence_generator_range
