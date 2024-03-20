@@ -1,11 +1,9 @@
 on:
   pull_request:
-    types: [closed]
-    branches: [main, develop, feature/split-release]
+    types: [closed, opened]
 
 jobs:
   dry-run:
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
