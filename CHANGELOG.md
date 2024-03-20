@@ -2,6 +2,17 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
 
+## [10.8.0](https://github.com/silinternational/ui-components/compare/v10.7.0...v10.8.0) (2024-03-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* **core:** updated from svelte 3 to svelte 4. Consumers should use svelte 4
+
+### Added
+
+* **core:** update to svelte 4, storybook 7, sass to 1.77.x ([c58d599](https://github.com/silinternational/ui-components/commit/c58d599107458f4ad174b44de27beb2b2875890a))
+
 ## [10.7.0](https://github.com/silinternational/ui-components/compare/v10.6.0...v10.7.0) (2024-01-23)
 
 
