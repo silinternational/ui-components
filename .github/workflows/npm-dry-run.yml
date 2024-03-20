@@ -1,6 +1,6 @@
 on:
   push:
-    branches: ['feature/split-release', 'develop']
+    branches-ignore: main
 
 jobs:
   dry-run:
