@@ -162,7 +162,7 @@ function getCIConfig() {
       ...plugins,
       ['@semantic-release/changelog', { changelogTitle: CHANGELOG_HEADER }],
       '@semantic-release/git',
-      '@semantic-release/github',
+      ['@semantic-release/github', { draft: true }],
     ],
   }
 }
