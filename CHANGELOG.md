@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ### ⚠ BREAKING CHANGES
 
-- **core:** updated from svelte 3 to svelte 4. Consumers should use svelte 4
+- **core:** updated from svelte 3 to svelte 4. Consumers should use svelte 4 although svelte 3 might still work
 
 ### Added
 
