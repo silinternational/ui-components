@@ -1,11 +1,25 @@
 on:
   pull_request:
-    types: [closed]
-    branches: main
+    types: [closed, opened]
 
 jobs:
+  dry-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm ci
+      - run: npm test
+      - uses: JS-DevTools/npm-publish@v3
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          dry-run: true
+
   publish:
-    if: github.event.pull_request.merged == true
+    needs: dry-run
+    if: github.event.pull_request.merged == true && (github.ref_name == 'main' || github.head_ref == 'main')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
