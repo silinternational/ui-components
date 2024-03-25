@@ -9,6 +9,8 @@ export let tooltipID
 export let positionX = undefined
 /** @type {string} can be one of: "above" or "below" */
 export let positionY = undefined
+/** @type {boolean} whether to show a rich tooltip */
+export let rich = false
 
 let element = {}
 let mdcToolTip = {}
@@ -35,8 +37,20 @@ onMount(() => {
 })
 </script>
 
-<div bind:this={element} id={tooltipID} class="mdc-tooltip" role="tooltip" aria-hidden="true">
-  <div class="mdc-tooltip__surface mdc-tooltip__surface-animation {$$props.class || ''}">
-    <slot />
+{#if rich}
+  <div bind:this={element} id={tooltipID} class="mdc-tooltip mdc-tooltip--rich" aria-hidden="true" role="tooltip">
+    <div class="mdc-tooltip__surface mdc-tooltip__surface-animation {$$props.class || ''}">
+      <p class="mdc-tooltip__content">
+        <slot />
+      </p>
+    </div>
   </div>
-</div>
+{:else}
+  <div bind:this={element} id={tooltipID} class="mdc-tooltip" role="tooltip" aria-hidden="true">
+    <div class="mdc-tooltip__surface mdc-tooltip__surface-animation {$$props.class || ''}">
+      <span class="mdc-tooltip__label">
+        <slot />
+      </span>
+    </div>
+  </div>
+{/if}
