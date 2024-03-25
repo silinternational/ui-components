@@ -28,7 +28,7 @@ $: dispatch('change', options[selectedIndex] || {})
 $: mdcSelect.disabled = disabled
 $: if (options && mdcSelect.layoutOptions) mdcSelect.layoutOptions()
 
-const getIDsCSV = (options) => options.map(option => option.id).join(',')
+const getIDsCSV = (options) => options.map((option) => option.id).join(',')
 
 const optionsHaveChanged = (options) => previousOptionsIDsCSV !== getIDsCSV(options)
 

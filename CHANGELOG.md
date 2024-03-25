@@ -1,51 +1,55 @@
 # Changelog
+
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
 
-## [10.7.0](https://github.com/silinternational/ui-components/compare/v10.6.0...v10.7.0) (2024-01-23)
+## [11.0.0](https://github.com/silinternational/ui-components/compare/v10.7.0...v10.8.0) (2024-03-20)
 
+### ⚠ BREAKING CHANGES
+
+- **core:** updated from svelte 3 to svelte 4. Consumers should use svelte 4 although svelte 3 might still work
+
+### Added
+
+- **core:** update to svelte 4, storybook 7, sass to 1.77.x ([c58d599](https://github.com/silinternational/ui-components/commit/c58d599107458f4ad174b44de27beb2b2875890a))
+
+## [10.7.0](https://github.com/silinternational/ui-components/compare/v10.6.0...v10.7.0) (2024-01-23)
 
 ### Security
 
-* **dependencies:** add deepfactor and move svelte, sass and material to dependencies ([8ac3b5a](https://github.com/silinternational/ui-components/commit/8ac3b5a0019806b261fbeeb00809cb835c166e50))
-
+- **dependencies:** add deepfactor and move svelte, sass and material to dependencies ([8ac3b5a](https://github.com/silinternational/ui-components/commit/8ac3b5a0019806b261fbeeb00809cb835c166e50))
 
 ### Fixed
 
-* **dependencies:** remove sass from peerDependencies ([c973f25](https://github.com/silinternational/ui-components/commit/c973f2549a10cde99b95f37c3f997dc3ed6552a7))
-
+- **dependencies:** remove sass from peerDependencies ([c973f25](https://github.com/silinternational/ui-components/commit/c973f2549a10cde99b95f37c3f997dc3ed6552a7))
 
 ### Added
 
-* **Checkbox:** add inputID as prop to Checkbox ([4f9e0ea](https://github.com/silinternational/ui-components/commit/4f9e0ea60cad064277521fa49bbaae38c1f10eee))
-* **StaticChip:** add height prop, improve defaults styles, width expands with content. styles overridable ([1cbdaba](https://github.com/silinternational/ui-components/commit/1cbdaba84b86dae4667196b8caa6080c6a9e43b4))
+- **Checkbox:** add inputID as prop to Checkbox ([4f9e0ea](https://github.com/silinternational/ui-components/commit/4f9e0ea60cad064277521fa49bbaae38c1f10eee))
+- **StaticChip:** add height prop, improve defaults styles, width expands with content. styles overridable ([1cbdaba](https://github.com/silinternational/ui-components/commit/1cbdaba84b86dae4667196b8caa6080c6a9e43b4))
 
 ## [10.6.0](https://github.com/silinternational/ui-components/compare/v10.5.0...v10.6.0) (2023-10-25)
 
-
 ### Added
 
-* **types:** Add and improve JSDOC types to props ([0f8a51f](https://github.com/silinternational/ui-components/commit/0f8a51f960a319716a87c28094c1be5bb8de2694))
-
+- **types:** Add and improve JSDOC types to props ([0f8a51f](https://github.com/silinternational/ui-components/commit/0f8a51f960a319716a87c28094c1be5bb8de2694))
 
 ### Fixed
 
-* **Select:** Only dispatch `populated` event when appropriate ([8624b08](https://github.com/silinternational/ui-components/commit/8624b08494b210e559e27daf743bb9cb34694154))
-* **types:** Add missing items type to Alert.Simple ([1193e03](https://github.com/silinternational/ui-components/commit/1193e0351ebbdcbbff699dbd07f4a1bddeea05f2))
+- **Select:** Only dispatch `populated` event when appropriate ([8624b08](https://github.com/silinternational/ui-components/commit/8624b08494b210e559e27daf743bb9cb34694154))
+- **types:** Add missing items type to Alert.Simple ([1193e03](https://github.com/silinternational/ui-components/commit/1193e0351ebbdcbbff699dbd07f4a1bddeea05f2))
 
 ## [10.5.0](https://github.com/silinternational/ui-components/compare/v10.4.0...v10.5.0) (2023-10-12)
 
-
 ### Added
 
-* **MoneyInput:** description in helper text like TextField ([b9d4b7d](https://github.com/silinternational/ui-components/commit/b9d4b7d3629e44316e5e682e36cfbe9512f0f629))
-* **SearchableSelect:** expose on:focus ([60667e0](https://github.com/silinternational/ui-components/commit/60667e04abd5a7fd7fd33a8f7ef5a3928bba8864))
-
+- **MoneyInput:** description in helper text like TextField ([b9d4b7d](https://github.com/silinternational/ui-components/commit/b9d4b7d3629e44316e5e682e36cfbe9512f0f629))
+- **SearchableSelect:** expose on:focus ([60667e0](https://github.com/silinternational/ui-components/commit/60667e04abd5a7fd7fd33a8f7ef5a3928bba8864))
 
 ### Fixed
 
-* **SearchableSelect:** let consumer clear input ([885a8bd](https://github.com/silinternational/ui-components/commit/885a8bdc4ded967ccc520050f835c46aa101b1cc))
-* **TextField:** add missing type for icon prop ([9ac0c6a](https://github.com/silinternational/ui-components/commit/9ac0c6a59be72d19cda78b19e51557fe44c5de48))
+- **SearchableSelect:** let consumer clear input ([885a8bd](https://github.com/silinternational/ui-components/commit/885a8bdc4ded967ccc520050f835c46aa101b1cc))
+- **TextField:** add missing type for icon prop ([9ac0c6a](https://github.com/silinternational/ui-components/commit/9ac0c6a59be72d19cda78b19e51557fe44c5de48))
 
 # Changelog
 
@@ -54,10 +58,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ## [10.4.0](https://github.com/silinternational/ui-components/compare/v10.3.0...v10.4.0) (2023-09-15)
 
-
 ### Added
 
-* **DataTable:** add lowContrast prop to DataRowItem ([bf1bbef](https://github.com/silinternational/ui-components/commit/bf1bbef33a7514b5300440d2e142474e3ed40eae))
+- **DataTable:** add lowContrast prop to DataRowItem ([bf1bbef](https://github.com/silinternational/ui-components/commit/bf1bbef33a7514b5300440d2e142474e3ed40eae))
 
 ## [10.3.0](https://github.com/silinternational/ui-components/compare/v10.2.0...v10.3.0) (2023-08-30)
 

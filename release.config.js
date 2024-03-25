@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 const plugins = [
   [
+    '@semantic-release/npm',
+
+    {
+      npmPublish: false,
+    },
+  ],
+  [
     '@semantic-release/commit-analyzer',
     {
       preset: 'conventionalcommits',
@@ -150,13 +157,12 @@ function getCIConfig() {
   // contains your normal semantic-release config
   // this will be used on your CI environment
   return {
-    branches: ['main'],
+    branches: ['develop'],
     plugins: [
       ...plugins,
       ['@semantic-release/changelog', { changelogTitle: CHANGELOG_HEADER }],
-      '@semantic-release/npm',
       '@semantic-release/git',
-      '@semantic-release/github',
+      ['@semantic-release/github', { draft: true }],
     ],
   }
 }
