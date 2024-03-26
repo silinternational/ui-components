@@ -31,7 +31,7 @@ const plugins = [
         },
         {
           type: 'change',
-          release: 'minor',
+          release: 'major',
         },
         {
           type: 'deprecate',
@@ -39,7 +39,7 @@ const plugins = [
         },
         {
           type: 'remove',
-          release: 'minor',
+          release: 'major',
         },
         {
           type: 'security',
