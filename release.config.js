@@ -17,6 +17,7 @@ const plugins = [
     {
       preset: 'conventionalcommits',
       releaseRules: [
+        { breaking: true, release: 'major' },
         {
           type: 'add',
           release: 'minor',
