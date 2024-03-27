@@ -1,9 +1,20 @@
 # Changelog
-
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
 
-## [11.0.0](https://github.com/silinternational/ui-components/compare/v10.7.0...v10.8.0) (2024-03-20)
+## [11.1.0](https://github.com/silinternational/ui-components/compare/v11.0.0...v11.1.0) (2024-03-26)
+
+
+### Added
+
+* **Tooltip:** Add Tooltip.rich ([2540751](https://github.com/silinternational/ui-components/commit/254075178e40db27fdc8864427ceeb34824b2aa2))
+
+
+### Fixed
+
+* **build:** fix npm-publish [skip release] ([1fd6d87](https://github.com/silinternational/ui-components/commit/1fd6d877d9376dd33d45b2b65a913b5d3e4827c8))
+
+## [11.0.0](https://github.com/silinternational/ui-components/compare/v10.7.0...v11.0.0) (2024-03-20)
 
 ### ⚠ BREAKING CHANGES
 

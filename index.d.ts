@@ -306,6 +306,7 @@ declare module '@silintl/ui-components' {
     tooltipID?: string
     positionX?: 'start' | 'center' | 'end'
     positionY?: 'above' | 'below'
+    rich?: boolean
     class?: string
   }
   export class Tooltip extends SvelteComponentTyped<TooltipProps> {}
@@ -313,6 +314,7 @@ declare module '@silintl/ui-components' {
   export namespace Tooltip {
     interface TooltipWrapperProps {
       ariaDescribedBy?: string
+      rich?: boolean
       class?: string
     }
     export class Wrapper extends SvelteComponentTyped<TooltipWrapperProps> {}

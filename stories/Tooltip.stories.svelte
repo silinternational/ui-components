@@ -13,7 +13,7 @@ const args = {
 
 <Template let:args>
   <div class="flex justify-center my-4">
-    <Tooltip.Wrapper ariaDescribedBy={args.tooltipID}>wrapper slot</Tooltip.Wrapper>
+    <Tooltip.Wrapper rich={args.rich} ariaDescribedBy={args.tooltipID}>wrapper slot</Tooltip.Wrapper>
   </div>
 
   <Tooltip {...args}>Tooltip main slot here</Tooltip>
@@ -22,3 +22,5 @@ const args = {
 <Story name="Default" {args} />
 
 <Story name="Position" args={copyAndModifyArgs(args, { positionX: 'start', positionY: 'above' })} />
+
+<Story name="Rich" args={copyAndModifyArgs(args, { rich: true })} />

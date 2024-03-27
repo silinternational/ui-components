@@ -17,6 +17,7 @@ const plugins = [
     {
       preset: 'conventionalcommits',
       releaseRules: [
+        { breaking: true, release: 'major' },
         {
           type: 'add',
           release: 'minor',
@@ -162,7 +163,7 @@ function getCIConfig() {
       ...plugins,
       ['@semantic-release/changelog', { changelogTitle: CHANGELOG_HEADER }],
       '@semantic-release/git',
-      ['@semantic-release/github', { draft: true }],
+      ['@semantic-release/github', { draftRelease: true }],
     ],
   }
 }
