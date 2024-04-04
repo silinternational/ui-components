@@ -4,6 +4,7 @@ import { MDCSelect } from '@material/select'
 import { generateRandomID } from '../../../random'
 import { afterUpdate, createEventDispatcher, onMount } from 'svelte'
 
+/** @type displayed with the mdc-floating-label class */
 export let label = 'Select'
 
 /** @type {{id: string, name: string}[]} The options to be displayed in the select list. */

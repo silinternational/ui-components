@@ -1,6 +1,6 @@
 {
   "name": "@silintl/ui-components",
-  "version": "11.1.0",
+  "version": "11.1.1",
   "description": "Reusable Svelte components for some internal applications",
   "main": "index.mjs",
   "module": "index.mjs",
@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "material-components-web": "^14.0.0",
-    "svelte": "^4.0.0"
+    "svelte": "^3 || ^4"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
