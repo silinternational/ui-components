@@ -109,3 +109,6 @@ dist
 #CSS compiled for Storybook
 global.css.map
 global.css
+
+# bun
+bun.lockb
