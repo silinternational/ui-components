@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
 
+### [11.1.2](https://github.com/silinternational/ui-components/compare/v11.1.1...v11.1.2) (2024-04-08)
+
+
+### Fixed
+
+* **TextArea:** fix TextArea maxlength hardcoded in textarea ([ea955bc](https://github.com/silinternational/ui-components/commit/ea955bcfcb13911f95c4cdd281bd79a2a5c6431a))
+
 ### [11.1.1](https://github.com/silinternational/ui-components/compare/v11.1.0...v11.1.1) (2024-04-04)
 
 
