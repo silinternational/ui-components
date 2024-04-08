@@ -87,7 +87,7 @@ label {
     aria-controls="{labelID}-helper-id"
     aria-describedby="{labelID}-helper-id"
     {rows}
-    maxlength="524288"
+    {maxlength}
     {name}
     {required}
     {placeholder}
