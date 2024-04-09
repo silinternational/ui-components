@@ -25,6 +25,10 @@ export let icon = ''
 export let description = ''
 /** @type {string} The name of the text input field. */
 export let name = ''
+/** @type {boolean} lets the component know to use error class. */
+export let showError = false
+/** @type {boolean} lets the component know to use warn class. */
+export let showWarn = false
 
 const labelID = generateRandomID('text-label-')
 
@@ -37,8 +41,10 @@ let hasBlurred = false
 $: mdcTextField.value = value
 $: hasExceededMaxLength = maxlength && value.length > maxlength
 $: error = hasExceededMaxLength || (hasFocused && hasBlurred && required && !value)
+$: warn = showWarn
 $: showCounter = maxlength && value.length / maxlength > 0.85
 $: value && addOrRemoveInvalidClass(error, element)
+$: addOrRemoveInvalidClass(showError || showWarn, element)
 
 onMount(() => {
   mdcTextField = new MDCTextField(element)
@@ -71,9 +77,11 @@ const focus = (node) => autofocus && node.focus()
   class="mdc-text-field mdc-text-field--outlined {$$props.class || ''} textfield-radius"
   class:mdc-text-field--no-label={!label}
   class:mdc-text-field--disabled={disabled}
+  class:warn
+  class:showError
   bind:this={element}
 >
-  <i class="material-icons" class:error aria-hidden="true">{icon}</i>
+  <i class="material-icons mdc-text-field__icon--leading" class:error aria-hidden="true"> {icon}</i>
   <input
     type="text"
     class="mdc-text-field__input"
@@ -97,7 +105,7 @@ const focus = (node) => autofocus && node.focus()
   />
   {#if hasExceededMaxLength}
     <span class="mdc-text-field__affix mdc-text-field__affix--suffix"
-      ><i class="material-icons error" aria-hidden="true">error</i></span
+      ><i class="material-icons mdc-text-field__icon--trailing error" aria-hidden="true">error</i></span
     >
   {/if}
 

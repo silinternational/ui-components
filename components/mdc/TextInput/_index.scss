@@ -2,10 +2,19 @@
 //@use "@material/line-ripple/mdc-line-ripple"; // Only needed if using ripple.
 @use '@material/notched-outline/mdc-notched-outline';
 @use '@material/textfield';
+@use '@material/textfield/icon';
 
 @include textfield.core-styles;
+@include icon.icon-core-styles;
+
+:root {
+  --mdc-theme-error: #c30000;
+  --mdc-theme-warn: #f48c03;
+}
 
 $radius: 8px !default;
+$error: var(--mdc-theme-status-error, var(--mdc-theme-error)) !default;
+$warn: var(--mdc-theme-status-warn, var(--mdc-theme-warn)) !default;
 
 /* TODO should be cleaned up later, this code is in multiple files but only needs to be in the master css*/
 
@@ -19,6 +28,30 @@ $radius: 8px !default;
 }
 .error {
   color: var(--mdc-theme-status-error, var(--mdc-theme-error)) !important;
+}
+.showError.mdc-text-field--invalid {
+  @include textfield.outline-color($error);
+  @include textfield.hover-outline-color($error);
+  @include textfield.ink-color($error);
+  @include textfield.placeholder-color($error);
+  @include textfield.label-color($error);
+  @include icon.leading-icon-color($error);
+  @include icon.trailing-icon-color($error);
+  @include textfield.caret-color($error);
+  @include textfield.prefix-color($error);
+  @include textfield.suffix-color($error);
+}
+.warn.mdc-text-field--invalid {
+  @include textfield.outline-color($warn);
+  @include textfield.hover-outline-color($warn);
+  @include textfield.ink-color($warn);
+  @include textfield.placeholder-color($warn);
+  @include textfield.label-color($warn);
+  @include icon.leading-icon-color($warn);
+  @include icon.trailing-icon-color($warn);
+  @include textfield.caret-color($warn);
+  @include textfield.prefix-color($warn);
+  @include textfield.suffix-color($warn);
 }
 .required {
   color: var(--mdc-required-input, rgba(0, 0, 0, 0.6));

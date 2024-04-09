@@ -25,6 +25,10 @@ export let required = false
 export let description = ''
 /** @type {string} The name of the textarea field. */
 export let name = ''
+/** @type {boolean} lets the component know to use error class. */
+export let showError = false
+/** @type {boolean} lets the component know to use warn class. */
+export let showWarn = false
 
 const labelID = generateRandomID('textarea-label-')
 
@@ -37,7 +41,9 @@ let hasBlurred = false
 $: hasExceededMaxLength = maxlength && value.length > maxlength
 $: error = hasExceededMaxLength || (hasFocused && hasBlurred && required && valueIsEmpty)
 $: valueIsEmpty = value === ' ' || !value
+$: warn = showWarn
 $: !valueIsEmpty && addOrRemoveInvalidClass(error, element)
+$: addOrRemoveInvalidClass(showError || showWarn, element)
 
 onMount(() => {
   resize()
@@ -78,6 +84,8 @@ label {
   class:mdc-text-field--no-label={!label}
   class:mdc-text-field--label-floating={label}
   class:mdc-text-field--with-internal-counter={maxlength}
+  class:warn
+  class:showError
   bind:this={element}
 >
   <textarea
