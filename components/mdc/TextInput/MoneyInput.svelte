@@ -1,7 +1,7 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield -->
 <script>
 /** A Svelte component that represents a text input for money values. */
-import { getDecimalPlacesLength } from './helpers'
+import { addOrRemoveInvalidClass, getDecimalPlacesLength } from './helpers'
 import { generateRandomID } from '../../../random'
 import { MDCTextField } from '@material/textfield'
 import { afterUpdate, onMount } from 'svelte'
@@ -28,6 +28,10 @@ export let disabled = false
 export let required = false
 /** @type {string} The description to display below the input. */
 export let description = ''
+/** @type {boolean} lets the component know to use error class. */
+export let showError = false
+/** @type {boolean} lets the component know to use warn class. */
+export let showWarn = false
 
 const labelID = generateRandomID('text-label-')
 
@@ -49,6 +53,8 @@ $: valueHasTooManyDecPlaces = getDecimalPlacesLength(internalValue) > getDecimal
 $: valueNotDivisibleByStep =
   (internalValue && (internalValue / Number(step)).toFixed(2) % 1 !== 0) || valueHasTooManyDecPlaces
 $: internalValue = Number(value) || 0
+$: warn = showWarn
+$: addOrRemoveInvalidClass(showError || showWarn, element)
 
 onMount(() => {
   mdcTextField = new MDCTextField(element)
@@ -80,9 +86,11 @@ const focus = (node) => autofocus && node.focus()
   class:mdc-text-field--no-label={!label}
   class:mdc-text-field--disabled={disabled}
   class:mdc-text-field--invalid={error}
+  class:warn
+  class:showError
   bind:this={element}
 >
-  <i class="material-icons" class:error aria-hidden="true">attach_money</i>
+  <i class="material-icons mdc-text-field__icon--leading" class:error aria-hidden="true">attach_money</i>
   <input
     {step}
     type="number"
