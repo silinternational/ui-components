@@ -43,7 +43,7 @@ $: hasExceededMaxLength = maxlength && value.length > maxlength
 $: error = hasExceededMaxLength || (hasFocused && hasBlurred && required && !value)
 $: warn = showWarn
 $: showCounter = maxlength && value.length / maxlength > 0.85
-$: value && addOrRemoveInvalidClass(error, element)
+$: value, addOrRemoveInvalidClass(error, element)
 $: addOrRemoveInvalidClass(showError || showWarn, element)
 
 onMount(() => {
@@ -58,30 +58,31 @@ afterUpdate(() => {
 const focus = (node) => autofocus && node.focus()
 </script>
 
-<style>
-.material-icons {
-  color: rgb(133, 140, 148);
-  position: relative;
-  top: 0.4rem;
-  right: 0.6rem;
-}
-.label-margin {
-  margin-left: 1.1rem;
-}
-.mdc-text-field--label-floating .mdc-floating-label {
-  margin-left: 0;
-}
-</style>
-
 <label
   class="mdc-text-field mdc-text-field--outlined {$$props.class || ''} textfield-radius"
   class:mdc-text-field--no-label={!label}
   class:mdc-text-field--disabled={disabled}
   class:warn
   class:showError
+  class:mdc-text-field--with-leading-icon={icon}
   bind:this={element}
 >
-  <i class="material-icons mdc-text-field__icon--leading" class:error aria-hidden="true"> {icon}</i>
+  <span class="mdc-notched-outline">
+    <span class="mdc-notched-outline__leading" />
+    {#if label}
+      <span class="mdc-notched-outline__notch">
+        <span class="mdc-floating-label" class:error id={labelID}>
+          {label}
+        </span>
+      </span>
+    {/if}
+    <span class="mdc-notched-outline__trailing" />
+  </span>
+  {#if icon}
+    <i class="material-icons mdc-text-field__icon mdc-text-field__icon--leading" class:error aria-hidden="true">
+      {icon}</i
+    >
+  {/if}
   <input
     type="text"
     class="mdc-text-field__input"
@@ -104,22 +105,8 @@ const focus = (node) => autofocus && node.focus()
     {placeholder}
   />
   {#if hasExceededMaxLength}
-    <span class="mdc-text-field__affix mdc-text-field__affix--suffix"
-      ><i class="material-icons mdc-text-field__icon--trailing error" aria-hidden="true">error</i></span
-    >
+    <i class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing error" aria-hidden="true">error</i>
   {/if}
-
-  <span class="mdc-notched-outline">
-    <span class="mdc-notched-outline__leading" />
-    {#if label}
-      <span class="mdc-notched-outline__notch">
-        <span class="mdc-floating-label" class:label-margin={icon} class:error id={labelID}>
-          {label}
-        </span>
-      </span>
-    {/if}
-    <span class="mdc-notched-outline__trailing" />
-  </span>
 </label>
 <div class="mdc-text-field-helper-line" style="width: {width};">
   <div
