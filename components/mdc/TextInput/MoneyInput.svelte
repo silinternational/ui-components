@@ -54,6 +54,7 @@ $: valueNotDivisibleByStep =
   (internalValue && (internalValue / Number(step)).toFixed(2) % 1 !== 0) || valueHasTooManyDecPlaces
 $: internalValue = Number(value) || 0
 $: warn = showWarn
+$: value, addOrRemoveInvalidClass(error, element)
 $: addOrRemoveInvalidClass(showError || showWarn, element)
 
 onMount(() => {
@@ -66,31 +67,29 @@ afterUpdate(() => (width = `${element?.offsetWidth}px`))
 const focus = (node) => autofocus && node.focus()
 </script>
 
-<style>
-.material-icons {
-  color: rgb(133, 140, 148);
-  position: relative;
-  top: 0.4rem;
-  right: 0.6rem;
-}
-.label-margin {
-  margin-left: 1.1rem;
-}
-.mdc-text-field--label-floating .mdc-floating-label {
-  margin-left: 0;
-}
-</style>
-
 <label
-  class="mdc-text-field mdc-text-field--outlined {$$props.class || ''} textfield-radius"
+  class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon {$$props.class ||
+    ''} textfield-radius"
   class:mdc-text-field--no-label={!label}
   class:mdc-text-field--disabled={disabled}
-  class:mdc-text-field--invalid={error}
   class:warn
   class:showError
   bind:this={element}
 >
-  <i class="material-icons mdc-text-field__icon--leading" class:error aria-hidden="true">attach_money</i>
+  <span class="mdc-notched-outline">
+    <span class="mdc-notched-outline__leading" />
+    {#if label}
+      <span class="mdc-notched-outline__notch">
+        <span class="mdc-floating-label" class:error id={labelID}>
+          {label}
+        </span>
+      </span>
+    {/if}
+    <span class="mdc-notched-outline__trailing" />
+  </span>
+  <i class="material-icons mdc-text-field__icon mdc-text-field__icon--leading" class:error aria-hidden="true">
+    attach_money
+  </i>
   <input
     {step}
     type="number"
@@ -115,21 +114,8 @@ const focus = (node) => autofocus && node.focus()
     {required}
   />
   {#if showErrorIcon}
-    <span class="mdc-text-field__affix mdc-text-field__affix--suffix">
-      <i class="material-icons error" aria-hidden="true"> error</i>
-    </span>
+    <i class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing error" aria-hidden="true"> error</i>
   {/if}
-  <span class="mdc-notched-outline">
-    <span class="mdc-notched-outline__leading" />
-    {#if label}
-      <span class="mdc-notched-outline__notch">
-        <span class="mdc-floating-label label-margin" class:error id={labelID}>
-          {label}
-        </span>
-      </span>
-    {/if}
-    <span class="mdc-notched-outline__trailing" />
-  </span>
 </label>
 <div class="mdc-text-field-helper-line" style="width: {width};">
   <div

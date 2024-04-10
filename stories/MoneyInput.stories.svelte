@@ -15,7 +15,6 @@ const args = {
   'on:keypress': (event) => (lastKey = event.key),
   'on:keyup': (event) => console.log('keyup', event),
   class: '', //will only work with global class
-  maxValue: 100,
   step: '.01',
 }
 $: arrayOfValues.forEach((v) =>
