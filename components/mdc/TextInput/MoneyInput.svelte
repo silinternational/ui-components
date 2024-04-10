@@ -1,7 +1,7 @@
 <!-- https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield -->
 <script>
 /** A Svelte component that represents a text input for money values. */
-import { getDecimalPlacesLength } from './helpers'
+import { addOrRemoveInvalidClass, getDecimalPlacesLength } from './helpers'
 import { generateRandomID } from '../../../random'
 import { MDCTextField } from '@material/textfield'
 import { afterUpdate, onMount } from 'svelte'
@@ -28,6 +28,10 @@ export let disabled = false
 export let required = false
 /** @type {string} The description to display below the input. */
 export let description = ''
+/** @type {boolean} lets the component know to use error class. */
+export let showError = false
+/** @type {boolean} lets the component know to use warn class. */
+export let showWarn = false
 
 const labelID = generateRandomID('text-label-')
 
@@ -49,6 +53,9 @@ $: valueHasTooManyDecPlaces = getDecimalPlacesLength(internalValue) > getDecimal
 $: valueNotDivisibleByStep =
   (internalValue && (internalValue / Number(step)).toFixed(2) % 1 !== 0) || valueHasTooManyDecPlaces
 $: internalValue = Number(value) || 0
+$: warn = showWarn
+$: value, addOrRemoveInvalidClass(error, element)
+$: addOrRemoveInvalidClass(showError || showWarn, element)
 
 onMount(() => {
   mdcTextField = new MDCTextField(element)
@@ -60,29 +67,29 @@ afterUpdate(() => (width = `${element?.offsetWidth}px`))
 const focus = (node) => autofocus && node.focus()
 </script>
 
-<style>
-.material-icons {
-  color: rgb(133, 140, 148);
-  position: relative;
-  top: 0.4rem;
-  right: 0.6rem;
-}
-.label-margin {
-  margin-left: 1.1rem;
-}
-.mdc-text-field--label-floating .mdc-floating-label {
-  margin-left: 0;
-}
-</style>
-
 <label
-  class="mdc-text-field mdc-text-field--outlined {$$props.class || ''} textfield-radius"
+  class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon {$$props.class ||
+    ''} textfield-radius"
   class:mdc-text-field--no-label={!label}
   class:mdc-text-field--disabled={disabled}
-  class:mdc-text-field--invalid={error}
+  class:warn
+  class:showError
   bind:this={element}
 >
-  <i class="material-icons" class:error aria-hidden="true">attach_money</i>
+  <span class="mdc-notched-outline">
+    <span class="mdc-notched-outline__leading" />
+    {#if label}
+      <span class="mdc-notched-outline__notch">
+        <span class="mdc-floating-label" class:error id={labelID}>
+          {label}
+        </span>
+      </span>
+    {/if}
+    <span class="mdc-notched-outline__trailing" />
+  </span>
+  <i class="material-icons mdc-text-field__icon mdc-text-field__icon--leading" class:error aria-hidden="true">
+    attach_money
+  </i>
   <input
     {step}
     type="number"
@@ -107,21 +114,8 @@ const focus = (node) => autofocus && node.focus()
     {required}
   />
   {#if showErrorIcon}
-    <span class="mdc-text-field__affix mdc-text-field__affix--suffix">
-      <i class="material-icons error" aria-hidden="true"> error</i>
-    </span>
+    <i class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing error" aria-hidden="true"> error</i>
   {/if}
-  <span class="mdc-notched-outline">
-    <span class="mdc-notched-outline__leading" />
-    {#if label}
-      <span class="mdc-notched-outline__notch">
-        <span class="mdc-floating-label label-margin" class:error id={labelID}>
-          {label}
-        </span>
-      </span>
-    {/if}
-    <span class="mdc-notched-outline__trailing" />
-  </span>
 </label>
 <div class="mdc-text-field-helper-line" style="width: {width};">
   <div

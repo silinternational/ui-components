@@ -15,7 +15,6 @@ const args = {
   'on:keypress': (event) => (lastKey = event.key),
   'on:keyup': (event) => console.log('keyup', event),
   class: '', //will only work with global class
-  maxValue: 100,
   step: '.01',
 }
 $: arrayOfValues.forEach((v) =>
@@ -84,3 +83,7 @@ function setValues(max, step) {
 <Story name="Test step" args={{ ...args, label: '' }} />
 
 <Story name="Name" args={copyAndModifyArgs(args, { name: 'money' })} />
+
+<Story name="showError" args={copyAndModifyArgs(args, { showError: true })} />
+
+<Story name="showWarn" args={copyAndModifyArgs(args, { showWarn: true })} />

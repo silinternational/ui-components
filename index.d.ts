@@ -217,6 +217,8 @@ declare module '@silintl/ui-components' {
     step?: number | string
     description?: string
     class?: string
+    showWarn?: boolean
+    showError?: boolean
   }
   export class MoneyInput extends SvelteComponentTyped<MoneyInputProps> {}
 
@@ -285,6 +287,8 @@ declare module '@silintl/ui-components' {
     rtl?: boolean
     description?: string
     class?: string
+    showWarn?: boolean
+    showError?: boolean
   }
   export class TextArea extends SvelteComponentTyped<TextAreaProps> {}
 
@@ -300,6 +304,8 @@ declare module '@silintl/ui-components' {
     required?: boolean
     description?: string
     class?: string
+    showWarn?: boolean
+    showError?: boolean
   }
   export class TextField extends SvelteComponentTyped<TextFieldProps> {}
 

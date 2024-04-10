@@ -38,3 +38,7 @@ const args = {
 <Story name="Description" args={copyAndModifyArgs(args, { description: 'a description' })} />
 
 <Story name="Name" args={copyAndModifyArgs(args, { name: 'area' })} />
+
+<Story name="showError" args={copyAndModifyArgs(args, { showError: true })} />
+
+<Story name="showWarn" args={copyAndModifyArgs(args, { showWarn: true })} />
