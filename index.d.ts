@@ -235,11 +235,12 @@ declare module '@silintl/ui-components' {
   }
 
   interface SelectProps {
+    disabled?: boolean
     label?: string
     options?: { name: string; id: string }[]
-    width?: string
-    disabled?: boolean
+    required?: boolean
     selectedID?: string
+    width?: string
     class?: string
   }
   export class Select extends SvelteComponentTyped<SelectProps> {}

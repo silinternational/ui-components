@@ -15,6 +15,8 @@ export let width = '280px'
 export let disabled = false
 /** @type {string} The ID of the selected option. */
 export let selectedID = ''
+/** @type {boolean} makes a selection required and adds invalid class when none selected */
+export let required = false
 
 const dispatch = createEventDispatcher()
 const labelID = generateRandomID('select-label-')
@@ -61,8 +63,18 @@ afterUpdate(() => {
 })
 </script>
 
-<div class="mdc-select mdc-select--outlined {$$props.class || ''}" bind:this={element} style="width: {width}">
-  <div class="mdc-select__anchor" role="button" aria-haspopup="listbox" aria-labelledby="{labelID} {selectedTextID}">
+<div
+  class="mdc-select mdc-select--outlined {$$props.class || ''}"
+  class:mdc-select--required={required}
+  bind:this={element}
+  style="width: {width}"
+>
+  <div
+    class="mdc-select__anchor"
+    aria-required={required}
+    aria-haspopup="listbox"
+    aria-labelledby="{labelID} {selectedTextID}"
+  >
     <span class="mdc-notched-outline">
       <span class="mdc-notched-outline__leading" />
       <span class="mdc-notched-outline__notch">

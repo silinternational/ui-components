@@ -26,8 +26,12 @@ const args = {
 
 <Story name="Default" {args} />
 
+<Story name="selectedID" args={copyAndModifyArgs(args, { selectedID: '5' })} />
+
 <Story name="Label" args={copyAndModifyArgs(args, { label: 'Label' })} />
 
 <Story name="Width" args={copyAndModifyArgs(args, { width: '560px' })} />
 
 <Story name="Disabled" args={copyAndModifyArgs(args, { disabled: true })} />
+
+<Story name="required" args={copyAndModifyArgs(args, { required: true })} />
