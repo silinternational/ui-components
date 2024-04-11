@@ -237,6 +237,7 @@ declare module '@silintl/ui-components' {
   interface SelectProps {
     disabled?: boolean
     label?: string
+    name?: string
     options?: { name: string; id: string }[]
     required?: boolean
     showError?: boolean

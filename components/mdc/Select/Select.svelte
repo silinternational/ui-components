@@ -19,6 +19,8 @@ export let selectedID = ''
 export let required = false
 /** @type {boolean} applies the mdc-select--invalid class */
 export let showError = false
+/** @type {string} a name for the hidden input field for form submission*/
+export let name = ''
 
 const dispatch = createEventDispatcher()
 const labelID = generateRandomID('select-label-')
@@ -72,6 +74,7 @@ afterUpdate(() => {
   bind:this={element}
   style="width: {width}"
 >
+  <input {required} type="hidden" {name} />
   <div
     class="mdc-select__anchor"
     aria-required={required}
