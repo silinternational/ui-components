@@ -35,3 +35,5 @@ const args = {
 <Story name="Disabled" args={copyAndModifyArgs(args, { disabled: true })} />
 
 <Story name="required" args={copyAndModifyArgs(args, { required: true })} />
+
+<Story name="showError" args={copyAndModifyArgs(args, { showError: true })} />

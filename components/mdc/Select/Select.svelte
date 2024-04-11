@@ -17,6 +17,8 @@ export let disabled = false
 export let selectedID = ''
 /** @type {boolean} makes a selection required and adds invalid class when none selected */
 export let required = false
+/** @type {boolean} applies the mdc-select--invalid class */
+export let showError = false
 
 const dispatch = createEventDispatcher()
 const labelID = generateRandomID('select-label-')
@@ -66,6 +68,7 @@ afterUpdate(() => {
 <div
   class="mdc-select mdc-select--outlined {$$props.class || ''}"
   class:mdc-select--required={required}
+  class:mdc-select--invalid={showError}
   bind:this={element}
   style="width: {width}"
 >

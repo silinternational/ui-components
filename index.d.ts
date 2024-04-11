@@ -239,6 +239,7 @@ declare module '@silintl/ui-components' {
     label?: string
     options?: { name: string; id: string }[]
     required?: boolean
+    showError?: boolean
     selectedID?: string
     width?: string
     class?: string
