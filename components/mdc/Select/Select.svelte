@@ -86,7 +86,7 @@ afterUpdate(() => {
     </span>
   </div>
 
-  <div class="mdc-select__menu mdc-menu mdc-menu-surface" style="width: {width}">
+  <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
     <ul class="mdc-deprecated-list" role="listbox" aria-label={label + ' picker listbox'}>
       {#each options as { id, name } (id)}
         <li class="mdc-deprecated-list-item" data-value={id} role="option" aria-selected={isOptionSelected(id)}>
