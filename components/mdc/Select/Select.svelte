@@ -15,6 +15,12 @@ export let width = '280px'
 export let disabled = false
 /** @type {string} The ID of the selected option. */
 export let selectedID = ''
+/** @type {boolean} makes a selection required and adds invalid class when none selected */
+export let required = false
+/** @type {boolean} applies the mdc-select--invalid class */
+export let showError = false
+/** @type {string} a name for the hidden input field for form submission*/
+export let name = ''
 
 const dispatch = createEventDispatcher()
 const labelID = generateRandomID('select-label-')
@@ -61,13 +67,32 @@ afterUpdate(() => {
 })
 </script>
 
-<div class="mdc-select mdc-select--outlined {$$props.class || ''}" bind:this={element} style="width: {width}">
-  <div class="mdc-select__anchor" role="button" aria-haspopup="listbox" aria-labelledby="{labelID} {selectedTextID}">
+<div
+  class="mdc-select mdc-select--outlined {$$props.class || ''}"
+  class:mdc-select--required={required}
+  class:mdc-select--invalid={showError}
+  bind:this={element}
+  style="width: {width}"
+>
+  <input {required} type="hidden" {name} />
+  <div
+    class="mdc-select__anchor"
+    aria-required={required}
+    aria-haspopup="listbox"
+    aria-labelledby="{labelID} {selectedTextID}"
+  >
+    <span class="mdc-notched-outline">
+      <span class="mdc-notched-outline__leading" />
+      <span class="mdc-notched-outline__notch">
+        <span id={labelID} class="mdc-floating-label">{label}</span>
+      </span>
+      <span class="mdc-notched-outline__trailing" />
+    </span>
     <span class="mdc-select__selected-text-container">
       <span id={selectedTextID} class="mdc-select__selected-text" />
     </span>
     <span class="mdc-select__dropdown-icon">
-      <svg class="mdc-select__dropdown-icon-graphic" viewBox="7 10 10 5">
+      <svg class="mdc-select__dropdown-icon-graphic" viewBox="7 10 10 5" focusable="false">
         <polygon
           class="mdc-select__dropdown-icon-inactive"
           stroke="none"
@@ -77,17 +102,10 @@ afterUpdate(() => {
         <polygon class="mdc-select__dropdown-icon-active" stroke="none" fill-rule="evenodd" points="7 15 12 10 17 15" />
       </svg>
     </span>
-    <span class="mdc-notched-outline">
-      <span class="mdc-notched-outline__leading" />
-      <span class="mdc-notched-outline__notch">
-        <span id={labelID} class="mdc-floating-label">{label}</span>
-      </span>
-      <span class="mdc-notched-outline__trailing" />
-    </span>
   </div>
 
-  <div class="mdc-select__menu mdc-menu mdc-menu-surface" style="width: {width}" role="listbox">
-    <ul class="mdc-deprecated-list">
+  <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
+    <ul class="mdc-deprecated-list" role="listbox" aria-label={label + ' picker listbox'}>
       {#each options as { id, name } (id)}
         <li class="mdc-deprecated-list-item" data-value={id} role="option" aria-selected={isOptionSelected(id)}>
           <span class="mdc-deprecated-list-item__text">{name}</span>
