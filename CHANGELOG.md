@@ -15,7 +15,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 * **Select:** Add Select.name for convenient form submission ([8f7380b](https://github.com/silinternational/ui-components/commit/8f7380bcd34df41600d3be7bbe9fafc3187c4df8))
 * **Select:** Add Select.required prop ([94bab91](https://github.com/silinternational/ui-components/commit/94bab918ba3a6560c49670622802aa942ee32628))
 * **Select:** Add Select.ShowError prop which applies the mdc-select--invalid class to the ([3d8f95d](https://github.com/silinternational/ui-components/commit/3d8f95d4657a1ee99f6900522a3449126790f20e))
-* **TextInputs:** add showError, showWarn props to MoneyInput, TextArea and TextField ([c143895](https://github.com/silinternational/ui-components/commit/c143895280c354e586e20c614919b1130d3e66e6))
+
 
 ## [11.2.0](https://github.com/silinternational/ui-components/compare/v11.1.2...v11.2.0) (2024-04-09)
 
