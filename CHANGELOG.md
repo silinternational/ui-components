@@ -2,13 +2,12 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
 
-## [11.2.0](https://github.com/silinternational/ui-components/compare/v11.1.2...v11.2.0) (2024-04-16)
+## [11.3.0](https://github.com/silinternational/ui-components/compare/v11.1.2...v11.2.0) (2024-04-16)
 
 
 ### Fixed
 
 * **Select:** update to match installed version of material/select ([a739d35](https://github.com/silinternational/ui-components/commit/a739d35b5635c74f3846feb3cee3485e5db2929d))
-* **TextInputs:** use latest material docs to fix icon spacing issues on TextField and MoneyInput ([2df920b](https://github.com/silinternational/ui-components/commit/2df920bf89df513213bc99067a565112850d5439))
 
 
 ### Added
