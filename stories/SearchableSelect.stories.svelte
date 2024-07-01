@@ -19,6 +19,7 @@ const args = {
   required: false,
   width: '232px',
   maxlength: 255,
+  showError: false,
   'on:chosen': (e) => setNotice(e.detail + ' chosen (accessed by event.detail)'),
   'on:check': (e) => {
     !args.options[e.detail] && setNotice(e.detail + ' not available')
@@ -57,3 +58,4 @@ setTimeout(() => {
   name="required"
   args={copyAndModifyArgs(args, { required: true, 'on:check': () => console.log('this is required') })}
 />
+<Story name="showError" args={copyAndModifyArgs(args, { showError: true })} />
