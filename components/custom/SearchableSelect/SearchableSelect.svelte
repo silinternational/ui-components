@@ -18,6 +18,8 @@ export let maxlength = 255
 export let disabled = false
 /** @type {boolean} if the input is required or not */
 export let required = false
+/** @type {boolean} applies the showError using error themes*/
+export let showError = false
 
 let element = {}
 let randomId = generateRandomID('dataList-')
@@ -74,6 +76,10 @@ const onChange = (e) => {
   font-size: 10px;
   color: #222;
 }
+.showError {
+  border-color: var(--mdc-theme-status-error, var(--mdc-theme-error));
+  color: var(--mdc-theme-status-error, var(--mdc-theme-error));
+}
 </style>
 
 <label class="custom-field" style="--field-padding: {padding}; {$$props.class || ''}">
@@ -82,6 +88,7 @@ const onChange = (e) => {
     {disabled}
     {maxlength}
     class="fs-14 {$$props.class || ''}"
+    class:showError
     style="width: {width}"
     {required}
     list={randomId}
@@ -89,7 +96,9 @@ const onChange = (e) => {
     bind:this={element}
     value={choice}
     on:change={onChange}
+    on:change
     on:blur={(e) => dispatch('check', e.target.value)}
+    on:blur
     on:focus
   />
   <span class="placeholder">{placeholder}</span>
