@@ -1,58 +1,57 @@
 # Changelog
+
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
 
-## [11.3.0](https://github.com/silinternational/ui-components/compare/v11.2.0...v11.3.0) (2024-04-16)
-
-
-### Fixed
-
-* **Select:** update to match installed version of material/select ([a739d35](https://github.com/silinternational/ui-components/commit/a739d35b5635c74f3846feb3cee3485e5db2929d))
-
+## [11.4.0](https://github.com/silinternational/ui-components/compare/v11.3.0...v11.4.0) (2024-07-03)
 
 ### Added
 
-* **Select:** Add Select.name for convenient form submission ([8f7380b](https://github.com/silinternational/ui-components/commit/8f7380bcd34df41600d3be7bbe9fafc3187c4df8))
-* **Select:** Add Select.required prop ([94bab91](https://github.com/silinternational/ui-components/commit/94bab918ba3a6560c49670622802aa942ee32628))
-* **Select:** Add Select.ShowError prop which applies the mdc-select--invalid class to the ([3d8f95d](https://github.com/silinternational/ui-components/commit/3d8f95d4657a1ee99f6900522a3449126790f20e))
+- **searchableSelect:** add showError prop to searchableSelect and expose blur and change events ([2d4db3f](https://github.com/silinternational/ui-components/commit/2d4db3f4eb8a60460bf3255a025aa22bfb492b12))
 
+## [11.3.0](https://github.com/silinternational/ui-components/compare/v11.2.0...v11.3.0) (2024-04-16)
+
+### Fixed
+
+- **Select:** update to match installed version of material/select ([a739d35](https://github.com/silinternational/ui-components/commit/a739d35b5635c74f3846feb3cee3485e5db2929d))
+
+### Added
+
+- **Select:** Add Select.name for convenient form submission ([8f7380b](https://github.com/silinternational/ui-components/commit/8f7380bcd34df41600d3be7bbe9fafc3187c4df8))
+- **Select:** Add Select.required prop ([94bab91](https://github.com/silinternational/ui-components/commit/94bab918ba3a6560c49670622802aa942ee32628))
+- **Select:** Add Select.ShowError prop which applies the mdc-select--invalid class to the ([3d8f95d](https://github.com/silinternational/ui-components/commit/3d8f95d4657a1ee99f6900522a3449126790f20e))
 
 ## [11.2.0](https://github.com/silinternational/ui-components/compare/v11.1.2...v11.2.0) (2024-04-09)
 
-
 ### Added
 
-* **TextInputs:** add showError, showWarn props to MoneyInput, TextArea and TextField ([c143895](https://github.com/silinternational/ui-components/commit/c143895280c354e586e20c614919b1130d3e66e6))
+- **TextInputs:** add showError, showWarn props to MoneyInput, TextArea and TextField ([c143895](https://github.com/silinternational/ui-components/commit/c143895280c354e586e20c614919b1130d3e66e6))
 
 ### Fixed
 
-* **TextInputs:** use latest material docs to fix icon spacing issues on TextField and MoneyInput ([2df920b](https://github.com/silinternational/ui-components/commit/2df920bf89df513213bc99067a565112850d5439))
+- **TextInputs:** use latest material docs to fix icon spacing issues on TextField and MoneyInput ([2df920b](https://github.com/silinternational/ui-components/commit/2df920bf89df513213bc99067a565112850d5439))
 
 ### [11.1.2](https://github.com/silinternational/ui-components/compare/v11.1.1...v11.1.2) (2024-04-08)
 
-
 ### Fixed
 
-* **TextArea:** fix TextArea maxlength hardcoded in textarea ([ea955bc](https://github.com/silinternational/ui-components/commit/ea955bcfcb13911f95c4cdd281bd79a2a5c6431a))
+- **TextArea:** fix TextArea maxlength hardcoded in textarea ([ea955bc](https://github.com/silinternational/ui-components/commit/ea955bcfcb13911f95c4cdd281bd79a2a5c6431a))
 
 ### [11.1.1](https://github.com/silinternational/ui-components/compare/v11.1.0...v11.1.1) (2024-04-04)
 
-
 ### Fixed
 
-* **types:** missing Select.label type ([687a403](https://github.com/silinternational/ui-components/commit/687a403579f35b2592b23519644764995dc3cff5))
+- **types:** missing Select.label type ([687a403](https://github.com/silinternational/ui-components/commit/687a403579f35b2592b23519644764995dc3cff5))
 
 ## [11.1.0](https://github.com/silinternational/ui-components/compare/v11.0.0...v11.1.0) (2024-03-26)
 
-
 ### Added
 
-* **Tooltip:** Add Tooltip.rich ([2540751](https://github.com/silinternational/ui-components/commit/254075178e40db27fdc8864427ceeb34824b2aa2))
-
+- **Tooltip:** Add Tooltip.rich ([2540751](https://github.com/silinternational/ui-components/commit/254075178e40db27fdc8864427ceeb34824b2aa2))
 
 ### Fixed
 
-* **build:** fix npm-publish [skip release] ([1fd6d87](https://github.com/silinternational/ui-components/commit/1fd6d877d9376dd33d45b2b65a913b5d3e4827c8))
+- **build:** fix npm-publish [skip release] ([1fd6d87](https://github.com/silinternational/ui-components/commit/1fd6d877d9376dd33d45b2b65a913b5d3e4827c8))
 
 ## [11.0.0](https://github.com/silinternational/ui-components/compare/v10.7.0...v11.0.0) (2024-03-20)
 
