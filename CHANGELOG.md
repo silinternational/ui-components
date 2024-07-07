@@ -1,4 +1,15 @@
 # Changelog
+All notable changes to this project will be documented in this file.
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
+
+## [11.4.0](https://github.com/silinternational/ui-components/compare/v11.3.0...v11.4.0) (2024-07-07)
+
+
+### Added
+
+* **searchableSelect:** add showError prop to searchableSelect and expose blur and change events ([2d4db3f](https://github.com/silinternational/ui-components/commit/2d4db3f4eb8a60460bf3255a025aa22bfb492b12))
+
+# Changelog
 
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
