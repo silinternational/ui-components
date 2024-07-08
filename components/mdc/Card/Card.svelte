@@ -31,6 +31,7 @@ $: tabindex = isClickable ? 0 : undefined
 </style>
 
 <div
+  role="button"
   {tabindex}
   class="mdc-card mdc-typography {$$props.class || ''}"
   style="background-color: {color}"
