@@ -2,42 +2,55 @@
 import { Button, Datatable, Drawer, Page } from '../components/mdc'
 import { copyAndModifyArgs } from './helpers.js'
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-
+console.log(location)
 const args = {
   class: '', //only works for global classes
   title: 'Title',
   toggle: true,
-  currentUrl: './user',
+  currentUrl: './?path=/docs/molecule-drawer--docs',
   menuItems: [
     {},
     {
-      url: './user',
-      icon: 'account_circle',
+      url: './?path=/docs/molecule-drawer--docs',
+      icon: 'description',
       label: 'account',
-      tooltip: 'user account',
+      tooltip: 'docs',
     },
     {
-      url: './',
-      icon: 'face',
-      label: 'bio',
+      url: './?path=/story/molecule-drawer--default',
+      icon: 'star',
+      label: 'default',
+      tooltip: 'default',
     },
     {
-      url: './',
-      icon: 'add',
-      label: 'add stuff',
-      tooltip: 'add things',
+      url: './?path=/story/molecule-drawer--subtitle',
+      icon: 'subtitles',
+      label: 'subtitle',
+      tooltip: 'subtitle',
     },
     {
-      url: './',
-      icon: 'remove',
-      label: 'remove stuff',
-      tooltip: 'remove things',
+      url: './?path=/story/molecule-drawer--dismissible',
+      icon: 'close',
+      label: 'dismiss',
+      tooltip: 'dismiss',
     },
     {
-      url: './',
-      icon: 'money',
-      label: 'reload',
-      button: true,
+      url: './?path=/story/molecule-drawer--hide-for-tablets',
+      icon: 'tablet',
+      label: 'hide tablet',
+      tooltip: 'hide for tablet',
+    },
+    {
+      url: './?path=/story/molecule-drawer--hide-for-phones-only',
+      icon: 'smartphone',
+      label: 'hide mobile',
+      tooltip: 'hide for mobile',
+    },
+    {
+      url: './?path=/story/molecule-drawer--mini-menu',
+      icon: 'menu',
+      label: 'mini menu',
+      tooltip: 'mini menu',
     },
   ],
 }
