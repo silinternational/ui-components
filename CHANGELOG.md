@@ -2,6 +2,16 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
 
+### [11.4.1](https://github.com/silinternational/ui-components/compare/v11.4.0...v11.4.1) (2024-07-09)
+
+
+### Fixed
+
+* **Card:** fix Card aria role warn ([58b599f](https://github.com/silinternational/ui-components/commit/58b599f2e853d78c8f486249637b70af91939c52))
+* **FileDropArea:** fix aria role warning ([d01d097](https://github.com/silinternational/ui-components/commit/d01d09740929848da6a64cae3067f99e6b35f522))
+* **Item:** fix aria warnings in List Item ([ca3778e](https://github.com/silinternational/ui-components/commit/ca3778efdb38cc401649ba25e4ea66e82dfc4346))
+* **Types:** stop using deprecated svelte types ([ba4798d](https://github.com/silinternational/ui-components/commit/ba4798d1bdc8efcca1c2ae1d47829622c13b5271))
+
 ## [11.4.0](https://github.com/silinternational/ui-components/compare/v11.3.0...v11.4.0) (2024-07-07)
 
 
