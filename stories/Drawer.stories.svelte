@@ -2,7 +2,7 @@
 import { Button, Datatable, Drawer, Page } from '../components/mdc'
 import { copyAndModifyArgs } from './helpers.js'
 import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-console.log(location)
+
 const args = {
   class: '', //only works for global classes
   title: 'Title',
