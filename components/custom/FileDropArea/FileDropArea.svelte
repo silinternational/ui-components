@@ -73,36 +73,35 @@ form > * {
 }
 </style>
 
-<div
+<form
   id="drop-area"
-  class="br-8px {$$props.class || ''}"
+  class="br-8px flex justify-between align-items-center py-1 px-1 {$$props.class || ''}"
   class:highlighted
   on:dragenter|preventDefault|stopPropagation={highlight}
   on:dragleave|preventDefault|stopPropagation={unhighlight}
   on:dragover|preventDefault|stopPropagation={highlight}
   on:drop|preventDefault|stopPropagation={handleDrop}
+  class:column={!isAboveMobile()}
 >
-  <form class="flex justify-between align-items-center my-1 px-1" class:column={!isAboveMobile()}>
-    {#if !uploading}
-      <input
-        bind:this={fileInput}
-        type="file"
-        id="fileElem"
-        multiple
-        accept={mimeType}
-        disabled={uploading}
-        on:change={() => handleFiles(fileInput.files)}
-      />
-    {/if}
-    <label
-      class="mdc-button m-8px"
-      for="fileElem"
-      class:custom-text-button={raised}
-      class:mdc-button--outlined={outlined}
-      class:disabled={uploading}
-      class:mdc-button--raised={raised}>Choose files</label
-    >
-    <div class="m-8px">or drop files here</div>
-    <i class="material-icons icon m-8px" id="upload-icon">cloud_upload</i>
-  </form>
-</div>
+  {#if !uploading}
+    <input
+      bind:this={fileInput}
+      type="file"
+      id="fileElem"
+      multiple
+      accept={mimeType}
+      disabled={uploading}
+      on:change={() => handleFiles(fileInput.files)}
+    />
+  {/if}
+  <label
+    class="mdc-button m-8px"
+    for="fileElem"
+    class:custom-text-button={raised}
+    class:mdc-button--outlined={outlined}
+    class:disabled={uploading}
+    class:mdc-button--raised={raised}>Choose files</label
+  >
+  <div class="m-8px">or drop files here</div>
+  <i class="material-icons icon m-8px" id="upload-icon">cloud_upload</i>
+</form>

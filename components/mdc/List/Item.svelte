@@ -51,35 +51,32 @@ img {
   class:mdc-deprecated-list-item--activated={activated}
   class:mdc-deprecated-list-item--disabled={nonInteractive}
   data-mdc-dialog-action={$$props['data-mdc-dialog-action']}
-  on:click
-  on:keydown
-  on:keypress
-  on:keyup
-  {tabindex}
 >
-  {#if graphicURL}
-    <div class="mdc-deprecated-list-item__graphic">
-      <img class="br-50" alt={graphicAlt} src={graphicURL} />
-    </div>
-  {:else if icon}
-    <i class="material-icons mdc-deprecated-list-item__graphic" aria-hidden="true">{icon}</i>
-  {/if}
-
-  <span class="mdc-deprecated-list-item__ripple" />
-
-  <span class="mdc-deprecated-list-item__text" class:nonInteractive>
-    {#if primary || secondary}
-      <span class="mdc-deprecated-list-item__primary-text">{primary}</span>
-      <span class="mdc-deprecated-list-item__secondary-text">{secondary}</span>
-    {:else}
-      {text}
-      <slot />
+  <div role="button" {tabindex} on:click on:keydown on:keypress on:keyup>
+    {#if graphicURL}
+      <div class="mdc-deprecated-list-item__graphic">
+        <img class="br-50" alt={graphicAlt} src={graphicURL} />
+      </div>
+    {:else if icon}
+      <i class="material-icons mdc-deprecated-list-item__graphic" aria-hidden="true">{icon}</i>
     {/if}
-  </span>
 
-  <div class="mdc-deprecated-list-item__meta">
-    {meta}
-    <slot name="meta" />
+    <span class="mdc-deprecated-list-item__ripple" />
+
+    <span class="mdc-deprecated-list-item__text" class:nonInteractive>
+      {#if primary || secondary}
+        <span class="mdc-deprecated-list-item__primary-text">{primary}</span>
+        <span class="mdc-deprecated-list-item__secondary-text">{secondary}</span>
+      {:else}
+        {text}
+        <slot />
+      {/if}
+    </span>
+
+    <div class="mdc-deprecated-list-item__meta">
+      {meta}
+      <slot name="meta" />
+    </div>
   </div>
 </li>
 
