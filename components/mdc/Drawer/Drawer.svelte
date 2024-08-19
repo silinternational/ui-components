@@ -118,6 +118,11 @@ main {
 .main-content-height {
   height: var(--mdc-drawer-height);
 }
+.drawer-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
 </style>
 
 <svelte:window on:resize={showAppropriateThings} />
@@ -138,50 +143,52 @@ main {
     <slot name="drawer-content-top" />
     <!-- override built-in padding so height 100 works correctly without creating a vertical scroller -->
     <!-- changing the list to flex causes the margins to not collapse -->
-    <nav
-      class="mdc-deprecated-list flex column p-0"
-      class:h-100={isFullHeightMenu}
-      on:click={onListClick}
-      on:keyup={onListClick}
-      bind:this={listElement}
-    >
-      {#each menuItems as { icon, label, url, urlPattern, hide, button, tooltip }, i}
-        {#if label === '--break--'}
-          <span class="grow-1" />
-        {:else if !hide}
-          <Tooltip.Wrapper ariaDescribedBy={label + '-tooltip'}>
-            {#if button && isNotMini}
-              <Button class="m-1" raised prependIcon={icon} {url}>{label}</Button>
-            {:else if button}
-              <IconButton class="mdc-theme--primary pl-1" {icon} ariaLabel={label} {url} />
-            {:else if url}
-              <a
-                class="mdc-deprecated-list-item"
-                class:mdc-deprecated-list-item--activated={isMenuItemActive(currentUrl, url, urlPattern)}
-                href={url}
-                aria-current={isMenuItemActive(currentUrl, url, urlPattern) ? 'page' : null}
-                tabindex={i === 0 ? 0 : undefined}
-              >
-                <span class="mdc-deprecated-list-item__ripple" />
-                {#if icon}
-                  <i class="material-icons mdc-deprecated-list-item__graphic" aria-hidden="true">{icon}</i>
-                {/if}
+    <nav class:h-100={isFullHeightMenu} bind:this={listElement}>
+      <div
+        class="drawer-menu mdc-deprecated-list"
+        role="button"
+        tabindex="-1"
+        on:click={onListClick}
+        on:keyup={onListClick}
+      >
+        {#each menuItems as { icon, label, url, urlPattern, hide, button, tooltip }, i}
+          {#if label === '--break--'}
+            <span class="grow-1" />
+          {:else if !hide}
+            <Tooltip.Wrapper ariaDescribedBy={label + '-tooltip'}>
+              {#if button && isNotMini}
+                <Button class="m-1" raised prependIcon={icon} {url}>{label}</Button>
+              {:else if button}
+                <IconButton class="mdc-theme--primary pl-1" {icon} ariaLabel={label} {url} />
+              {:else if url}
+                <a
+                  class="mdc-deprecated-list-item"
+                  class:mdc-deprecated-list-item--activated={isMenuItemActive(currentUrl, url, urlPattern)}
+                  href={url}
+                  aria-current={isMenuItemActive(currentUrl, url, urlPattern) ? 'page' : null}
+                  tabindex={i === 0 ? 0 : undefined}
+                >
+                  <span class="mdc-deprecated-list-item__ripple" />
+                  {#if icon}
+                    <i class="material-icons mdc-deprecated-list-item__graphic" aria-hidden="true">{icon}</i>
+                  {/if}
 
-                {#if label && isNotMini}
-                  <span class="mdc-deprecated-list-item__text">{label}</span>
-                {/if}
-              </a>
-            {:else}
-              <hr
-                class="mdc-deprecated-list-divider mdc-deprecated-list-divider--inset-leading mdc-deprecated-list-divider--inset-trailing"
-              />
+                  {#if label && isNotMini}
+                    <span class="mdc-deprecated-list-item__text">{label}</span>
+                  {/if}
+                </a>
+              {:else}
+                <hr
+                  class="mdc-deprecated-list-divider mdc-deprecated-list-divider--inset-leading mdc-deprecated-list-divider--inset-trailing"
+                />
+              {/if}
+            </Tooltip.Wrapper>
+            {#if tooltip}
+              <Tooltip tooltipID={label + '-tooltip'}>{tooltip}</Tooltip>
             {/if}
-          </Tooltip.Wrapper>
-          {#if tooltip}
-            <Tooltip tooltipID={label + '-tooltip'}>{tooltip}</Tooltip>
           {/if}
-        {/if}
-      {/each}
+        {/each}
+      </div>
     </nav>
   </div>
 </aside>

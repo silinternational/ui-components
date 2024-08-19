@@ -1,4 +1,15 @@
 # Changelog
+All notable changes to this project will be documented in this file.
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
+
+### [11.4.2](https://github.com/silinternational/ui-components/compare/v11.4.1...v11.4.2) (2024-08-19)
+
+
+### Fixed
+
+* **Drawer:** fix A11y warning in Drawer ([275d2b9](https://github.com/silinternational/ui-components/commit/275d2b9f0944e82da7b275f043afc11b6e9296c1))
+
+# Changelog
 
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
