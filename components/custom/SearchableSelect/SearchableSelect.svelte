@@ -2,6 +2,8 @@
 import { generateRandomID } from '../../../random'
 import { createEventDispatcher } from 'svelte'
 
+/** @type {boolean} if the input should be ignored by 1Password */
+export let data_1p_ignore = false
 /** @type {object} the options to choose from. The keys are displayed in the dropdown and the value is dispatched with the change event */
 export let options = {}
 /** @type {string} the currently selected option value */
@@ -84,6 +86,7 @@ const onChange = (e) => {
 
 <label class="custom-field" style="--field-padding: {padding}; {$$props.class || ''}">
   <input
+    data-1p-ignore={data_1p_ignore}
     autocomplete="off"
     {disabled}
     {maxlength}
