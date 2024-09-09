@@ -61,6 +61,7 @@ const focus = (node) => autofocus && node.focus()
 
 <label class="{$$props.class || ''} custom-field">
   <input
+    data-1p-ignore
     type="date"
     {required}
     {disabled}

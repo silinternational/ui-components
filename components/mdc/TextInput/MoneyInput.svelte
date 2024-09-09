@@ -91,6 +91,7 @@ const focus = (node) => autofocus && node.focus()
     attach_money
   </i>
   <input
+    data-1p-ignore
     {step}
     type="number"
     min={minValue}

@@ -74,7 +74,7 @@ afterUpdate(() => {
   bind:this={element}
   style="width: {width}"
 >
-  <input {required} type="hidden" {name} />
+  <input data-1p-ignore {required} type="hidden" {name} />
   <div
     class="mdc-select__anchor"
     aria-required={required}
