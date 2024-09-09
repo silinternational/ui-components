@@ -85,6 +85,7 @@ const onChange = (e) => {
 <label class="custom-field" style="--field-padding: {padding}; {$$props.class || ''}">
   <input
     autocomplete="off"
+    data-1p-ignore
     {disabled}
     {maxlength}
     class="fs-14 {$$props.class || ''}"
