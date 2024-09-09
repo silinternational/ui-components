@@ -112,3 +112,6 @@ global.css
 
 # bun
 bun.lockb
+
+# Jetbrains
+.idea/
