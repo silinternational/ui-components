@@ -23,6 +23,7 @@ export let showError = false
 
 let element = {}
 let randomId = generateRandomID('dataList-')
+let savedChoice = ''
 
 const dispatch = createEventDispatcher()
 
@@ -31,6 +32,18 @@ const onChange = (e) => {
   options[internalChoice] && dispatch('chosen', options[internalChoice])
   choice = internalChoice
   element.blur()
+}
+
+const clearChoice = () => {
+  savedChoice = choice
+  choice = ''
+}
+
+const onBlur = () => {
+  if (savedChoice && !choice) {
+    choice = savedChoice
+  }
+  dispatch('check', choice)
 }
 </script>
 
@@ -80,6 +93,16 @@ const onChange = (e) => {
   border-color: var(--mdc-theme-status-error, var(--mdc-theme-error));
   color: var(--mdc-theme-status-error, var(--mdc-theme-error));
 }
+
+.clear-button {
+  cursor: pointer;
+  padding: 5px;
+  position: relative;
+  right: 50px;
+  border-radius: 4px;
+  border: none;
+  background-color: transparent;
+}
 </style>
 
 <label class="custom-field" style="--field-padding: {padding}; {$$props.class || ''}">
@@ -98,11 +121,14 @@ const onChange = (e) => {
     value={choice}
     on:change={onChange}
     on:change
-    on:blur={(e) => dispatch('check', e.target.value)}
+    on:blur={onBlur}
     on:blur
     on:focus
   />
   <span class="placeholder">{placeholder}</span>
+  {#if choice}
+    <button type="button" class="clear-button" on:click={clearChoice} aria-label="Clear selection">✕</button>
+  {/if}
 </label>
 
 <datalist id={randomId}>

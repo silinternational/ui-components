@@ -2,22 +2,37 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
 
-## [11.5.0](https://github.com/silinternational/ui-components/compare/v11.4.2...v11.5.0) (2024-09-09)
+## [11.6.0](https://github.com/silinternational/ui-components/compare/v11.5.0...v11.6.0) (2024-10-03)
 
 
 ### Added
 
-* **DateInput:** add data-1p-ignore to prevent 1Password trying to fill ([c296811](https://github.com/silinternational/ui-components/commit/c29681127222afabceff914350aafebe38687dfc))
-* **MoneyInput:** add data-1p-ignore to prevent 1Password trying to fill ([6367aa8](https://github.com/silinternational/ui-components/commit/6367aa8f43c5544556039feaf848fff60002cf33))
-* **SearchableSelect:** add data-1p-ignore to SearchableSelect ([ce4bf4b](https://github.com/silinternational/ui-components/commit/ce4bf4be28a7c3ef5efe0636c47d4437e8fe71f0))
-* **Select:** add data-1p-ignore to prevent 1Password trying to fill ([1e502e2](https://github.com/silinternational/ui-components/commit/1e502e226144bf0c8b41a7535f8499d62df537e7))
+* **SearchableSelect:** add clear button to SearchableSelect ([000f776](https://github.com/silinternational/ui-components/commit/000f776dc36dd7e7c2bd10363d6314c5ed0fae5b))
+
+
+### Changed
+
+* **changelog:** format ([3fd0539](https://github.com/silinternational/ui-components/commit/3fd05396879a911d075855c92828eaf4a06f2265))
+
+# Changelog
+
+All notable changes to this project will be documented in this file.
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
+
+## [11.5.0](https://github.com/silinternational/ui-components/compare/v11.4.2...v11.5.0) (2024-09-09)
+
+### Added
+
+- **DateInput:** add data-1p-ignore to prevent 1Password trying to fill ([c296811](https://github.com/silinternational/ui-components/commit/c29681127222afabceff914350aafebe38687dfc))
+- **MoneyInput:** add data-1p-ignore to prevent 1Password trying to fill ([6367aa8](https://github.com/silinternational/ui-components/commit/6367aa8f43c5544556039feaf848fff60002cf33))
+- **SearchableSelect:** add data-1p-ignore to SearchableSelect ([ce4bf4b](https://github.com/silinternational/ui-components/commit/ce4bf4be28a7c3ef5efe0636c47d4437e8fe71f0))
+- **Select:** add data-1p-ignore to prevent 1Password trying to fill ([1e502e2](https://github.com/silinternational/ui-components/commit/1e502e226144bf0c8b41a7535f8499d62df537e7))
 
 ### [11.4.2](https://github.com/silinternational/ui-components/compare/v11.4.1...v11.4.2) (2024-09-06)
 
-
 ### Fixed
 
-* **Drawer:** fix A11y warning in Drawer ([275d2b9](https://github.com/silinternational/ui-components/commit/275d2b9f0944e82da7b275f043afc11b6e9296c1))
+- **Drawer:** fix A11y warning in Drawer ([275d2b9](https://github.com/silinternational/ui-components/commit/275d2b9f0944e82da7b275f043afc11b6e9296c1))
 
 ### [11.4.1](https://github.com/silinternational/ui-components/compare/v11.4.0...v11.4.1) (2024-07-09)
 
