@@ -12,6 +12,24 @@ jobs:
         with:
           node-version: "20"
       - run: npm ci
+      - name: Check formatting
+        run: |
+          set -eo pipefail
+          files_to_format=$(npm run format:check --silent || true)
+          if [ -n "$files_to_format" ]; then
+            echo "The following files are not formatted correctly:"
+            echo "$files_to_format"
+            {
+              echo "formatted_files<<EOF"
+              echo "$files_to_format"
+              echo "EOF"
+              echo "formatting_needed=true"
+            } >> $GITHUB_OUTPUT
+            exit 1
+          else
+            echo "All files are formatted correctly."
+            echo "formatting_needed=false" >> $GITHUB_OUTPUT
+          fi
       - run: npm test
       - uses: JS-DevTools/npm-publish@v3
         with:
