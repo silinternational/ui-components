@@ -7,7 +7,8 @@
   "svelte": "index.mjs",
   "scripts": {
     "test": "echo test",
-    "format-all": "npx prettier --write .",
+    "format-all": "prettier --write .",
+    "format:check": "prettier --list-different .",
     "dev": "sass components/global.scss components/global.css; storybook dev -p 6007",
     "build": "sass components/global.scss components/global.css; storybook build",
     "dry": "npx semantic-release --dry-run",
