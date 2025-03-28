@@ -220,6 +220,24 @@ declare module '@silintl/ui-components' {
   }
   export class MoneyInput extends SvelteComponent<MoneyInputProps> {}
 
+  interface NumberInputProps {
+    label?: string
+    value?: number | string
+    name?: string
+    placeholder?: string
+    autofocus?: boolean
+    disabled?: boolean
+    required?: boolean
+    minValue?: number | string
+    maxValue?: number | string
+    step?: number | string
+    description?: string
+    class?: string
+    showWarn?: boolean
+    showError?: boolean
+  }
+  export class NumberInput extends SvelteComponent<NumberInputProps> {}
+
   export namespace Progress {
     type CircularProps = {}
     export class Circular extends SvelteComponent<CircularProps> {}

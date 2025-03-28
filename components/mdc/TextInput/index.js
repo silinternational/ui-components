@@ -3,4 +3,6 @@ import TextArea from './TextArea.svelte'
 import TextField from './TextField.svelte'
 import MoneyInput from './MoneyInput.svelte'
 
-export { TextArea, TextField, MoneyInput }
+import NumberInput from './NumberInput.svelte'
+
+export { TextArea, TextField, MoneyInput, NumberInput }
