@@ -9,6 +9,8 @@ const dispatch = createEventDispatcher()
 
 /** @type {string} the label text*/
 export let label = ''
+/** @type {string} the description text*/
+export let description = ''
 /** @type {boolean} if the checkbox is checked or not */
 export let checked = false
 /** @type {boolean} if the checkbox is disabled or not */
@@ -46,4 +48,16 @@ const handleChange = () => dispatch(checkbox.checked ? 'checked' : 'unchecked')
     <div class="mdc-checkbox__ripple" />
   </div>
   <label class:uppercase for={inputID}>{label}</label>
+</div>
+<div class="mdc-text-field-helper-line ml-10px">
+  <div
+    class="mdc-text-field-helper-text
+    mdc-text-field-helper-text--persistent"
+    id="{inputID}-helper-id"
+    aria-hidden="true"
+  >
+    {#if description}
+      {description}
+    {/if}
+  </div>
 </div>

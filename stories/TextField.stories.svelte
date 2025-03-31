@@ -18,6 +18,7 @@ const args = {
   icon: '',
   description: '',
   name: '',
+  type: 'text',
 }
 
 let lastKey = ''
@@ -51,6 +52,8 @@ let lastKey = ''
 <Story name="Description" args={copyAndModifyArgs(args, { description: 'a description' })} />
 
 <Story name="Name" args={copyAndModifyArgs(args, { name: 'field' })} />
+
+<Story name="Type" args={copyAndModifyArgs(args, { type: 'text' })} />
 
 <Story name="showError" args={copyAndModifyArgs(args, { showError: true })} />
 
