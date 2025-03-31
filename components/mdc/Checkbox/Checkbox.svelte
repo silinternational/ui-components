@@ -49,7 +49,7 @@ const handleChange = () => dispatch(checkbox.checked ? 'checked' : 'unchecked')
   </div>
   <label class:uppercase for={inputID}>{label}</label>
 </div>
-<div class="mdc-text-field-helper-line" style="margin-left: 10px">
+<div class="mdc-text-field-helper-line ml-10px">
   <div
     class="mdc-text-field-helper-text
     mdc-text-field-helper-text--persistent"
