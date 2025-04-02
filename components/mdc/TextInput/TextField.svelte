@@ -29,6 +29,8 @@ export let name = ''
 export let showError = false
 /** @type {boolean} lets the component know to use warn class. */
 export let showWarn = false
+/** @type {string} The type of the text input field. */
+export let type = 'text'
 
 const labelID = generateRandomID('text-label-')
 
@@ -84,7 +86,6 @@ const focus = (node) => autofocus && node.focus()
     >
   {/if}
   <input
-    type="text"
     class="mdc-text-field__input"
     aria-labelledby={labelID}
     aria-controls="{labelID}-helper-id"
@@ -101,6 +102,7 @@ const focus = (node) => autofocus && node.focus()
     {name}
     {required}
     {disabled}
+    {...{ type }}
     maxlength="524288"
     {placeholder}
   />

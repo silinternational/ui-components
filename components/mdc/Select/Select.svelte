@@ -7,6 +7,9 @@ import { afterUpdate, createEventDispatcher, onMount } from 'svelte'
 /** @type displayed with the mdc-floating-label class */
 export let label = 'Select'
 
+/** @type {string} The description to display below the select list. */
+export let description = ''
+
 /** @type {{id: string, name: string}[]} The options to be displayed in the select list. */
 export let options = []
 /** @type {string} The width of the select list. E.g. '280px' */
@@ -112,5 +115,17 @@ afterUpdate(() => {
         </li>
       {/each}
     </ul>
+  </div>
+</div>
+<div class="mdc-text-field-helper-line">
+  <div
+    class="mdc-text-field-helper-text
+    mdc-text-field-helper-text--persistent"
+    id="{labelID}-helper-id"
+    aria-hidden="true"
+  >
+    {#if description}
+      {description}
+    {/if}
   </div>
 </div>

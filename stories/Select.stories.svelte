@@ -13,6 +13,7 @@ const args = {
     { name: 'choice 5', id: '4' },
     { name: 'choice 6', id: '5' },
   ],
+  description: '',
   'on:change': (e) => console.log('option: ', e.detail, 'const onChange = (e) => selectedOption = e.detail'),
   'on:populated': () => console.log('it is safe to set selectedID'),
   class: '', //only works for global classes
