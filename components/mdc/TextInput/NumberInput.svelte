@@ -8,7 +8,7 @@ import { afterUpdate, onMount } from 'svelte'
 
 /** @type {string} The label for the input. */
 export let label = ''
-/** @type {string} The value of the input. */
+/** @type {number} The value of the input. */
 export let value = ''
 /** @type {string} The step value for the input. */
 export let step = '1'
