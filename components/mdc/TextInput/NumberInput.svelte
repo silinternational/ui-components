@@ -9,9 +9,9 @@ import { afterUpdate, onMount } from 'svelte'
 /** @type {string} The label for the input. */
 export let label = ''
 /** @type {number} The value of the input. */
-export let value = ''
-/** @type {string} The step value for the input. */
-export let step = '1'
+export let value = 0
+/** @type {number} The step value for the input. */
+export let step = 1
 /** @type {string} The placeholder for the input. */
 export let placeholder = ''
 /** @type {string} The name of the input. */
