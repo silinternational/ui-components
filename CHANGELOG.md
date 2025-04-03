@@ -1,4 +1,15 @@
 # Changelog
+All notable changes to this project will be documented in this file.
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
+
+## [11.8.0](https://github.com/silinternational/ui-components/compare/v11.7.0...v11.8.0) (2025-04-03)
+
+
+### Added
+
+* **components:** Add NumberInput component and story (minor release) ([31a0a44](https://github.com/silinternational/ui-components/commit/31a0a4486ec670d0e5c07ee45faec3977e8b0d1c))
+
+# Changelog
 
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
