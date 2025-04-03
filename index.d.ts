@@ -32,6 +32,7 @@ declare module '@silintl/ui-components' {
 
   interface CheckboxProps {
     label?: string
+    description: string
     checked?: boolean
     disabled?: boolean
     uppercase?: boolean
@@ -253,6 +254,7 @@ declare module '@silintl/ui-components' {
   interface SelectProps {
     disabled?: boolean
     label?: string
+    description?: string
     name?: string
     options?: { name: string; id: string }[]
     required?: boolean
@@ -316,6 +318,7 @@ declare module '@silintl/ui-components' {
     value?: string
     name?: string
     icon?: string
+    type?: string
     placeholder?: string
     maxlength?: number
     autofocus?: boolean

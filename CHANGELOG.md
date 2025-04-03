@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
 
+## [11.7.0](https://github.com/silinternational/ui-components/compare/v11.6.1...v11.7.0) (2025-03-31)
+
+### Added
+
+- **components:** Added description props to Checkbox and Select components for displaying helper text. Enhanced TextField with a type prop for flexible input types (e.g., 'email'). Updated type definitions and improved Storybook examples to showcase the new features. ([4d88bad](https://github.com/silinternational/ui-components/commit/4d88bada9a39e3abd213256564eb88995b232c18))
+
 ### [11.6.1](https://github.com/silinternational/ui-components/compare/v11.6.0...v11.6.1) (2024-12-11)
 
 ### Security
@@ -18,11 +24,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 ### Changed
 
 - **changelog:** format ([3fd0539](https://github.com/silinternational/ui-components/commit/3fd05396879a911d075855c92828eaf4a06f2265))
-
-# Changelog
-
-All notable changes to this project will be documented in this file.
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
 
 ## [11.5.0](https://github.com/silinternational/ui-components/compare/v11.4.2...v11.5.0) (2024-09-09)
 
@@ -145,11 +146,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 - **SearchableSelect:** let consumer clear input ([885a8bd](https://github.com/silinternational/ui-components/commit/885a8bdc4ded967ccc520050f835c46aa101b1cc))
 - **TextField:** add missing type for icon prop ([9ac0c6a](https://github.com/silinternational/ui-components/commit/9ac0c6a59be72d19cda78b19e51557fe44c5de48))
-
-# Changelog
-
-All notable changes to this project will be documented in this file.
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
 
 ## [10.4.0](https://github.com/silinternational/ui-components/compare/v10.3.0...v10.4.0) (2023-09-15)
 

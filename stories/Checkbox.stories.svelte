@@ -6,6 +6,7 @@ import { copyAndModifyArgs } from './helpers.js'
 const args = {
   label: 'Checkbox',
   class: '', //only works for global classes
+  description: '',
   'on:checked': () => setNotice('checked'),
   'on:unchecked': () => setNotice('unchecked'),
 }
