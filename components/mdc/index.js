@@ -23,7 +23,7 @@ import Select from './Select'
 import Snackbar from './Snackbar'
 import Switch from './Switch'
 import TabBar from './TabBar'
-import { TextArea, TextField, MoneyInput } from './TextInput'
+import { TextArea, TextField, NumberInput, MoneyInput } from './TextInput'
 import Tooltip from './Tooltip'
 import TopAppBar from './TopAppBar'
 import Tour from './Tour'
@@ -45,6 +45,7 @@ export {
   List,
   Menu,
   MoneyInput,
+  NumberInput,
   Page,
   Progress,
   TabBar,
