@@ -175,11 +175,13 @@ function isDryRun() {
 const gitPath = '/usr/bin/git'
 
 function getLocalRepoUrl() {
+  // Safe: using fixed path to git in a trusted CI environment with no user input
   const topLevelDir = execSync(`${gitPath} rev-parse --show-toplevel`).toString().trim()
 
   return `file://${topLevelDir}/.git`
 }
 
 function getCurrentBranch() {
+  // Safe: using fixed path to git in a trusted CI environment with no user input
   return execSync(`${gitPath}  rev-parse --abbrev-ref HEAD`).toString().trim()
 }
