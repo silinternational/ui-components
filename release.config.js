@@ -172,12 +172,14 @@ function isDryRun() {
   return process.argv.includes('--dry-run')
 }
 
+const gitPath = '/usr/bin/git'
+
 function getLocalRepoUrl() {
-  const topLevelDir = execSync('git rev-parse --show-toplevel').toString().trim()
+  const topLevelDir = execSync(`${gitPath} rev-parse --show-toplevel`).toString().trim()
 
   return `file://${topLevelDir}/.git`
 }
 
 function getCurrentBranch() {
-  return execSync('git rev-parse --abbrev-ref HEAD').toString().trim()
+  return execSync(`${gitPath}  rev-parse --abbrev-ref HEAD`).toString().trim()
 }
