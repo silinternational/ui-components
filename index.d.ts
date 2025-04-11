@@ -32,7 +32,7 @@ declare module '@silintl/ui-components' {
 
   interface CheckboxProps {
     label?: string
-    description: string
+    description?: string
     checked?: boolean
     disabled?: boolean
     uppercase?: boolean
