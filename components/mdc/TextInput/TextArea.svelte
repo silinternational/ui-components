@@ -44,6 +44,7 @@ $: valueIsEmpty = value === ' ' || !value
 $: warn = showWarn
 $: !valueIsEmpty && addOrRemoveInvalidClass(error, element)
 $: addOrRemoveInvalidClass(showError || showWarn, element)
+$: floating = !!label && !value.length
 
 onMount(() => {
   resize()
@@ -82,8 +83,8 @@ label {
 <label
   class="mdc-text-field mdc-text-field--outlined mdc-text-field--textarea {$$props.class || ''} textfield-radius"
   class:mdc-text-field--no-label={!label}
-  class:mdc-text-field--label-floating={label}
-  class:mdc-text-field--with-internal-counter={maxlength}
+  class:mdc-text-field--label-floating={floating}
+  class:mdc-text-field--with-internal-counter={!!maxlength}
   class:warn
   class:showError
   bind:this={element}
