@@ -1,6 +1,6 @@
 {
   "name": "@silintl/ui-components",
-  "version": "11.8.1",
+  "version": "11.8.2",
   "description": "Reusable Svelte components for some internal applications",
   "main": "index.mjs",
   "module": "index.mjs",
