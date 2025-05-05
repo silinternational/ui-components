@@ -38,6 +38,8 @@ declare module '@silintl/ui-components' {
     uppercase?: boolean
     class?: string
     inputID?: string
+    name?: string
+    value?: string
   }
   export class Checkbox extends SvelteComponent<CheckboxProps> {}
 

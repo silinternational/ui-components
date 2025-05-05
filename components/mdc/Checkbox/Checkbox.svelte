@@ -19,26 +19,48 @@ export let disabled = false
 export let uppercase = false
 /** @type {string} random id prefixed with checkbox- for the input id*/
 export let inputID = generateRandomID('checkbox-')
+/** @type {string} name attribute for the checkbox input - important for forms */
+export let name = ''
+/** @type {string} value attribute when checked (default is "on") */
+export let value = 'on'
 
 let checkboxElement = {}
 let formFieldElement = {}
 let checkbox
 
-$: if (checkbox) checkbox.checked = checked
-
 onMount(() => {
   checkbox = new MDCCheckbox(checkboxElement)
   const formField = new MDCFormField(formFieldElement)
-
   formField.input = checkbox
+
+  checkbox.checked = checked
 })
 
-const handleChange = () => dispatch(checkbox.checked ? 'checked' : 'unchecked')
+$: if (checkbox && checkbox.checked !== checked) {
+  checkbox.checked = checked
+}
+
+const handleChange = () => {
+  if (checkbox) {
+    checked = checkbox.checked
+    dispatch(checkbox.checked ? 'checked' : 'unchecked')
+  }
+}
 </script>
 
 <div class="mdc-form-field {$$props.class || ''}" bind:this={formFieldElement}>
   <div class="mdc-checkbox" bind:this={checkboxElement}>
-    <input type="checkbox" {disabled} on:change={handleChange} class="mdc-checkbox__native-control" id={inputID} />
+    <input
+      type="checkbox"
+      {name}
+      {value}
+      {checked}
+      {disabled}
+      on:change={handleChange}
+      on:change
+      class="mdc-checkbox__native-control"
+      id={inputID}
+    />
     <div class="mdc-checkbox__background">
       <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
         <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
