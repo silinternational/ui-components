@@ -1,25 +1,19 @@
 # Changelog
+
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
 
 ## [11.9.0](https://github.com/silinternational/ui-components/compare/v11.8.2...v11.9.0) (2025-05-05)
 
-
 ### Added
 
-* **Checkbox:** add name and value attributes and expose change event ([df1d009](https://github.com/silinternational/ui-components/commit/df1d00960db1bda8f9c3210824fa10175450707a))
+- **Checkbox:** add name and value attributes and expose change event ([df1d009](https://github.com/silinternational/ui-components/commit/df1d00960db1bda8f9c3210824fa10175450707a))
 
 ### [11.8.2](https://github.com/silinternational/ui-components/compare/v11.8.1...v11.8.2) (2025-05-02)
 
-
 ### Fixed
 
-* **TextArea:** Fix label overlapping prefilled text ([17c5cf8](https://github.com/silinternational/ui-components/commit/17c5cf878048b2dc9304947a28477184bae0f1e4))
-
-# Changelog
-
-All notable changes to this project will be documented in this file.
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
+- **TextArea:** Fix label overlapping prefilled text ([17c5cf8](https://github.com/silinternational/ui-components/commit/17c5cf878048b2dc9304947a28477184bae0f1e4))
 
 ### [11.8.1](https://github.com/silinternational/ui-components/compare/v11.8.0...v11.8.1) (2025-04-10)
 
