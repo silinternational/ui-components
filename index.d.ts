@@ -426,6 +426,7 @@ declare module '@silintl/ui-components' {
     required?: boolean
     width?: string
     class?: string
+    showError?: boolean
   }
   export class SearchableSelect extends SvelteComponent<SearchableSelectProps> {}
 
