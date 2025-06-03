@@ -45,6 +45,22 @@ const onBlur = () => {
   }
   dispatch('check', choice)
 }
+
+const onKeyup = (e) => {
+  const optionsList = Object.keys(options)
+  const currentIndex = optionsList.indexOf(choice)
+  if (e.key === 'ArrowUp') {
+    if (currentIndex === -1) {
+      e.preventDefault()
+      choice = optionsList[0]
+    }
+  } else if (e.key === 'ArrowDown') {
+    e.preventDefault()
+    if (currentIndex === -1) {
+      choice = optionsList[optionsList.length - 1]
+    }
+  }
+}
 </script>
 
 <style>
@@ -105,7 +121,7 @@ const onBlur = () => {
 }
 </style>
 
-<label class="custom-field" style="--field-padding: {padding}; {$$props.class || ''}">
+<label class="custom-field" class:showError style="--field-padding: {padding}; {$$props.class || ''}">
   <input
     autocomplete="off"
     data-1p-ignore
@@ -124,6 +140,7 @@ const onBlur = () => {
     on:blur={onBlur}
     on:blur
     on:focus
+    on:keyup={onKeyup}
   />
   <span class="placeholder">{placeholder}</span>
   {#if choice}
