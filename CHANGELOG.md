@@ -13,19 +13,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 ### Added
 
 * **Checkbox:** add name and value attributes and expose change event ([df1d009](https://github.com/silinternational/ui-components/commit/df1d00960db1bda8f9c3210824fa10175450707a))
-* **SearchableSelect:** listen for up and down arrow keys to set when not a valid option ([96abc5f](https://github.com/silinternational/ui-components/commit/96abc5f7d8ffa9f5d797c9b5fce0ccc717a3097e))
-
-## [11.9.0](https://github.com/silinternational/ui-components/compare/v11.8.1...v11.9.0) (2025-06-03)
-
-
-### Fixed
-
-* **TextArea:** Fix label overlapping prefilled text ([17c5cf8](https://github.com/silinternational/ui-components/commit/17c5cf878048b2dc9304947a28477184bae0f1e4))
-
-
-### Added
-
-* **Checkbox:** add name and value attributes and expose change event ([df1d009](https://github.com/silinternational/ui-components/commit/df1d00960db1bda8f9c3210824fa10175450707a))
 
 ## [11.9.0](https://github.com/silinternational/ui-components/compare/v11.8.1...v11.9.0) (2025-05-05)
 
