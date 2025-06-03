@@ -1,4 +1,15 @@
 # Changelog
+All notable changes to this project will be documented in this file.
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
+
+## [11.10.0](https://github.com/silinternational/ui-components/compare/v11.9.0...v11.10.0) (2025-06-03)
+
+
+### Added
+
+* **SearchableSelect:** listen for up and down arrow keys to set when not a valid option ([96abc5f](https://github.com/silinternational/ui-components/commit/96abc5f7d8ffa9f5d797c9b5fce0ccc717a3097e))
+
+# Changelog
 
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
