@@ -1,4 +1,8 @@
-start: install
+install:
+	npm install
+
+update:
+	npm update
 
 clean:
 	npm run clean
